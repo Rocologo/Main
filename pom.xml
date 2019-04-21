@@ -12,7 +12,7 @@
 	<url>https://github.com/Rocologo/Main/</url>
 
 	<modules>
-		<module>Core</module>
+		<module>../Core</module>
 		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
 	</modules>
