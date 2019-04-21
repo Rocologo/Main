@@ -479,7 +479,7 @@
 		<!-- citizens repository -->
 		<repository>
 			<id>citizens-repo</id>
-			<url>http://repo.citizensnpcs.co/net/citizensnpcs/citizensapi/</url>
+			<url>http://repo.citizensnpcs.co/net/citizensnpcs/</url>
 		</repository>
 
 		<!-- Minigames / Addstar repo -->
