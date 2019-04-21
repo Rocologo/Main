@@ -55,6 +55,7 @@
 
 		<bagofgold.version>2.5.5-SNAPSHOT-B209</bagofgold.version>
 		<mobhunting.version>6.5.4-SNAPSHOT-B736</mobhunting.version>
+		<core.version>0.0.4-SNAPSHOT-B11</core.version>
 
 		<vault.version>1.6.6</vault.version>
 		<bstats.version>1.4</bstats.version>
@@ -238,6 +239,15 @@
 			<groupId>com.comphenix.protocol</groupId>
 			<artifactId>ProtocolLib-API</artifactId>
 			<version>${protocollib.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Rocologo Core -->
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>Core</artifactId>
+			<version>${core.version}</version>
+			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
 
