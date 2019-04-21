@@ -242,15 +242,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Rocologo Core -->
-		<dependency>
-			<groupId>one.lindegaard</groupId>
-			<artifactId>Core</artifactId>
-			<version>${core.version}</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>
-
 		<!-- Citizens -->
 		<dependency>
 			<groupId>net.citizensnpcs</groupId>
