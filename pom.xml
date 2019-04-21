@@ -72,7 +72,7 @@
 		<placeholderapi.version>2.9.2</placeholderapi.version>
 		<TitleAPI.version>1.7.5</TitleAPI.version>
 
-		<citizensapi.version>2.0.24-SNAPSHOT</citizensapi.version>
+		<citizensapi.version>2.0.23-SNAPSHOT</citizensapi.version>
 		<holograms.version>2.6-SNAPSHOT</holograms.version>
 		<hologramdisplays.version>2.3.2</hologramdisplays.version>
 
@@ -246,7 +246,8 @@
 			<groupId>net.citizensnpcs</groupId>
 			<artifactId>citizensapi</artifactId>
 			<version>${citizensapi.version}</version>
-			<scope>provided</scope>
+			<type>jar</type>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- LibsDisguises -->
@@ -479,7 +480,7 @@
 		<!-- citizens repository -->
 		<repository>
 			<id>citizens-repo</id>
-			<url>http://repo.citizensnpcs.co/net/citizensnpcs/</url>
+			<url>http://repo.citizensnpcs.co/</url>
 		</repository>
 
 		<!-- Minigames / Addstar repo -->
