@@ -5,14 +5,14 @@
 
 	<groupId>one.lindegaard</groupId>
 	<artifactId>Main</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.5</version>
 	<packaging>pom</packaging>
 
 	<name>Main</name>
 	<url>https://github.com/Rocologo/Main/</url>
 
 	<modules>
-		<module>../Core</module>
+		<module>Core</module>
 		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
 	</modules>
