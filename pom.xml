@@ -13,8 +13,8 @@
 
 	<modules>
 		<module>../Core</module>
-		<module>../MobHunting</module>
 		<module>../BagOfGold</module>
+		<module>../MobHunting</module>
 	</modules>
 
 	<organization>
@@ -28,9 +28,9 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<bagofgold.version>2.5.5-SNAPSHOT-B209</bagofgold.version>
-		<mobhunting.version>6.5.4-SNAPSHOT-B747</mobhunting.version>
-		<core.version>0.0.5-SNAPSHOT-B36</core.version>
+		<bagofgold.version>2.5.5-SNAPSHOT-B227</bagofgold.version>
+		<mobhunting.version>6.5.4-SNAPSHOT-B766</mobhunting.version>
+		<core.version>0.0.5-SNAPSHOT-B38</core.version>
 
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
