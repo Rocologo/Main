@@ -39,8 +39,9 @@
 		<junit.version>4.12</junit.version>
 		<spring.version>5.1.5.RELEASE</spring.version>
 
-		<spigotmc113.version>1.13.2-R0.1-SNAPSHOT</spigotmc113.version>
+		<spigotmc114.version>1.14-R0.1-SNAPSHOT</spigotmc114.version>
 
+		<craftbukkit114R1.version>1.14-R1</craftbukkit114R1.version>
 		<craftbukkit113R2.version>1.13-R2</craftbukkit113R2.version>
 		<craftbukkit113R1.version>1.13-R1</craftbukkit113R1.version>
 		<craftbukkit112R1.version>1.12-R1</craftbukkit112R1.version>
@@ -138,11 +139,20 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc113.version}</version>
+			<version>${spigotmc114.version}</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/spigot-1.13.2.jar</systemPath>
+			<systemPath>${project.basedir}/../Main/lib/spigot-1.14-pre5.jar</systemPath>
 		</dependency>
 
+		<!-- CraftBukkit -->
+		<dependency>
+			<groupId>org.craftbukkit</groupId>
+			<artifactId>craftbukkit114R1</artifactId>
+			<version>${craftbukkit114R1.version}</version>
+			<!-- <scope>provided</scope> -->
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.14-pre5.jar</systemPath>
+		</dependency>
 		<!-- CraftBukkit -->
 		<dependency>
 			<groupId>org.craftbukkit</groupId>
@@ -224,6 +234,14 @@
 			<!-- <scope>provided</scope> -->
 			<scope>system</scope>
 			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.8-R0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+
+		<!-- Rocologo Core -->
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>Core</artifactId>
+			<version>${core.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Vault / -->
