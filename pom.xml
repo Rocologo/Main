@@ -13,8 +13,8 @@
 
 	<modules>
 		<module>../Core</module>
-		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
+		<module>../BagOfGold</module>
 	</modules>
 
 	<organization>
@@ -241,7 +241,7 @@
 			<groupId>one.lindegaard</groupId>
 			<artifactId>Core</artifactId>
 			<version>${core.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- Vault / -->
