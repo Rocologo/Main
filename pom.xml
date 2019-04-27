@@ -13,8 +13,8 @@
 
 	<modules>
 		<module>../Core</module>
-		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
+		<module>../BagOfGold</module>
 	</modules>
 
 	<organization>
@@ -28,9 +28,9 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<bagofgold.version>2.5.5-SNAPSHOT-B227</bagofgold.version>
-		<mobhunting.version>6.5.4-SNAPSHOT-B771</mobhunting.version>
-		<core.version>0.0.5-SNAPSHOT-B48</core.version>
+		<bagofgold.version>2.5.5-SNAPSHOT-B228</bagofgold.version>
+		<mobhunting.version>6.5.4-SNAPSHOT-B772</mobhunting.version>
+		<core.version>0.0.5-SNAPSHOT-B50</core.version>
 
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -141,7 +141,7 @@
 			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc114.version}</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/spigot-1.14-pre5.jar</systemPath>
+			<systemPath>${project.basedir}/../Main/lib/spigot-1.14.jar</systemPath>
 		</dependency>
 
 		<!-- CraftBukkit -->
