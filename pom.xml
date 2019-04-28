@@ -29,7 +29,7 @@
 	<properties>
 
 		<bagofgold.version>2.5.5-SNAPSHOT-B233</bagofgold.version>
-		<mobhunting.version>6.5.4-SNAPSHOT-B774</mobhunting.version>
+		<mobhunting.version>6.5.4-SNAPSHOT-B776</mobhunting.version>
 		<core.version>0.0.5-SNAPSHOT-B66</core.version>
 
 		<build.number>1337</build.number>
