@@ -30,7 +30,7 @@
 
 		<bagofgold.version>2.5.5-SNAPSHOT-B229</bagofgold.version>
 		<mobhunting.version>6.5.4-SNAPSHOT-B773</mobhunting.version>
-		<core.version>0.0.5-SNAPSHOT-B54</core.version>
+		<core.version>0.0.5-SNAPSHOT-B55</core.version>
 
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,8 +47,8 @@
 		<craftbukkit112R1.version>1.12-R1</craftbukkit112R1.version>
 		<craftbukkit111R1.version>1.11-R1</craftbukkit111R1.version>
 		<craftbukkit110R1.version>1.10-R1</craftbukkit110R1.version>
-		<craftbukkit19R1.version>1.9-R1</craftbukkit19R1.version>
 		<craftbukkit19R2.version>1.9-R2</craftbukkit19R2.version>
+		<craftbukkit19R1.version>1.9-R1</craftbukkit19R1.version>
 		<craftbukkit18R3.version>1.8-R3</craftbukkit18R3.version>
 		<craftbukkit18R2.version>1.8-R2</craftbukkit18R2.version>
 		<craftbukkit18R1.version>1.8-R1</craftbukkit18R1.version>
