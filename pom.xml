@@ -6,7 +6,7 @@
 	<groupId>one.lindegaard</groupId>
 	<artifactId>Main</artifactId>
 	<version>0.0.5</version>
-	<packaging>pom</packaging> 
+	<packaging>pom</packaging>
 
 	<name>Main</name>
 	<url>https://github.com/Rocologo/Main/</url>
@@ -28,9 +28,9 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<bagofgold.version>2.5.5-SNAPSHOT-B233</bagofgold.version>
+		<bagofgold.version>2.5.5-SNAPSHOT-B234</bagofgold.version>
 		<mobhunting.version>6.5.4-SNAPSHOT-B776</mobhunting.version>
-		<core.version>0.0.5-SNAPSHOT-B66</core.version>
+		<core.version>0.0.5-SNAPSHOT-B67</core.version>
 
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,7 +67,7 @@
 		<PerWorldInventory.version>2.1.0</PerWorldInventory.version>
 
 		<bossbarapi.version>2.4.1</bossbarapi.version>
-		<barapi.version>3.4</barapi.version> 
+		<barapi.version>3.4</barapi.version>
 		<titlemanager.version>2.0.0</titlemanager.version>
 		<ActionBarAPI.version>1.5.2</ActionBarAPI.version>
 		<ActionAnnouncer.version>1.10.0</ActionAnnouncer.version>
@@ -349,7 +349,7 @@
 			<artifactId>BossShop</artifactId>
 			<version>${bossshop.version}</version>
 		</dependency>
-		
+
 		<!-- SpigetUpdate -->
 		<dependency>
 			<groupId>org.inventivetalent.spiget-update</groupId>
@@ -357,14 +357,14 @@
 			<version>${spigetupdate.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -508,11 +508,18 @@
 			<url>http://repo.md-5.net/content/repositories/public/</url>
 		</repository>
 
-		<!-- bStats repository -->
+		<!-- CodeMC - Open Source Minecraft projects repository -->
+		<!-- Used by bStats -->
 		<repository>
 			<id>CodeMC</id>
 			<url>https://repo.codemc.org/repository/maven-public</url>
 		</repository>
+		<!-- CodeMC: NMS artifacts (Spigot/CraftBukkit) -->
+		<repository>
+			<id>nms-repo</id>
+			<url>https://repo.codemc.org/repository/nms/</url>
+		</repository>
+
 
 		<!-- PlaceholderAPI -->
 		<repository>
