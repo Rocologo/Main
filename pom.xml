@@ -22,7 +22,6 @@
 		<url>https://fractal.lindegaard.one</url>
 	</organization>
 
-
 	<!-- ********************************************************************** -->
 	<!-- ***************************** Properties ***************************** -->
 	<!-- ********************************************************************** -->
@@ -30,7 +29,7 @@
 
 		<bagofgold.version>2.5.5-SNAPSHOT-B237</bagofgold.version>
 		<mobhunting.version>6.5.4-SNAPSHOT-B777</mobhunting.version>
-		<core.version>0.0.7-SNAPSHOT-B100</core.version>
+		<core.version>0.0.7-SNAPSHOT-B101</core.version>
 
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
