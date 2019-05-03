@@ -27,10 +27,10 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<bagofgold.version>2.5.5-SNAPSHOT-B237</bagofgold.version>
-		<mobhunting.version>6.5.4-SNAPSHOT-B777</mobhunting.version>
-		<bagofgoldcore.version>0.0.7-SNAPSHOT-B101</bagofgoldcore.version>
-
+		<bagofgoldcore.version>0.0.7-SNAPSHOT-B102</bagofgoldcore.version>
+		<bagofgold.version>2.5.5-SNAPSHOT-B239</bagofgold.version>
+		<mobhunting.version>6.5.4-SNAPSHOT-B778</mobhunting.version>
+		
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
