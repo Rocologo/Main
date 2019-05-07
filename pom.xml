@@ -30,8 +30,8 @@
 
 		<core.version>0.1.0-SNAPSHOT-B3</core.version>
 		<bagofgoldcore.version>0.1.0-SNAPSHOT-B106</bagofgoldcore.version>
-		<bagofgold.version>2.5.5-SNAPSHOT-B241</bagofgold.version>
-		<mobhunting.version>6.5.4-SNAPSHOT-B781</mobhunting.version>
+		<bagofgold.version>2.5.5</bagofgold.version>
+		<mobhunting.version>6.5.4</mobhunting.version>
 		
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -72,8 +72,8 @@
 		<titlemanager.version>2.0.0</titlemanager.version>
 		<ActionBarAPI.version>1.5.2</ActionBarAPI.version>
 		<ActionAnnouncer.version>1.10.0</ActionAnnouncer.version>
-		<placeholderapi.version>2.9.2</placeholderapi.version>
 		<TitleAPI.version>1.7.5</TitleAPI.version>
+		<placeholderapi.version>2.10.0</placeholderapi.version>
 
 		<citizensapi.version>2.0.24-SNAPSHOT</citizensapi.version>
 		<holograms.version>2.6-SNAPSHOT</holograms.version>
@@ -88,7 +88,6 @@
 		<PreciousStones.version>10.7.2</PreciousStones.version>
 		<libsdisguises.version>9.5.1-SNAPSHOT</libsdisguises.version>
 		<battleArena.version>3.9.10.6.2</battleArena.version>
-		<placeholderapi.version>2.0.6</placeholderapi.version>
 		<custommobs.version>4.16</custommobs.version>
 		<mobarena.version>0.97.1</mobarena.version>
 		<massivecore.version>2.12.1</massivecore.version>
