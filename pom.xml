@@ -40,8 +40,10 @@
 		<junit.version>4.12</junit.version>
 		<spring.version>5.1.5.RELEASE</spring.version>
 
+		<spigotmc1141.version>1.14.1-R0.1-SNAPSHOT</spigotmc1141.version>
 		<spigotmc114.version>1.14-R0.1-SNAPSHOT</spigotmc114.version>
 
+		<craftbukkit114R2.version>1.14-R2</craftbukkit114R2.version>
 		<craftbukkit114R1.version>1.14-R1</craftbukkit114R1.version>
 		<craftbukkit113R2.version>1.13-R2</craftbukkit113R2.version>
 		<craftbukkit113R1.version>1.13-R1</craftbukkit113R1.version>
@@ -139,12 +141,27 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
+			<version>${spigotmc1141.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../Main/lib/spigot-1.14.1.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc114.version}</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/../Main/lib/spigot-1.14.jar</systemPath>
 		</dependency>
 
 		<!-- CraftBukkit -->
+		<dependency>
+			<groupId>org.craftbukkit</groupId>
+			<artifactId>craftbukkit114R2</artifactId>
+			<version>${craftbukkit114R2.version}</version>
+			<!-- <scope>provided</scope> -->
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.14.1-R0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
 		<dependency>
 			<groupId>org.craftbukkit</groupId>
 			<artifactId>craftbukkit114R1</artifactId>
