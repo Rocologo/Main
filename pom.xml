@@ -124,7 +124,7 @@
 
 		<minigameslib.version>1.14.15.jar</minigameslib.version>
 
-		<gringotts.version>2.11-SNAPSHOT</gringotts.version>
+		<gringotts.version>-SNAPSHOT</gringotts.version>
 		<extrahardmode.version>3.12.1</extrahardmode.version>
 		<extrahardmode.jar.version>ExtraHardMode-3.12.1.jar</extrahardmode.jar.version>
 
@@ -547,6 +547,11 @@
 			<url>http://nexus.xworlds.eu/nexus/content/repositories/mce/</url>
 		</repository>
 
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+		
 	</repositories>
 
 </project>
