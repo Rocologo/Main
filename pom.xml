@@ -5,7 +5,7 @@
 
 	<groupId>one.lindegaard</groupId>
 	<artifactId>Main</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.5</version>
 	<packaging>pom</packaging>
 
 	<name>Main</name>
