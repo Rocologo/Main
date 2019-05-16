@@ -125,7 +125,6 @@
 		<minigameslib.version>1.14.15.jar</minigameslib.version>
 
 		<gringotts.version>2.11-SNAPSHOT</gringotts.version>
-		<gringotts.jar.version>Gringotts-2.10-SNAPSHOT.jar</gringotts.jar.version>
 		<extrahardmode.version>3.12.1</extrahardmode.version>
 		<extrahardmode.jar.version>ExtraHardMode-3.12.1.jar</extrahardmode.jar.version>
 
