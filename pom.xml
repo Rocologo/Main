@@ -141,7 +141,7 @@
 			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc1141.version}</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/spigot-1.14.1.jar</systemPath>
+			<systemPath>${project.basedir}/../Main/lib/spigot-1.14.2.jar</systemPath>
 		</dependency>
 		
 		<!-- CraftBukkit -->
