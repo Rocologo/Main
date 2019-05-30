@@ -151,7 +151,7 @@
 			<version>${craftbukkit114R2.version}</version>
 			<!-- <scope>provided</scope> -->
 			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.14.1-R0.1-SNAPSHOT.jar</systemPath>
+			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.14.2-R0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.craftbukkit</groupId>
