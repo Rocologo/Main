@@ -269,14 +269,6 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- LibsDisguises -->
-		<dependency>
-			<groupId>me.libraryaddict.disguise.LibsDisguises</groupId>
-			<artifactId>LibsDisguises</artifactId>
-			<version>${libsdisguises.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
 		<!-- BossBarAPI -->
 		<dependency>
 			<groupId>org.inventivetalent</groupId>
@@ -510,7 +502,6 @@
 
 		<!-- md5 repository -->
 		<!-- mcMMO -->
-		<!-- LibsDisguises -->
 		<repository>
 			<id>md5-repo</id>
 			<url>http://repo.md-5.net/content/repositories/public/</url>
