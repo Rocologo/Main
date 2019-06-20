@@ -87,7 +87,7 @@
 		<worldedit.version>7.0.0</worldedit.version>
 		<worldguard.version>7.0.0</worldguard.version>
 		<PreciousStones.version>10.7.2</PreciousStones.version>
-		<libsdisguises.version>9.5.1-SNAPSHOT</libsdisguises.version>
+		<libsdisguises.version>9.8.2-20190620.180128-1</libsdisguises.version>
 		<battleArena.version>3.9.12.4</battleArena.version>
 		<custommobs.version>4.16</custommobs.version>
 		<mobarena.version>0.97.1</mobarena.version>
@@ -271,7 +271,7 @@
 
 		<!-- LibsDisguises -->
 		<dependency>
-			<groupId>LibsDisguises</groupId>
+			<groupId>me.libraryaddict.disguise.LibsDisguises</groupId>
 			<artifactId>LibsDisguises</artifactId>
 			<version>${libsdisguises.version}</version>
 			<scope>provided</scope>
