@@ -28,7 +28,7 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.0-SNAPSHOT-B21</core.version>
+		<core.version>0.1.0-SNAPSHOT-B22</core.version>
 		<bagofgoldcore.version>0.1.0-SNAPSHOT-B106</bagofgoldcore.version>
 		<bagofgold.version>2.6.1-SNAPSHOT-B264</bagofgold.version>
 		<mobhunting.version>6.6.6-SNAPSHOT-B817</mobhunting.version>
