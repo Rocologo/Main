@@ -28,7 +28,7 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.0-SNAPSHOT-B22</core.version>
+		<core.version>0.1.0-SNAPSHOT-B24</core.version>
 		<bagofgoldcore.version>0.1.0-SNAPSHOT-B106</bagofgoldcore.version>
 		<bagofgold.version>2.6.1-SNAPSHOT-B264</bagofgold.version>
 		<mobhunting.version>6.6.6-SNAPSHOT-B817</mobhunting.version>
@@ -118,7 +118,7 @@
 		<mythicmobsold.version>2.5.1</mythicmobsold.version>
 		<mythicmobs.version>4.1.0-SNAPSHOT</mythicmobs.version>
 		<mythiclib.version>0.0.1-20170628.172950-1</mythiclib.version>
-		<StackMob.version>2.1.1</StackMob.version>
+		<StackMob.version>4.0.1</StackMob.version>
 		<InfernalMobs.version>5.8</InfernalMobs.version>
 		<PVPControl.version>1.4.1-SNAPSHOT</PVPControl.version>
 
