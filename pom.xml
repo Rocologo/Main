@@ -28,9 +28,9 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.0-SNAPSHOT-B25</core.version>
+		<core.version>0.1.0-SNAPSHOT-B27</core.version>
 		<bagofgoldcore.version>0.1.0-SNAPSHOT-B106</bagofgoldcore.version>
-		<bagofgold.version>2.6.3-SNAPSHOT-B268</bagofgold.version>
+		<bagofgold.version>2.6.4-SNAPSHOT-B271</bagofgold.version>
 		<mobhunting.version>6.6.7-SNAPSHOT-B820</mobhunting.version>
 		
 		<build.number>1337</build.number>
