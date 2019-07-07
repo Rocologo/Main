@@ -28,11 +28,11 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.1-SNAPSHOT-B32</core.version>
+		<core.version>0.1.1-SNAPSHOT-B34</core.version>
 		<bagofgoldcore.version>0.1.0-SNAPSHOT-B106</bagofgoldcore.version>
 		<bagofgold.version>2.6.7-SNAPSHOT-B278</bagofgold.version>
 		<mobhunting.version>6.6.7-SNAPSHOT-B820</mobhunting.version>
-		
+
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -41,7 +41,7 @@
 		<spring.version>5.1.5.RELEASE</spring.version>
 
 		<spigotmc1141.version>1.14.1-R0.1-SNAPSHOT</spigotmc1141.version>
-		
+
 		<craftbukkit114R2.version>1.14-R2</craftbukkit114R2.version>
 		<craftbukkit114R1.version>1.14-R1</craftbukkit114R1.version>
 		<craftbukkit113R2.version>1.13-R2</craftbukkit113R2.version>
@@ -61,6 +61,7 @@
 		<mavenShadePlugin.version>3.2.1</mavenShadePlugin.version>
 
 		<vault.version>1.6.6</vault.version>
+		<reserve.version>0.1.2.0</reserve.version>
 		<bstats.version>1.5</bstats.version>
 		<protocollib.version>4.4.0-SNAPSHOT</protocollib.version>
 		<EssentialsX.version>2.0.1</EssentialsX.version>
@@ -143,7 +144,7 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/../Main/lib/spigot-1.14.2.jar</systemPath>
 		</dependency>
-		
+
 		<!-- CraftBukkit -->
 		<dependency>
 			<groupId>org.craftbukkit</groupId>
@@ -249,6 +250,14 @@
 			<groupId>net.milkbowl.vault</groupId>
 			<artifactId>Vault</artifactId>
 			<version>${vault.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Reserve / -->
+		<dependency>
+			<groupId>net.tnemc</groupId>
+			<artifactId>Reserve</artifactId>
+			<version>${reserve.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -439,6 +448,12 @@
 			<url>http://nexus.hc.to/content/repositories/pub_releases</url>
 		</repository>
 
+		<!-- Reserve -->
+		<repository>
+			<id>reserve-repo</id>
+			<url>https://dl.bintray.com/theneweconomy/java/</url>
+		</repository>
+
 		<!-- sk89q WorldGuard WorldEdit repositories -->
 		<repository>
 			<id>sk89q-repo</id>
@@ -542,7 +557,7 @@
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
-		
+
 	</repositories>
 
 </project>
