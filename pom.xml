@@ -14,6 +14,7 @@
 	<modules>
 		<module>../Core</module>
 		<module>../BagOfGoldCore</module>
+		<module>../Spheres</module>
 		<module>../MobHunting</module>
 		<module>../BagOfGold</module>
 	</modules>
@@ -28,7 +29,7 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.1-SNAPSHOT-B35</core.version>
+		<core.version>0.1.1-SNAPSHOT-B36</core.version>
 		<bagofgoldcore.version>0.1.0-SNAPSHOT-B106</bagofgoldcore.version>
 		<bagofgold.version>2.6.7-SNAPSHOT-B278</bagofgold.version>
 		<mobhunting.version>6.6.7-SNAPSHOT-B820</mobhunting.version>
