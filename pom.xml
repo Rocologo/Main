@@ -32,7 +32,7 @@
 		<core.version>0.1.1-SNAPSHOT-B36</core.version>
 		<bagofgoldcore.version>0.1.0-SNAPSHOT-B106</bagofgoldcore.version>
 		<bagofgold.version>2.7.1-SNAPSHOT-B287</bagofgold.version>
-		<mobhunting.version>6.6.7-SNAPSHOT-B820</mobhunting.version>
+		<mobhunting.version>6.7.7-SNAPSHOT-B845</mobhunting.version>
 
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
