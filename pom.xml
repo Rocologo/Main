@@ -13,7 +13,6 @@
 
 	<modules>
 		<module>../Core</module>
-		<module>../BagOfGoldCore</module>
 		<module>../Spheres</module>
 		<module>../MobHunting</module>
 		<module>../BagOfGold</module>
