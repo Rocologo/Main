@@ -145,22 +145,15 @@
 		</dependency>
 
 		<!-- CraftBukkit -->
-		<dependency>
-			<groupId>org.craftbukkit</groupId>
-			<artifactId>craftbukkit114R2</artifactId>
-			<version>${craftbukkit114R2.version}</version>
-			<!-- <scope>provided</scope> -->
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.14.2-R0.1-SNAPSHOT.jar</systemPath>
-		</dependency>
-		<dependency>
+		<dependency>  
 			<groupId>org.craftbukkit</groupId>
 			<artifactId>craftbukkit114R1</artifactId>
 			<version>${craftbukkit114R1.version}</version>
 			<!-- <scope>provided</scope> -->
 			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.14-pre5.jar</systemPath>
+			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.14.4-R0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
+
 		<!-- CraftBukkit -->
 		<dependency>
 			<groupId>org.craftbukkit</groupId>
