@@ -28,7 +28,7 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.1-SNAPSHOT-B36</core.version>
+		<core.version>0.1.1-SNAPSHOT-B37</core.version>
 		<bagofgoldcore.version>0.1.0-SNAPSHOT-B106</bagofgoldcore.version>
 		<bagofgold.version>2.7.2-SNAPSHOT-B290</bagofgold.version>
 		<mobhunting.version>6.7.8-SNAPSHOT-B849</mobhunting.version>
@@ -40,9 +40,8 @@
 		<junit.version>4.12</junit.version>
 		<spring.version>5.1.5.RELEASE</spring.version>
 
-		<spigotmc1141.version>1.14.1-R0.1-SNAPSHOT</spigotmc1141.version>
+		<spigotmc1144.version>1.14.4-R0.1-SNAPSHOT</spigotmc1144.version>
 
-		<craftbukkit114R2.version>1.14-R2</craftbukkit114R2.version>
 		<craftbukkit114R1.version>1.14-R1</craftbukkit114R1.version>
 		<craftbukkit113R2.version>1.13-R2</craftbukkit113R2.version>
 		<craftbukkit113R1.version>1.13-R1</craftbukkit113R1.version>
@@ -140,9 +139,9 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc1141.version}</version>
+			<version>${spigotmc1144.version}</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/spigot-1.14.2.jar</systemPath>
+			<systemPath>${project.basedir}/../Main/lib/spigot-1.14.4.jar</systemPath>
 		</dependency>
 
 		<!-- CraftBukkit -->
