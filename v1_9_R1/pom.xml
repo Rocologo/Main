@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>v1_99_R1</artifactId>
+	<artifactId>v1_9_R1</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT-B${build.number}</version>
 	<name>NMS V1.9 R1</name>
