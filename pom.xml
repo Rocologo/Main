@@ -344,12 +344,6 @@
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
 
-		<!-- Sponge -->
-		<repository>
-			<id>sponge</id>
-			<url>http://repo.spongepowered.org/maven</url>
-		</repository>
-
 		<!-- Vault -->
 		<repository>
 			<id>vault-repo</id>
