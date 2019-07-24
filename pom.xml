@@ -23,10 +23,10 @@
 		<module>v1_8_R3</module>
 		<module>v1_8_R2</module>
 		<module>v1_8_R1</module>
-		<module>Core</module>
+		<module>../Core</module>
 		<module>../Spheres</module>
-		<module>BagOfGold</module>
-		<module>MobHunting</module>
+		<module>../BagOfGold</module>
+		<module>../MobHunting</module>
 	</modules>
 
 	<organization>
