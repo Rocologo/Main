@@ -140,7 +140,7 @@
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc_1_14_R1.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 
 		<!-- https://www.spigotmc.org/wiki/spigot-nms-and-minecraft-versions/ -->
@@ -149,69 +149,69 @@
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_14_R1.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<!-- CraftBukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_13_R2.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<!-- CraftBukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_13_R1.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_12_R1.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_11_R1.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_10_R1.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_9_R2.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_9_R1.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_8_R3.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_8_R2.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_8_R1.version}</version>
-			<scope>provided</scope>
+			<scope>jar</scope>
 		</dependency>
 
 		<!-- Vault / -->
