@@ -12,7 +12,18 @@
 	<url>https://github.com/Rocologo/Main/</url>
 
 	<modules>
-		<module>../Core</module>
+		<module>Core</module>
+		<module>v1_14_R1</module>
+		<module>v1_13_R2</module>
+		<module>v1_13_R1</module>
+		<module>v1_12_R1</module>
+		<module>v1_11_R1</module>
+		<module>v1_10_R1</module>
+		<module>v1_9_R2</module>
+		<module>v1_9_R1</module>
+		<module>v1_8_R3</module>
+		<module>v1_8_R2</module>
+		<module>v1_8_R1</module>
 		<module>../Spheres</module>
 		<module>../MobHunting</module>
 		<module>../BagOfGold</module>
@@ -140,78 +151,7 @@
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc_1_14_R1.version}</version>
-			<scope>jar</scope>
-		</dependency>
-
-		<!-- https://www.spigotmc.org/wiki/spigot-nms-and-minecraft-versions/ -->
-		<!-- CraftBukkit -->
-		<dependency>  
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_14_R1.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<!-- CraftBukkit -->
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_13_R2.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<!-- CraftBukkit -->
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_13_R1.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_12_R1.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_11_R1.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_10_R1.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_9_R2.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_9_R1.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_8_R3.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_8_R2.version}</version>
-			<scope>jar</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_8_R1.version}</version>
-			<scope>jar</scope>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Vault / -->

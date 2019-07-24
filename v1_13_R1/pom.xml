@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>v1_13_R1</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT-B${build.number}</version>
+	<name>NMS V1.13 R1</name>
+	<description></description>
+
+	<parent>
+		<groupId>one.lindegaard</groupId>
+		<artifactId>Main</artifactId>
+		<version>0.0.6</version>
+		<relativePath>../Main/pom.xml</relativePath>
+	</parent>
+
+	<!-- ********************************************************************** -->
+	<!-- ******************************** Build ******************************* -->
+	<!-- ********************************************************************** -->
+	<build>
+		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<defaultGoal>clean install</defaultGoal>
+		<directory>${basedir}/target</directory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${mavenCompilerPlugin.version}</version>
+				<configuration>
+					<source>${javacompiler.version}</source>
+					<target>${javacompiler.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.Maven.plugins</groupId>
+				<artifactId>Maven-jar-plugin</artifactId>
+				<version>${mavenJarPlugin.version}</version>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Implementation-Version>B${build.number}</Implementation-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+		<!-- ********************************************************************** -->
+	<!-- **************************** Dependencies **************************** -->
+	<!-- ********************************************************************** -->
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId>
+			<version>${craftbukkit_1_13_R1.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+</project>
