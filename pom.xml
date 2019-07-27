@@ -40,7 +40,7 @@
 	<properties>
 
 		<core.version>0.1.3-SNAPSHOT-B60</core.version>
-		<bagofgold.version>2.7.3-SNAPSHOT-B301</bagofgold.version>
+		<bagofgold.version>2.7.4-SNAPSHOT-B302</bagofgold.version>
 		<mobhunting.version>6.8.0-SNAPSHOT-B861</mobhunting.version>
 
 		<build.number>1337</build.number>
