@@ -1,0 +1,24 @@
+name: Spheres
+main: one.lindegaard.Spheres.Spheres
+version: ${version}
+description: Spheres  
+dev-url: https://github.com/Rocologo/Spheres
+author: Rocologo
+load: startup
+depend: []
+loadbefore: []
+softdepend: []
+api-version: 1.13
+
+commands:
+  spheres:
+    description: Allows you to configure Spheres
+    permission: spheres.cmd
+    aliases: []
+    usage: /<command> command
+
+permissions:
+  spheres.cmd:
+    description: Allows a player to use the mobhunt command
+    default: op
+    

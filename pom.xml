@@ -12,8 +12,8 @@
 	<url>https://github.com/Rocologo/Main/</url>
 
 	<modules>
-		<module>../Core</module>
-		<!--<module>v1_14_R1</module>
+		<module>Core</module>
+		<module>v1_14_R1</module>
 		<module>v1_13_R2</module>
 		<module>v1_13_R1</module>
 		<module>v1_12_R1</module>
@@ -24,9 +24,9 @@
 		<module>v1_8_R3</module>
 		<module>v1_8_R2</module>
 		<module>v1_8_R1</module>
-		 <module>../Spheres</module> -->
-		<module>../BagOfGold</module>
-		<module>../MobHunting</module>
+		<module>Spheres</module>
+		<module>BagOfGold</module>
+		<module>MobHunting</module>
 	</modules>
 
 	<organization>
@@ -152,222 +152,151 @@
 			<version>${spigotmc_1_14_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- CraftBukkit -->
+		
 		<dependency>
 			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_14_R1</artifactId>
+			<artifactId>craftbukkit</artifactId>
 			<version>v1_14_R1</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.14.4-R0.1-SNAPSHOT.jar</systemPath>
+			<systemPath>${project.basedir}/lib/craftbukkit-1.14.4-R0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
+
+		<!-- Vault / -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_13_R2</artifactId>
-			<version>v1_13_R2</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.13.2-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>net.milkbowl.vault</groupId>
+			<artifactId>Vault</artifactId>
+			<version>${vault.version}</version>
+			<scope>provided</scope>
 		</dependency>
+
+		<!-- Reserve / -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_13_R1</artifactId>
-			<version>v1_13_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.13-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>net.tnemc</groupId>
+			<artifactId>Reserve</artifactId>
+			<version>${reserve.version}</version>
+			<scope>provided</scope>
 		</dependency>
+
+		<!-- ProtocolLib -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_12_R1</artifactId>
-			<version>v1_12_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.12.2-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>com.comphenix.protocol</groupId>
+			<artifactId>ProtocolLib-API</artifactId>
+			<version>${protocollib.version}</version>
+			<scope>provided</scope>
 		</dependency>
+
+		<!-- Citizens -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_11_R1</artifactId>
-			<version>v1_11_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.11.2-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>net.citizensnpcs</groupId>
+			<artifactId>citizensapi</artifactId>
+			<version>${citizensapi.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
 		</dependency>
+
+		<!-- BossBarAPI -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit1_10_R1</artifactId>
-			<version>v1_10_R2</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.10.2-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>org.inventivetalent</groupId>
+			<artifactId>bossbarapi</artifactId>
+			<version>${bossbarapi.version}</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>metrics-lite</artifactId>
+					<groupId>org.mcstats.bukkit</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+
+		<!-- BarAPI -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_9_R2</artifactId>
-			<version>v1_9_R2</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.9.4-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>me.confuser</groupId>
+			<artifactId>BarAPI</artifactId>
+			<version>${barapi.version}</version>
+			<scope>provided</scope>
 		</dependency>
+
+		<!-- TitleManager -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_9_R1</artifactId>
-			<version>v1_9_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.9-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>io.puharesource.mc</groupId>
+			<artifactId>TitleManager</artifactId>
+			<version>${titlemanager.version}</version>
+			<scope>provided</scope>
 		</dependency>
+
+		<!-- TitleAPI -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_8_R3</artifactId>
-			<version>v1_8_R3</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.8.8-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>com.connorlinfoot</groupId>
+			<artifactId>TitleAPI</artifactId>
+			<version>${TitleAPI.version}</version>
 		</dependency>
+
+		<!-- Essentials -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_8_R2</artifactId>
-			<version>v1_8_R2</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.8.3-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>net.ess3</groupId>
+			<artifactId>EssentialsX</artifactId>
+			<version>${EssentialsX.version}</version>
 		</dependency>
+
+		<!-- ActionBarAPI -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit_1_8_R1</artifactId>
-			<version>v1_8_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../Main/lib/craftbukkit-1.8-R0.1-SNAPSHOT.jar</systemPath>
+			<groupId>ActionBarAPI</groupId>
+			<artifactId>ActionBarAPI</artifactId>
+			<version>${ActionBarAPI.version}</version>
 		</dependency>
 
-	<!-- Vault / -->
-	<dependency>
-		<groupId>net.milkbowl.vault</groupId>
-		<artifactId>Vault</artifactId>
-		<version>${vault.version}</version>
-		<scope>provided</scope>
-	</dependency>
+		<!-- ActionAnnouncer -->
+		<dependency>
+			<groupId>me.clip.actionannouncer.ActionAnnouncer</groupId>
+			<artifactId>ActionAnnouncer</artifactId>
+			<version>${ActionAnnouncer.version}</version>
+		</dependency>
 
-	<!-- Reserve / -->
-	<dependency>
-		<groupId>net.tnemc</groupId>
-		<artifactId>Reserve</artifactId>
-		<version>${reserve.version}</version>
-		<scope>provided</scope>
-	</dependency>
+		<!-- bStats.org -->
+		<dependency>
+			<groupId>org.bstats</groupId>
+			<artifactId>bstats-bukkit</artifactId>
+			<version>${bstats.version}</version>
+			<scope>compile</scope>
+		</dependency>
 
-	<!-- ProtocolLib -->
-	<dependency>
-		<groupId>com.comphenix.protocol</groupId>
-		<artifactId>ProtocolLib-API</artifactId>
-		<version>${protocollib.version}</version>
-		<scope>provided</scope>
-	</dependency>
+		<!-- PlacholdeAPI -->
+		<dependency>
+			<groupId>me.clip</groupId>
+			<artifactId>placeholderapi</artifactId>
+			<version>${placeholderapi.version}</version>
+			<scope>provided</scope>
+		</dependency>
 
-	<!-- Citizens -->
-	<dependency>
-		<groupId>net.citizensnpcs</groupId>
-		<artifactId>citizensapi</artifactId>
-		<version>${citizensapi.version}</version>
-		<type>jar</type>
-		<scope>compile</scope>
-	</dependency>
+		<!-- BossShop -->
+		<dependency>
+			<groupId>org.black_ixx</groupId>
+			<artifactId>BossShop</artifactId>
+			<version>${bossshop.version}</version>
+		</dependency>
 
-	<!-- BossBarAPI -->
-	<dependency>
-		<groupId>org.inventivetalent</groupId>
-		<artifactId>bossbarapi</artifactId>
-		<version>${bossbarapi.version}</version>
-		<scope>provided</scope>
-		<exclusions>
-			<exclusion>
-				<artifactId>metrics-lite</artifactId>
-				<groupId>org.mcstats.bukkit</groupId>
-			</exclusion>
-		</exclusions>
-	</dependency>
+		<!-- SpigetUpdate -->
+		<dependency>
+			<groupId>org.inventivetalent.spiget-update</groupId>
+			<artifactId>bukkit</artifactId>
+			<version>${spigetupdate.version}</version>
+			<scope>compile</scope>
+		</dependency>
 
-	<!-- BarAPI -->
-	<dependency>
-		<groupId>me.confuser</groupId>
-		<artifactId>BarAPI</artifactId>
-		<version>${barapi.version}</version>
-		<scope>provided</scope>
-	</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-	<!-- TitleManager -->
-	<dependency>
-		<groupId>io.puharesource.mc</groupId>
-		<artifactId>TitleManager</artifactId>
-		<version>${titlemanager.version}</version>
-		<scope>provided</scope>
-	</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 
-	<!-- TitleAPI -->
-	<dependency>
-		<groupId>com.connorlinfoot</groupId>
-		<artifactId>TitleAPI</artifactId>
-		<version>${TitleAPI.version}</version>
-	</dependency>
-
-	<!-- Essentials -->
-	<dependency>
-		<groupId>net.ess3</groupId>
-		<artifactId>EssentialsX</artifactId>
-		<version>${EssentialsX.version}</version>
-	</dependency>
-
-	<!-- ActionBarAPI -->
-	<dependency>
-		<groupId>ActionBarAPI</groupId>
-		<artifactId>ActionBarAPI</artifactId>
-		<version>${ActionBarAPI.version}</version>
-	</dependency>
-
-	<!-- ActionAnnouncer -->
-	<dependency>
-		<groupId>me.clip.actionannouncer.ActionAnnouncer</groupId>
-		<artifactId>ActionAnnouncer</artifactId>
-		<version>${ActionAnnouncer.version}</version>
-	</dependency>
-
-	<!-- bStats.org -->
-	<dependency>
-		<groupId>org.bstats</groupId>
-		<artifactId>bstats-bukkit</artifactId>
-		<version>${bstats.version}</version>
-		<scope>compile</scope>
-	</dependency>
-
-	<!-- PlacholdeAPI -->
-	<dependency>
-		<groupId>me.clip</groupId>
-		<artifactId>placeholderapi</artifactId>
-		<version>${placeholderapi.version}</version>
-		<scope>provided</scope>
-	</dependency>
-
-	<!-- BossShop -->
-	<dependency>
-		<groupId>org.black_ixx</groupId>
-		<artifactId>BossShop</artifactId>
-		<version>${bossshop.version}</version>
-	</dependency>
-
-	<!-- SpigetUpdate -->
-	<dependency>
-		<groupId>org.inventivetalent.spiget-update</groupId>
-		<artifactId>bukkit</artifactId>
-		<version>${spigetupdate.version}</version>
-		<scope>compile</scope>
-	</dependency>
-
-	<dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>${junit.version}</version>
-		<scope>test</scope>
-	</dependency>
-
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-core</artifactId>
-		<version>${spring.version}</version>
-	</dependency>
-
-</dependencies>
+	</dependencies>
 
 
 	<!-- ********************************************************************** -->
