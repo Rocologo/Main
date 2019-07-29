@@ -12,7 +12,6 @@
 	<url>https://github.com/Rocologo/Main/</url>
 
 	<modules>
-		<module>../Core</module>
 		<module>v1_14_R1</module>
 		<module>v1_13_R2</module>
 		<module>v1_13_R1</module>
@@ -24,6 +23,7 @@
 		<module>v1_8_R3</module>
 		<module>v1_8_R2</module>
 		<module>v1_8_R1</module>
+		<module>../Core</module>
 		<module>../Spheres</module>
 		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
@@ -157,9 +157,8 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>v1_14_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/craftbukkit-1.14.4-R0.1-SNAPSHOT.jar</systemPath>
+			<version>${craftbukkit_1_14_R1.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Vault / -->
