@@ -7,11 +7,10 @@
 	<parent>
 		<groupId>one.lindegaard</groupId>
 		<artifactId>Main</artifactId>
-		<version>0.0.7</version>
+		<version>0.0.8</version>
 	</parent>
 	<groupId>one.lindegaard.Core</groupId>
 	<artifactId>v1_8_R1</artifactId>
-	<version>0.0.7</version>
 	<name>v1_8_R1</name>
 	<url>http://maven.apache.org</url>
 	<properties>
