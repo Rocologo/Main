@@ -5,7 +5,7 @@
 
 	<groupId>one.lindegaard</groupId>
 	<artifactId>Main</artifactId>
-	<version>0.0.8</version>
+	<version>0.0.7</version>
 	<packaging>pom</packaging>
 
 	<name>Main</name>
@@ -27,7 +27,6 @@
 		<module>../Spheres</module>
 		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
-
 	</modules>
 
 	<organization>
@@ -41,7 +40,7 @@
 	<properties>
 
 		<core.version>0.1.3-SNAPSHOT-B65</core.version>
-		<bagofgold.version>2.7.5-SNAPSHOT-B311</bagofgold.version>
+		<bagofgold.version>2.7.4-SNAPSHOT-B302</bagofgold.version>
 		<mobhunting.version>6.8.0-SNAPSHOT-B861</mobhunting.version>
 
 		<build.number>1337</build.number>
@@ -52,9 +51,10 @@
 		<spring.version>5.1.5.RELEASE</spring.version>
 
 		<spigotmc_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</spigotmc_1_14_R1.version>
+
 		<craftbukkit_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</craftbukkit_1_14_R1.version>
 		<craftbukkit_1_13_R2.version>1.13.2-R0.1-SNAPSHOT</craftbukkit_1_13_R2.version>
-		<craftbukkit_1_13_R1.version>1.13-R0.1-SNAPSHOT</craftbukkit_1_13_R1.version>
+		<craftbukkit_1_13_R1.version>1.13.1-R0.1-SNAPSHOT</craftbukkit_1_13_R1.version>
 		<craftbukkit_1_12_R1.version>1.12.2-R0.1-SNAPSHOT</craftbukkit_1_12_R1.version>
 		<craftbukkit_1_11_R1.version>1.11.2-R0.1-SNAPSHOT</craftbukkit_1_11_R1.version>
 		<craftbukkit_1_10_R1.version>1.10.2-R0.1-SNAPSHOT</craftbukkit_1_10_R1.version>
@@ -153,13 +153,12 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Craftbukkit / Bukkit -->
+		<!-- Craftbukkit / Bukkit -->		
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>1_14_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/craftbukkit-1.14.4-R0.1-SNAPSHOT.jar</systemPath>
+			<version>${craftbukkit_1_14_R1.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Vault / -->
