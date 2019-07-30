@@ -18,14 +18,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
+		<!-- Craftbukkit / Bukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>v1_8_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../lib/craftbukkit-1.8-R0.1-SNAPSHOT.jar</systemPath>
+			<version>${craftbukkit_1_8_R1.version}</version>
+			<scope>provided</scope>
 		</dependency>
-				<!-- Rocologo Core -->
+		<!-- Rocologo Core -->
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>Core</artifactId>

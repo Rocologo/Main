@@ -12,7 +12,7 @@
 	<groupId>one.lindegaard.Core</groupId>
 	<artifactId>v1_10_R1</artifactId>
 	<version>0.0.7</version>
-	<name>v1_8_R3</name>
+	<name>v1_10_R1</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,11 +21,10 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>v1_10_R1</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../lib/craftbukkit-1.10.2-R0.1-SNAPSHOT.jar</systemPath>
+			<version>${craftbukkit_1_10_R1.version}</version>
+			<scope>provided</scope>
 		</dependency>
-				<!-- Rocologo Core -->
+		<!-- Rocologo Core -->
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>Core</artifactId>

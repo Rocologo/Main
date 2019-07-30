@@ -51,10 +51,9 @@
 		<spring.version>5.1.5.RELEASE</spring.version>
 
 		<spigotmc_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</spigotmc_1_14_R1.version>
-
 		<craftbukkit_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</craftbukkit_1_14_R1.version>
 		<craftbukkit_1_13_R2.version>1.13.2-R0.1-SNAPSHOT</craftbukkit_1_13_R2.version>
-		<craftbukkit_1_13_R1.version>1.13.1-R0.1-SNAPSHOT</craftbukkit_1_13_R1.version>
+		<craftbukkit_1_13_R1.version>1.13-R0.1-SNAPSHOT</craftbukkit_1_13_R1.version>
 		<craftbukkit_1_12_R1.version>1.12.2-R0.1-SNAPSHOT</craftbukkit_1_12_R1.version>
 		<craftbukkit_1_11_R1.version>1.11.2-R0.1-SNAPSHOT</craftbukkit_1_11_R1.version>
 		<craftbukkit_1_10_R1.version>1.10.2-R0.1-SNAPSHOT</craftbukkit_1_10_R1.version>
