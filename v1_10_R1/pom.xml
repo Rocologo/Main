@@ -31,7 +31,7 @@
 			<groupId>one.lindegaard</groupId>
 			<artifactId>Core</artifactId>
 			<version>${core.version}</version>
-			<scope>compile</scope>
+			<scope>jar</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
