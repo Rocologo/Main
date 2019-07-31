@@ -40,7 +40,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-<build>
+	<build>
 		<sourceDirectory>${basedir}/src</sourceDirectory>
 		<defaultGoal>clean install</defaultGoal>
 		<directory>${basedir}/target</directory>

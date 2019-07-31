@@ -8,11 +8,10 @@
 	<version>0.0.7</version>
 	<packaging>pom</packaging>
 
-	<name>Main</name>
+	<name>Main project / Core Library</name>
 	<url>https://github.com/Rocologo/Main/</url>
 
 	<modules>
-		<module>Core</module>
 		<module>v1_14_R1</module>
 		<module>v1_13_R2</module>
 		<module>v1_13_R1</module>
@@ -24,6 +23,7 @@
 		<module>v1_8_R3</module>
 		<module>v1_8_R2</module>
 		<module>v1_8_R1</module>
+		<module>Core</module>
 		<module>../Spheres</module>
 		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
@@ -39,8 +39,8 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.3-SNAPSHOT-B65</core.version>
-		<bagofgold.version>2.7.4-SNAPSHOT-B302</bagofgold.version>
+		<core.version>LATEST</core.version>
+		<bagofgold.version>LATEST</bagofgold.version>
 		<mobhunting.version>6.8.0-SNAPSHOT-B861</mobhunting.version>
 
 		<build.number>1337</build.number>

@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>Core</artifactId>
 	<packaging>jar</packaging>
-	<version>0.1.4-SNAPSHOT-B${build.number}</version>
+	<version>0.1.5-SNAPSHOT-B${build.number}</version>
 	<name>Rocologo Core Library</name>
 	<url>https://github.com/Rocologo/Core</url>
 	<description>Core is a library with code shared between MobHunting and BagOfGold. </description>
@@ -59,6 +59,44 @@
 							<Implementation-Version>B${build.number}</Implementation-Version>
 						</manifestEntries>
 					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>${mavenShadePlugin.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+					<createSourcesJar>false</createSourcesJar>
+					<artifactSet>
+						<includes>
+							<include>one.lindegaard:Core:skins:v1_14_R1:*</include>
+							<include>one.lindegaard:Core:v1_13_R2:*</include>
+							<include>one.lindegaard:v1_13_R1:*</include>
+							<include>one.lindegaard:v1_12_R1:*</include>
+							<include>one.lindegaard:v1_11_R1:*</include>
+							<include>one.lindegaard:v1_10_R1:*</include>
+							<include>one.lindegaard:v1_9_R2:*</include>
+							<include>one.lindegaard:v1_9_R1:*</include>
+							<include>one.lindegaard:v1_8_R3:*</include>
+							<include>one.lindegaard:v1_8_R2:*</include>
+							<include>one.lindegaard:v1_8_R1:*</include>
+						</includes>
+					</artifactSet>
+					<relocations>
+						<relocation>
+							<pattern>org.bstats</pattern>
+							<shadedPattern>one.lindegaard.BagOfGold</shadedPattern>
+						</relocation>
+					</relocations>
 				</configuration>
 			</plugin>
 		</plugins>
