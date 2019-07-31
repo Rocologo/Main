@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>Core</artifactId>
+	<packaging>jar</packaging>
+	<version>0.1.4-SNAPSHOT-B${build.number}</version>
+	<name>Rocologo Core Library</name>
+	<url>https://github.com/Rocologo/Core</url>
+	<description>Core is a library with code shared between MobHunting and BagOfGold. </description>
+
+	<parent>
+		<groupId>one.lindegaard</groupId>
+		<artifactId>Main</artifactId>
+		<version>0.0.7</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<scm>
+		<connection>scm:svn:https://github.com/Rocologo/Core.git</connection>
+		<developerConnection>scm:git:git://github.com/Rocologo</developerConnection>
+		<url>https://github.com/Rocologo/Core</url>
+	</scm>
+
+	<issueManagement>
+		<url>https://github.com/Rocologo/Core/issues</url>
+	</issueManagement>
+
+	<!-- ********************************************************************** -->
+	<!-- ******************************** Build ******************************* -->
+	<!-- ********************************************************************** -->
+	<build>
+		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<defaultGoal>clean install</defaultGoal>
+		<directory>${basedir}/target</directory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${mavenCompilerPlugin.version}</version>
+				<configuration>
+					<source>${javacompiler.version}</source>
+					<target>${javacompiler.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.Maven.plugins</groupId>
+				<artifactId>Maven-jar-plugin</artifactId>
+				<version>${mavenJarPlugin.version}</version>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Implementation-Version>B${build.number}</Implementation-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ********************************************************************** -->
+	<!-- **************************** Dependencies **************************** -->
+	<!-- ********************************************************************** -->
+	<dependencies>
+		<!-- SpigotMC -->
+		<dependency>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot-api</artifactId>
+			<version>${spigotmc_1_14_R1.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Craftbukkit / Bukkit -->
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId>
+			<version>${craftbukkit_1_14_R1.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+</project>
