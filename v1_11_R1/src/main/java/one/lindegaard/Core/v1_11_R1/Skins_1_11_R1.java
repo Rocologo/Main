@@ -1,4 +1,4 @@
-package one.lindegaard.Core.skins.v1_11_R1;
+package one.lindegaard.Core.v1_11_R1;
 
 import org.bukkit.craftbukkit.v1_11_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;

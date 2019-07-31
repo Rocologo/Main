@@ -11,6 +11,8 @@
 	</parent>
 	<groupId>one.lindegaard.Core</groupId>
 	<artifactId>v1_12_R1</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT-B${build.number}</version>
 	<name>v1_12_R1</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -38,4 +40,36 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
+		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<defaultGoal>clean install</defaultGoal>
+		<directory>${basedir}/target</directory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${mavenCompilerPlugin.version}</version>
+				<configuration>
+					<source>${javacompiler.version}</source>
+					<target>${javacompiler.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.Maven.plugins</groupId>
+				<artifactId>Maven-jar-plugin</artifactId>
+				<version>${mavenJarPlugin.version}</version>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Implementation-Version>B${build.number}</Implementation-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
