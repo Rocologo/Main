@@ -61,7 +61,7 @@
 					</archive>
 				</configuration>
 			</plugin>
-						<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>${mavenShadePlugin.version}</version>
@@ -83,7 +83,7 @@
 					</artifactSet>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 
@@ -105,6 +105,5 @@
 			<version>${craftbukkit_1_14_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
 </project>
