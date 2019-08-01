@@ -105,13 +105,5 @@
 			<version>${craftbukkit_1_14_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- Vault / -->
-		<dependency>
-			<groupId>net.milkbowl.vault</groupId>
-			<artifactId>Vault</artifactId>
-			<version>${vault.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		
 	</dependencies>
 </project>
