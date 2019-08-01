@@ -55,7 +55,6 @@
 
 		<core.version>LATEST</core.version>
 		<bagofgold.version>LATEST</bagofgold.version>
-		<mobhunting.version>6.8.0-SNAPSHOT-B861</mobhunting.version>
 
 		<build.number>1337</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
