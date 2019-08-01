@@ -198,12 +198,12 @@
 		</dependency>
 
 		<!-- Vault / -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>net.milkbowl.vault</groupId>
 			<artifactId>Vault</artifactId>
 			<version>${vault.version}</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 
 		<!-- Reserve / -->
 		<dependency>
