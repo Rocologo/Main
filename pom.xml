@@ -34,6 +34,20 @@
 		<url>https://fractal.lindegaard.one</url>
 	</organization>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${mavenCompilerPlugin.version}</version>
+                <configuration>
+                    <source>${javacompiler.version}</source>
+                    <target>${javacompiler.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 	<!-- ********************************************************************** -->
 	<!-- ***************************** Properties ***************************** -->
 	<!-- ********************************************************************** -->
