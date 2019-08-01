@@ -8,8 +8,30 @@
 	<version>0.0.7</version>
 	<packaging>pom</packaging>
 
-	<name>Main project / Core Library</name>
+	<name>Main project</name>
 	<url>https://github.com/Rocologo/Main/</url>
+
+    <licenses>
+        <license>
+            <name>GNU LESSER GENERAL PUBLIC LICENSE - Version 3, 29 June 2007</name>
+            <url>http://www.gnu.org/licenses/lgpl.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>rocologo</id>
+            <name>Rocologo</name>
+            <email>rocologo@hotmail.com</email>
+            <url>http://github.com/rocologo</url>
+            <roles>
+                <role>developer</role>
+                <role>maintainer</role>
+            </roles>
+            <timezone>2</timezone>
+        </developer>
+    </developers>
 
 	<modules>
 		<module>Core</module>
@@ -53,10 +75,11 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>LATEST</core.version>
-		<bagofgold.version>LATEST</bagofgold.version>
+		<core.version>0.1.5-SNAPSHOT-B${build.number}</core.version>
+		<bagofgold.version>2.7.5-SNAPSHOT-B${build.number}</bagofgold.version>
+		<mobhunting.version>6.8.1-SNAPSHOT-B${build.number}</mobhunting.version>
 
-		<build.number>1337</build.number>
+		<build.number>TestBuild</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<mainClass>${project.groupId}.${project.artifactId}</mainClass>
