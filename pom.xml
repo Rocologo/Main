@@ -34,7 +34,6 @@
     </developers>
 
 	<modules>
-		<module>Core</module>
 		<module>NMS_v1_14_R1</module>
 		<module>NMS_v1_13_R2</module>
 		<module>NMS_v1_13_R1</module>
@@ -46,6 +45,7 @@
 		<module>NMS_v1_8_R3</module>
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
+		<module>Core</module>
 		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
 		<!-- <module>../Spheres</module>  -->
@@ -195,141 +195,6 @@
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_14_R1.version}</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<!-- Vault / -->
-		<dependency>
-			<groupId>net.milkbowl.vault</groupId>
-			<artifactId>Vault</artifactId>
-			<version>${vault.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- Reserve / -->
-		<dependency>
-			<groupId>net.tnemc</groupId>
-			<artifactId>Reserve</artifactId>
-			<version>${reserve.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- ProtocolLib -->
-		<dependency>
-			<groupId>com.comphenix.protocol</groupId>
-			<artifactId>ProtocolLib-API</artifactId>
-			<version>${protocollib.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- Citizens -->
-		<dependency>
-			<groupId>net.citizensnpcs</groupId>
-			<artifactId>citizensapi</artifactId>
-			<version>${citizensapi.version}</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-
-		<!-- BossBarAPI -->
-		<dependency>
-			<groupId>org.inventivetalent</groupId>
-			<artifactId>bossbarapi</artifactId>
-			<version>${bossbarapi.version}</version>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<artifactId>metrics-lite</artifactId>
-					<groupId>org.mcstats.bukkit</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- BarAPI -->
-		<dependency>
-			<groupId>me.confuser</groupId>
-			<artifactId>BarAPI</artifactId>
-			<version>${barapi.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- TitleManager -->
-		<dependency>
-			<groupId>io.puharesource.mc</groupId>
-			<artifactId>TitleManager</artifactId>
-			<version>${titlemanager.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- TitleAPI -->
-		<dependency>
-			<groupId>com.connorlinfoot</groupId>
-			<artifactId>TitleAPI</artifactId>
-			<version>${TitleAPI.version}</version>
-		</dependency>
-
-		<!-- Essentials -->
-		<dependency>
-			<groupId>net.ess3</groupId>
-			<artifactId>EssentialsX</artifactId>
-			<version>${EssentialsX.version}</version>
-		</dependency>
-
-		<!-- ActionBarAPI -->
-		<dependency>
-			<groupId>ActionBarAPI</groupId>
-			<artifactId>ActionBarAPI</artifactId>
-			<version>${ActionBarAPI.version}</version>
-		</dependency>
-
-		<!-- ActionAnnouncer -->
-		<dependency>
-			<groupId>me.clip.actionannouncer.ActionAnnouncer</groupId>
-			<artifactId>ActionAnnouncer</artifactId>
-			<version>${ActionAnnouncer.version}</version>
-		</dependency>
-
-		<!-- bStats.org -->
-		<dependency>
-			<groupId>org.bstats</groupId>
-			<artifactId>bstats-bukkit</artifactId>
-			<version>${bstats.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<!-- PlacholdeAPI -->
-		<dependency>
-			<groupId>me.clip</groupId>
-			<artifactId>placeholderapi</artifactId>
-			<version>${placeholderapi.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- BossShop -->
-		<dependency>
-			<groupId>org.black_ixx</groupId>
-			<artifactId>BossShop</artifactId>
-			<version>${bossshop.version}</version>
-		</dependency>
-
-		<!-- SpigetUpdate -->
-		<dependency>
-			<groupId>org.inventivetalent.spiget-update</groupId>
-			<artifactId>bukkit</artifactId>
-			<version>${spigetupdate.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
 		</dependency>
 
 	</dependencies>
