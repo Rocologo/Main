@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>NMS_v1_11_R1</artifactId>
+	<packaging>jar</packaging>
+	<name>Core NMS v1_11_R1</name>
+	<version>v1_11_R1</version>
+
+	<parent>
+		<groupId>one.lindegaard</groupId>
+		<artifactId>Main</artifactId>
+		<version>0.0.7</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId>
+			<version>v1_11_R1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../lib/craftbukkit-1.11.2-R0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+		<!-- Rocologo Core -->
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>Core</artifactId>
+			<version>${core.version}</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+</project>

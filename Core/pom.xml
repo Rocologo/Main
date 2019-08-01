@@ -61,6 +61,29 @@
 					</archive>
 				</configuration>
 			</plugin>
+						<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>${mavenShadePlugin.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+					<createSourcesJar>false</createSourcesJar>
+					<artifactSet>
+						<includes>
+							<include>one.lindegaard:Core:NMS_*</include>
+						</includes>
+					</artifactSet>
+				</configuration>
+			</plugin>
+			
 		</plugins>
 	</build>
 
