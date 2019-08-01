@@ -26,7 +26,7 @@
 		<module>NMS_v1_8_R1</module>
 		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
-		<module>../Spheres</module>
+		<!-- <module>../Spheres</module>  -->
 	</modules>
 
 	<organization>
