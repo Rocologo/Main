@@ -78,9 +78,8 @@
 
 		<core.version>0.1.6-SNAPSHOT</core.version>
 		<NMS_Shared.version>0.0.1-SNAPSHOT</NMS_Shared.version>
-		<bagofgold.version>2.7.5-SNAPSHOT-B${build.number}</bagofgold.version>
-		<mobhunting.version>6.8.1-SNAPSHOT-B${build.number}</mobhunting.version>
-
+		<bagofgold.version>2.7.5-SNAPSHOT-B323</bagofgold.version>
+		
 		<build.number>TestBuild</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
