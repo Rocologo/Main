@@ -110,7 +110,7 @@
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_Shared</artifactId>
-			<version>NMS_Shared</version>
+			<version>0.0.1-SNAPSHOT</version>
 			<type>jar</type>
 			<optional>true</optional>
 		</dependency>
