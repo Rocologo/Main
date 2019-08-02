@@ -21,12 +21,5 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/../lib/craftbukkit-1.13.2-R0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
-		<!-- Rocologo Core -->
-		<dependency>
-			<groupId>one.lindegaard</groupId>
-			<artifactId>Core</artifactId>
-			<version>${core.version}</version>
-			<scope>compile</scope>
-		</dependency>
 	</dependencies>
 </project>
