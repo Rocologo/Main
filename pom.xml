@@ -47,9 +47,9 @@
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
 		<module>Core</module>
-		<module>../BagOfGold</module>
-		<module>../MobHunting</module>
-		<!-- <module>../Spheres</module>  -->
+		<!-- <module>../BagOfGold</module>  -->
+		<!-- <module>../MobHunting</module> -->
+		<!-- <module>../Spheres</module>  --> 
 	</modules>
 
 	<organization>
