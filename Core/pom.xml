@@ -78,8 +78,7 @@
 					<createSourcesJar>false</createSourcesJar>
 					<artifactSet>
 						<includes>
-							<include>one.lindegaard:Core:*</include>
-							<include>one.lindegaard:Core:v1_*:*</include>
+							<include>one.lindegaard:Core:v1*</include>
 						</includes>
 					</artifactSet>
 				</configuration>
@@ -92,6 +91,7 @@
 	<!-- **************************** Dependencies **************************** -->
 	<!-- ********************************************************************** -->
 	<dependencies>
+	
 		<!-- SpigotMC -->
 		<dependency>
 			<groupId>org.spigotmc</groupId>
@@ -99,6 +99,7 @@
 			<version>${spigotmc_1_14_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<!-- Craftbukkit / Bukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
@@ -106,7 +107,7 @@
 			<version>${craftbukkit_1_14_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
-				<dependency>
+		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_14_R1</artifactId>
 			<version>v1_14_R1</version>
@@ -183,6 +184,6 @@
 			<type>jar</type>
 			<optional>true</optional>
 		</dependency>
-		
+
 	</dependencies>
 </project>
