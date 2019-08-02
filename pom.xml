@@ -197,6 +197,14 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- ProtocolLib -->
+		<dependency>
+			<groupId>com.comphenix.protocol</groupId>
+			<artifactId>ProtocolLib-API</artifactId>
+			<version>${protocollib.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 

@@ -33,7 +33,7 @@
 	<!-- ********************************************************************** -->
 	<build>
 		<sourceDirectory>${basedir}/src</sourceDirectory>
-		<defaultGoal>install</defaultGoal>
+		<defaultGoal>clean install</defaultGoal>
 		<directory>${basedir}/target</directory>
 		<plugins>
 			<plugin>
