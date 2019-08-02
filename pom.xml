@@ -34,6 +34,7 @@
     </developers>
 
 	<modules>
+		<module>NMS_Shared</module>
 		<module>NMS_v1_14_R1</module>
 		<module>NMS_v1_13_R2</module>
 		<module>NMS_v1_13_R1</module>

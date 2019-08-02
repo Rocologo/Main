@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>NMS_Shared</artifactId>
 	<packaging>jar</packaging>
-	<name>NMS Shared code</name>
-	<version>NMS_Shared</version>
+	<name>Core NMS Shared code</name>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<parent>
 		<groupId>one.lindegaard</groupId>
