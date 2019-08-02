@@ -19,7 +19,7 @@
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_13_R1.version}</version>
 			<type>jar</type>
-			<scope>provided</scope>
+			<scope></scope>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>

@@ -76,7 +76,7 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.5-SNAPSHOT-B${build.number}</core.version>
+		<core.version>0.1.6-SNAPSHOT</core.version>
 		<NMS_Shared.version>0.0.1-SNAPSHOT</NMS_Shared.version>
 		<bagofgold.version>2.7.5-SNAPSHOT-B${build.number}</bagofgold.version>
 		<mobhunting.version>6.8.1-SNAPSHOT-B${build.number}</mobhunting.version>
