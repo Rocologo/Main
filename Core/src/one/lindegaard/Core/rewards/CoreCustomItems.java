@@ -2,7 +2,7 @@ package one.lindegaard.Core.rewards;
 
 import org.bukkit.Bukkit;
 
-import one.lindegaard.Core.skins.Skins;
+import one.lindegaard.Core.Shared.Skins;
 import one.lindegaard.Core.v1_10_R1.Skins_1_10_R1;
 import one.lindegaard.Core.v1_10_R1.Skins_1_12_R1;
 import one.lindegaard.Core.v1_11_R1.Skins_1_11_R1;

@@ -1,4 +1,4 @@
-package one.lindegaard.Core.skins;
+package one.lindegaard.Core.Shared;
 
 import org.bukkit.entity.Player;
 

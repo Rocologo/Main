@@ -21,5 +21,12 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/../lib/craftbukkit-1.8.8-R0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>NMS_Shared</artifactId>
+			<version>NMS_Shared</version>
+			<type>jar</type>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 </project>

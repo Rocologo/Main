@@ -91,7 +91,7 @@
 	<!-- **************************** Dependencies **************************** -->
 	<!-- ********************************************************************** -->
 	<dependencies>
-	
+
 		<!-- SpigotMC -->
 		<dependency>
 			<groupId>org.spigotmc</groupId>
@@ -99,13 +99,20 @@
 			<version>${spigotmc_1_14_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- Craftbukkit / Bukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_14_R1.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>NMS_Shared</artifactId>
+			<version>NMS_Shared</version>
+			<type>jar</type>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
