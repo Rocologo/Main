@@ -78,7 +78,7 @@
 
 		<core.version>0.1.6-SNAPSHOT</core.version>
 		<NMS_Shared.version>0.0.1-SNAPSHOT</NMS_Shared.version>
-		<bagofgold.version>2.7.5-SNAPSHOT-B324</bagofgold.version>
+		<bagofgold.version>2.7.5-SNAPSHOT-B325</bagofgold.version>
 		
 		<!-- not used -->
 		<mobhunting.version>6.8.1-SNAPSHOT-B899</mobhunting.version>
