@@ -17,15 +17,14 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>v1_10_R1</version>
+			<version>${craftbukkit_1_10_R1.version}</version>
 			<type>jar</type>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/../lib/craftbukkit-1.10.2-R0.1-SNAPSHOT.jar</systemPath>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_Shared</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${NMS_Shared.version}</version>
 			<type>jar</type>
 			<optional>true</optional>
 		</dependency>
