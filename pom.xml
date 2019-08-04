@@ -76,8 +76,11 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<core.version>0.1.6-SNAPSHOT</core.version>
+		<!-- Build versions -->
+		<core.version>0.1.6-SNAPSHOT</core.version>		
 		<NMS_Shared.version>0.0.1-SNAPSHOT</NMS_Shared.version>
+		
+		<!-- The version MobHunting uses -->
 		<bagofgold.version>2.7.5-SNAPSHOT-B325</bagofgold.version>
 		
 		<!-- not used -->
@@ -358,14 +361,15 @@
 		</repository>
 
 		<!-- Nexus is used by Holograms -->
-		<repository>
+		<!-- currently broken -->
+		<!-- <repository>
 			<id>nexus-repo</id>
 			<url>http://maven.sainttx.com/nexus/content/repositories/releases</url>
 		</repository>
 		<repository>
 			<id>nexus-snapshot-repo</id>
 			<url>http://maven.sainttx.com/nexus/content/repositories/snapshots</url>
-		</repository>
+		</repository> -->
 
 		<!-- PlaceholderAPI -->
 		<repository>
