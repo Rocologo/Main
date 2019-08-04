@@ -1,7 +1,10 @@
 package one.lindegaard.Core.rewards;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 
+import one.lindegaard.Core.Server.Servers;
 import one.lindegaard.Core.Shared.Skins;
 import one.lindegaard.Core.v1_10_R1.Skins_1_10_R1;
 import one.lindegaard.Core.v1_10_R1.Skins_1_12_R1;
@@ -18,7 +21,6 @@ import one.lindegaard.Core.v1_9_R2.Skins_1_9_R2;
 public class CoreCustomItems {
 
 	public CoreCustomItems() {
-		// TODO Auto-generated constructor stub
 	}
 
 	// How to get Playerskin
@@ -65,6 +67,48 @@ public class CoreCustomItems {
 			sk = new Skins_1_8_R1();
 		}
 		return sk;
+	}
+
+	public static ItemStack getDefaultSkeletonHead(int amount) {
+		if (Servers.isMC113OrNewer())
+			return new ItemStack(Material.SKELETON_SKULL, amount);
+		else
+			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 0);
+	}
+
+	public static ItemStack getDefaultWitherSkeletonHead(int amount) {
+		if (Servers.isMC113OrNewer())
+			return new ItemStack(Material.WITHER_SKELETON_SKULL, amount);
+		else
+			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 1);
+	}
+
+	public static ItemStack getDefaultZombieHead(int amount) {
+		if (Servers.isMC113OrNewer())
+			return new ItemStack(Material.ZOMBIE_HEAD, amount);
+		else
+			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 2);
+	}
+	
+	public static ItemStack getDefaultPlayerHead(int amount) {
+		if (Servers.isMC113OrNewer())
+			return new ItemStack(Material.PLAYER_HEAD, amount);
+		else
+			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 3);
+	}
+
+	public static ItemStack getDefaultCreeperHead(int amount) {
+		if (Servers.isMC113OrNewer())
+			return new ItemStack(Material.CREEPER_HEAD, amount);
+		else
+			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 4);
+	}
+
+	public static ItemStack getDefaultEnderDragonHead(int amount) {
+		if (Servers.isMC113OrNewer())
+			return new ItemStack(Material.DRAGON_HEAD, amount);
+		else
+			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 5);
 	}
 
 }

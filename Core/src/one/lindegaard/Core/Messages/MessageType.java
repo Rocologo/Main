@@ -1,5 +1,7 @@
 package one.lindegaard.Core.Messages;
 
+import one.lindegaard.Core.Messages.MessageType;
+
 public enum MessageType {
 	Chat("Chat"), ActionBar("ActionBar"), BossBar("BossBar"), Title("Title"), Subtitle("Subtitle"), None("None");
 
