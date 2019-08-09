@@ -11,27 +11,27 @@
 	<name>Main project</name>
 	<url>https://github.com/Rocologo/Main/</url>
 
-    <licenses>
-        <license>
-            <name>GNU LESSER GENERAL PUBLIC LICENSE - Version 3, 29 June 2007</name>
-            <url>http://www.gnu.org/licenses/lgpl.html</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE - Version 3, 29 June 2007</name>
+			<url>http://www.gnu.org/licenses/lgpl.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-    <developers>
-        <developer>
-            <id>rocologo</id>
-            <name>Rocologo</name>
-            <email>rocologo@hotmail.com</email>
-            <url>http://github.com/rocologo</url>
-            <roles>
-                <role>developer</role>
-                <role>maintainer</role>
-            </roles>
-            <timezone>2</timezone>
-        </developer>
-    </developers>
+	<developers>
+		<developer>
+			<id>rocologo</id>
+			<name>Rocologo</name>
+			<email>rocologo@hotmail.com</email>
+			<url>http://github.com/rocologo</url>
+			<roles>
+				<role>developer</role>
+				<role>maintainer</role>
+			</roles>
+			<timezone>2</timezone>
+		</developer>
+	</developers>
 
 	<modules>
 		<module>NMS_Shared</module>
@@ -47,9 +47,9 @@
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
 		<module>Core</module>
-		<!-- <module>../BagOfGold</module>  -->
+		<!-- <module>../BagOfGold</module> -->
 		<!-- <module>../MobHunting</module> -->
-		<!-- <module>../Spheres</module>  --> 
+		<!-- <module>../Spheres</module> -->
 	</modules>
 
 	<organization>
@@ -57,19 +57,19 @@
 		<url>https://fractal.lindegaard.one</url>
 	</organization>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${mavenCompilerPlugin.version}</version>
-                <configuration>
-                    <source>${javacompiler.version}</source>
-                    <target>${javacompiler.version}</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${mavenCompilerPlugin.version}</version>
+				<configuration>
+					<source>${javacompiler.version}</source>
+					<target>${javacompiler.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<!-- ********************************************************************** -->
 	<!-- ***************************** Properties ***************************** -->
@@ -77,15 +77,15 @@
 	<properties>
 
 		<!-- Build versions -->
-		<core.version>0.1.6-SNAPSHOT</core.version>		
+		<core.version>0.1.6-SNAPSHOT</core.version>
 		<NMS_Shared.version>0.0.1-SNAPSHOT</NMS_Shared.version>
-		
+
 		<!-- The version MobHunting uses -->
 		<bagofgold.version>2.7.5-SNAPSHOT-B325</bagofgold.version>
-		
+
 		<!-- not used -->
 		<mobhunting.version>6.8.3-SNAPSHOT-B888</mobhunting.version>
-		
+
 		<build.number>TestBuild</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -194,7 +194,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Craftbukkit / Bukkit -->		
+		<!-- Craftbukkit / Bukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
@@ -308,7 +308,7 @@
 			<id>minigameslib-repo</id>
 			<url>http://nexus.xworlds.eu/nexus/content/repositories/</url>
 		</repository>
-		
+
 		<!-- Inventive Repo / SpigetUpdater / BossBarAPI -->
 		<repository>
 			<id>inventive-repo</id>
@@ -360,14 +360,9 @@
 
 		<!-- Nexus is used by Holograms -->
 		<!-- currently broken -->
-		<!-- <repository>
-			<id>nexus-repo</id>
-			<url>http://maven.sainttx.com/nexus/content/repositories/releases</url>
-		</repository>
-		<repository>
-			<id>nexus-snapshot-repo</id>
-			<url>http://maven.sainttx.com/nexus/content/repositories/snapshots</url>
-		</repository> -->
+		<!-- <repository> <id>nexus-repo</id> <url>http://maven.sainttx.com/nexus/content/repositories/releases</url> 
+			</repository> <repository> <id>nexus-snapshot-repo</id> <url>http://maven.sainttx.com/nexus/content/repositories/snapshots</url> 
+			</repository> -->
 
 		<!-- PlaceholderAPI -->
 		<repository>
@@ -381,9 +376,10 @@
 			<url>https://ci.ender.zone/plugin/repository/everything/com/massivecraft/Factions/</url>
 		</repository>
 
+		<!-- Used by Gringotts, I think -->
 		<repository>
 			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
+			<url>https://jitpack.io/com/github/MinecraftWars/Gringotts</url>
 		</repository>
 
 	</repositories>
