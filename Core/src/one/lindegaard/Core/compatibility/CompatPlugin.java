@@ -7,7 +7,7 @@ public enum CompatPlugin {
 	BarApi("BarAPI", 3), //
 	BattleArena("BattleArena", 4), //
 	BossBarApi("BossBarAPI", 5), //
-	BossShop("BossShop", 6), //
+	BossShop("BossShopPro", 6), //
 	Citizens("Citizens", 7), //
 	ConquestiaMobs("ConquestiaMobs", 8), //
 	CrackShot("CrackShot", 9), //
