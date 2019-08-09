@@ -84,7 +84,7 @@
 		<bagofgold.version>2.7.5-SNAPSHOT-B325</bagofgold.version>
 		
 		<!-- not used -->
-		<mobhunting.version>6.8.1-SNAPSHOT-B899</mobhunting.version>
+		<mobhunting.version>6.8.3-SNAPSHOT-B888</mobhunting.version>
 		
 		<build.number>TestBuild</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -134,7 +134,7 @@
 		<hologramdisplays.version>2.3.2</hologramdisplays.version>
 
 		<minigames.version>1.9.0-SNAPSHOT</minigames.version>
-		<minigameslib.version>1.14.14</minigameslib.version>
+		<minigameslib.version>1.14.18-SNAPSHOT</minigameslib.version>
 		<mypet.version>2.3.4</mypet.version>
 		<mcmmohorses.version>4.3.55</mcmmohorses.version>
 		<worldedit.version>7.0.0</worldedit.version>
@@ -169,13 +169,11 @@
 		<bossshop.version>2.7.3</bossshop.version>
 		<MobStacker.version>2.0.0</MobStacker.version>
 		<mythicmobsold.version>2.5.1</mythicmobsold.version>
-		<mythicmobs.version>4.1.0-SNAPSHOT</mythicmobs.version>
+		<mythicmobs.version>4.6.5</mythicmobs.version>
 		<mythiclib.version>0.0.1-20170628.172950-1</mythiclib.version>
 		<StackMob.version>4.0.1</StackMob.version>
 		<InfernalMobs.version>5.8</InfernalMobs.version>
 		<PVPControl.version>1.4.1-SNAPSHOT</PVPControl.version>
-
-		<minigameslib.version>1.14.15.jar</minigameslib.version>
 
 		<gringotts.version>-SNAPSHOT</gringotts.version>
 		<extrahardmode.version>3.12.1</extrahardmode.version>
@@ -310,7 +308,7 @@
 			<id>minigameslib-repo</id>
 			<url>http://nexus.xworlds.eu/nexus/content/repositories/</url>
 		</repository>
-
+		
 		<!-- Inventive Repo / SpigetUpdater / BossBarAPI -->
 		<repository>
 			<id>inventive-repo</id>
@@ -381,12 +379,6 @@
 		<repository>
 			<id>factionsuuid-repo</id>
 			<url>https://ci.ender.zone/plugin/repository/everything/com/massivecraft/Factions/</url>
-		</repository>
-
-		<repository>
-			<id>MinigamesAPI-Repo</id>
-			<name>MinigamesAPI Repository</name>
-			<url>http://nexus.xworlds.eu/nexus/content/repositories/mce/</url>
 		</repository>
 
 		<repository>
