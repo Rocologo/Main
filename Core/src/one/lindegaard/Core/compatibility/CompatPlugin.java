@@ -49,12 +49,12 @@ public enum CompatPlugin {
 	HolographicDisplays("HolographicDisplays", 45), //
 	PreciousStones("PreciousStones", 46), //
 	BagOfGold("BagOfGold", 47), //
-	MobHunting("MobHunting", 48),//
-	PerWorldInventory("PerWorldInventory",49), //
+	MobHunting("MobHunting", 48), //
+	PerWorldInventory("PerWorldInventory", 49), //
 	LorinthsRpgMobs("LorinthsRpgMobs", 50), //
-	CMI("CMI",51), // CMI Holograms
-	EliteMobs("EliteMobs",52), // EliteMobs
-	McMMOHorses("mcMMOHorse",53); // McMMOHorses
+	CMI("CMI", 51), // CMI Holograms
+	EliteMobs("EliteMobs", 52), // EliteMobs
+	McMMOHorses("mcMMOHorse", 53); // McMMOHorses
 
 	private final String name;
 	private final Integer id;
