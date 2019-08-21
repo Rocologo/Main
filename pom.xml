@@ -137,7 +137,7 @@
 		<minigameslib.version>1.14.18-SNAPSHOT</minigameslib.version>
 		<mypet.version>2.3.4</mypet.version>
 		<mcmmohorses.version>4.3.55</mcmmohorses.version>
-		<worldedit.version>7.0.0</worldedit.version>
+		<worldedit.version>7.0.1-SNAPSHOT</worldedit.version>
 		<worldguard.version>7.0.0</worldguard.version>
 		<PreciousStones.version>10.7.2</PreciousStones.version>
 		<libsdisguises.version>9.8.2-20190620.180128-1</libsdisguises.version>
@@ -173,6 +173,7 @@
 		<mythiclib.version>0.0.1-20170628.172950-1</mythiclib.version>
 		<StackMob.version>4.0.1</StackMob.version>
 		<InfernalMobs.version>5.8</InfernalMobs.version>
+		<BossAPI.version>5.8</BossAPI.version>
 		<PVPControl.version>1.4.1-SNAPSHOT</PVPControl.version>
 
 		<gringotts.version>-SNAPSHOT</gringotts.version>
