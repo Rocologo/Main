@@ -335,10 +335,10 @@
 		</repository>
 
 		<!-- Minigames / Addstar repo -->
-		<repository>
+		<!-- <repository>
 			<id>addstar-snapshot-repo</id>
 			<url>http://maven.addstar.com.au/artifactory/ext-snapshot-local/</url>
-		</repository>
+		</repository> -->
 
 		<!-- md5 repository -->
 		<!-- mcMMO -->
