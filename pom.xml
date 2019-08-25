@@ -77,11 +77,11 @@
 	<properties>
 
 		<!-- Build versions -->
-		<core.version>0.1.6-SNAPSHOT</core.version>
+		<core.version>0.1.7-SNAPSHOT</core.version>
 		<NMS_Shared.version>0.0.1-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
-		<bagofgold.version>2.7.7-SNAPSHOT-B334</bagofgold.version>
+		<bagofgold.version>2.7.7-SNAPSHOT-B336</bagofgold.version>
 
 		<!-- not used -->
 		<mobhunting.version>6.8.3-SNAPSHOT-B888</mobhunting.version>
