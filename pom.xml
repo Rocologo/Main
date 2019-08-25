@@ -252,14 +252,14 @@
 	<repositories>
 
 		<!-- Rocologo repository -->
-		<repository>
+		<!-- <repository>
 			<id>fractal-release</id>
 			<url>https://fractal.lindegaard.one:8187/plugins-release/</url>
 		</repository>
 		<repository>
 			<id>fractal-snapshots</id>
 			<url>https://fractal.lindegaard.one:8187/plugins-snapshot/</url>
-		</repository>
+		</repository> -->
 
 		<!-- SpigotMC Repository -->
 		<repository>
