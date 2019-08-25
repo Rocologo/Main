@@ -55,7 +55,7 @@ public enum CompatPlugin {
 	CMI("CMI", 51), // CMI Holograms
 	EliteMobs("EliteMobs", 52), // EliteMobs
 	McMMOHorses("mcMMOHorse", 53), // McMMOHorses
-	BOSS("Boss",54); //BOSS
+	Boss("Boss",54); //BOSS
 
 	private final String name;
 	private final Integer id;
