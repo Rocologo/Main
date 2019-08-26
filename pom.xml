@@ -77,7 +77,7 @@
 	<properties>
 
 		<!-- Build versions -->
-		<core.version>0.1.7-SNAPSHOT</core.version>
+		<core.version>0.1.8-SNAPSHOT</core.version>
 		<NMS_Shared.version>0.0.1-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
@@ -252,14 +252,14 @@
 	<repositories>
 
 		<!-- Rocologo repository -->
-		<!-- <repository>
+		<repository>
 			<id>fractal-release</id>
 			<url>https://fractal.lindegaard.one:8187/plugins-release/</url>
 		</repository>
 		<repository>
 			<id>fractal-snapshots</id>
 			<url>https://fractal.lindegaard.one:8187/plugins-snapshot/</url>
-		</repository> -->
+		</repository>
 
 		<!-- SpigotMC Repository -->
 		<repository>
