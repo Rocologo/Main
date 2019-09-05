@@ -77,7 +77,7 @@
 	<properties>
 
 		<!-- Build versions -->
-		<core.version>0.1.8-SNAPSHOT</core.version>
+		<core.version>0.1.9-SNAPSHOT</core.version>
 		<NMS_Shared.version>0.0.1-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
