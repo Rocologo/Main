@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>NMS_v1_15_R1</artifactId>
+	<packaging>jar</packaging>
+	<name>Core NMS v1_15_R1</name>
+	<version>v1_15_R1</version>
+
+	<parent>
+		<groupId>one.lindegaard</groupId>
+		<artifactId>Main</artifactId>
+		<version>0.0.7</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId>
+			<version>${craftbukkit_1_15_R1.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>NMS_Shared</artifactId>
+			<version>${NMS_Shared.version}</version>
+			<type>jar</type>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+</project>

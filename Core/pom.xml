@@ -96,11 +96,17 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_14_R1.version}</version>
+			<version>${spigotmc_1_15_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<!-- Craftbukkit / Bukkit -->
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId>
+			<version>${craftbukkit_1_15_R1.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
