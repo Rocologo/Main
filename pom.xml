@@ -174,7 +174,8 @@
 		<bossshop.version>1.9.8</bossshop.version>
 		<MobStacker.version>2.0.0</MobStacker.version>
 		<mythicmobsold.version>2.5.1</mythicmobsold.version>
-		<mythicmobs.version>4.6.5</mythicmobs.version>
+		<!-- <mythicmobs.version>4.6.5</mythicmobs.version> -->
+		<mythicmobs.version>4.7.2</mythicmobs.version>
 		<mythiclib.version>0.0.1-20170628.172950-1</mythiclib.version>
 		<StackMob.version>4.0.1</StackMob.version>
 		<InfernalMobs.version>5.8</InfernalMobs.version>
