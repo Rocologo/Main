@@ -82,7 +82,7 @@
 		<NMS_Shared.version>0.0.2-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
-		<bagofgold.version>2.8.0-SNAPSHOT-B348</bagofgold.version>
+		<bagofgold.version>2.8.8-SNAPSHOT-B366</bagofgold.version>
 
 		<!-- not used -->
 		<mobhunting.version>6.8.3-SNAPSHOT-B888</mobhunting.version>
