@@ -1,3 +1,5 @@
+V0.2.1
+* Minecraft 1.15.2 Release
 V0.2.0
 * Minecraft 1.15.1 Release
 V0.1.0
