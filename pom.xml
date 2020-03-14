@@ -82,7 +82,7 @@
 		<NMS_Shared.version>0.0.2-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
-		<bagofgold.version>2.8.8-SNAPSHOT-B366</bagofgold.version>
+		<bagofgold.version>2.9.0-SNAPSHOT-B369</bagofgold.version>
 
 		<!-- not used -->
 		<mobhunting.version>6.8.3-SNAPSHOT-B888</mobhunting.version>
@@ -178,7 +178,7 @@
 		<mythiclib.version>0.0.1-20170628.172950-1</mythiclib.version>
 		<StackMob.version>4.0.1</StackMob.version>
 		<InfernalMobs.version>5.8</InfernalMobs.version>
-		<BossAPI.version>3.1.0</BossAPI.version>
+		<BossAPI.version>3.6.7</BossAPI.version>
 		<PVPControl.version>1.4.1-SNAPSHOT</PVPControl.version>
 
 		<gringotts.version>2.11.1-SNAPSHOT</gringotts.version>
