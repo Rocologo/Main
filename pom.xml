@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
+	<project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -242,12 +242,12 @@
 		<repository>
 			<id>central</id>
 			<name>fractal-releases</name>
-			<url>https://fractal.lindegaard.one:8187/plugins-release-local</url>
+			<url>https://fractal.lindegaard.one:8187/artifactory/plugins-release-local</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>fractal-snapshot</name>
-			<url>https://fractal.lindegaard.one:8187/plugins-snapshot-local</url>
+			<url>https://fractal.lindegaard.one:8187/artifactory/plugins-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -259,11 +259,11 @@
 		<!-- Rocologo repository -->
 		<repository>
 			<id>fractal-release</id>
-			<url>https://fractal.lindegaard.one:8187/plugins-release/</url>
+			<url>https://fractal.lindegaard.one:8187/artifactory/plugins-release/</url>
 		</repository>
 		<repository>
 			<id>fractal-snapshots</id>
-			<url>https://fractal.lindegaard.one:8187/plugins-snapshot/</url>
+			<url>https://fractal.lindegaard.one:8187/artifactory/plugins-snapshot/</url>
 		</repository>
 
 		<!-- SpigotMC Repository -->
