@@ -119,7 +119,7 @@
 
 		<vault.version>1.7.2</vault.version>
 		<reserve.version>0.1.3.0</reserve.version>
-		<bstats.version>1.5</bstats.version>
+		<bstats.version>1.7</bstats.version>
 		<protocollib.version>4.4.0-SNAPSHOT</protocollib.version>
 		<EssentialsX.version>2.0.1</EssentialsX.version>
 		<spigetupdate.version>1.4.0</spigetupdate.version>
