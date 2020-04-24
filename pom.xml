@@ -133,6 +133,7 @@
 		<ActionAnnouncer.version>1.10.0</ActionAnnouncer.version>
 		<TitleAPI.version>1.7.5</TitleAPI.version>
 		<placeholderapi.version>2.10.0</placeholderapi.version>
+		<CMI.version>8.6.23.3</CMI.version>
 
 		<citizensapi.version>2.0.25-SNAPSHOT</citizensapi.version>
 		<holograms.version>2.6-SNAPSHOT</holograms.version>
