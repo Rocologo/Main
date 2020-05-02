@@ -12,8 +12,8 @@
 	<description>Core is a library with code shared between MobHunting and BagOfGold. </description>
 
 	<properties>
-		<core-bagofgold.version>2.9.6</core-bagofgold.version>
-		<core-mobhunting.version>7.0.0</core-mobhunting.version>
+		<core-bagofgold.version>2.9.8</core-bagofgold.version>
+		<core-mobhunting.version>7.0.8</core-mobhunting.version>
 	</properties>
 
 	<parent>
