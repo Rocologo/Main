@@ -2,14 +2,14 @@ package one.lindegaard.Core;
 
 import java.io.File;
 
-import one.lindegaard.BagOfGold.BagOfGold;
+//import one.lindegaard.BagOfGold.BagOfGold;
 import one.lindegaard.Core.config.ConfigManagerShared;
-import one.lindegaard.MobHunting.MobHunting;
+//import one.lindegaard.MobHunting.MobHunting;
 
 public class Core {
 
-	MobHunting mMobHuntingPlugin;
-	BagOfGold mBagOfGoldPlugin;
+	//MobHunting mMobHuntingPlugin;
+	//BagOfGold mBagOfGoldPlugin;
 	private File mFileShared = new File("../BagOfGold", "shared_config.yml");
 	
 	public Core() {
@@ -27,13 +27,13 @@ public class Core {
 		}
 	}
 	
-	public void connectToPlugin(MobHunting plugin) {
+	/**public void connectToPlugin(MobHunting plugin) {
 		mMobHuntingPlugin=plugin;
 	}
 	
 	public void connectToPlugin(BagOfGold plugin) {
 		mBagOfGoldPlugin=plugin;
-	}
+	}**/
 
 
 }

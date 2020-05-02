@@ -52,6 +52,7 @@
 		<!-- <module>../BagOfGold</module> -->
 		<!-- <module>../MobHunting</module> -->
 		<!-- <module>../Spheres</module> -->
+		<module>Test</module>
 	</modules>
 
 	<organization>
