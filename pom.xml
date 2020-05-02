@@ -1,4 +1,5 @@
-	<project xmlns="http://maven.apache.org/POM/4.0.0"
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -78,7 +79,9 @@
 	<properties>
 
 		<!-- Build versions -->
-		<core.version>0.2.1-SNAPSHOT</core.version>
+		<!-- Remember that Core version must behind Core/pom.xml version before 
+			it can compile first time -->
+		<core.version>0.2.2-SNAPSHOT</core.version>
 		<NMS_Shared.version>0.0.2-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
@@ -341,10 +344,8 @@
 		</repository>
 
 		<!-- Minigames / Addstar repo -->
-		<!-- <repository>
-			<id>addstar-snapshot-repo</id>
-			<url>http://maven.addstar.com.au/artifactory/ext-snapshot-local/</url>
-		</repository> -->
+		<!-- <repository> <id>addstar-snapshot-repo</id> <url>http://maven.addstar.com.au/artifactory/ext-snapshot-local/</url> 
+			</repository> -->
 
 		<!-- md5 repository -->
 		<!-- mcMMO -->

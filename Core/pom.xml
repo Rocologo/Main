@@ -6,10 +6,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>Core</artifactId>
 	<packaging>jar</packaging>
-	<version>${core.version}</version>
+	<version>0.2.2</version>
 	<name>Rocologo Core Library</name>
 	<url>https://github.com/Rocologo/Core</url>
 	<description>Core is a library with code shared between MobHunting and BagOfGold. </description>
+
+	<properties>
+		<core-bagofgold.version>2.9.6</core-bagofgold.version>
+		<core-mobhunting.version>7.0.0</core-mobhunting.version>
+	</properties>
 
 	<parent>
 		<groupId>one.lindegaard</groupId>
@@ -106,6 +111,20 @@
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_15_R2.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>BagOfGold</artifactId>
+			<version>${core-bagofgold.version}</version>
+			<type>jar</type>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>MobHunting</artifactId>
+			<version>${core-mobhunting.version}</version>
+			<type>jar</type>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
