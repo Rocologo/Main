@@ -22,8 +22,6 @@ import java.util.regex.Pattern;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.Core;
@@ -32,19 +30,23 @@ public class SharedMessages {
 
 	private Plugin plugin;
 
+	private File dataFolder;
+	private String datapath;
+
 	public SharedMessages(Plugin plugin) {
 		this.plugin = plugin;
+		datapath = plugin.getDataFolder().getParent() + "/BagOfGoldCore";
+		dataFolder = new File(datapath);
 		exportDefaultLanguages(plugin);
 	}
 
 	private static Map<String, String> mTranslationTable;
 	private static String[] mValidEncodings = new String[] { "UTF-16", "UTF-16BE", "UTF-16LE", "UTF-8", "ISO646-US" };
 	private static final String PREFIX = ChatColor.GOLD + "[BagOfGoldCore]" + ChatColor.RESET;
-	private static String[] sources = new String[] { "en_US.lang", "hu_HU.lang", "pt_BR.lang", "zh_CN.lang",
-			"fr_FR.lang", "ru_RU.lang" };
+	private static String[] sources = new String[] { "en_US_shared.lang" };
 
 	public void exportDefaultLanguages(Plugin plugin) {
-		File folder = new File(plugin.getDataFolder(), "lang");
+		File folder = new File(dataFolder, "lang");
 		if (!folder.exists())
 			folder.mkdirs();
 
@@ -52,11 +54,11 @@ public class SharedMessages {
 			File dest = new File(folder, source);
 			if (!dest.exists()) {
 				Bukkit.getConsoleSender().sendMessage(PREFIX + " Creating language file " + source + " from JAR.");
-				plugin.saveResource("lang/" + source, false);
+				plugin.saveResource(datapath + "/lang/" + source, false);
 			} else {
-				if (!injectChanges(plugin.getResource("lang/" + source),
-						new File(plugin.getDataFolder(), "lang/" + source))) {
-					plugin.saveResource("lang/" + source, true);
+				if (!injectChanges(plugin.getResource(datapath + "/lang/" + source),
+						new File(dataFolder, "lang/" + source))) {
+					plugin.saveResource(datapath + "/lang/" + source, true);
 				}
 			}
 			mTranslationTable = loadLang(dest);
@@ -116,7 +118,7 @@ public class SharedMessages {
 	}
 
 	public void injectMissingMobNamesToLangFiles() {
-		File folder = new File(plugin.getDataFolder().getParent() + "/BagOfGoldCore", "lang");
+		File folder = new File(datapath, "lang");
 		if (!folder.exists())
 			folder.mkdirs();
 
@@ -213,7 +215,7 @@ public class SharedMessages {
 	}
 
 	public void setLanguage(String lang) {
-		File file = new File(plugin.getDataFolder().getParent() + "/BagOfGoldCore", "lang/" + lang);
+		File file = new File(datapath, "lang/" + lang);
 		if (!file.exists()) {
 			Bukkit.getConsoleSender().sendMessage(PREFIX
 					+ " Language file does not exist. Creating a new file based on en_US. You need to translate the file yourself.");
@@ -226,7 +228,7 @@ public class SharedMessages {
 		}
 
 		if (file.exists()) {
-			InputStream resource = plugin.getResource("../BagOfGoldCore/lang/en_US.lang");
+			InputStream resource = plugin.getResource(datapath + "/lang/en_US.lang");
 			injectChanges(resource, file);
 			mTranslationTable = loadLang(file);
 			sortFileOnDisk(file);

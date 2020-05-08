@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>Core</artifactId>
 	<packaging>jar</packaging>
-	<version>0.2.1</version>
+	<version>0.2.2</version>
 	<name>Rocologo Core Library</name>
 	<url>https://github.com/Rocologo/Core</url>
 	<description>Core is a library with code shared between MobHunting and BagOfGold. </description>
@@ -39,6 +39,13 @@
 	<build>
 		<sourceDirectory>${basedir}/src</sourceDirectory>
 		<defaultGoal>clean install</defaultGoal>
+		<resources>
+			<resource>
+				<targetPath>lang</targetPath>
+				<filtering>true</filtering>
+				<directory>${basedir}/src/main/resources/lang</directory>
+			</resource>
+		</resources>
 		<directory>${basedir}/target</directory>
 		<plugins>
 			<plugin>
