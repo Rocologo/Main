@@ -6,9 +6,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import one.lindegaard.Core.config.AutoConfig;
 import one.lindegaard.Core.config.ConfigField;
 
-public class ConfigManagerShared extends AutoConfig {
+public class ConfigManager extends AutoConfig {
 
-	public ConfigManagerShared(File file) {
+	public ConfigManager(File file) {
 
 		super(file);
 		setCategoryComment("shared", "########################################################################"

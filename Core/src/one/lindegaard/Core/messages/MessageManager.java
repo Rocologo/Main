@@ -1,4 +1,4 @@
-package one.lindegaard.Core.Messages;
+package one.lindegaard.Core.messages;
 
 import java.util.HashMap;
 import java.util.LinkedList;

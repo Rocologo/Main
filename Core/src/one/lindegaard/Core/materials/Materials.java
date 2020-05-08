@@ -1,10 +1,10 @@
-package one.lindegaard.Core.Materials;
+package one.lindegaard.Core.materials;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
-import one.lindegaard.Core.Server.Servers;
+import one.lindegaard.Core.server.Servers;
 
 public class Materials {
 

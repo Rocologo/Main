@@ -13,7 +13,7 @@ import org.bukkit.entity.ZombieVillager;
 import org.bukkit.entity.Skeleton.SkeletonType;
 import org.bukkit.entity.Villager.Profession;
 
-import one.lindegaard.Core.Server.Servers;
+import one.lindegaard.Core.server.Servers;
 
 public enum MobType {
 	// PlayerName and texture can be found here:

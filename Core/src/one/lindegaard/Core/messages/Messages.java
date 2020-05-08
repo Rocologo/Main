@@ -1,4 +1,4 @@
-package one.lindegaard.Core.Messages;
+package one.lindegaard.Core.messages;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -26,14 +26,14 @@ import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.Core;
 
-public class SharedMessages {
+public class Messages {
 
 	private Plugin plugin;
 
 	private File dataFolder;
-	private String datapath;
+	private String datapath="";
 
-	public SharedMessages(Plugin plugin) {
+	public Messages(Plugin plugin) {
 		this.plugin = plugin;
 		datapath = plugin.getDataFolder().getParent() + "/BagOfGoldCore";
 		dataFolder = new File(datapath);
@@ -54,11 +54,11 @@ public class SharedMessages {
 			File dest = new File(folder, source);
 			if (!dest.exists()) {
 				Bukkit.getConsoleSender().sendMessage(PREFIX + " Creating language file " + source + " from JAR.");
-				plugin.saveResource(datapath + "/lang/" + source, false);
+				plugin.saveResource("lang/" + source, false);
 			} else {
-				if (!injectChanges(plugin.getResource(datapath + "/lang/" + source),
+				if (!injectChanges(plugin.getResource("lang/" + source),
 						new File(dataFolder, "lang/" + source))) {
-					plugin.saveResource(datapath + "/lang/" + source, true);
+					plugin.saveResource("lang/" + source, true);
 				}
 			}
 			mTranslationTable = loadLang(dest);
@@ -118,19 +118,19 @@ public class SharedMessages {
 	}
 
 	public void injectMissingMobNamesToLangFiles() {
-		File folder = new File(datapath, "lang");
+		File folder = new File(dataFolder, "lang");
 		if (!folder.exists())
 			folder.mkdirs();
 
 		boolean customLanguage = true;
 		for (String source : sources) {
-			if (source.equalsIgnoreCase(Core.getConfigManagerShared().language))
+			if (source.equalsIgnoreCase(Core.getConfigManager().language))
 				customLanguage = false;
 			new File(folder, source);
 		}
 
 		if (customLanguage) {
-			File dest = new File(folder, Core.getConfigManagerShared().language + ".lang");
+			File dest = new File(folder, Core.getConfigManager().language + ".lang");
 			sortFileOnDisk(dest);
 		}
 
@@ -215,7 +215,7 @@ public class SharedMessages {
 	}
 
 	public void setLanguage(String lang) {
-		File file = new File(datapath, "lang/" + lang);
+		File file = new File(dataFolder, "lang/" + lang);
 		if (!file.exists()) {
 			Bukkit.getConsoleSender().sendMessage(PREFIX
 					+ " Language file does not exist. Creating a new file based on en_US. You need to translate the file yourself.");
@@ -228,7 +228,7 @@ public class SharedMessages {
 		}
 
 		if (file.exists()) {
-			InputStream resource = plugin.getResource(datapath + "/lang/en_US.lang");
+			InputStream resource = plugin.getResource(datapath + "/lang/en_US_shared.lang");
 			injectChanges(resource, file);
 			mTranslationTable = loadLang(file);
 			sortFileOnDisk(file);
@@ -313,7 +313,7 @@ public class SharedMessages {
 	 * @param args
 	 */
 	public void debug(String message, Object... args) {
-		if (Core.getConfigManagerShared().debug) {
+		if (Core.getConfigManager().debug) {
 			Bukkit.getServer().getConsoleSender().sendMessage(PREFIX + " [Debug] " + String.format(message, args));
 		}
 	}

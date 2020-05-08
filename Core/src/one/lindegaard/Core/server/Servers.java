@@ -1,4 +1,4 @@
-package one.lindegaard.Core.Server;
+package one.lindegaard.Core.server;
 
 import org.bukkit.Bukkit; 
 

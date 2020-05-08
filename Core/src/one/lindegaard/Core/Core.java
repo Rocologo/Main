@@ -4,8 +4,8 @@ import java.io.File;
 
 import org.bukkit.plugin.Plugin;
 
-import one.lindegaard.Core.Messages.SharedMessages;
-import one.lindegaard.Core.config.ConfigManagerShared;
+import one.lindegaard.Core.config.ConfigManager;
+import one.lindegaard.Core.messages.Messages;
 
 public class Core {
 
@@ -13,8 +13,8 @@ public class Core {
 
 	private static File mFileShared = new File("../BagOfGoldCore", "config.yml");
 
-	private static ConfigManagerShared mConfig;
-	private static SharedMessages mSharedMessages;
+	private static ConfigManager mConfig;
+	private static Messages mMessages;
 
 	public Core(Plugin plugin) {
 
@@ -22,8 +22,8 @@ public class Core {
 
 		// getMessages().debug("BagOfGold/MobHunting shared config file is
 		// ../BagOfGold/%s", mFileShared.getName());
-		int Shared_config_version = ConfigManagerShared.getConfigVersion(mFileShared);
-		switch (Shared_config_version) {
+		int config_version = ConfigManager.getConfigVersion(mFileShared);
+		switch (config_version) {
 		case -1:
 			// create new shared config file
 			// if bagofgold config exists then import shared settings
@@ -33,17 +33,18 @@ public class Core {
 			// create new shared config file
 		}
 
-		mConfig = new ConfigManagerShared(mFileShared);
-		mSharedMessages = new SharedMessages(plugin);
+		mConfig = new ConfigManager(mFileShared);
+		mMessages = new Messages(plugin);
+		mMessages.debug("Loading shared config.yml file, version %s",config_version);
 
 	}
 
-	public static ConfigManagerShared getConfigManagerShared() {
+	public static ConfigManager getConfigManager() {
 		return mConfig;
 	}
 	
-	public static SharedMessages getSharedMessages() {
-		return mSharedMessages;
+	public static Messages getMessages() {
+		return mMessages;
 	}
 
 }

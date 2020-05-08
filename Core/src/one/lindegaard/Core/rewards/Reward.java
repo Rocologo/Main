@@ -114,11 +114,12 @@ public class Reward {
 	}
 
 	public ArrayList<String> getHiddenLore() {
-		return new ArrayList<String>(Arrays.asList("Hidden(0):" + displayname, // displayname
+		ArrayList<String> lores = new ArrayList<String>(Arrays.asList("Hidden(0):" + displayname, // displayname
 				"Hidden(1):" + String.format(Locale.ENGLISH, "%.5f", money), // value
 				"Hidden(2):" + rewardType.getRewardType(), // type
 				"Hidden(4):" + (skinUUID == null ? "" : skinUUID.toString()), // SkinUUID
 				"Hidden(5):" + encodedHash)); // Hash
+		return lores;
 	}
 
 	/**
