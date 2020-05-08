@@ -81,6 +81,7 @@
 		<!-- Build versions -->
 		<!-- Remember that Core version must behind Core/pom.xml version before 
 			it can compile first time -->
+
 		<core.version>0.2.1-SNAPSHOT</core.version> 
 		<NMS_Shared.version>0.0.2-SNAPSHOT</NMS_Shared.version>
 

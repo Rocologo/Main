@@ -20,7 +20,7 @@
 		<groupId>one.lindegaard</groupId>
 		<artifactId>Main</artifactId>
 		<version>0.0.9</version>
-		<relativePath>../pom.xml</relativePath>
+	<!-- 	<relativePath>../pom.xml</relativePath>  -->
 	</parent>
 
 	<scm>
@@ -112,20 +112,6 @@
 			<version>${craftbukkit_1_15_R2.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- <dependency>
-			<groupId>one.lindegaard</groupId>
-			<artifactId>BagOfGold</artifactId>
-			<version>${core-bagofgold.version}</version>
-			<type>jar</type>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>one.lindegaard</groupId>
-			<artifactId>MobHunting</artifactId>
-			<version>${core-mobhunting.version}</version>
-			<type>jar</type>
-			<optional>true</optional>
-		</dependency> -->
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_Shared</artifactId>

@@ -2,19 +2,26 @@ package one.lindegaard.Core;
 
 import java.io.File;
 
-//import one.lindegaard.BagOfGold.BagOfGold;
+import org.bukkit.plugin.Plugin;
+
+import one.lindegaard.Core.Messages.SharedMessages;
 import one.lindegaard.Core.config.ConfigManagerShared;
-//import one.lindegaard.MobHunting.MobHunting;
 
 public class Core {
 
-	//MobHunting mMobHuntingPlugin;
-	//BagOfGold mBagOfGoldPlugin;
-	private File mFileShared = new File("../BagOfGold", "shared_config.yml");
-	
-	public Core() {
-		
-		//getMessages().debug("BagOfGold/MobHunting shared config file is ../BagOfGold/%s", mFileShared.getName());
+	private Plugin plugin;
+
+	private static File mFileShared = new File("../BagOfGoldCore", "config.yml");
+
+	private static ConfigManagerShared mConfig;
+	private static SharedMessages mSharedMessages;
+
+	public Core(Plugin plugin) {
+
+		this.plugin = plugin;
+
+		// getMessages().debug("BagOfGold/MobHunting shared config file is
+		// ../BagOfGold/%s", mFileShared.getName());
 		int Shared_config_version = ConfigManagerShared.getConfigVersion(mFileShared);
 		switch (Shared_config_version) {
 		case -1:
@@ -25,15 +32,18 @@ public class Core {
 		default:
 			// create new shared config file
 		}
-	}
-	
-	/**public void connectToPlugin(MobHunting plugin) {
-		mMobHuntingPlugin=plugin;
-	}
-	
-	public void connectToPlugin(BagOfGold plugin) {
-		mBagOfGoldPlugin=plugin;
-	}**/
 
+		mConfig = new ConfigManagerShared(mFileShared);
+		mSharedMessages = new SharedMessages(plugin);
+
+	}
+
+	public static ConfigManagerShared getConfigManagerShared() {
+		return mConfig;
+	}
+	
+	public static SharedMessages getSharedMessages() {
+		return mSharedMessages;
+	}
 
 }
