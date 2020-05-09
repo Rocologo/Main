@@ -84,7 +84,7 @@
 
 		<parentproject.version>0.1.1</parentproject.version> 
 		<core.version>0.2.3-SNAPSHOT</core.version> 
-		<NMS_Shared.version>0.0.4-SNAPSHOT</NMS_Shared.version>
+		<NMS_Shared.version>0.0.5-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
 		<bagofgold.version>3.0.0-SNAPSHOT</bagofgold.version>
