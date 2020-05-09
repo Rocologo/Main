@@ -86,10 +86,10 @@
 		<NMS_Shared.version>0.0.3-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
-		<bagofgold.version>2.9.5-SNAPSHOT-B391</bagofgold.version>
+		<bagofgold.version>3.0.0-SNAPSHOT</bagofgold.version>
 
 		<!-- not used -->
-		<mobhunting.version>7.0.5-SNAPSHOT-B985</mobhunting.version>
+		<mobhunting.version>7.0.9-SNAPSHOT</mobhunting.version>
 
 		<build.number>TestBuild</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
