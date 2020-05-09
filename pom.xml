@@ -6,7 +6,7 @@
 
 	<groupId>one.lindegaard</groupId>
 	<artifactId>Main</artifactId>
-	<version>${parentproject.version}</version>
+	<version>0.1.1</version>
 	<packaging>pom</packaging>
 
 	<name>Main project</name>
