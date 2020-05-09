@@ -99,12 +99,10 @@
 		<junit.version>4.12</junit.version>
 		<spring.version>5.1.5.RELEASE</spring.version>
 
-		<spigotmc_1_15_R2.version>1.15.2-R0.1-SNAPSHOT</spigotmc_1_15_R2.version>
-		<spigotmc_1_15_R1.version>1.15.1-R0.1-SNAPSHOT</spigotmc_1_15_R1.version>
+		<spigotmc_1_15_R1.version>1.15.2-R0.1-SNAPSHOT</spigotmc_1_15_R1.version>
 		<spigotmc_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</spigotmc_1_14_R1.version>
 
-		<craftbukkit_1_15_R2.version>1.15.2-R0.1-SNAPSHOT</craftbukkit_1_15_R2.version>
-		<craftbukkit_1_15_R1.version>1.15.1-R0.1-SNAPSHOT</craftbukkit_1_15_R1.version>
+		<craftbukkit_1_15_R1.version>1.15.2-R0.1-SNAPSHOT</craftbukkit_1_15_R1.version>
 		<craftbukkit_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</craftbukkit_1_14_R1.version>
 		<craftbukkit_1_13_R2.version>1.13.2-R0.1-SNAPSHOT</craftbukkit_1_13_R2.version>
 		<craftbukkit_1_13_R1.version>1.13-R0.1-SNAPSHOT</craftbukkit_1_13_R1.version>
@@ -202,7 +200,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_15_R2.version}</version>
+			<version>${spigotmc_1_15_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -210,7 +208,7 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_15_R2.version}</version>
+			<version>${craftbukkit_1_15_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
