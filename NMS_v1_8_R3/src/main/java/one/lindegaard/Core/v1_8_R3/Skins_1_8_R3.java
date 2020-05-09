@@ -7,7 +7,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
 import net.minecraft.server.v1_8_R3.EntityPlayer;
-import one.lindegaard.Core.Shared.Skins;
+import one.lindegaard.Core.shared.Skins;
 
 public class Skins_1_8_R3 implements Skins {
 

@@ -1,4 +1,4 @@
-package one.lindegaard.Core.Shared;
+package one.lindegaard.Core.rewards;
 
 import org.bukkit.entity.Player;
 

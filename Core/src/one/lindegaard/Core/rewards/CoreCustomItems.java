@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import one.lindegaard.Core.Shared.Skins;
 import one.lindegaard.Core.server.Servers;
 import one.lindegaard.Core.v1_10_R1.Skins_1_10_R1;
 import one.lindegaard.Core.v1_10_R1.Skins_1_12_R1;
@@ -13,7 +12,6 @@ import one.lindegaard.Core.v1_13_R1.Skins_1_13_R1;
 import one.lindegaard.Core.v1_13_R2.Skins_1_13_R2;
 import one.lindegaard.Core.v1_14_R1.Skins_1_14_R1;
 import one.lindegaard.Core.v1_15_R1.Skins_1_15_R1;
-//import one.lindegaard.Core.v1_15_R2.Skins_1_15_R2;
 import one.lindegaard.Core.v1_8_R1.Skins_1_8_R1;
 import one.lindegaard.Core.v1_8_R2.Skins_1_8_R2;
 import one.lindegaard.Core.v1_8_R3.Skins_1_8_R3;

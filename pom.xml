@@ -35,7 +35,7 @@
 	</developers>
 
 	<modules>
-		<module>NMS_Shared</module>
+		<!-- <module>NMS_Shared</module> -->
 		<module>NMS_v1_15_R1</module>
 		<module>NMS_v1_14_R1</module>
 		<module>NMS_v1_13_R2</module>
@@ -82,8 +82,8 @@
 		<!-- Remember that Core version must behind Core/pom.xml version before 
 			it can compile first time -->
 
-		<core.version>0.2.2</core.version> 
-		<NMS_Shared.version>0.0.2-SNAPSHOT</NMS_Shared.version>
+		<core.version>0.2.3-SNAPSHOT</core.version> 
+		<NMS_Shared.version>0.0.3-SNAPSHOT</NMS_Shared.version>
 
 		<!-- The version MobHunting uses -->
 		<bagofgold.version>2.9.5-SNAPSHOT-B391</bagofgold.version>
