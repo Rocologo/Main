@@ -15,7 +15,6 @@
 		<groupId>one.lindegaard</groupId>
 		<artifactId>Main</artifactId>
 		<version>${parentproject.version}</version>
-	<!-- 	<relativePath>../pom.xml</relativePath>  -->
 	</parent>
 
 	<scm>

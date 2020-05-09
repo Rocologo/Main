@@ -5,7 +5,7 @@
 	<artifactId>NMS_v1_8_R2</artifactId>
 	<packaging>jar</packaging>
 	<name>Core NMS v1_8_R2</name>
-	<version>v1_8_R2</version>
+	<version>v1_8_R2-SNAPSHOT</version>
 
 	<parent>
 		<groupId>one.lindegaard</groupId>

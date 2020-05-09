@@ -82,7 +82,7 @@
 		<!-- Remember that Core version must behind Core/pom.xml version before 
 			it can compile first time -->
 
-		<parentproject.version>0.1.0</parentproject.version> 
+		<parentproject.version>0.1.1</parentproject.version> 
 		<core.version>0.2.3-SNAPSHOT</core.version> 
 		<NMS_Shared.version>0.0.3-SNAPSHOT</NMS_Shared.version>
 
