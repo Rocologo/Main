@@ -8,9 +8,9 @@ import one.lindegaard.Core.server.Servers;
 import one.lindegaard.Core.shared.Skins;
 import one.lindegaard.Core.v1_15_R1.Skins_1_15_R1;
 
-public class CoreCustomItems2 {
+public class CoreCustomItems {
 
-	public CoreCustomItems2() {
+	public CoreCustomItems() {
 	}
 
 	// How to get Playerskin
