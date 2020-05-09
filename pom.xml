@@ -6,7 +6,7 @@
 
 	<groupId>one.lindegaard</groupId>
 	<artifactId>Main</artifactId>
-	<version>0.0.9</version>
+	<version>${parentproject.version}</version>
 	<packaging>pom</packaging>
 
 	<name>Main project</name>
@@ -82,6 +82,7 @@
 		<!-- Remember that Core version must behind Core/pom.xml version before 
 			it can compile first time -->
 
+		<parentproject.version>0.1.0</parentproject.version> 
 		<core.version>0.2.3-SNAPSHOT</core.version> 
 		<NMS_Shared.version>0.0.3-SNAPSHOT</NMS_Shared.version>
 
