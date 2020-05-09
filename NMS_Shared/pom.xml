@@ -5,7 +5,7 @@
 	<artifactId>NMS_Shared</artifactId>
 	<packaging>jar</packaging>
 	<name>Core NMS Shared code</name>
-	<version>${NMS_Shared.version}</version>
+	<version>0.0.5-SNAPSHOT</version>
 
 	<parent>
 		<groupId>one.lindegaard</groupId>
