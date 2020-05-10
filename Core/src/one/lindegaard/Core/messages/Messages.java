@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -46,7 +45,8 @@ public class Messages {
 	private static Map<String, String> mTranslationTable;
 	private static String[] mValidEncodings = new String[] { "UTF-16", "UTF-16BE", "UTF-16LE", "UTF-8", "ISO646-US" };
 	private static final String PREFIX = ChatColor.GOLD + "[BagOfGoldCore]" + ChatColor.RESET;
-	private static String[] sources = new String[] { "en_US.lang" };
+	private static String[] sources = new String[] { "en_US_shared.lang", "hu_HU_shared.lang", "pl_PL_shared.lang",
+			"ru_RU_shared.lang", "zh_CN_shared.lang" };
 
 	public void exportDefaultLanguages(Plugin plugin) {
 		File folder = new File(dataFolder, "lang");
@@ -55,16 +55,28 @@ public class Messages {
 
 		for (String source : sources) {
 			File dest = new File(folder, source);
-			if (!dest.exists()
-					|| !injectChanges(plugin.getResource("lang/" + source), new File(dataFolder, "lang/" + source))) {
+			if (!dest.exists()) {
 				Bukkit.getConsoleSender().sendMessage(PREFIX + " Creating language file " + source + " from JAR.");
 				InputStream is = plugin.getResource("lang/" + source);
 				String outputFile = datapath + "/lang/" + source;
 				try {
 					Files.copy(is, Paths.get(outputFile));
 					File file = new File(outputFile);
+					sortFileOnDisk(file);
 				} catch (IOException e) {
 					e.printStackTrace();
+				}
+			} else {
+				if (!injectChanges(plugin.getResource("lang/" + source), new File(dataFolder, "lang/" + source))) {
+					InputStream is = plugin.getResource("lang/" + source);
+					String outputFile = datapath + "/lang/" + source;
+					try {
+						Files.copy(is, Paths.get(outputFile));
+						File file = new File(outputFile);
+						sortFileOnDisk(file);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 			mTranslationTable = loadLang(dest);
@@ -92,6 +104,7 @@ public class Messages {
 				for (Entry<String, String> entry : newEntries.entrySet())
 					writer.append("\n" + entry.getKey() + "=" + entry.getValue());
 				writer.close();
+				sortFileOnDisk(onDisk);
 				Bukkit.getConsoleSender()
 						.sendMessage(PREFIX + " Updated " + onDisk.getName() + " language file with missing keys");
 			}
@@ -113,9 +126,6 @@ public class Messages {
 				writer.append("\n" + entry.getKey() + "=" + entry.getValue());
 			}
 			writer.close();
-			// Bukkit.getLogger().info(PREFIX + " Sorted " + onDisk.getName() +
-			// " translation");
-
 			return true;
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -123,7 +133,7 @@ public class Messages {
 		}
 	}
 
-	public void injectMissingMobNamesToLangFiles() {
+	private void injectMissingMobNamesToLangFiles() {
 		File folder = new File(dataFolder, "lang");
 		if (!folder.exists())
 			folder.mkdirs();
@@ -136,7 +146,7 @@ public class Messages {
 		}
 
 		if (customLanguage) {
-			File dest = new File(folder, Core.getConfigManager().language + ".lang");
+			File dest = new File(folder, Core.getConfigManager().language + "_shared.lang");
 			sortFileOnDisk(dest);
 		}
 
@@ -234,17 +244,16 @@ public class Messages {
 		}
 
 		if (file.exists()) {
-			InputStream resource = plugin.getResource(datapath + "/lang/en_US_shared.lang");
+			InputStream resource = plugin.getResource("lang/en_US_shared.lang");
 			injectChanges(resource, file);
 			mTranslationTable = loadLang(file);
-			sortFileOnDisk(file);
 		} else {
 			Bukkit.getConsoleSender().sendMessage(PREFIX + " Could not read the language file:" + file.getName());
 		}
 
 		if (mTranslationTable == null) {
 			mTranslationTable = new HashMap<String, String>();
-			Bukkit.getConsoleSender().sendMessage(PREFIX + " Creating new translation table.");
+			Bukkit.getConsoleSender().sendMessage(PREFIX + " Creating empty translation table.");
 		}
 	}
 
