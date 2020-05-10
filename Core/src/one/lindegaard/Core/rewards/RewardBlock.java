@@ -43,4 +43,8 @@ public class RewardBlock {
 	public boolean equals(RewardBlock rewardBlock) {
 		return reward.equals(rewardBlock.getReward()) && location.equals(rewardBlock.getLocation());
 	}
+	
+	public String toString() {
+		return "{RewardBlock: {Location=" + location.toString() + ", Reward=" + reward.toString()+ "}}";
+	}
 }

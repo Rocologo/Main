@@ -132,7 +132,7 @@ public class Reward {
 				"Hidden(4):" + (skinUUID == null ? "" : skinUUID.toString()), // SkinUUID
 				"Hidden(5):" + encodedHash)); // Hash
 		if (rewardType != RewardType.BAGOFGOLD)
-			lores.add(Core.getMessages().getString("core.reward.lore"));
+			lores.add(Core.getMessages().getString(Core.getMessages().getString("core.reward.lore")));
 		return lores;
 
 	}
@@ -159,13 +159,6 @@ public class Reward {
 	}
 
 	/**
-	 * @return the Unique
-	 */
-	// public UUID getUniqueUUID() {
-	// return uniqueId;
-	// }
-
-	/**
 	 * @param displayName the displayName to set
 	 */
 	public void setDisplayname(String displayName) {
@@ -187,13 +180,6 @@ public class Reward {
 		this.rewardType = rewardType;
 		updateEncodedHash();
 	}
-
-	/**
-	 * @param uniqueId the uniqueId to set
-	 */
-	// public void setUniqueId(UUID uniqueId) {
-	// this.uniqueId = uniqueId;
-	// }
 
 	/**
 	 * Get the skin UUID for the reward
@@ -229,7 +215,12 @@ public class Reward {
 
 	public String toString() {
 		return "{Description=" + displayname + ", money=" + String.format(Locale.ENGLISH, "%.5f", money) + ", type="
-				+ rewardType.getType() + ", Skin=" + skinUUID + "}";
+				+ rewardType.getType() + ", Skin=" + skinUUID + ", id=" + id + "}";
+	}
+
+	public boolean equals(Reward reward) {
+		return displayname.equalsIgnoreCase(reward.getDisplayName()) && money == reward.money
+				&& rewardType == reward.getRewardType() && skinUUID.equals(reward.getSkinUUID()) && checkHash();
 	}
 
 	public void save(ConfigurationSection section) {
@@ -241,12 +232,14 @@ public class Reward {
 	}
 
 	public void read(ConfigurationSection section) throws InvalidConfigurationException {
-		displayname = section.getString("displayname");
-		if (displayname == null)
+		if (section.contains("displayname"))
+			displayname = section.getString("displayname");
+		else
 			displayname = section.getString("description"); // old config name
 		money = Double.valueOf(section.getString("money").replace(",", "."));
-		rewardType = RewardType.valueOf(section.getString("type"));
-		if (rewardType == null) {
+		if (section.contains("type"))
+			rewardType = RewardType.valueOf(section.getString("type"));
+		else {
 			String uuid = section.getString("uuid"); // old config name
 			if (RewardType.BAGOFGOLD.getUUID().equals(uuid))
 				rewardType = RewardType.BAGOFGOLD;

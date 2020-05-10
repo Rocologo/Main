@@ -13,6 +13,7 @@ import org.bukkit.entity.ZombieVillager;
 import org.bukkit.entity.Skeleton.SkeletonType;
 import org.bukkit.entity.Villager.Profession;
 
+import one.lindegaard.Core.Core;
 import one.lindegaard.Core.server.Servers;
 
 public enum MobType {
@@ -685,5 +686,39 @@ public enum MobType {
 		}
 		return null;
 	}
+	
+	public String getTexture(String displayname) {
+		for (MobType mob : values()) {
+			if (mob.getDisplayName().equalsIgnoreCase(displayname)
+					|| mob.getFriendlyName().equalsIgnoreCase(displayname)) {
+				return String.valueOf(mob.getTextureValue());
+			}
+		}
+		return "";
+	}
 
+	public String getSignature(String displayname) {
+		for (MobType mob : values()) {
+			if (mob.getDisplayName().equalsIgnoreCase(displayname)
+					|| mob.getFriendlyName().equalsIgnoreCase(displayname)) {
+				return String.valueOf(mob.getTextureSignature());
+			}
+		}
+		return "";
+
+	}
+
+	public static MobType getMinecraftMobType(String name) {
+		String name1 = name.replace(" ", "_");
+		for (MobType type : values())
+			if (type.getFriendlyName().replace(" ", "_").equalsIgnoreCase(name1)
+					|| type.getDisplayName().replace(" ", "_").equalsIgnoreCase(name1)
+					|| type.name().equalsIgnoreCase(name1))
+				return type;
+		return null;
+	}
+
+	public String getFriendlyName() {
+		return Core.getMessages().getString("mobs." + name() + ".name");
+	}
 }
