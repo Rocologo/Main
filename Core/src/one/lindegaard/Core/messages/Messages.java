@@ -8,8 +8,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -31,7 +34,7 @@ public class Messages {
 	private Plugin plugin;
 
 	private File dataFolder;
-	private String datapath="";
+	private String datapath = "";
 
 	public Messages(Plugin plugin) {
 		this.plugin = plugin;
@@ -43,7 +46,7 @@ public class Messages {
 	private static Map<String, String> mTranslationTable;
 	private static String[] mValidEncodings = new String[] { "UTF-16", "UTF-16BE", "UTF-16LE", "UTF-8", "ISO646-US" };
 	private static final String PREFIX = ChatColor.GOLD + "[BagOfGoldCore]" + ChatColor.RESET;
-	private static String[] sources = new String[] { "en_US_shared.lang" };
+	private static String[] sources = new String[] { "en_US.lang" };
 
 	public void exportDefaultLanguages(Plugin plugin) {
 		File folder = new File(dataFolder, "lang");
@@ -52,13 +55,16 @@ public class Messages {
 
 		for (String source : sources) {
 			File dest = new File(folder, source);
-			if (!dest.exists()) {
+			if (!dest.exists()
+					|| !injectChanges(plugin.getResource("lang/" + source), new File(dataFolder, "lang/" + source))) {
 				Bukkit.getConsoleSender().sendMessage(PREFIX + " Creating language file " + source + " from JAR.");
-				plugin.saveResource("lang/" + source, false);
-			} else {
-				if (!injectChanges(plugin.getResource("lang/" + source),
-						new File(dataFolder, "lang/" + source))) {
-					plugin.saveResource("lang/" + source, true);
+				InputStream is = plugin.getResource("lang/" + source);
+				String outputFile = datapath + "/lang/" + source;
+				try {
+					Files.copy(is, Paths.get(outputFile));
+					File file = new File(outputFile);
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
 			}
 			mTranslationTable = loadLang(dest);

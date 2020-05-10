@@ -11,6 +11,7 @@ public class ConfigManager extends AutoConfig {
 	public ConfigManager(File file) {
 
 		super(file);
+		
 		setCategoryComment("shared", "########################################################################"
 				+ "\nShared Settings" + "\n########################################################################");
 	

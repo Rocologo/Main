@@ -18,25 +18,28 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.MetadataValue;
 
+import one.lindegaard.Core.Core;
 import one.lindegaard.Core.Strings;
 import one.lindegaard.Core.Tools;
 
 public class Reward {
 
-	public final static String MH_REWARD_DATA = "MH:HiddenRewardData";
+	public final static String MH_REWARD_DATA_NEW = "MH:HiddenRewardDataNew";
 
 	private String displayname = ""; // Hidden(0)
 	private double money = 0; // Hidden(1) - the value of the reward
 	private RewardType rewardType = null; // Hidden(2)
 	private UUID skinUUID; // Hidden(4)
-	private String encodedHash; // Hidden(5) -
+	private String encodedHash; // Hidden(5)
+	private int id; // only used when the Reward is placed as a Block and when saved
 
 	public Reward() {
 		this.displayname = "Skull";
 		this.money = 0;
 		this.rewardType = RewardType.BAGOFGOLD;
-		this.skinUUID=UUID.fromString(RewardType.BAGOFGOLD.getUUID());
+		this.skinUUID = UUID.fromString(RewardType.BAGOFGOLD.getUUID());
 		this.encodedHash = Strings.encode(makeDecodedHash());
+		this.id = 0;
 	}
 
 	public Reward(Reward reward) {
@@ -45,9 +48,10 @@ public class Reward {
 		this.rewardType = reward.getRewardType();
 		this.skinUUID = reward.getSkinUUID();
 		this.encodedHash = reward.getEncodedHash();
+		this.id = reward.getUniqueID();
 	}
 
-	public Reward(String displayName, double money, RewardType rewardType, UUID uniqueId, UUID skinUUID) {
+	public Reward(String displayName, double money, RewardType rewardType, UUID skinUUID) {
 		this.displayname = displayName;
 		this.money = money;
 		this.rewardType = rewardType;
@@ -55,12 +59,20 @@ public class Reward {
 		this.encodedHash = Strings.encode(makeDecodedHash());
 	}
 
+	public int getUniqueID() {
+		return id;
+	}
+
+	public void setUniqueID(int id) {
+		this.id = id;
+	}
+
 	public Reward(List<String> lore) {
 		setReward(lore);
 	}
 
 	private String makeDecodedHash() {
-		return String.format(Locale.ENGLISH, "%.5f", money) + rewardType.toString();
+		return String.format(Locale.ENGLISH, "%.5f", money) + rewardType.getType();
 	}
 
 	public boolean checkHash() {
@@ -116,10 +128,13 @@ public class Reward {
 	public ArrayList<String> getHiddenLore() {
 		ArrayList<String> lores = new ArrayList<String>(Arrays.asList("Hidden(0):" + displayname, // displayname
 				"Hidden(1):" + String.format(Locale.ENGLISH, "%.5f", money), // value
-				"Hidden(2):" + rewardType.getRewardType(), // type
+				"Hidden(2):" + rewardType.getType(), // type
 				"Hidden(4):" + (skinUUID == null ? "" : skinUUID.toString()), // SkinUUID
 				"Hidden(5):" + encodedHash)); // Hash
+		if (rewardType != RewardType.BAGOFGOLD)
+			lores.add(Core.getMessages().getString("core.reward.lore"));
 		return lores;
+
 	}
 
 	/**
@@ -214,13 +229,13 @@ public class Reward {
 
 	public String toString() {
 		return "{Description=" + displayname + ", money=" + String.format(Locale.ENGLISH, "%.5f", money) + ", type="
-				+ rewardType + ", Skin=" + skinUUID + "}";
+				+ rewardType.getType() + ", Skin=" + skinUUID + "}";
 	}
 
 	public void save(ConfigurationSection section) {
 		section.set("displayname", displayname);
 		section.set("money", String.format(Locale.ENGLISH, "%.5f", money));
-		section.set("type", rewardType.toString());
+		section.set("type", rewardType.getType());
 		section.set("skinuuid", skinUUID == null ? "" : skinUUID.toString());
 		section.set("hash", encodedHash == null ? "" : Strings.decode(encodedHash));
 	}
@@ -270,14 +285,14 @@ public class Reward {
 	}
 
 	public static boolean isReward(Item item) {
-		return item.hasMetadata(MH_REWARD_DATA) || isReward(item.getItemStack());
+		return item.hasMetadata(MH_REWARD_DATA_NEW) || isReward(item.getItemStack());
 	}
 
 	public static Reward getReward(Item item) {
-		if (item.hasMetadata(MH_REWARD_DATA))
-			for (MetadataValue mv : item.getMetadata(MH_REWARD_DATA)) {
+		if (item.hasMetadata(MH_REWARD_DATA_NEW))
+			for (MetadataValue mv : item.getMetadata(MH_REWARD_DATA_NEW)) {
 				if (mv.value() instanceof Reward)
-					return (Reward) item.getMetadata(MH_REWARD_DATA).get(0).value();
+					return (Reward) item.getMetadata(MH_REWARD_DATA_NEW).get(0).value();
 			}
 		return getReward(item.getItemStack());
 	}
@@ -306,19 +321,19 @@ public class Reward {
 	}
 
 	public static boolean isReward(Block block) {
-		return block.hasMetadata(MH_REWARD_DATA);
+		return block.hasMetadata(MH_REWARD_DATA_NEW);
 	}
 
 	public static Reward getReward(Block block) {
-		return (Reward) block.getMetadata(MH_REWARD_DATA).get(0).value();
+		return (Reward) block.getMetadata(MH_REWARD_DATA_NEW).get(0).value();
 	}
 
 	public static boolean isReward(Entity entity) {
-		return entity.hasMetadata(MH_REWARD_DATA);
+		return entity.hasMetadata(MH_REWARD_DATA_NEW);
 	}
 
 	public static Reward getReward(Entity entity) {
-		return (Reward) entity.getMetadata(MH_REWARD_DATA).get(0).value();
+		return (Reward) entity.getMetadata(MH_REWARD_DATA_NEW).get(0).value();
 	}
 
 	/**
