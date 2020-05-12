@@ -75,9 +75,14 @@ public class Reward {
 		return String.format(Locale.ENGLISH, "%.5f", money) + rewardType.getType();
 	}
 
+	private String makeDecodedHashOld() {
+		return String.format(Locale.ENGLISH, "%.5f", money) + rewardType.getUUID();
+	}
+
 	public boolean checkHash() {
 		if (this.encodedHash != null)
-			return makeDecodedHash().equals(Strings.decode(this.encodedHash));
+			return makeDecodedHash().equals(Strings.decode(this.encodedHash))
+					|| makeDecodedHashOld().equals(Strings.decode(this.encodedHash));
 		else
 			return true;
 	}
@@ -104,7 +109,20 @@ public class Reward {
 			// RewardType
 			else if (str.startsWith("Hidden(2):")) {
 				rewardTypeStr = str.substring(10); // Dont remove this line
-				this.rewardType = RewardType.valueOf(str.substring(10));
+				try {
+					this.rewardType = RewardType.valueOf(rewardTypeStr);
+				} catch (Exception e) {
+					if (RewardType.BAGOFGOLD.getUUID().equals(rewardTypeStr))
+						rewardType = RewardType.BAGOFGOLD;
+					else if (RewardType.ITEM.getUUID().equals(rewardTypeStr))
+						rewardType = RewardType.ITEM;
+					else if (RewardType.KILLED.getUUID().equals(rewardTypeStr))
+						rewardType = RewardType.KILLED;
+					else if (RewardType.KILLER.getUUID().equals(rewardTypeStr))
+						rewardType = RewardType.KILLER;
+					else
+						rewardType = RewardType.BAGOFGOLD;
+				}
 			}
 
 			// Skin UUID
@@ -132,7 +150,7 @@ public class Reward {
 				"Hidden(4):" + (skinUUID == null ? "" : skinUUID.toString()), // SkinUUID
 				"Hidden(5):" + encodedHash)); // Hash
 		if (rewardType != RewardType.BAGOFGOLD)
-			lores.add(Core.getMessages().getString(Core.getMessages().getString("core.reward.lore")));
+			lores.add(Core.getMessages().getString("core.reward.lore"));
 		return lores;
 
 	}
@@ -296,12 +314,10 @@ public class Reward {
 			String lore = itemStack.getItemMeta().getLore().get(2);
 			if (lore.startsWith("Hidden(2):")) {
 				lore = lore.substring(10);
-				RewardType rewardType = RewardType.valueOf(lore);
-				if (rewardType != null)
-					return true;
-				else
-					return lore.equals(RewardType.BAGOFGOLD.getUUID()) || lore.equals(RewardType.KILLED.getUUID())
-							|| lore.equals(RewardType.KILLER.getUUID()) || lore.equals(RewardType.ITEM.getUUID());
+				return lore.equals(RewardType.BAGOFGOLD.getType()) || lore.equals(RewardType.KILLED.getType())
+						|| lore.equals(RewardType.KILLER.getType()) || lore.equals(RewardType.ITEM.getType())
+						|| lore.equals(RewardType.BAGOFGOLD.getUUID()) || lore.equals(RewardType.KILLED.getUUID())
+						|| lore.equals(RewardType.KILLER.getUUID()) || lore.equals(RewardType.ITEM.getUUID());
 			} else
 				return false;
 
