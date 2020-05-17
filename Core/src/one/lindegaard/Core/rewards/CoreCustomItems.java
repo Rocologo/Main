@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -96,7 +97,7 @@ public class CoreCustomItems {
 	 * @param money
 	 * @return ItemStack with custom texture.
 	 */
-	public ItemStack getCustomtexture(String mDisplayName, double money, RewardType mRewardType, UUID skinUuid,
+	public ItemStack getCustomtexture(Reward reward,
 			String mTextureValue, String mTextureSignature) {
 		ItemStack skull = CoreCustomItems.getDefaultPlayerHead(1);
 		if (mTextureSignature.isEmpty() || mTextureValue.isEmpty())
@@ -104,7 +105,7 @@ public class CoreCustomItems {
 
 		SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
 
-		GameProfile profile = new GameProfile(skinUuid, mDisplayName);
+		GameProfile profile = new GameProfile(reward.getSkinUUID(), reward.getDisplayName());
 		if (mTextureSignature.isEmpty())
 			profile.getProperties().put("textures", new Property("textures", mTextureValue));
 		else
@@ -125,48 +126,7 @@ public class CoreCustomItems {
 		} catch (IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
 		}
-		if (mRewardType == RewardType.BAGOFGOLD)
-			skullMeta.setLore(new ArrayList<String>(Arrays.asList("Hidden(0):" + mDisplayName,
-					"Hidden(1):" + String.format(Locale.ENGLISH, "%.5f", money), "Hidden(2):" + mRewardType.getType(),
-					"Hidden(4):" + skinUuid, "Hidden(5):"
-							+ Strings.encode(String.format(Locale.ENGLISH, "%.5f", money) + mRewardType.getType()))));
-		else
-			skullMeta.setLore(new ArrayList<String>(Arrays.asList("Hidden(0):" + mDisplayName,
-					"Hidden(1):" + String.format(Locale.ENGLISH, "%.5f", money), "Hidden(2):" + mRewardType.getType(),
-					"Hidden(4):" + skinUuid,
-					"Hidden(5):" + Strings.encode(String.format(Locale.ENGLISH, "%.5f", money) + mRewardType.getType()),
-					Core.getMessages().getString("core.reward.lore"))));
-
-		if (mRewardType == RewardType.BAGOFGOLD)
-			skullMeta.setDisplayName(Core.getConfigManager().bagOfGoldDisplayNameFormat
-					.replace("{displayname}", Core.getConfigManager().bagOfGoldName)
-					.replace("{value}", Tools.format(money)));
-
-		else if (mRewardType == RewardType.ITEM)
-			if (money == 0)
-				skullMeta.setDisplayName(Core.getConfigManager().itemDisplayNameFormatNoValue
-						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
-			else
-				skullMeta.setDisplayName(Core.getConfigManager().itemDisplayNameFormat
-						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
-
-		else if (mRewardType == RewardType.KILLED)
-			if (money == 0)
-				skullMeta.setDisplayName(Core.getConfigManager().killedHeadDisplayNameFormatNoValue
-						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
-			else
-				skullMeta.setDisplayName(Core.getConfigManager().killedHeadDisplayNameFormat
-						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
-
-		else if (mRewardType == RewardType.KILLER)
-			if (money == 0)
-				skullMeta.setDisplayName(Core.getConfigManager().killerHeadDisplayNameFormatNoValue
-						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
-			else
-				skullMeta.setDisplayName(Core.getConfigManager().killerHeadDisplayNameFormat
-						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
-
-		skull.setItemMeta(skullMeta);
+		skull = Reward.setDisplayNameAndHiddenLores(skull, reward);
 		return skull;
 	}
 

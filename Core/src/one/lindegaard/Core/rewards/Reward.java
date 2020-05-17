@@ -362,6 +362,39 @@ public class Reward {
 		else
 			skullMeta.setDisplayName(reward.isItemReward() ? Tools.format(reward.getMoney())
 					: reward.getDisplayName() + " (" + Tools.format(reward.getMoney()) + ")");
+
+		if (reward.getRewardType() == RewardType.BAGOFGOLD) {
+			skullMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
+					Core.getConfigManager().bagOfGoldDisplayNameFormat.replace("{displayname}", reward.getDisplayName())
+							.replace("{value}", Tools.format(reward.getMoney()))));
+
+		} else if (reward.getRewardType() == RewardType.ITEM)
+			if (reward.getMoney() == 0)
+				skullMeta.setDisplayName(Core.getConfigManager().itemDisplayNameFormatNoValue.replace("{displayname}",
+						reward.getDisplayName()));
+			else
+				skullMeta.setDisplayName(
+						Core.getConfigManager().itemDisplayNameFormat.replace("{displayname}", reward.getDisplayName())
+								.replace("{value}", Tools.format(reward.getMoney())));
+
+		else if (reward.getRewardType() == RewardType.KILLED)
+			if (reward.getMoney() == 0)
+				skullMeta.setDisplayName(Core.getConfigManager().killedHeadDisplayNameFormatNoValue
+						.replace("{displayname}", reward.getDisplayName()));
+			else
+				skullMeta.setDisplayName(Core.getConfigManager().killedHeadDisplayNameFormat
+						.replace("{displayname}", reward.getDisplayName())
+						.replace("{value}", Tools.format(reward.getMoney())));
+
+		else if (reward.getRewardType() == RewardType.KILLER)
+			if (reward.getMoney() == 0)
+				skullMeta.setDisplayName(Core.getConfigManager().killerHeadDisplayNameFormatNoValue
+						.replace("{displayname}", reward.getDisplayName()));
+			else
+				skullMeta.setDisplayName(Core.getConfigManager().killerHeadDisplayNameFormat
+						.replace("{displayname}", reward.getDisplayName())
+						.replace("{value}", Tools.format(reward.getMoney())));
+
 		skull.setItemMeta(skullMeta);
 		return skull;
 	}
