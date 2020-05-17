@@ -79,7 +79,7 @@
 	<properties>
 
 		<!-- Build versions -->
-		<core.version>0.2.5-SNAPSHOT</core.version> 
+		<core.version>0.2.6-SNAPSHOT</core.version> 
 		<NMS_Shared.version>0.0.5-SNAPSHOT</NMS_Shared.version>
 
 		<build.number>TestBuild</build.number>
