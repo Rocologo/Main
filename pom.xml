@@ -79,7 +79,6 @@
 	<properties>
 
 		<!-- Build versions -->
-		<core.version>0.2.7-SNAPSHOT</core.version> 
 		<NMS_Shared.version>0.0.5-SNAPSHOT</NMS_Shared.version>
 
 		<build.number>TestBuild</build.number>
