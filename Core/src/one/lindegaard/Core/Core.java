@@ -25,6 +25,10 @@ public class Core {
 
 		mConfig = new ConfigManager(mFileShared);
 		if (mConfig.loadConfig()) {
+			if (config_version == -1 || config_version == 0) {
+				mConfig.importConfig(plugin);
+				config_version = 1;
+			}
 			mConfig.saveConfig();
 		} else
 			throw new RuntimeException("[BagOfGoldCore] Could not load shared_config.yml");

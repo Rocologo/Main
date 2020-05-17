@@ -1,7 +1,9 @@
 package one.lindegaard.Core.config;
 
 import java.io.File;
+
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.config.AutoConfig;
 import one.lindegaard.Core.config.ConfigField;
@@ -12,7 +14,10 @@ public class ConfigManager extends AutoConfig {
 
 		super(file);
 
-		setCategoryComment("shared", "########################################################################"
+		setCategoryComment("general", "########################################################################"
+				+ "\ngeneral Settings" + "\n########################################################################");
+
+		setCategoryComment("eConomy", "########################################################################"
 				+ "\nShared Settings" + "\n########################################################################");
 
 		setCategoryComment("reward", "########################################################################"
@@ -29,18 +34,33 @@ public class ConfigManager extends AutoConfig {
 	}
 
 	// #####################################################################################
-	// Shared settings
+	// General settings
 	// #####################################################################################
 
 	@ConfigField(name = "language", category = "general", comment = "The language (file) to use. You can put the name of the language file as the language code "
 			+ "\n(eg. en_US, fr_FR, hu_HU, pt_BR, zh_CN, ru_RU ect.) or you can specify the name of a custom file without the .lang\nPlease check the lang/ folder for a list of all available translations.")
 	public String language = "en_US";
 
-	@ConfigField(name = "number-format", category = "shared", comment = "Here you can change the way the numbers is formatted when you use BagOfGold as an EconomyPlugin.")
+	@ConfigField(name = "debug", category = "general", comment = "Enable/disable debug information")
+	public boolean debug = false;
+
+	@ConfigField(name = "config_version", category = "general", comment = "Config version. Do NOT change this!")
+	public int configVersion = 0;
+
+	// #####################################################################################
+	// eConomy settings
+	// #####################################################################################
+
+	@ConfigField(name = "number-format", category = "eConomy", comment = "Here you can change the way the numbers is formatted when you use BagOfGold as an EconomyPlugin.")
 	public String numberFormat = "#.#####";
 
-	@ConfigField(name = "debug", category = "shared", comment = "Enable/disable debug information")
-	public boolean debug = false;
+	@ConfigField(name = "reward_rounding", category = "eConomy", comment = "Rounding of rewards when you uses a range or %. (ex creeperPrize=10:30) the reward."
+			+ "\nAll numbers except 0 can be used. "
+			+ "\nSet rounding_reward=1 if you want integers. IE. 10,11,12,13,14..."
+			+ "\nSet rounding_reward=0.01 if you want 2 decimals 10.00, 10.01, 10.02... integers."
+			+ "\nSet rounding_reward=5 if you want multipla of 5 IE. 10,15,20,25..."
+			+ "\nSet rounding_reward=2 if you want multipla of 2 IE. 10,12,14,16...")
+	public double rewardRounding = 1;
 
 	// #####################################################################################
 	// Reward Settings
@@ -66,5 +86,20 @@ public class ConfigManager extends AutoConfig {
 	public String killerHeadDisplayNameFormat = "&e{killer} (&f{value}&e)&r";
 	@ConfigField(name = "killer-displayname-format-no-value", category = "reward.name", comment = "This is the displayname format of BagOfGold (KILLER) items when the value is 0.")
 	public String killerHeadDisplayNameFormatNoValue = "&e{killer}&r";
+
+	/**
+	 * importConfig import settings from BagOfGold and/or from MobHunting
+	 * 
+	 * @param plugin
+	 */
+	public void importConfig(Plugin plugin) {
+		File mFileShared = new File(plugin.getDataFolder(), "config.yml");
+		YamlConfiguration yamlConfig = YamlConfiguration.loadConfiguration(mFileShared);
+		this.language = yamlConfig.getString("general.language");
+		this.numberFormat = yamlConfig.getString("economy.number-format");
+		this.rewardRounding = yamlConfig.getDouble("economy.reward_rounding");
+		this.bagOfGoldName = yamlConfig.getString("dropmoneyonground.drop-money-on-ground-skull-reward-name");
+		configVersion = 1;
+	}
 
 }
