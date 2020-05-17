@@ -103,8 +103,8 @@ public class CoreCustomItems {
 		if (mTextureSignature.isEmpty() || mTextureValue.isEmpty())
 			return skull;
 
+		// add custom texture to skull
 		SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
-
 		GameProfile profile = new GameProfile(reward.getSkinUUID(), reward.getDisplayName());
 		if (mTextureSignature.isEmpty())
 			profile.getProperties().put("textures", new Property("textures", mTextureValue));
@@ -118,14 +118,15 @@ public class CoreCustomItems {
 			e.printStackTrace();
 			return skull;
 		}
-
 		profileField.setAccessible(true);
-
 		try {
 			profileField.set(skullMeta, profile);
 		} catch (IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
 		}
+		skull.setItemMeta(skullMeta);
+		
+		// add displayname and lores to skull
 		skull = Reward.setDisplayNameAndHiddenLores(skull, reward);
 		return skull;
 	}
