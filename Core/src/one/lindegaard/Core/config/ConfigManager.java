@@ -88,7 +88,7 @@ public class ConfigManager extends AutoConfig {
 	public String killerHeadDisplayNameFormatNoValue = "&e{killer}&r";
 
 	/**
-	 * importConfig import settings from BagOfGold and/or from MobHunting
+	 * importConfig import settings from BagOfGold and/or from MobHunting - ADDED at BagOfGold V3.0.0 and MobHunting V7.0.8
 	 * 
 	 * @param plugin
 	 */
