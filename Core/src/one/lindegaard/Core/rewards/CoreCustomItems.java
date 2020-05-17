@@ -1,10 +1,24 @@
 package one.lindegaard.Core.rewards;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
+
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
 
 import one.lindegaard.Core.shared.Skins;
+import one.lindegaard.Core.Core;
+import one.lindegaard.Core.Strings;
+import one.lindegaard.Core.Tools;
 import one.lindegaard.Core.server.Servers;
 import one.lindegaard.Core.v1_10_R1.Skins_1_10_R1;
 import one.lindegaard.Core.v1_11_R1.Skins_1_11_R1;
@@ -72,6 +86,91 @@ public class CoreCustomItems {
 		return sk;
 	}
 
+	/**
+	 * Return an ItemStack with a custom texture. If Mojang changes the way they
+	 * calculate Signatures this method will stop working.
+	 *
+	 * @param mPlayerUUID
+	 * @param mDisplayName
+	 * @param mTextureValue
+	 * @param mTextureSignature
+	 * @param money
+	 * @return ItemStack with custom texture.
+	 */
+	public ItemStack getCustomtexture(String mDisplayName, double money, RewardType mRewardType, UUID skinUuid,
+			String mTextureValue, String mTextureSignature) {
+		ItemStack skull = CoreCustomItems.getDefaultPlayerHead(1);
+		if (mTextureSignature.isEmpty() || mTextureValue.isEmpty())
+			return skull;
+
+		SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+
+		GameProfile profile = new GameProfile(skinUuid, mDisplayName);
+		if (mTextureSignature.isEmpty())
+			profile.getProperties().put("textures", new Property("textures", mTextureValue));
+		else
+			profile.getProperties().put("textures", new Property("textures", mTextureValue, mTextureSignature));
+		Field profileField = null;
+
+		try {
+			profileField = skullMeta.getClass().getDeclaredField("profile");
+		} catch (NoSuchFieldException | SecurityException e) {
+			e.printStackTrace();
+			return skull;
+		}
+
+		profileField.setAccessible(true);
+
+		try {
+			profileField.set(skullMeta, profile);
+		} catch (IllegalArgumentException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		if (mRewardType == RewardType.BAGOFGOLD)
+			skullMeta.setLore(new ArrayList<String>(Arrays.asList("Hidden(0):" + mDisplayName,
+					"Hidden(1):" + String.format(Locale.ENGLISH, "%.5f", money), "Hidden(2):" + mRewardType.getType(),
+					"Hidden(4):" + skinUuid, "Hidden(5):"
+							+ Strings.encode(String.format(Locale.ENGLISH, "%.5f", money) + mRewardType.getType()))));
+		else
+			skullMeta.setLore(new ArrayList<String>(Arrays.asList("Hidden(0):" + mDisplayName,
+					"Hidden(1):" + String.format(Locale.ENGLISH, "%.5f", money), "Hidden(2):" + mRewardType.getType(),
+					"Hidden(4):" + skinUuid,
+					"Hidden(5):" + Strings.encode(String.format(Locale.ENGLISH, "%.5f", money) + mRewardType.getType()),
+					Core.getMessages().getString("core.reward.lore"))));
+
+		if (mRewardType == RewardType.BAGOFGOLD)
+			skullMeta.setDisplayName(Core.getConfigManager().bagOfGoldDisplayNameFormat
+					.replace("{displayname}", Core.getConfigManager().bagOfGoldName)
+					.replace("{value}", Tools.format(money)));
+
+		else if (mRewardType == RewardType.ITEM)
+			if (money == 0)
+				skullMeta.setDisplayName(Core.getConfigManager().itemDisplayNameFormatNoValue
+						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
+			else
+				skullMeta.setDisplayName(Core.getConfigManager().itemDisplayNameFormat
+						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
+
+		else if (mRewardType == RewardType.KILLED)
+			if (money == 0)
+				skullMeta.setDisplayName(Core.getConfigManager().killedHeadDisplayNameFormatNoValue
+						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
+			else
+				skullMeta.setDisplayName(Core.getConfigManager().killedHeadDisplayNameFormat
+						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
+
+		else if (mRewardType == RewardType.KILLER)
+			if (money == 0)
+				skullMeta.setDisplayName(Core.getConfigManager().killerHeadDisplayNameFormatNoValue
+						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
+			else
+				skullMeta.setDisplayName(Core.getConfigManager().killerHeadDisplayNameFormat
+						.replace("{displayname}", mDisplayName).replace("{value}", Tools.format(money)));
+
+		skull.setItemMeta(skullMeta);
+		return skull;
+	}
+
 	public static ItemStack getDefaultSkeletonHead(int amount) {
 		if (Servers.isMC113OrNewer())
 			return new ItemStack(Material.SKELETON_SKULL, amount);
@@ -92,7 +191,7 @@ public class CoreCustomItems {
 		else
 			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 2);
 	}
-	
+
 	public static ItemStack getDefaultPlayerHead(int amount) {
 		if (Servers.isMC113OrNewer())
 			return new ItemStack(Material.PLAYER_HEAD, amount);

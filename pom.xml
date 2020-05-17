@@ -300,7 +300,8 @@
 		<repository>
 			<id>battleplugins-net</id>
 			<name>BattlePlugins</name>
-			<url>https://repo.battleplugins.org/artifactory/libs-release-local/</url>
+			<url>http://rainbowcraft.sytes.net/maven/repository/</url>
+			<!-- <url>https://repo.battleplugins.org/artifactory/libs-release-local/</url> -->
 		</repository>
 
 		<!-- MiniGamesLib / MinigamesAPI repo -->

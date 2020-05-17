@@ -11,13 +11,21 @@ public class ConfigManager extends AutoConfig {
 	public ConfigManager(File file) {
 
 		super(file);
-		
+
 		setCategoryComment("shared", "########################################################################"
 				+ "\nShared Settings" + "\n########################################################################");
-	
-		setCategoryComment("bagofgold", "########################################################################"
-				+ "\nBagOfGold Reward Settings" + "\n########################################################################");
-	
+
+		setCategoryComment("reward", "########################################################################"
+				+ "\nReward Settings" + "\n########################################################################");
+
+	}
+
+	public static int getConfigVersion(File file) {
+		if (!file.exists())
+			return -1;
+
+		YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
+		return config.getInt("shared.config_version", config.contains("shared.debug") == true ? 0 : -1);
 	}
 
 	// #####################################################################################
@@ -30,16 +38,33 @@ public class ConfigManager extends AutoConfig {
 
 	@ConfigField(name = "number-format", category = "shared", comment = "Here you can change the way the numbers is formatted when you use BagOfGold as an EconomyPlugin.")
 	public String numberFormat = "#.#####";
-	
+
 	@ConfigField(name = "debug", category = "shared", comment = "Enable/disable debug information")
 	public boolean debug = false;
 
-	public static int getConfigVersion(File file) {
-		if (!file.exists())
-			return -1;
+	// #####################################################################################
+	// Reward Settings
+	// #####################################################################################
 
-		YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
-		return config.getInt("shared.config_version", config.contains("shared.debug") == true ? 0 : -1);
-	}
+	@ConfigField(name = "bagofgold-name", category = "reward.name", comment = "This is the name of the currency which will be used in the displayname.")
+	public String bagOfGoldName = "BagOfGold";
+
+	@ConfigField(name = "bagofgold-displayname-format", category = "reward.name", comment = "This is the displayname format of BagOfGold (SKULL) items.")
+	public String bagOfGoldDisplayNameFormat = "&6{displayname} (&f{value}&6)&r";
+
+	@ConfigField(name = "item-displayname-format", category = "reward.name", comment = "This is the displayname format of BagOfGold (ITEM) items.")
+	public String itemDisplayNameFormat = "&6{value}&r";
+	@ConfigField(name = "item-displayname-format-no-value", category = "reward.name", comment = "This is the displayname format of BagOfGold (ITEM) items when the value is 0.")
+	public String itemDisplayNameFormatNoValue = "";
+
+	@ConfigField(name = "killed-displayname-format", category = "reward.name", comment = "This is the displayname format of BagOfGold (KILLED) items.")
+	public String killedHeadDisplayNameFormat = "&e{killer} (&f{value}&e)&r";
+	@ConfigField(name = "killed-displayname-format-no-value", category = "reward.name", comment = "This is the displayname format of BagOfGold (KILLED) items when the value is 0.")
+	public String killedHeadDisplayNameFormatNoValue = "&e{killer}&r";
+
+	@ConfigField(name = "killer-displayname-format", category = "reward.name", comment = "This is the displayname format of BagOfGold (KILLER) items.")
+	public String killerHeadDisplayNameFormat = "&e{killer} (&f{value}&e)&r";
+	@ConfigField(name = "killer-displayname-format-no-value", category = "reward.name", comment = "This is the displayname format of BagOfGold (KILLER) items when the value is 0.")
+	public String killerHeadDisplayNameFormatNoValue = "&e{killer}&r";
 
 }
