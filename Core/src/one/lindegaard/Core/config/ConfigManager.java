@@ -235,7 +235,7 @@ public class ConfigManager extends AutoConfig {
 	@ConfigField(name = "type", category = "database", comment = "Type of database to use. Valid values are: sqlite, mysql")
 	public String databaseType = "sqlite";
 
-	@ConfigField(name = "database", category = "database")
+	@ConfigField(name = "database_name", category = "database")
 	public String databaseName = "bagofgold";
 
 	@ConfigField(name = "save-period", category = "general", comment = "Time between saves in ticks (20 ticks ~ 1 sec) This number must be higher that 1200 ticks = 2 minutes,"
@@ -264,23 +264,44 @@ public class ConfigManager extends AutoConfig {
 	// #####################################################################################
 	/**
 	 * importConfig import settings from BagOfGold and/or from MobHunting - ADDED at
-	 * BagOfGold V3.0.0 and MobHunting V7.0.8
+	 * BagOfGold V3.0.0 and MobHunting V7.5.0
 	 * 
 	 * @param plugin
 	 */
 	public void importConfig(Plugin plugin) {
-		File mFileShared = new File(plugin.getDataFolder(), "config.yml");
+		File mFileShared = new File(plugin.getDataFolder(), "config.yml");	
 		YamlConfiguration yamlConfig = YamlConfiguration.loadConfiguration(mFileShared);
+		
+		// Import general settings
 		this.language = yamlConfig.getString("general.language");
-		this.numberFormat = yamlConfig.getString("economy.number_format");
 
+		// Import economy settings
+		this.numberFormat = yamlConfig.getString("economy.number_format");
 		if (Core.getBagOfGoldCompat().isSupported())
 			this.rewardRounding = yamlConfig.getDouble("economy.reward_rounding", 10);
 		else if (Core.getMobHuntingCompat().isSupported())
 			this.rewardRounding = yamlConfig.getDouble("general.reward_rounding", 20);
 		else
 			this.rewardRounding = 30;
+		
+		// Import database settings
+		if (Core.getBagOfGoldCompat().isSupported()) {
+			this.databaseType=yamlConfig.getString("database.type");
+			this.databaseUsername=yamlConfig.getString("database.username");
+			this.databasePassword=yamlConfig.getString("database.password");
+			this.databaseHost=yamlConfig.getString("database.host");
+			this.databaseUseSSL=yamlConfig.getString("database.mysql.useSSL");
+			this.databaseName=yamlConfig.getString("database.database");
+		} else if (Core.getMobHuntingCompat().isSupported()) {
+			this.databaseType=yamlConfig.getString("database.type");
+			this.databaseUsername=yamlConfig.getString("database.mysql.username");
+			this.databasePassword=yamlConfig.getString("database.mysql.password");
+			this.databaseHost=yamlConfig.getString("database.mysql.host");
+			this.databaseUseSSL=yamlConfig.getString("database.mysql.useSSL");
+			this.databaseName=yamlConfig.getString("database.database_name");
+		}
 
+		// Import reward settings 
 		this.bagOfGoldName = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name");
 		this.bagOfGoldNamePlural = yamlConfig
 				.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name_plural");

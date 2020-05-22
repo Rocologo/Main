@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Set;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -56,6 +55,12 @@ public class SQLiteDataStore extends DatabaseDataStore {
 			mInsertPlayerSettings = connection.prepareStatement(
 					"INSERT OR REPLACE INTO mh_PlayerSettings (UUID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE,TEXTURE,SIGNATURE,LAST_LOGON,LAST_INTEREST) "
 							+ "VALUES(?,?,?,?,?,?,?,?,?);");
+			break;
+		case UPDATE_PLAYER_NAME:
+			mUpdatePlayerName = connection.prepareStatement("UPDATE mh_Players SET NAME=? WHERE UUID=?;");
+			break;
+		case GET_PLAYER_BY_PLAYER_ID:
+			mGetPlayerByPlayerId = connection.prepareStatement("SELECT UUID FROM mh_Players WHERE PLAYER_ID=?;");
 			break;
 
 		}
