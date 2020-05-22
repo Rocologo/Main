@@ -1,0 +1,38 @@
+package one.lindegaard.Core.compatibility;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.plugin.Plugin;
+
+import one.lindegaard.Core.compatibility.CompatPlugin;
+
+public class BagOfGoldCompat {
+
+	private Plugin mPlugin;
+	private static boolean supported = false;
+
+	public BagOfGoldCompat() {
+		mPlugin = Bukkit.getPluginManager().getPlugin(CompatPlugin.BagOfGold.getName());
+
+		if (mPlugin.getDescription().getVersion().compareTo("3.0.0") >= 0) {
+			Bukkit.getServer().getConsoleSender()
+					.sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RESET
+							+ "Enabling compatibility with BagOfGold ("
+							+ mPlugin.getDescription().getVersion() + ")");
+			supported = true;
+		} else {
+			Bukkit.getServer().getConsoleSender()
+					.sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED
+							+ "Your current version of BagOfGold (" + mPlugin.getDescription().getVersion()
+							+ ") is outdated. Please upgrade to 3.0.0 or newer.");
+			Bukkit.getPluginManager().disablePlugin(mPlugin);
+		}
+
+	}
+
+	public boolean isSupported() {
+		return supported;
+	}
+	
+
+}

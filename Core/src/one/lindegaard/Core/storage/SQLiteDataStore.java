@@ -1,0 +1,116 @@
+package one.lindegaard.Core.storage;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Set;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.plugin.Plugin;
+
+import one.lindegaard.Core.Core;
+
+public class SQLiteDataStore extends DatabaseDataStore {
+
+	private Plugin plugin;
+
+	public SQLiteDataStore(Plugin plugin) {
+		super(plugin);
+		this.plugin = plugin;
+	}
+
+	// *******************************************************************************
+	// SETUP / INITIALIZE
+	// *******************************************************************************
+
+	@Override
+	protected Connection setupConnection() throws DataStoreException {
+		try {
+			Class.forName("org.sqlite.JDBC");
+			Connection connection = DriverManager.getConnection("jdbc:sqlite:" + plugin.getDataFolder().getPath() + "/"
+					+ Core.getConfigManager().databaseName + ".db");
+			connection.setAutoCommit(false);
+			return connection;
+		} catch (ClassNotFoundException classNotFoundEx) {
+			throw new DataStoreException("SQLite not present on the classpath", classNotFoundEx);
+		} catch (SQLException sqlEx) {
+			throw new DataStoreException("Error creating sql connection", sqlEx);
+		}
+	}
+
+	@Override
+	protected void openPreparedStatements(Connection connection, PreparedConnectionType preparedConnectionType)
+			throws SQLException {
+		switch (preparedConnectionType) {
+		case GET_PLAYER_UUID:
+			mGetPlayerUUID = connection.prepareStatement("SELECT UUID FROM mh_PlayerSettings WHERE NAME=?;");
+			break;
+		case GET_PLAYER_SETTINGS:
+			mGetPlayerSettings = connection.prepareStatement("SELECT * FROM mh_PlayerSettings WHERE UUID=?;");
+			break;
+		case INSERT_PLAYER_SETTINGS:
+			mInsertPlayerSettings = connection.prepareStatement(
+					"INSERT OR REPLACE INTO mh_PlayerSettings (UUID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE,TEXTURE,SIGNATURE,LAST_LOGON,LAST_INTEREST) "
+							+ "VALUES(?,?,?,?,?,?,?,?,?);");
+			break;
+
+		}
+	}
+
+	@Override
+	public void databaseConvertToUtf8(String database_name) throws DataStoreException {
+		ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
+		console.sendMessage(ChatColor.RED + "[BagOfGold] this command is only for MySQL");
+	}
+
+	// *******************************************************************************
+	// V3 DATABASE SETUP
+	// *******************************************************************************
+
+	@Override
+	protected void setupV3Tables(Connection connection) throws SQLException {
+		Statement create = connection.createStatement();
+
+		// Create new empty tables if they do not exist
+		String lm = Core.getConfigManager().learningMode ? "1" : "0";
+		create.executeUpdate("CREATE TABLE IF NOT EXISTS mh_PlayerSettings" //
+				+ "(UUID TEXT PRIMARY KEY," //
+				+ " NAME TEXT, " //
+				+ " LAST_WORLDGRP NOT NULL DEFAULT 'default'," //
+				+ " LEARNING_MODE INTEGER NOT NULL DEFAULT " + lm + "," //
+				+ " MUTE_MODE INTEGER NOT NULL DEFAULT 0," //
+				+ " TEXTURE TEXT, " //
+				+ " SIGNATURE TEXT, " //
+				+ " LAST_LOGON INTEGER, " //
+				+ " LAST_INTEREST INTEGER, " //
+				+ " UNIQUE(UUID))");
+
+		create.close();
+		connection.commit();
+
+	}
+
+	public void migrateDatabaseLayoutFromV2ToV3(Connection connection) throws SQLException {
+		Statement statement = connection.createStatement();
+		try {
+			ResultSet rs = statement.executeQuery("SELECT TEXTURE from mh_PlayerSettings LIMIT 0");
+			rs.close();
+		} catch (SQLException e) {
+			Bukkit.getConsoleSender().sendMessage(
+					ChatColor.GOLD + "[BagOfGold] " + ChatColor.GREEN + "Adding new coloumns to BagOfGold Database.");
+			statement.executeUpdate("alter table `mh_PlayerSettings` add column `TEXTURE` TEXT");
+			statement.executeUpdate("alter table `mh_PlayerSettings` add column `SIGNATURE` TEXT");
+			statement.executeUpdate("alter table `mh_PlayerSettings` add column `LAST_LOGON` INTEGER DEFAULT 0");
+			statement.executeUpdate("alter table `mh_PlayerSettings` add column `LAST_INTEREST` INTEGER DEFAULT 0");
+			statement.close();
+			connection.commit();
+			Bukkit.getConsoleSender().sendMessage(
+					ChatColor.GOLD + "[BagOfGold] " + ChatColor.GREEN + "Database was converted to version 3");
+		}
+	}
+
+}
