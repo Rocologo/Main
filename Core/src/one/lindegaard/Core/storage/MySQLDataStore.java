@@ -72,13 +72,6 @@ public class MySQLDataStore extends DatabaseDataStore {
 					"REPLACE INTO mh_PlayerSettings (UUID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE,TEXTURE,SIGNATURE,LAST_LOGON,LAST_INTEREST) "
 							+ "VALUES(?,?,?,?,?,?,?,?,?);");
 			break;
-		case GET_PLAYER_BY_PLAYER_ID:
-			mGetPlayerByPlayerId = connection.prepareStatement("SELECT UUID FROM mh_Players WHERE PLAYER_ID=?;");
-			break;
-		case UPDATE_PLAYER_NAME:
-			mUpdatePlayerName = connection.prepareStatement("UPDATE mh_Players SET NAME=? WHERE UUID=?;");
-			break;
-
 		}
 
 	}
@@ -99,8 +92,9 @@ public class MySQLDataStore extends DatabaseDataStore {
 
 			create.executeUpdate(
 					"ALTER DATABASE " + database_name + " CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
-			create.executeUpdate("ALTER TABLE mh_Players CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
 			create.executeUpdate("ALTER TABLE mh_Balance CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
+			create.executeUpdate(
+					"ALTER TABLE mh_PlayerSettings CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
 			console.sendMessage(ChatColor.GREEN + "[BagOfGold] Done.");
 
 		} catch (SQLException e) {

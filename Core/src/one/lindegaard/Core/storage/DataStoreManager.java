@@ -85,25 +85,6 @@ public class DataStoreManager {
 		}
 	}
 	
-	/**
-	 * Get the playerId from the database
-	 * 
-	 * @param offlinePlayer
-	 * @return
-	 * @throws UserNotFoundException
-	 */
-	public int getPlayerId(OfflinePlayer offlinePlayer) throws UserNotFoundException {
-		try {
-			return mStore.getPlayerId(offlinePlayer);
-		} catch (DataStoreException e) {
-			if (Core.getConfigManager().debug)
-				e.printStackTrace();
-		}
-		throw new UserNotFoundException(
-				"[MobHunting] User " + offlinePlayer.getName() + " is not present in MobHunting database");
-	}
-
-
 	// *****************************************************************************
 	// Common
 	// *****************************************************************************

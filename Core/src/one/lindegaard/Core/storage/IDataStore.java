@@ -58,15 +58,6 @@ public interface IDataStore {
 	OfflinePlayer getPlayerByName(String name) throws DataStoreException;
 	
 	/**
-	 * Get the player ID directly from the database
-	 * @param player
-	 * @return
-	 * @throws DataStoreException
-	 * @throws UserNotFoundException
-	 */
-	int getPlayerId(OfflinePlayer player) throws DataStoreException;
-	
-	/**
 	 * Convert all tables to use UTF-8 character set.
 	 * 
 	 * @param database_name
@@ -74,12 +65,6 @@ public interface IDataStore {
 	 */
 	void databaseConvertToUtf8(String database_name) throws DataStoreException;
 	
-	/**
-	 * Get the OfflinePlayer from the internal playerId
-	 * @param playerId
-	 * @return
-	 * @throws DataStoreException
-	 */
-	OfflinePlayer getPlayerByPlayerId(int playerId) throws DataStoreException;
+	
 	
 }
