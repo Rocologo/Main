@@ -2,7 +2,6 @@ package one.lindegaard.Core;
 
 import java.io.File;
 
-import org.bukkit.entity.minecart.StorageMinecart;
 import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.compatibility.BagOfGoldCompat;
@@ -14,7 +13,6 @@ import one.lindegaard.Core.storage.DataStoreManager;
 import one.lindegaard.Core.storage.IDataStore;
 import one.lindegaard.Core.storage.MySQLDataStore;
 import one.lindegaard.Core.storage.SQLiteDataStore;
-import one.lindegaard.Core.storage.async.IDataStoreTask;
 
 public class Core {
 
@@ -45,7 +43,7 @@ public class Core {
 		mConfig = new ConfigManager(mFileShared);
 		if (mConfig.loadConfig()) {
 			if (config_version == -1 || config_version == 0) {
-				mConfig.importConfig(plugin);
+				// mConfig.importConfig(plugin);
 				config_version = 1;
 			}
 			mConfig.saveConfig();

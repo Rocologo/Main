@@ -74,6 +74,12 @@ public interface IDataStore {
 	 */
 	void databaseConvertToUtf8(String database_name) throws DataStoreException;
 	
+	/**
+	 * Get the OfflinePlayer from the internal playerId
+	 * @param playerId
+	 * @return
+	 * @throws DataStoreException
+	 */
 	OfflinePlayer getPlayerByPlayerId(int playerId) throws DataStoreException;
 	
 }

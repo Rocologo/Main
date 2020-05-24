@@ -41,23 +41,21 @@ public abstract class DatabaseDataStore implements IDataStore {
 	 * Args: player uuid
 	 */
 	protected PreparedStatement mInsertPlayerSettings;
-	
+
 	/**
 	 * Args: player uuid
 	 */
 	protected PreparedStatement mGetPlayerData;
-	
+
 	/**
 	 * Args: player name, player uuid
 	 */
 	protected PreparedStatement mUpdatePlayerName;
-	
+
 	/**
 	 * Args: player player_id
 	 */
 	protected PreparedStatement mGetPlayerByPlayerId;
-
-	
 
 	/**
 	 * Establish initial connection to Database
@@ -96,45 +94,29 @@ public abstract class DatabaseDataStore implements IDataStore {
 			Connection mConnection = setupConnection();
 
 			// Find current database version
-			if (Core.getConfigManager().databaseVersion < 3) {
+			if (Core.getConfigManager().databaseVersion < 1) {
 				Statement statement = mConnection.createStatement();
 				try {
-					ResultSet rs = statement.executeQuery("SELECT TEXTURE FROM mh_PlayerSettings LIMIT 0");
+					ResultSet rs = statement.executeQuery("SELECT UUID FROM mh_PlayerSettings LIMIT 0");
 					rs.close();
-					Core.getConfigManager().databaseVersion = 3;
+					Core.getConfigManager().databaseVersion = 1;
 				} catch (SQLException e1) {
-					try {
-						ResultSet rs = statement.executeQuery("SELECT UUID FROM mh_PlayerSettings LIMIT 0");
-						rs.close();
-						Core.getConfigManager().databaseVersion = 2;
-					} catch (SQLException e2) {
-						try {
-							// Check if Database exists at all?
-							ResultSet rs = statement.executeQuery("SELECT UUID FROM mh_Balance LIMIT 0");
-							rs.close();
-							Core.getConfigManager().databaseVersion = 1;
-						} catch (SQLException e3) {
-							// Database v1,v2 does not exist. Create V3
-							Core.getConfigManager().databaseVersion = 3;
-						}
-
-					}
-
+					Core.getConfigManager().databaseVersion = 0;
 				}
 				statement.close();
 				Core.getConfigManager().saveConfig();
-				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGold]" + ChatColor.WHITE
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore]" + ChatColor.WHITE
 						+ " Database version " + Core.getConfigManager().databaseVersion + " detected.");
 			}
 
 			switch (Core.getConfigManager().databaseVersion) {
+			case 0:
 			case 1:
-				default:
 				setupV3Tables(mConnection);
-
+				break;
 			}
 
-			Core.getConfigManager().databaseVersion = 2;
+			Core.getConfigManager().databaseVersion = 1;
 			Core.getConfigManager().saveConfig();
 
 			// Enable FOREIGN KEY for Sqlite database
@@ -240,7 +222,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 				mInsertPlayerSettings.setString(7, playerSettings.getSignature());
 				mInsertPlayerSettings.setLong(8, playerSettings.getLast_logon());
 				mInsertPlayerSettings.setLong(9, playerSettings.getLast_interest());
-				
+
 				mInsertPlayerSettings.addBatch();
 				mInsertPlayerSettings.executeBatch();
 				mInsertPlayerSettings.close();
@@ -257,7 +239,8 @@ public abstract class DatabaseDataStore implements IDataStore {
 	}
 
 	@Override
-	public void savePlayerSettings(Set<PlayerSettings> playerDataSet, boolean removeFromCache) throws DataStoreException {
+	public void savePlayerSettings(Set<PlayerSettings> playerDataSet, boolean removeFromCache)
+			throws DataStoreException {
 		Connection mConnection;
 		try {
 			mConnection = setupConnection();
@@ -273,7 +256,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 					mInsertPlayerSettings.setString(7, playerSettings.getSignature());
 					mInsertPlayerSettings.setLong(8, playerSettings.getLast_logon());
 					mInsertPlayerSettings.setLong(9, playerSettings.getLast_interest());
-					
+
 					mInsertPlayerSettings.addBatch();
 				}
 				mInsertPlayerSettings.executeBatch();
@@ -331,7 +314,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 			throw new DataStoreException(e);
 		}
 	}
-	
+
 	/**
 	 * getPlayerID. get the player ID and check if the player has change name
 	 * 
@@ -345,6 +328,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 		if (offlinePlayer == null)
 			return 0;
 		int playerId = 0;
+		Bukkit.getConsoleSender().sendMessage("[BagOfGoldCore][DEBUG] player="+offlinePlayer.toString());
 		PlayerSettings ps = Core.getPlayerSettingsManager().getPlayerSettings(offlinePlayer);
 		if (ps != null)
 			playerId = ps.getPlayerId();
@@ -363,8 +347,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 					if (name != null && uuid != null)
 						if (offlinePlayer.getUniqueId().equals(uuid) && !offlinePlayer.getName().equals(name)) {
 							Core.getMessages().debug("Name change detected(2): " + name + " -> "
-											+ offlinePlayer.getName() + " UUID="
-											+ offlinePlayer.getUniqueId().toString());
+									+ offlinePlayer.getName() + " UUID=" + offlinePlayer.getUniqueId().toString());
 							changedNames.add(offlinePlayer);
 						}
 					playerId = result.getInt(3);
@@ -387,12 +370,11 @@ public abstract class DatabaseDataStore implements IDataStore {
 		}
 		return playerId;
 	}
-	
+
 	/**
 	 * updatePlayerName - update the players name in the Database
 	 * 
-	 * @param offlinePlayer
-	 *            : OfflinePlayer
+	 * @param offlinePlayer : OfflinePlayer
 	 * @throws SQLException
 	 * @throws DataStoreException
 	 */
@@ -417,12 +399,11 @@ public abstract class DatabaseDataStore implements IDataStore {
 		}
 
 	}
-	
+
 	/**
 	 * getPlayerByPlayerId - get the player
 	 * 
-	 * @param name
-	 *            : String
+	 * @param name : String
 	 * @return player
 	 */
 	@Override

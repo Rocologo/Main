@@ -269,6 +269,7 @@ public class ConfigManager extends AutoConfig {
 	 * @param plugin
 	 */
 	public void importConfig(Plugin plugin) {
+		
 		File mFileShared = new File(plugin.getDataFolder(), "config.yml");	
 		YamlConfiguration yamlConfig = YamlConfiguration.loadConfiguration(mFileShared);
 		
@@ -278,11 +279,11 @@ public class ConfigManager extends AutoConfig {
 		// Import economy settings
 		this.numberFormat = yamlConfig.getString("economy.number_format");
 		if (Core.getBagOfGoldCompat().isSupported())
-			this.rewardRounding = yamlConfig.getDouble("economy.reward_rounding", 10);
+			this.rewardRounding = yamlConfig.getDouble("economy.reward_rounding");
 		else if (Core.getMobHuntingCompat().isSupported())
-			this.rewardRounding = yamlConfig.getDouble("general.reward_rounding", 20);
+			this.rewardRounding = yamlConfig.getDouble("general.reward_rounding");
 		else
-			this.rewardRounding = 30;
+			this.rewardRounding = 1;
 		
 		// Import database settings
 		if (Core.getBagOfGoldCompat().isSupported()) {
