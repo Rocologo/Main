@@ -57,24 +57,26 @@ public interface IDataStore {
 	 * @throws DataStoreException
 	 */
 	OfflinePlayer getPlayerByName(String name) throws DataStoreException;
-	
+
 	/**
 	 * Get the OfflinePlayer from the internal playerId
+	 * 
 	 * @param playerId
 	 * @return
 	 * @throws DataStoreException
 	 */
 	OfflinePlayer getPlayerByPlayerId(int playerId) throws DataStoreException;
-	
+
 	/**
 	 * Get the player ID directly from the database
+	 * 
 	 * @param player
 	 * @return
 	 * @throws DataStoreException
 	 * @throws UserNotFoundException
 	 */
 	int getPlayerId(OfflinePlayer player) throws DataStoreException;
-	
+
 	/**
 	 * Convert all tables to use UTF-8 character set.
 	 * 
@@ -83,8 +85,11 @@ public interface IDataStore {
 	 */
 	void databaseConvertToUtf8(String database_name) throws DataStoreException;
 
+	/**
+	 * create a RandomBountyPlayer if not exist in mh_PlayerSettings
+	 * 
+	 * @param connection
+	 */
 	void createRandomBountyPlayer(Connection mConnection);
-	
-	
-	
+
 }
