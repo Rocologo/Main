@@ -386,7 +386,6 @@ public abstract class DatabaseDataStore implements IDataStore {
 		if (offlinePlayer == null)
 			return 0;
 		int playerId = 0;
-		Bukkit.getConsoleSender().sendMessage("[BagOfGoldCore][DEBUG] player=" + offlinePlayer.toString());
 		PlayerSettings ps = Core.getPlayerSettingsManager().getPlayerSettings(offlinePlayer);
 		if (ps != null)
 			playerId = ps.getPlayerId();
