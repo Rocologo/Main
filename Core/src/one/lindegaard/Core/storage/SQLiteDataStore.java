@@ -82,7 +82,7 @@ public class SQLiteDataStore extends DatabaseDataStore {
 		String lm = Core.getConfigManager().learningMode ? "1" : "0";
 		create.executeUpdate("CREATE TABLE IF NOT EXISTS mh_PlayerSettings" //
 				+ "(UUID TEXT PRIMARY KEY," //
-				+ " PLAYER_ID INTEGER NOT NULL AUTOINCREMENT, " //DEFAULT 0, " //
+				+ " PLAYER_ID INTEGER NOT NULL DEFAULT 0, " //
 				+ " NAME TEXT, " //
 				+ " LAST_WORLDGRP NOT NULL DEFAULT 'default'," //
 				+ " LEARNING_MODE INTEGER NOT NULL DEFAULT " + lm + "," //
