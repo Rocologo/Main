@@ -16,9 +16,14 @@ public class PlayerSettings {
 	public PlayerSettings(OfflinePlayer player) {
 		this.player = player;
 		this.setLastKnownWorldGrp("default");
-		// this.setLearningMode(MobHunting.getInstance().getConfigManager().learningMode);
-		this.setLearningMode(false);
+		this.setLearningMode(Core.getConfigManager().learningMode);
 		this.setMuteMode(false);
+	}
+	
+	public PlayerSettings(OfflinePlayer player, boolean learning_mode, boolean mute) {
+		this.player = player;
+		this.setLearningMode(learning_mode);
+		this.setMuteMode(mute);
 	}
 
 	public PlayerSettings(OfflinePlayer player, String lastKnownWorldGrp, boolean learning_mode, boolean mute,
