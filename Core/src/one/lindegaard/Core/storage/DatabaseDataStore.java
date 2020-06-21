@@ -366,7 +366,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 			}
 			mGetPlayerByPlayerId.close();
 			mConnection.close();
-			throw new UserNotFoundException("[MobHunting] PlayerId " + playerId + " is not present in database");
+			throw new UserNotFoundException("[BagOfGoldCore] PlayerId " + playerId + " is not present in database");
 		} catch (SQLException e) {
 			throw new DataStoreException(e);
 		}

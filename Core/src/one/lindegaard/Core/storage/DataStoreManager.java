@@ -100,10 +100,19 @@ public class DataStoreManager {
 				e.printStackTrace();
 		}
 		throw new UserNotFoundException(
-				"[MobHunting] User " + offlinePlayer.getName() + " is not present in MobHunting database");
+				"[MobHunting] User " + offlinePlayer.getName() + " is not present in Core database");
 	}
 
-	
+	public OfflinePlayer getPlayerByPlayerId(int playerId) throws UserNotFoundException {
+		try {
+			return mStore.getPlayerByPlayerId(playerId);
+		} catch (DataStoreException e) {
+			if (Core.getConfigManager().debug)
+				e.printStackTrace();
+		}
+		throw new UserNotFoundException(
+				"[MobHunting] User " + playerId + " is not present in Core database");
+	}
 	
 	// *****************************************************************************
 	// Common
