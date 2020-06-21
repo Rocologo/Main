@@ -41,12 +41,12 @@ public abstract class DatabaseDataStore implements IDataStore {
 	 * Args: player uuid
 	 */
 	protected PreparedStatement mInsertPlayerSettings;
-	
+
 	/**
 	 * Args: player player_id
 	 */
 	protected PreparedStatement mGetPlayerByPlayerId;
-	
+
 	/**
 	 * Args: player name, player uuid
 	 */
@@ -73,8 +73,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 			throws SQLException;
 
 	public enum PreparedConnectionType {
-		GET_PLAYER_UUID, GET_PLAYER_SETTINGS, INSERT_PLAYER_SETTINGS, 
-		UPDATE_PLAYER_NAME, GET_PLAYER_BY_PLAYER_ID, //GET_PLAYER_DATA, UPDATE_PLAYER_DATA, INSERT_PLAYER_DATA,
+		GET_PLAYER_UUID, GET_PLAYER_SETTINGS, INSERT_PLAYER_SETTINGS, UPDATE_PLAYER_NAME, GET_PLAYER_BY_PLAYER_ID,
 	};
 
 	/**
@@ -172,7 +171,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 	 * @throws SQLException
 	 * 
 	 */
-	//@Override
+	// @Override
 	public PlayerSettings loadPlayerSettings(OfflinePlayer offlinePlayer)
 			throws UserNotFoundException, DataStoreException {
 		Connection mConnection;
@@ -183,9 +182,10 @@ public abstract class DatabaseDataStore implements IDataStore {
 			ResultSet result;
 			result = mGetPlayerSettings.executeQuery();
 			if (result.next()) {
-				PlayerSettings ps = new PlayerSettings(offlinePlayer, result.getString("LAST_WORLDGRP"),
-						result.getBoolean("LEARNING_MODE"), result.getBoolean("MUTE_MODE"), result.getString("TEXTURE"),
-						result.getString("SIGNATURE"), result.getLong("LAST_LOGON"), result.getLong("LAST_INTEREST"));
+				PlayerSettings ps = new PlayerSettings(offlinePlayer, result.getInt("PLAYER_ID"),
+						result.getString("LAST_WORLDGRP"), result.getBoolean("LEARNING_MODE"),
+						result.getBoolean("MUTE_MODE"), result.getString("TEXTURE"), result.getString("SIGNATURE"),
+						result.getLong("LAST_LOGON"), result.getLong("LAST_INTEREST"));
 				result.close();
 				mGetPlayerSettings.close();
 				mConnection.close();
@@ -202,7 +202,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 	/**
 	 * insertPlayerSettings to database
 	 */
-	//@Override
+	// @Override
 	public void insertPlayerSettings(PlayerSettings playerSettings) throws DataStoreException {
 		Connection mConnection;
 		try {
@@ -210,14 +210,15 @@ public abstract class DatabaseDataStore implements IDataStore {
 			try {
 				openPreparedStatements(mConnection, PreparedConnectionType.INSERT_PLAYER_SETTINGS);
 				mInsertPlayerSettings.setString(1, playerSettings.getPlayer().getUniqueId().toString());
-				mInsertPlayerSettings.setString(2, playerSettings.getPlayer().getName());
-				mInsertPlayerSettings.setString(3, playerSettings.getLastKnownWorldGrp());
-				mInsertPlayerSettings.setInt(4, playerSettings.isLearningMode() ? 1 : 0);
-				mInsertPlayerSettings.setInt(5, playerSettings.isMuted() ? 1 : 0);
-				mInsertPlayerSettings.setString(6, playerSettings.getTexture());
-				mInsertPlayerSettings.setString(7, playerSettings.getSignature());
-				mInsertPlayerSettings.setLong(8, playerSettings.getLast_logon());
-				mInsertPlayerSettings.setLong(9, playerSettings.getLast_interest());
+				mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
+				mInsertPlayerSettings.setString(3, playerSettings.getPlayer().getName());
+				mInsertPlayerSettings.setString(4, playerSettings.getLastKnownWorldGrp());
+				mInsertPlayerSettings.setInt(5, playerSettings.isLearningMode() ? 1 : 0);
+				mInsertPlayerSettings.setInt(6, playerSettings.isMuted() ? 1 : 0);
+				mInsertPlayerSettings.setString(7, playerSettings.getTexture());
+				mInsertPlayerSettings.setString(8, playerSettings.getSignature());
+				mInsertPlayerSettings.setLong(9, playerSettings.getLast_logon());
+				mInsertPlayerSettings.setLong(10, playerSettings.getLast_interest());
 
 				mInsertPlayerSettings.addBatch();
 				mInsertPlayerSettings.executeBatch();
@@ -234,7 +235,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 		}
 	}
 
-	//@Override
+	// @Override
 	public void savePlayerSettings(Set<PlayerSettings> playerDataSet, boolean removeFromCache)
 			throws DataStoreException {
 		Connection mConnection;
@@ -244,14 +245,15 @@ public abstract class DatabaseDataStore implements IDataStore {
 				openPreparedStatements(mConnection, PreparedConnectionType.INSERT_PLAYER_SETTINGS);
 				for (PlayerSettings playerSettings : playerDataSet) {
 					mInsertPlayerSettings.setString(1, playerSettings.getPlayer().getUniqueId().toString());
-					mInsertPlayerSettings.setString(2, playerSettings.getPlayer().getName());
-					mInsertPlayerSettings.setString(3, playerSettings.getLastKnownWorldGrp());
-					mInsertPlayerSettings.setInt(4, playerSettings.isLearningMode() ? 1 : 0);
-					mInsertPlayerSettings.setInt(5, playerSettings.isMuted() ? 1 : 0);
-					mInsertPlayerSettings.setString(6, playerSettings.getTexture());
-					mInsertPlayerSettings.setString(7, playerSettings.getSignature());
-					mInsertPlayerSettings.setLong(8, playerSettings.getLast_logon());
-					mInsertPlayerSettings.setLong(9, playerSettings.getLast_interest());
+					mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
+					mInsertPlayerSettings.setString(3, playerSettings.getPlayer().getName());
+					mInsertPlayerSettings.setString(4, playerSettings.getLastKnownWorldGrp());
+					mInsertPlayerSettings.setInt(5, playerSettings.isLearningMode() ? 1 : 0);
+					mInsertPlayerSettings.setInt(6, playerSettings.isMuted() ? 1 : 0);
+					mInsertPlayerSettings.setString(7, playerSettings.getTexture());
+					mInsertPlayerSettings.setString(8, playerSettings.getSignature());
+					mInsertPlayerSettings.setLong(9, playerSettings.getLast_logon());
+					mInsertPlayerSettings.setLong(10, playerSettings.getLast_interest());
 
 					mInsertPlayerSettings.addBatch();
 				}
@@ -311,7 +313,6 @@ public abstract class DatabaseDataStore implements IDataStore {
 		}
 	}
 
-	
 	/**
 	 * updatePlayerName - update the players name in the Database
 	 * 
@@ -340,7 +341,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 		}
 
 	}
-	
+
 	/**
 	 * getPlayerByPlayerId - get the player
 	 * 
@@ -385,7 +386,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 		if (offlinePlayer == null)
 			return 0;
 		int playerId = 0;
-		Bukkit.getConsoleSender().sendMessage("[BagOfGoldCore][DEBUG] player="+offlinePlayer.toString());
+		Bukkit.getConsoleSender().sendMessage("[BagOfGoldCore][DEBUG] player=" + offlinePlayer.toString());
 		PlayerSettings ps = Core.getPlayerSettingsManager().getPlayerSettings(offlinePlayer);
 		if (ps != null)
 			playerId = ps.getPlayerId();
@@ -427,5 +428,31 @@ public abstract class DatabaseDataStore implements IDataStore {
 		}
 		return playerId;
 	}
+	
+	/**
+	 * create a RandomBountyPlayer if not exist in mh_PlayerSettings
+	 * 
+	 * @param connection
+	 */
+	public void createRandomBountyPlayer(Connection connection) {
+		// added because BOUNTYOWNER_ID is null for Random bounties.
+		try {
+			Statement create = connection.createStatement();
+			ResultSet rs = create.executeQuery("SELECT PLAYER_ID from mh_Players WHERE NAME='RandomBounty' LIMIT 0");
+			if (!rs.next()) {
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[MobHunting] " + ChatColor.RESET
+						+ "Adding RandomBounty Player to MobHunting Database.");
+				create.executeUpdate(
+						"insert into mh_Players (UUID,NAME,PLAYER_ID,LEARNING_MODE,MUTE_MODE) values (null,'RandomBounty',0,0,0)");
+				create.executeUpdate("update mh_Players set Player_id=0 where name='RandomBounty'");
+			}
+			rs.close();
+			create.close();
+		} catch (SQLException e) {
+			// e.printStackTrace();
+		}
+	}
+
+
 
 }

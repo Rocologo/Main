@@ -52,8 +52,8 @@ public class SQLiteDataStore extends DatabaseDataStore {
 			break;
 		case INSERT_PLAYER_SETTINGS:
 			mInsertPlayerSettings = connection.prepareStatement(
-					"INSERT OR REPLACE INTO mh_PlayerSettings (UUID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE,TEXTURE,SIGNATURE,LAST_LOGON,LAST_INTEREST) "
-							+ "VALUES(?,?,?,?,?,?,?,?,?);");
+					"INSERT OR REPLACE INTO mh_PlayerSettings (UUID,PLAYER_ID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE,TEXTURE,SIGNATURE,LAST_LOGON,LAST_INTEREST) "
+							+ "VALUES(?,?,?,?,?,?,?,?,?,?);");
 			break;
 		case UPDATE_PLAYER_NAME:
 			mUpdatePlayerName = connection.prepareStatement("UPDATE mh_PlayerSettings SET NAME=? WHERE UUID=?;");
@@ -82,7 +82,7 @@ public class SQLiteDataStore extends DatabaseDataStore {
 		String lm = Core.getConfigManager().learningMode ? "1" : "0";
 		create.executeUpdate("CREATE TABLE IF NOT EXISTS mh_PlayerSettings" //
 				+ "(UUID TEXT PRIMARY KEY," //
-				+ " PLAYER_ID INTEGER NOT NULL DEFAULT 1, " //
+				+ " PLAYER_ID INTEGER NOT NULL AUTOINCREMENT, " //DEFAULT 0, " //
 				+ " NAME TEXT, " //
 				+ " LAST_WORLDGRP NOT NULL DEFAULT 'default'," //
 				+ " LEARNING_MODE INTEGER NOT NULL DEFAULT " + lm + "," //

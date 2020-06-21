@@ -30,7 +30,7 @@ public class PlayerSettingsRetrieverTask implements IDataStoreTask<PlayerSetting
 				String worldgroup = mPlayer.isOnline()
 						? Core.getWorldGroupManager().getCurrentWorldGroup(mPlayer)
 						: Core.getWorldGroupManager().getDefaultWorldgroup();
-				PlayerSettings ps = new PlayerSettings(mPlayer, worldgroup,
+				PlayerSettings ps = new PlayerSettings(mPlayer, 0, worldgroup,
 						Core.getConfigManager().learningMode, false, null, null,
 						System.currentTimeMillis(), System.currentTimeMillis());
 				try {
