@@ -1,5 +1,6 @@
 package one.lindegaard.Core.storage;
 
+import java.sql.Connection;
 import java.util.LinkedHashSet;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

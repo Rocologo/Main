@@ -1,5 +1,6 @@
 package one.lindegaard.Core.storage;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Set;
 
@@ -81,6 +82,8 @@ public interface IDataStore {
 	 * @throws DataStoreException
 	 */
 	void databaseConvertToUtf8(String database_name) throws DataStoreException;
+
+	void createRandomBountyPlayer(Connection mConnection);
 	
 	
 	
