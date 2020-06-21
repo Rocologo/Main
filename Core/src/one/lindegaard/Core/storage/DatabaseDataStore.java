@@ -428,7 +428,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 		}
 		return playerId;
 	}
-	
+
 	/**
 	 * create a RandomBountyPlayer if not exist in mh_PlayerSettings
 	 * 
@@ -438,13 +438,14 @@ public abstract class DatabaseDataStore implements IDataStore {
 		// added because BOUNTYOWNER_ID is null for Random bounties.
 		try {
 			Statement create = connection.createStatement();
-			ResultSet rs = create.executeQuery("SELECT PLAYER_ID from mh_Players WHERE NAME='RandomBounty' LIMIT 0");
+			ResultSet rs = create
+					.executeQuery("SELECT PLAYER_ID from mh_PlayerSettings WHERE NAME='RandomBounty' LIMIT 0");
 			if (!rs.next()) {
-				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[MobHunting] " + ChatColor.RESET
-						+ "Adding RandomBounty Player to MobHunting Database.");
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RESET
+						+ "Adding RandomBounty Player to BagOfGoldCore Database.");
 				create.executeUpdate(
-						"insert into mh_Players (UUID,NAME,PLAYER_ID,LEARNING_MODE,MUTE_MODE) values (null,'RandomBounty',0,0,0)");
-				create.executeUpdate("update mh_Players set Player_id=0 where name='RandomBounty'");
+						"insert into mh_Players (UUID,PLAYER_ID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE) values (null,0,'RandomBounty','default',0,0)");
+				create.executeUpdate("update mh_PlayerSettings set Player_id=0 where name='RandomBounty'");
 			}
 			rs.close();
 			create.close();
@@ -452,7 +453,5 @@ public abstract class DatabaseDataStore implements IDataStore {
 			// e.printStackTrace();
 		}
 	}
-
-
 
 }
