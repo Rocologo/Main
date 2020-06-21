@@ -299,7 +299,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 			ResultSet set = mGetPlayerUUID.executeQuery();
 
 			if (set.next()) {
-				UUID uid = UUID.fromString(set.getString(1));
+				UUID uid = UUID.fromString(set.getString("UUID"));
 				set.close();
 				mGetPlayerUUID.close();
 				mConnection.close();
@@ -359,7 +359,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 			ResultSet set = mGetPlayerByPlayerId.executeQuery();
 
 			if (set.next()) {
-				UUID uid = UUID.fromString(set.getString(1));
+				UUID uid = UUID.fromString(set.getString("UUID"));
 				set.close();
 				mGetPlayerByPlayerId.close();
 				mConnection.close();
@@ -399,8 +399,8 @@ public abstract class DatabaseDataStore implements IDataStore {
 				mGetPlayerSettings.setString(1, offlinePlayer.getUniqueId().toString());
 				ResultSet result = mGetPlayerSettings.executeQuery();
 				if (result.next()) {
-					String name = result.getString(2);
-					UUID uuid = UUID.fromString(result.getString(1));
+					String name = result.getString("NAME");
+					UUID uuid = UUID.fromString(result.getString("UUID"));
 					if (name != null && uuid != null)
 						if (offlinePlayer.getUniqueId().equals(uuid) && !offlinePlayer.getName().equals(name)) {
 							Core.getMessages().debug("Name change detected(2): " + name + " -> "
@@ -441,9 +441,9 @@ public abstract class DatabaseDataStore implements IDataStore {
 					.executeQuery("SELECT PLAYER_ID from mh_PlayerSettings WHERE NAME='RandomBounty' LIMIT 0");
 			if (!rs.next()) {
 				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RESET
-						+ "Adding RandomBounty Player to BagOfGoldCore Database.");
+						+ "Adding RandomBounty Player to BagOfGoldCore Database.(2)");
 				create.executeUpdate(
-						"insert into mh_Players (UUID,PLAYER_ID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE) values (null,0,'RandomBounty','default',0,0)");
+						"insert into mh_PlayerSettings (UUID,PLAYER_ID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE) values (null,0,'RandomBounty','default',0,0)");
 				create.executeUpdate("update mh_PlayerSettings set Player_id=0 where name='RandomBounty'");
 			}
 			rs.close();

@@ -47,10 +47,12 @@ public class PlayerSettingsManager implements Listener {
 			try {
 				ps = Core.getStoreManager().loadPlayerSettings(offlinePlayer);
 			} catch (UserNotFoundException e) {
-				String worldgroup = offlinePlayer.isOnline()?Core.getWorldGroupManager().getCurrentWorldGroup(offlinePlayer):Core.getWorldGroupManager().getDefaultWorldgroup();
+				String worldgroup = offlinePlayer.isOnline()
+						? Core.getWorldGroupManager().getCurrentWorldGroup(offlinePlayer)
+						: Core.getWorldGroupManager().getDefaultWorldgroup();
 				Core.getMessages().debug("Insert new PlayerSettings for %s to database.", offlinePlayer.getName());
-				ps = new PlayerSettings(offlinePlayer,0 , worldgroup, Core.getConfigManager().learningMode, false, null, null, System.currentTimeMillis(),
-						System.currentTimeMillis());
+				ps = new PlayerSettings(offlinePlayer, 0, worldgroup, Core.getConfigManager().learningMode, false, null,
+						null, System.currentTimeMillis(), System.currentTimeMillis());
 				setPlayerSettings(offlinePlayer, ps);
 				return ps;
 			} catch (DataStoreException e) {
@@ -102,7 +104,8 @@ public class PlayerSettingsManager implements Listener {
 		PlayerSettings ps = mPlayerSettings.get(player.getUniqueId());
 		ps.setLastKnownWorldGrp(Core.getWorldGroupManager().getCurrentWorldGroup(player));
 		setPlayerSettings(player, ps);
-		Core.getMessages().debug("Saving lastKnownWorldGroup: %s",Core.getWorldGroupManager().getCurrentWorldGroup(player));
+		Core.getMessages().debug("Saving lastKnownWorldGroup: %s",
+				Core.getWorldGroupManager().getCurrentWorldGroup(player));
 	}
 
 	/**
@@ -117,10 +120,12 @@ public class PlayerSettingsManager implements Listener {
 			public void onCompleted(PlayerSettings ps) {
 				ps.setLast_logon(System.currentTimeMillis());
 				mPlayerSettings.put(offlinePlayer.getUniqueId(), ps);
-				
+
 				if (ps.getTexture() == null || ps.getTexture().equals("")) {
 					Core.getMessages().debug("Store %s skin in BagOfGoldCore Skin Cache", offlinePlayer.getName());
-					//new CustomItems().getPlayerHead(offlinePlayer.getUniqueId(),offlinePlayer.getName(), 1, 0);
+					// new
+					// CustomItems().getPlayerHead(offlinePlayer.getUniqueId(),offlinePlayer.getName(),
+					// 1, 0);
 				}
 
 			}
