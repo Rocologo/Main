@@ -159,7 +159,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 	 * @throws SQLException
 	 * 
 	 */
-	@Override
+	//@Override
 	public PlayerSettings loadPlayerSettings(OfflinePlayer offlinePlayer)
 			throws UserNotFoundException, DataStoreException {
 		Connection mConnection;
@@ -189,7 +189,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 	/**
 	 * insertPlayerSettings to database
 	 */
-	@Override
+	//@Override
 	public void insertPlayerSettings(PlayerSettings playerSettings) throws DataStoreException {
 		Connection mConnection;
 		try {
@@ -221,7 +221,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 		}
 	}
 
-	@Override
+	//@Override
 	public void savePlayerSettings(Set<PlayerSettings> playerDataSet, boolean removeFromCache)
 			throws DataStoreException {
 		Connection mConnection;
