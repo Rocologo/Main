@@ -3,9 +3,11 @@ package one.lindegaard.Core.config;
 import java.io.File;
 import java.util.LinkedHashMap;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
+import net.md_5.bungee.api.ChatColor;
 import one.lindegaard.Core.Core;
 import one.lindegaard.Core.config.AutoConfig;
 import one.lindegaard.Core.config.ConfigField;
@@ -236,7 +238,7 @@ public class ConfigManager extends AutoConfig {
 	public String databaseType = "sqlite";
 
 	@ConfigField(name = "database_name", category = "database")
-	public String databaseName = "bagofgold";
+	public String databaseName = "bagofgoldcore";
 
 	@ConfigField(name = "save-period", category = "general", comment = "Time between saves in ticks (20 ticks ~ 1 sec) This number must be higher that 1200 ticks = 2 minutes,"
 			+ "\nbut I recommend to save every 5th minute = 6000 ticks")
@@ -269,44 +271,84 @@ public class ConfigManager extends AutoConfig {
 	 * @param plugin
 	 */
 	public void importConfig(Plugin plugin) {
-		
-		File mFileShared = new File(plugin.getDataFolder(), "config.yml");	
-		YamlConfiguration yamlConfig = YamlConfiguration.loadConfiguration(mFileShared);
-		
-		// Import general settings
-		this.language = yamlConfig.getString("general.language");
 
-		// Import economy settings
-		this.numberFormat = yamlConfig.getString("economy.number_format");
-		if (Core.getBagOfGoldCompat().isSupported())
-			this.rewardRounding = yamlConfig.getDouble("economy.reward_rounding");
-		else if (Core.getMobHuntingCompat().isSupported())
-			this.rewardRounding = yamlConfig.getDouble("general.reward_rounding");
-		else
-			this.rewardRounding = 1;
-		
-		// Import database settings
-		if (Core.getBagOfGoldCompat().isSupported()) {
-			this.databaseType=yamlConfig.getString("database.type");
-			this.databaseUsername=yamlConfig.getString("database.username");
-			this.databasePassword=yamlConfig.getString("database.password");
-			this.databaseHost=yamlConfig.getString("database.host");
-			this.databaseUseSSL=yamlConfig.getString("database.mysql.useSSL");
-			this.databaseName=yamlConfig.getString("database.database");
-		} else if (Core.getMobHuntingCompat().isSupported()) {
-			this.databaseType=yamlConfig.getString("database.type");
-			this.databaseUsername=yamlConfig.getString("database.mysql.username");
-			this.databasePassword=yamlConfig.getString("database.mysql.password");
-			this.databaseHost=yamlConfig.getString("database.mysql.host");
-			this.databaseUseSSL=yamlConfig.getString("database.mysql.useSSL");
-			this.databaseName=yamlConfig.getString("database.database_name");
+		if (configVersion == 0) {
+			Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
+					+ "Migration configuration from BagOfGold/MobHunting to BagOfGold Core");
+			File mFileShared=null;
+			if (Core.getBagOfGoldCompat().isSupported())
+				mFileShared = new File(plugin.getDataFolder(), "../BagOfGold/config.yml");
+			else if (Core.getMobHuntingCompat().isSupported())
+				mFileShared = new File(plugin.getDataFolder(), "../MobHunting/config.yml");
+			else {
+				configVersion = 2;
+				Bukkit.getConsoleSender().sendMessage(
+						ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED + "Could not find configuration file");
+			}
+
+			YamlConfiguration yamlConfig = YamlConfiguration.loadConfiguration(mFileShared);
+
+			// Import general settings
+			this.language = yamlConfig.getString("general.language");
+
+			this.debug = yamlConfig.getBoolean("general.debug");
+
+			this.learningMode = yamlConfig.getBoolean("general.newplayer_learning_mode");
+
+			// Import economy settings
+			this.numberFormat = yamlConfig.getString("economy.number_format");
+
+			if (Core.getBagOfGoldCompat().isSupported())
+				this.rewardRounding = yamlConfig.getDouble("economy.reward_rounding");
+			else if (Core.getMobHuntingCompat().isSupported())
+				this.rewardRounding = yamlConfig.getDouble("general.reward_rounding");
+			else
+				this.rewardRounding = 1;
+
+			if (Core.getBagOfGoldCompat().isSupported())
+				this.limitPerBag = yamlConfig.getDouble("economy.limit_per_bag");
+			else if (Core.getMobHuntingCompat().isSupported())
+				this.limitPerBag = yamlConfig.getDouble("dropmoneyonground.limit_per_bag");
+			else
+				this.limitPerBag = 10000;
+
+			// Import reward settings
+			this.bagOfGoldName = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name");
+
+			this.bagOfGoldNamePlural = yamlConfig
+					.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name_plural");
+
+			if (Core.getBagOfGoldCompat().isSupported())
+				this.rewardTextColor = yamlConfig.getString("dropmoneyonground.drop-money-on-ground-text-color");
+			else if (Core.getMobHuntingCompat().isSupported())
+				this.rewardTextColor = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_text_color");
+			else
+				this.rewardTextColor = "GOLD";
+
+			this.commandAlias = yamlConfig.getString("dropmoneyonground.drop_money_command_alias");
+
+			if (Core.getBagOfGoldCompat().isSupported())
+				this.rewardItemtype = yamlConfig.getString("dropmoneyonground.drop-money-on-ground-itemtype");
+			else if (Core.getMobHuntingCompat().isSupported())
+				this.rewardItemtype = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_itemtype");
+			else
+				this.rewardItemtype = "SKULL";
+
+			if (Core.getBagOfGoldCompat().isSupported())
+				this.rewardItem = yamlConfig.getString("dropmoneyonground.drop-money-on-ground-item");
+			else if (Core.getMobHuntingCompat().isSupported())
+				this.rewardItem = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_item");
+			else
+				this.rewardItem = "GOLD_INGOT";
+
+			this.denyHoppersToPickUpRewards = yamlConfig
+					.getBoolean("dropmoneyonground.deny_hoppers_to_pickup_money_on_ground");
+
+			configVersion = 2;
+			Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
+					+ "Finished migration configuration from BagOfGold/MobHunting to BagOfGold Core");
+
 		}
-
-		// Import reward settings 
-		this.bagOfGoldName = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name");
-		this.bagOfGoldNamePlural = yamlConfig
-				.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name_plural");
-		configVersion = 1;
 	}
 
 }

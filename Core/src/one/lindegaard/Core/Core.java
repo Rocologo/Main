@@ -43,8 +43,8 @@ public class Core {
 		mConfig = new ConfigManager(mFileShared);
 		if (mConfig.loadConfig()) {
 			if (config_version == -1 || config_version == 0) {
-				// mConfig.importConfig(plugin);
-				config_version = 1;
+				mConfig.importConfig(plugin);
+				//config_version = 2;
 			}
 			mConfig.saveConfig();
 		} else
