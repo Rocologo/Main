@@ -120,6 +120,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 				statement.execute("PRAGMA foreign_keys = ON");
 				statement.close();
 			}
+			mConnection.commit();
 			mConnection.close();
 
 		} catch (SQLException e) {
@@ -333,7 +334,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 				mConnection.commit();
 				mConnection.close();
 			} catch (SQLException e) {
-				mConnection.close();
+				rollback(mConnection);
 				throw new DataStoreException(e);
 			}
 		} catch (SQLException e1) {
@@ -454,7 +455,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 			mConnection.commit();
 			mConnection.close();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new DataStoreException(e);
 		}
 	}
 
