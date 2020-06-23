@@ -434,11 +434,13 @@ public abstract class DatabaseDataStore implements IDataStore {
 	 * create a RandomBountyPlayer if not exist in mh_PlayerSettings
 	 * 
 	 * @param connection
+	 * @throws DataStoreException 
 	 */
-	public void createRandomBountyPlayer(Connection connection) {
+	public void createRandomBountyPlayer() throws DataStoreException {
 		// added because BOUNTYOWNER_ID is null for Random bounties.
 		try {
-			Statement create = connection.createStatement();
+			Connection mConnection = setupConnection();
+			Statement create = mConnection.createStatement();
 			ResultSet rs = create
 					.executeQuery("SELECT PLAYER_ID from mh_PlayerSettings WHERE NAME='RandomBounty' LIMIT 0");
 			if (!rs.next()) {
@@ -455,7 +457,5 @@ public abstract class DatabaseDataStore implements IDataStore {
 			e.printStackTrace();
 		}
 	}
-
-	
 
 }

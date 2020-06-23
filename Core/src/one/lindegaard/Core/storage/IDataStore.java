@@ -89,7 +89,8 @@ public interface IDataStore {
 	 * create a RandomBountyPlayer if not exist in mh_PlayerSettings
 	 * 
 	 * @param connection
+	 * @throws DataStoreException 
 	 */
-	void createRandomBountyPlayer(Connection mConnection);
+	void createRandomBountyPlayer() throws DataStoreException;
 	
 }

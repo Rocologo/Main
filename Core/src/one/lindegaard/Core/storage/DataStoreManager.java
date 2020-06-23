@@ -1,6 +1,9 @@
 package one.lindegaard.Core.storage;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.LinkedHashSet;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -114,7 +117,18 @@ public class DataStoreManager {
 		throw new UserNotFoundException(
 				"[MobHunting] User " + playerId + " is not present in Core database");
 	}
+
+	public void createRandomBountyPlayer() {
+		try {
+			mStore.createRandomBountyPlayer();
+		} catch (DataStoreException e) {
+			if (Core.getConfigManager().debug)
+				e.printStackTrace();
+		}
+	}
 	
+
+
 	// *****************************************************************************
 	// Common
 	// *****************************************************************************
