@@ -34,7 +34,7 @@ public class Core {
 
 		this.plugin = plugin;
 
-		mFileShared = new File(plugin.getDataFolder() + "/../BagOfGold", "bagofgoldcore_config.yml");
+		mFileShared = new File(plugin.getDataFolder() + "/../BagOfGold", "bagofgoldcore.yml");
 		int config_version = ConfigManager.getConfigVersion(mFileShared);
 
 		mBagOfGoldCompat = new BagOfGoldCompat();
@@ -48,11 +48,11 @@ public class Core {
 			}
 			mConfig.saveConfig();
 		} else
-			throw new RuntimeException("[BagOfGoldCore] Could not load bagofgoldcore_config.yml");
+			throw new RuntimeException("[BagOfGoldCore] Could not load bagofgoldcore.yml");
 
 		mMessages = new Messages(plugin);
 		mMessages.setLanguage(mConfig.language + "_shared.lang");
-		mMessages.debug("Loading bagofgoldcore_config.yml file, version %s", config_version);
+		mMessages.debug("Loading bagofgoldcore.yml file, version %s", config_version);
 
 		mWorldGroupManager = new WorldGroupManager(plugin);
 		mWorldGroupManager.load();
