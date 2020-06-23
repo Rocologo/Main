@@ -451,6 +451,8 @@ public abstract class DatabaseDataStore implements IDataStore {
 			}
 			rs.close();
 			create.close();
+			mConnection.commit();
+			mConnection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
