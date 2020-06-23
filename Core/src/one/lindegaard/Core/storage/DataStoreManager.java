@@ -118,6 +118,8 @@ public class DataStoreManager {
 				"[MobHunting] User " + playerId + " is not present in Core database");
 	}
 
+	public final static String RANDOM_PLAYER_UUID = "bb3be6f2-b457-11ea-b3de-0242ac130004";
+
 	public void createRandomBountyPlayer() {
 		try {
 			mStore.createRandomBountyPlayer();

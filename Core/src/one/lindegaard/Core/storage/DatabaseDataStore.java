@@ -428,8 +428,6 @@ public abstract class DatabaseDataStore implements IDataStore {
 		return playerId;
 	}
 	
-	public final static String RANDOM_PLAYER_UUID = "bb3be6f2-b457-11ea-b3de-0242ac130004";
-
 	/**
 	 * create a RandomBountyPlayer if not exist in mh_PlayerSettings
 	 * 
@@ -448,7 +446,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 						+ "Adding RandomBounty Player to BagOfGoldCore Database.");
 				create.executeUpdate(
 						"insert into mh_PlayerSettings (UUID,PLAYER_ID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE) values ('"
-								+ RANDOM_PLAYER_UUID + "',0,'RandomBounty','default',0,0)");
+								+ DataStoreManager.RANDOM_PLAYER_UUID + "',0,'RandomBounty','default',0,0)");
 				create.executeUpdate("update mh_PlayerSettings set Player_id=0 where name='RandomBounty'");
 			}
 			rs.close();
