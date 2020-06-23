@@ -45,8 +45,8 @@ public class Messages {
 	private static Map<String, String> mTranslationTable;
 	private static String[] mValidEncodings = new String[] { "UTF-16", "UTF-16BE", "UTF-16LE", "UTF-8", "ISO646-US" };
 	private static final String PREFIX = ChatColor.GOLD + "[BagOfGoldCore]" + ChatColor.RESET;
-	private static String[] sources = new String[] { "en_US_shared.lang", "hu_HU_shared.lang", "pl_PL_shared.lang",
-			"ru_RU_shared.lang", "zh_CN_shared.lang" };
+	private static String[] sources = new String[] { "bagofgoldcore_en_US.lang", "bagofgoldcore_hu_HU.lang", "bagofgoldcore_pl_PL.lang",
+			"bagofgoldcore_ru_RU.lang", "bagofgoldcore_zh_CN.lang" };
 
 	public void exportDefaultLanguages(Plugin plugin) {
 		File folder = new File(dataFolder, "lang");
@@ -146,7 +146,7 @@ public class Messages {
 		}
 
 		if (customLanguage) {
-			File dest = new File(folder, Core.getConfigManager().language + "_shared.lang");
+			File dest = new File(folder, "bagofgoldcore_"+Core.getConfigManager().language + ".lang");
 			sortFileOnDisk(dest);
 		}
 
@@ -244,7 +244,7 @@ public class Messages {
 		}
 
 		if (file.exists()) {
-			InputStream resource = plugin.getResource("lang/en_US_shared.lang");
+			InputStream resource = plugin.getResource("lang/bagofgoldcore_en_US.lang");
 			injectChanges(resource, file);
 			mTranslationTable = loadLang(file);
 		} else {
