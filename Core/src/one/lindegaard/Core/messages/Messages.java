@@ -37,7 +37,7 @@ public class Messages {
 
 	public Messages(Plugin plugin) {
 		this.plugin = plugin;
-		datapath = plugin.getDataFolder().getParent() + "/BagOfGoldCore";
+		datapath = plugin.getDataFolder().getParent() + "/BagOfGold";
 		dataFolder = new File(datapath);
 		exportDefaultLanguages(plugin);
 	}

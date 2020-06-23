@@ -30,7 +30,7 @@ public class SQLiteDataStore extends DatabaseDataStore {
 		try {
 			Class.forName("org.sqlite.JDBC");
 			Connection connection = DriverManager.getConnection("jdbc:sqlite:" + plugin.getDataFolder().getPath()
-					+ "/../BagOfGoldCore/" + Core.getConfigManager().databaseName + ".db");
+					+ "/../BagOfGold/" + Core.getConfigManager().databaseName + ".db");
 			connection.setAutoCommit(false);
 			return connection;
 		} catch (ClassNotFoundException classNotFoundEx) {
