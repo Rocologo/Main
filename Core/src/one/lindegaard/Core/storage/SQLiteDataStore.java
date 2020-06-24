@@ -81,8 +81,8 @@ public class SQLiteDataStore extends DatabaseDataStore {
 		// Create new empty tables if they do not exist
 		String lm = Core.getConfigManager().learningMode ? "1" : "0";
 		create.executeUpdate("CREATE TABLE IF NOT EXISTS mh_PlayerSettings" //
-				+ "(UUID TEXT PRIMARY KEY," //
-				+ " PLAYER_ID INTEGER AUTOINCREMENT," //NOT NULL DEFAULT 0, " //
+				+ "(UUID TEXT," //
+				+ " PLAYER_ID INTEGER PRIMARY KEY AUTOINCREMENT," //NOT NULL DEFAULT 0, " //
 				+ " NAME TEXT, " //
 				+ " LAST_WORLDGRP NOT NULL DEFAULT 'default'," //
 				+ " LEARNING_MODE INTEGER NOT NULL DEFAULT " + lm + "," //
