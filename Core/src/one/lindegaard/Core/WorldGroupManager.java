@@ -33,7 +33,7 @@ public class WorldGroupManager {
 
 	public WorldGroupManager(Plugin plugin) {
 		this.plugin = plugin;
-		file = new File(plugin.getDataFolder(), "worldgroups.yml");
+		file = new File(plugin.getDataFolder(), "../BagOfGold/worldgroups.yml");
 		load();
 		if (worldGroups.isEmpty()) {
 			// TODO: check if worldgroups is the same as PerWorldInventory and MyPet if
@@ -120,7 +120,7 @@ public class WorldGroupManager {
 		worldGroups.get(getDefaultWorldgroup()).add(world);
 		save();
 		Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGold]" + ChatColor.RED + " World:" + world
-				+ " was missing in the worldgroups.yml file. It has beed added to the default group. Please review the worldgroups.");
+				+ " was missing in the worldgroups.yml file. It has beed added to the default group in worldgroups.yml in the BagOfGold folder. Please review the worldgroups.");
 		return getDefaultWorldgroup();
 	}
 

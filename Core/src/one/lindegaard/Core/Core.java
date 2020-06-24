@@ -44,14 +44,13 @@ public class Core {
 		if (mConfig.loadConfig()) {
 			if (config_version == -1 || config_version == 0) {
 				mConfig.importConfig(plugin);
-				//config_version = 2;
 			}
 			mConfig.saveConfig();
 		} else
 			throw new RuntimeException("[BagOfGoldCore] Could not load bagofgoldcore.yml");
 
 		mMessages = new Messages(plugin);
-		mMessages.setLanguage(mConfig.language + "_shared.lang");
+		mMessages.setLanguage("bagofgoldcore_"+mConfig.language + ".lang");
 		mMessages.debug("Loading bagofgoldcore.yml file, version %s", config_version);
 
 		mWorldGroupManager = new WorldGroupManager(plugin);

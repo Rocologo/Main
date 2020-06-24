@@ -204,7 +204,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 	 * insertPlayerSettings to database
 	 */
 	// @Override
-	public void insertPlayerSettings(PlayerSettings playerSettings) throws DataStoreException {
+	/**public void insertPlayerSettings(PlayerSettings playerSettings) throws DataStoreException {
 		Connection mConnection;
 		try {
 			mConnection = setupConnection();
@@ -234,7 +234,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-	}
+	}**/
 
 	// @Override
 	public void savePlayerSettings(Set<PlayerSettings> playerDataSet, boolean removeFromCache)

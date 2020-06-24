@@ -25,7 +25,7 @@ public class PlayerSettingsRetrieverTask implements IDataStoreTask<PlayerSetting
 			try {
 				return store.loadPlayerSettings(mPlayer);
 			} catch (UserNotFoundException e) {
-				Core.getMessages().debug("Insert new PlayerSettings for %s to database.",
+				Core.getMessages().debug("Creating new PlayerSettings for %s in the BagOfGoldCore database.",
 						mPlayer.getName());
 				String worldgroup = mPlayer.isOnline()
 						? Core.getWorldGroupManager().getCurrentWorldGroup(mPlayer)
@@ -33,11 +33,12 @@ public class PlayerSettingsRetrieverTask implements IDataStoreTask<PlayerSetting
 				PlayerSettings ps = new PlayerSettings(mPlayer, 0, worldgroup,
 						Core.getConfigManager().learningMode, false, null, null,
 						System.currentTimeMillis(), System.currentTimeMillis());
-				try {
-					store.insertPlayerSettings(ps);
-				} catch (DataStoreException e1) {
-					e1.printStackTrace();
-				}
+				Core.getPlayerSettingsManager().setPlayerSettings(mPlayer, ps);
+				//try {
+				//	store.insertPlayerSettings(ps);
+				//} catch (DataStoreException e1) {
+				//	e1.printStackTrace();
+				//}
 				return ps;
 			} catch (DataStoreException e) {
 				e.printStackTrace();

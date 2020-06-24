@@ -48,7 +48,7 @@ public interface IDataStore {
 	 * @param ps
 	 * @throws DataStoreException
 	 */
-	void insertPlayerSettings(PlayerSettings ps) throws DataStoreException;
+	//void insertPlayerSettings(PlayerSettings ps) throws DataStoreException;
 
 	/**
 	 * Get the player by his name from the Database. ings @param name

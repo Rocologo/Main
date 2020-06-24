@@ -273,17 +273,20 @@ public class ConfigManager extends AutoConfig {
 	public void importConfig(Plugin plugin) {
 
 		if (configVersion == 0) {
-			Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
-					+ "Migration configuration from BagOfGold/MobHunting to BagOfGold Core");
-			File mFileShared=null;
-			if (Core.getBagOfGoldCompat().isSupported())
+			File mFileShared = null;
+			if (Core.getBagOfGoldCompat().isSupported()) {
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
+						+ "Migrating configuration from BagOfGold to BagOfGoldCore");
 				mFileShared = new File(plugin.getDataFolder(), "../BagOfGold/config.yml");
-			else if (Core.getMobHuntingCompat().isSupported())
+			} else if (Core.getMobHuntingCompat().isSupported()) {
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
+						+ "Migrating configuration from MobHunting to BagOfGoldCore");
 				mFileShared = new File(plugin.getDataFolder(), "../MobHunting/config.yml");
-			else {
+			} else {
 				configVersion = 2;
 				Bukkit.getConsoleSender().sendMessage(
 						ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED + "Could not find configuration file");
+				return;
 			}
 
 			YamlConfiguration yamlConfig = YamlConfiguration.loadConfiguration(mFileShared);
@@ -346,7 +349,7 @@ public class ConfigManager extends AutoConfig {
 
 			configVersion = 2;
 			Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
-					+ "Finished migration configuration from BagOfGold/MobHunting to BagOfGold Core");
+					+ "Finished migrating configuration.");
 
 		}
 	}

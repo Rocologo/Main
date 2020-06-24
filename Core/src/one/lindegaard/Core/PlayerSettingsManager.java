@@ -56,8 +56,7 @@ public class PlayerSettingsManager implements Listener {
 				setPlayerSettings(offlinePlayer, ps);
 				return ps;
 			} catch (DataStoreException e) {
-				Core.getMessages().debug("Error reading %s's data from the database", offlinePlayer.getName(),
-						offlinePlayer.hasPlayedBefore());
+				Core.getMessages().debug("Error reading %s's data from the database", offlinePlayer.getName());
 				return new PlayerSettings(offlinePlayer);
 			}
 			mPlayerSettings.put(offlinePlayer.getUniqueId(), ps);
@@ -123,9 +122,6 @@ public class PlayerSettingsManager implements Listener {
 
 				if (ps.getTexture() == null || ps.getTexture().equals("")) {
 					Core.getMessages().debug("Store %s skin in BagOfGoldCore Skin Cache", offlinePlayer.getName());
-					// new
-					// CustomItems().getPlayerHead(offlinePlayer.getUniqueId(),offlinePlayer.getName(),
-					// 1, 0);
 				}
 
 			}
