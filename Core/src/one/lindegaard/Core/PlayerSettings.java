@@ -38,7 +38,7 @@ public class PlayerSettings {
 		this.setLast_interest(last_interest == 0 ? System.currentTimeMillis() : last_interest);
 	}
 
-	public PlayerSettings(OfflinePlayer player, PlayerSettings ps) {
+	public PlayerSettings(PlayerSettings ps, String a) {
 		this.player = ps.getPlayer();
 		this.playerId = ps.getPlayerId();
 		this.setLearningMode(ps.isLearningMode());

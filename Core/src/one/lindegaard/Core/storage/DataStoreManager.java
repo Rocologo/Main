@@ -64,9 +64,9 @@ public class DataStoreManager {
 	 * @param offlinePlayer
 	 * @param playerSetting
 	 */
-	public void updatePlayerSettings(OfflinePlayer offlinePlayer, PlayerSettings ps) {
+	public void insertPlayerSettings(PlayerSettings ps) {
 		synchronized (mWaiting) {
-			mWaiting.add(new PlayerSettings(offlinePlayer, ps));
+			mWaiting.add(ps);
 		}
 	}
 

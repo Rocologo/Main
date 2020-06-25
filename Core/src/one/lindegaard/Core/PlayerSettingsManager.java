@@ -53,7 +53,7 @@ public class PlayerSettingsManager implements Listener {
 				Core.getMessages().debug("Insert new PlayerSettings for %s to database.", offlinePlayer.getName());
 				ps = new PlayerSettings(offlinePlayer, worldgroup, Core.getConfigManager().learningMode, false, null,
 						null, System.currentTimeMillis(), System.currentTimeMillis());
-				setPlayerSettings(offlinePlayer, ps);
+				setPlayerSettings(ps);
 				return ps;
 			} catch (DataStoreException e) {
 				Core.getMessages().debug("Error reading %s's data from the database", offlinePlayer.getName());
@@ -70,9 +70,9 @@ public class PlayerSettingsManager implements Listener {
 	 * 
 	 * @param playerSettings
 	 */
-	public void setPlayerSettings(OfflinePlayer player, PlayerSettings playerSettings) {
-		mPlayerSettings.put(player.getUniqueId(), playerSettings);
-		Core.getDataStoreManager().updatePlayerSettings(player, playerSettings);
+	public void setPlayerSettings(PlayerSettings playerSettings) {
+		mPlayerSettings.put(playerSettings.getPlayer().getUniqueId(), playerSettings);
+		Core.getDataStoreManager().insertPlayerSettings(playerSettings);
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class PlayerSettingsManager implements Listener {
 		final Player player = event.getPlayer();
 		PlayerSettings ps = mPlayerSettings.get(player.getUniqueId());
 		ps.setLastKnownWorldGrp(Core.getWorldGroupManager().getCurrentWorldGroup(player));
-		setPlayerSettings(player, ps);
+		setPlayerSettings(ps);
 		Core.getMessages().debug("Saving lastKnownWorldGroup: %s",
 				Core.getWorldGroupManager().getCurrentWorldGroup(player));
 	}

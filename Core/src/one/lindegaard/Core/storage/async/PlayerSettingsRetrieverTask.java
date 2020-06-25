@@ -33,7 +33,7 @@ public class PlayerSettingsRetrieverTask implements IDataStoreTask<PlayerSetting
 				PlayerSettings ps = new PlayerSettings(mPlayer, worldgroup,
 						Core.getConfigManager().learningMode, false, null, null,
 						System.currentTimeMillis(), System.currentTimeMillis());
-				Core.getPlayerSettingsManager().setPlayerSettings(mPlayer, ps);
+				Core.getPlayerSettingsManager().setPlayerSettings(ps);
 				return ps;
 			} catch (DataStoreException e) {
 				e.printStackTrace();
