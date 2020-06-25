@@ -211,15 +211,14 @@ public abstract class DatabaseDataStore implements IDataStore {
 				openPreparedStatements(mConnection, PreparedConnectionType.INSERT_PLAYER_SETTINGS);
 				for (PlayerSettings playerSettings : playerDataSet) {
 					mInsertPlayerSettings.setString(1, playerSettings.getPlayer().getUniqueId().toString());
-					//<<mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
-					mInsertPlayerSettings.setString(3, playerSettings.getPlayer().getName());
-					mInsertPlayerSettings.setString(4, playerSettings.getLastKnownWorldGrp());
-					mInsertPlayerSettings.setInt(5, playerSettings.isLearningMode() ? 1 : 0);
-					mInsertPlayerSettings.setInt(6, playerSettings.isMuted() ? 1 : 0);
-					mInsertPlayerSettings.setString(7, playerSettings.getTexture());
-					mInsertPlayerSettings.setString(8, playerSettings.getSignature());
-					mInsertPlayerSettings.setLong(9, playerSettings.getLast_logon());
-					mInsertPlayerSettings.setLong(10, playerSettings.getLast_interest());
+					mInsertPlayerSettings.setString(2, playerSettings.getPlayer().getName());
+					mInsertPlayerSettings.setString(3, playerSettings.getLastKnownWorldGrp());
+					mInsertPlayerSettings.setInt(4, playerSettings.isLearningMode() ? 1 : 0);
+					mInsertPlayerSettings.setInt(5, playerSettings.isMuted() ? 1 : 0);
+					mInsertPlayerSettings.setString(6, playerSettings.getTexture());
+					mInsertPlayerSettings.setString(7, playerSettings.getSignature());
+					mInsertPlayerSettings.setLong(8, playerSettings.getLast_logon());
+					mInsertPlayerSettings.setLong(9, playerSettings.getLast_interest());
 
 					mInsertPlayerSettings.addBatch();
 				}
