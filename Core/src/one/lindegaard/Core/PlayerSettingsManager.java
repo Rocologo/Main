@@ -51,7 +51,7 @@ public class PlayerSettingsManager implements Listener {
 						? Core.getWorldGroupManager().getCurrentWorldGroup(offlinePlayer)
 						: Core.getWorldGroupManager().getDefaultWorldgroup();
 				Core.getMessages().debug("Insert new PlayerSettings for %s to database.", offlinePlayer.getName());
-				ps = new PlayerSettings(offlinePlayer, 0, worldgroup, Core.getConfigManager().learningMode, false, null,
+				ps = new PlayerSettings(offlinePlayer, worldgroup, Core.getConfigManager().learningMode, false, null,
 						null, System.currentTimeMillis(), System.currentTimeMillis());
 				setPlayerSettings(offlinePlayer, ps);
 				return ps;

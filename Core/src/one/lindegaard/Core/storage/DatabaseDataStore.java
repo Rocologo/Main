@@ -183,10 +183,11 @@ public abstract class DatabaseDataStore implements IDataStore {
 			ResultSet result;
 			result = mGetPlayerSettings.executeQuery();
 			if (result.next()) {
-				PlayerSettings ps = new PlayerSettings(offlinePlayer, result.getInt("PLAYER_ID"),
+				PlayerSettings ps = new PlayerSettings(offlinePlayer, 
 						result.getString("LAST_WORLDGRP"), result.getBoolean("LEARNING_MODE"),
 						result.getBoolean("MUTE_MODE"), result.getString("TEXTURE"), result.getString("SIGNATURE"),
 						result.getLong("LAST_LOGON"), result.getLong("LAST_INTEREST"));
+				ps.setPlayerId(result.getInt("PLAYER_ID"));
 				result.close();
 				mGetPlayerSettings.close();
 				mConnection.close();
@@ -200,42 +201,6 @@ public abstract class DatabaseDataStore implements IDataStore {
 		throw new UserNotFoundException("User " + offlinePlayer.toString() + " is not present in database");
 	}
 
-	/**
-	 * insertPlayerSettings to database
-	 */
-	// @Override
-	/**public void insertPlayerSettings(PlayerSettings playerSettings) throws DataStoreException {
-		Connection mConnection;
-		try {
-			mConnection = setupConnection();
-			try {
-				openPreparedStatements(mConnection, PreparedConnectionType.INSERT_PLAYER_SETTINGS);
-				mInsertPlayerSettings.setString(1, playerSettings.getPlayer().getUniqueId().toString());
-				mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
-				mInsertPlayerSettings.setString(3, playerSettings.getPlayer().getName());
-				mInsertPlayerSettings.setString(4, playerSettings.getLastKnownWorldGrp());
-				mInsertPlayerSettings.setInt(5, playerSettings.isLearningMode() ? 1 : 0);
-				mInsertPlayerSettings.setInt(6, playerSettings.isMuted() ? 1 : 0);
-				mInsertPlayerSettings.setString(7, playerSettings.getTexture());
-				mInsertPlayerSettings.setString(8, playerSettings.getSignature());
-				mInsertPlayerSettings.setLong(9, playerSettings.getLast_logon());
-				mInsertPlayerSettings.setLong(10, playerSettings.getLast_interest());
-
-				mInsertPlayerSettings.addBatch();
-				mInsertPlayerSettings.executeBatch();
-				mInsertPlayerSettings.close();
-				mConnection.commit();
-				mConnection.close();
-			} catch (SQLException e) {
-				rollback(mConnection);
-				mConnection.close();
-				throw new DataStoreException(e);
-			}
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-	}**/
-
 	// @Override
 	public void savePlayerSettings(Set<PlayerSettings> playerDataSet, boolean removeFromCache)
 			throws DataStoreException {
@@ -246,7 +211,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 				openPreparedStatements(mConnection, PreparedConnectionType.INSERT_PLAYER_SETTINGS);
 				for (PlayerSettings playerSettings : playerDataSet) {
 					mInsertPlayerSettings.setString(1, playerSettings.getPlayer().getUniqueId().toString());
-					mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
+					//<<mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
 					mInsertPlayerSettings.setString(3, playerSettings.getPlayer().getName());
 					mInsertPlayerSettings.setString(4, playerSettings.getLastKnownWorldGrp());
 					mInsertPlayerSettings.setInt(5, playerSettings.isLearningMode() ? 1 : 0);
