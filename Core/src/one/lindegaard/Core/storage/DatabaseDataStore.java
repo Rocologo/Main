@@ -210,7 +210,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 				openPreparedStatements(mConnection, PreparedConnectionType.INSERT_PLAYER_SETTINGS);
 				for (PlayerSettings playerSettings : playerDataSet) {
 					mInsertPlayerSettings.setString(1, playerSettings.getPlayer().getUniqueId().toString());
-					if(playerSettings.getPlayerId()==0)
+					if (playerSettings.getPlayerId() == 0)
 						mInsertPlayerSettings.setString(2, null);
 					else
 						mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
@@ -327,15 +327,15 @@ public abstract class DatabaseDataStore implements IDataStore {
 			ResultSet set = mGetPlayerByPlayerId.executeQuery();
 
 			if (set.next()) {
-				UUID uid = UUID.fromString(set.getString("UUID"));
+				UUID uuid = UUID.fromString(set.getString("UUID"));
 				set.close();
 				mGetPlayerByPlayerId.close();
 				mConnection.close();
-				return Bukkit.getOfflinePlayer(uid);
+				return Bukkit.getOfflinePlayer(uuid);
 			}
 			mGetPlayerByPlayerId.close();
 			mConnection.close();
-			throw new UserNotFoundException("[BagOfGoldCore] PlayerId " + playerId + " is not present in database");
+			return null;
 		} catch (SQLException e) {
 			throw new DataStoreException(e);
 		}
@@ -407,10 +407,9 @@ public abstract class DatabaseDataStore implements IDataStore {
 		try {
 			Connection mConnection = setupConnection();
 			Statement query = mConnection.createStatement();
-			ResultSet rs = query
-					.executeQuery("SELECT PLAYER_ID from mh_PlayerSettings WHERE PLAYER_ID=0");
+			ResultSet rs = query.executeQuery("SELECT PLAYER_ID from mh_PlayerSettings WHERE PLAYER_ID=0");
 			if (!rs.next()) {
-				Statement create = mConnection.createStatement(); 
+				Statement create = mConnection.createStatement();
 				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RESET
 						+ "Adding RandomBounty Player to BagOfGoldCore Database.");
 				create.executeUpdate(
