@@ -85,3 +85,7 @@ mobs.Zombie.name=§9Zombi
 mobs.ZombieHorse.name=§9Zombi ló
 mobs.ZombiePigman.name=§9Zombi-malac ember
 mobs.ZombieVillager.name=§9Falusi zombi
+mobs.Hoglin.name=§9Hoglin
+mobs.Piglin.name=§9Piglin
+mobs.Strider.name=§9Strider
+mobs.Zoglin.name=§9Zoglin

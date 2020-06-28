@@ -85,3 +85,7 @@ mobs.Zombie.name=§9Zombie
 mobs.ZombieHorse.name=§9Kon Zombie
 mobs.ZombiePigman.name=§9Swiniak Zombie
 mobs.ZombieVillager.name=§9Zombie Wiesniak
+mobs.Hoglin.name=§9Hoglin
+mobs.Piglin.name=§9Piglin
+mobs.Strider.name=§9Strider
+mobs.Zoglin.name=§9Zoglin
