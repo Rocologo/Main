@@ -52,8 +52,8 @@ public class SQLiteDataStore extends DatabaseDataStore {
 			break;
 		case INSERT_PLAYER_SETTINGS:
 			mInsertPlayerSettings = connection.prepareStatement(
-					"INSERT OR REPLACE INTO mh_PlayerSettings (UUID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE,TEXTURE,SIGNATURE,LAST_LOGON,LAST_INTEREST) "
-							+ "VALUES(?,?,?,?,?,?,?,?,?);");
+					"INSERT OR REPLACE INTO mh_PlayerSettings (UUID,PLAYER_ID,NAME,LAST_WORLDGRP,LEARNING_MODE,MUTE_MODE,TEXTURE,SIGNATURE,LAST_LOGON,LAST_INTEREST) "
+							+ "VALUES(?,?,?,?,?,?,?,?,?,?);");
 			break;
 		case UPDATE_PLAYER_NAME:
 			mUpdatePlayerName = connection.prepareStatement("UPDATE mh_PlayerSettings SET NAME=? WHERE UUID=?;");
