@@ -100,7 +100,7 @@ public class DataStoreManager {
 				e.printStackTrace();
 		}
 		throw new UserNotFoundException(
-				"[MobHunting] User " + offlinePlayer.getName() + " is not present in Core database");
+				"[BagOfGoldCore] User " + offlinePlayer.getName() + " is not present in Core database");
 	}
 
 	public OfflinePlayer getPlayerByPlayerId(int playerId) throws UserNotFoundException {
