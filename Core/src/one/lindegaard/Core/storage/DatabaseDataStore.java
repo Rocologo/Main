@@ -404,7 +404,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 			Connection mConnection = setupConnection();
 			Statement query = mConnection.createStatement();
 			ResultSet rs = query
-					.executeQuery("SELECT PLAYER_ID from mh_PlayerSettings WHERE NAME='RandomBounty'");
+					.executeQuery("SELECT PLAYER_ID from mh_PlayerSettings WHERE PLAYER_ID=0");
 			if (!rs.next()) {
 				Statement create = mConnection.createStatement(); 
 				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RESET
