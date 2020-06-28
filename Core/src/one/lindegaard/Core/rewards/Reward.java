@@ -391,7 +391,17 @@ public class Reward {
 				skullMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
 						Core.getConfigManager().killerHeadDisplayNameFormat.replace("{name}", reward.getDisplayName())
 								.replace("{value}", Tools.format(reward.getMoney()))));
+		skull.setItemMeta(skullMeta);
+		return skull;
+	}
 
+	public static ItemStack setDisplayNameAndHiddenLores(ItemStack skull, String name, double value,
+			List<String> lores) {
+		ItemMeta skullMeta = skull.getItemMeta();
+		skullMeta.setLore(lores);
+		skullMeta.setDisplayName(
+				ChatColor.translateAlternateColorCodes('&', Core.getConfigManager().bagOfGoldDisplayNameFormat
+						.replace("{name}", name).replace("{value}", Tools.format(value))));
 		skull.setItemMeta(skullMeta);
 		return skull;
 	}
