@@ -210,7 +210,10 @@ public abstract class DatabaseDataStore implements IDataStore {
 				openPreparedStatements(mConnection, PreparedConnectionType.INSERT_PLAYER_SETTINGS);
 				for (PlayerSettings playerSettings : playerDataSet) {
 					mInsertPlayerSettings.setString(1, playerSettings.getPlayer().getUniqueId().toString());
-					mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
+					if(playerSettings.getPlayerId()==0)
+						mInsertPlayerSettings.setString(2, null);
+					else
+						mInsertPlayerSettings.setInt(2, playerSettings.getPlayerId());
 					mInsertPlayerSettings.setString(3, playerSettings.getPlayer().getName());
 					mInsertPlayerSettings.setString(4, playerSettings.getLastKnownWorldGrp());
 					mInsertPlayerSettings.setInt(5, playerSettings.isLearningMode() ? 1 : 0);

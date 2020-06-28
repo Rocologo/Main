@@ -143,6 +143,9 @@ public class DataStoreManager {
 	/**
 	 * Shutdown the DataStoreManager
 	 */
+	/**
+	 * 
+	 */
 	public void shutdown() {
 		mExit = true;
 		flush();
