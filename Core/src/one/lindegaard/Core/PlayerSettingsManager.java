@@ -121,14 +121,14 @@ public class PlayerSettingsManager implements Listener {
 				mPlayerSettings.put(offlinePlayer.getUniqueId(), ps);
 
 				if (ps.getTexture() == null || ps.getTexture().equals("")) {
-					Core.getMessages().debug("Store %s skin in BagOfGoldCore Skin Cache", offlinePlayer.getName());
+					Core.getMessages().debug("Store %s's skin in BagOfGoldCore Skin Cache", offlinePlayer.getName());
 				}
 
 			}
 
 			@Override
 			public void onError(Throwable error) {
-				Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[BagOfGold][ERROR] " + offlinePlayer.getName()
+				Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[BagOfGoldCore][ERROR] " + offlinePlayer.getName()
 						+ " is new, creating user in database.");
 				mPlayerSettings.put(offlinePlayer.getUniqueId(), new PlayerSettings(offlinePlayer));
 			}

@@ -20,11 +20,11 @@ public class PlayerSettings {
 		this.setMuteMode(false);
 	}
 	
-	public PlayerSettings(OfflinePlayer player, boolean learning_mode, boolean mute) {
-		this.player = player;
-		this.setLearningMode(learning_mode);
-		this.setMuteMode(mute);
-	}
+	//public PlayerSettings(OfflinePlayer player, boolean learning_mode, boolean mute) {
+	//	this.player = player;
+	//	this.setLearningMode(learning_mode);
+	//	this.setMuteMode(mute);
+	//}
 
 	public PlayerSettings(OfflinePlayer player, String lastKnownWorldGrp, boolean learning_mode, boolean mute,
 			String texture, String signature, long last_logon, long last_interest) {
@@ -34,18 +34,6 @@ public class PlayerSettings {
 		this.setMuteMode(mute);
 		this.setTexture(texture);
 		this.setSignature(signature);
-		this.setLast_logon(last_logon == 0 ? last_logon = System.currentTimeMillis() : last_logon);
-		this.setLast_interest(last_interest == 0 ? System.currentTimeMillis() : last_interest);
-	}
-
-	public PlayerSettings(PlayerSettings ps, String a) {
-		this.player = ps.getPlayer();
-		this.playerId = ps.getPlayerId();
-		this.setLearningMode(ps.isLearningMode());
-		this.setMuteMode(ps.isMuted());
-		this.setLastKnownWorldGrp(ps.getLastKnownWorldGrp());
-		this.setTexture(ps.getTexture());
-		this.setSignature(ps.getSignature());
 		this.setLast_logon(last_logon == 0 ? last_logon = System.currentTimeMillis() : last_logon);
 		this.setLast_interest(last_interest == 0 ? System.currentTimeMillis() : last_interest);
 	}
