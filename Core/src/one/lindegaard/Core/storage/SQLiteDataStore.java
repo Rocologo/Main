@@ -92,7 +92,6 @@ public class SQLiteDataStore extends DatabaseDataStore {
 				+ " LAST_LOGON INTEGER, " //
 				+ " LAST_INTEREST INTEGER, " //
 				+ " UNIQUE(UUID))");
-
 		create.close();
 		connection.commit();
 

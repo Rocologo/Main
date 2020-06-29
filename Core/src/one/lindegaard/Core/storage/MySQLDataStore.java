@@ -121,20 +121,18 @@ public class MySQLDataStore extends DatabaseDataStore {
 
 		// Create new empty tables if they do not exist
 		String lm = Core.getConfigManager().learningMode ? "1" : "0";
-		Core.getMessages().debug("MySQLDatastore: create mh_PlayerSettings");
 		create.executeUpdate("CREATE TABLE IF NOT EXISTS mh_PlayerSettings "//
 				+ "(UUID CHAR(40),"//
 				+ " PLAYER_ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,"//
 				+ " NAME VARCHAR(20),"//
 				+ " LAST_WORLDGRP VARCHAR(20) NOT NULL DEFAULT 'default'," //
 				+ " LEARNING_MODE INTEGER NOT NULL DEFAULT " + lm + ","//
-				+ " MUTE_MODE INTEGER NOT NULL DEFAULT 0,"//
+				+ " MUTE_MODE INTEGER NOT NULL DEFAULT 0, "//
 				+ " TEXTURE TEXT, " //
 				+ " SIGNATURE TEXT, " //
 				+ " LAST_LOGON BIGINT, " //
-				+ " LAST_INTEREST BIGINT,"
-				+ " UNIQUE(UUID)");
-
+				+ " LAST_INTEREST BIGINT, "
+				+ " UNIQUE(UUID))");
 		create.close();
 		connection.commit();
 	}
