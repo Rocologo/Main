@@ -521,6 +521,8 @@ public enum MobType {
 				return entity instanceof org.bukkit.entity.Strider;
 			else if (this == Zoglin)
 				return entity instanceof org.bukkit.entity.Zoglin;
+			else if (this == ZombiePigman)
+				return entity instanceof org.bukkit.entity.PigZombie;
 
 		if (Servers.isMC115OrNewer())
 			if (this == Bee)

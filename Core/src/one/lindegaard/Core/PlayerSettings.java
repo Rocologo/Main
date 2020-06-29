@@ -20,12 +20,6 @@ public class PlayerSettings {
 		this.setMuteMode(false);
 	}
 	
-	//public PlayerSettings(OfflinePlayer player, boolean learning_mode, boolean mute) {
-	//	this.player = player;
-	//	this.setLearningMode(learning_mode);
-	//	this.setMuteMode(mute);
-	//}
-
 	public PlayerSettings(OfflinePlayer player, String lastKnownWorldGrp, boolean learning_mode, boolean mute,
 			String texture, String signature, long last_logon, long last_interest) {
 		this.player = player;
