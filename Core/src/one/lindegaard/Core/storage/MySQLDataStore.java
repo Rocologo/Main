@@ -124,7 +124,7 @@ public class MySQLDataStore extends DatabaseDataStore {
 		Core.getMessages().debug("MySQLDatastore: create mh_PlayerSettings");
 		create.executeUpdate("CREATE TABLE IF NOT EXISTS mh_PlayerSettings "//
 				+ "(UUID CHAR(40),"//
-				+ " PLAYER_ID INTEGER NOT NULL AUTO_INCREMENT,"//
+				+ " PLAYER_ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,"//
 				+ " NAME VARCHAR(20),"//
 				+ " LAST_WORLDGRP VARCHAR(20) NOT NULL DEFAULT 'default'," //
 				+ " LEARNING_MODE INTEGER NOT NULL DEFAULT " + lm + ","//
@@ -132,8 +132,8 @@ public class MySQLDataStore extends DatabaseDataStore {
 				+ " TEXTURE TEXT, " //
 				+ " SIGNATURE TEXT, " //
 				+ " LAST_LOGON BIGINT, " //
-				+ " LAST_INTEREST BIGINT, " //
-				+ " PRIMARY KEY (UUID))");
+				+ " LAST_INTEREST BIGINT,"
+				+ " UNIQUE(UUID)");
 
 		create.close();
 		connection.commit();
