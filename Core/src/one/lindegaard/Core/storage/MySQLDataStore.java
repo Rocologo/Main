@@ -134,7 +134,6 @@ public class MySQLDataStore extends DatabaseDataStore {
 				+ " LAST_LOGON BIGINT, " //
 				+ " LAST_INTEREST BIGINT, " //
 				+ " PRIMARY KEY (UUID))");
-		connection.commit();
 
 		create.close();
 		connection.commit();

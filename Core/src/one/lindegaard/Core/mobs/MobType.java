@@ -680,7 +680,6 @@ public enum MobType {
 			return entity instanceof Skeleton && ((Skeleton) entity).getSkeletonType() == SkeletonType.NORMAL;
 		else if (this == BonusMob)
 			return entity.hasMetadata("MH:hasBonus");
-		// else
 		else
 			return entity.getType().toString().equals(mMobType);
 	}

@@ -107,7 +107,7 @@ public class ConfigManager extends AutoConfig {
 	public String language = "en_US";
 
 	@ConfigField(name = "debug", category = "general", comment = "Enable/disable debug information")
-	public boolean debug = false;
+	public boolean debug = true;
 
 	@ConfigField(name = "newplayer_learning_mode", category = "general", comment = "When a new playerjoins the server he will by default start"
 			+ "\nin 'LEARNING MODE' and get extra information about when he get rewards and not,"
