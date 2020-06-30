@@ -240,7 +240,7 @@ public class ConfigManager extends AutoConfig {
 	@ConfigField(name = "database_name", category = "database")
 	public String databaseName = "bagofgoldcore";
 
-	@ConfigField(name = "save-period", category = "general", comment = "Time between saves in ticks (20 ticks ~ 1 sec) This number must be higher that 1200 ticks = 2 minutes,"
+	@ConfigField(name = "save_period", category = "database", comment = "Time between saving data to disk in ticks (20 ticks ~ 1 sec) This number must be higher that 1200 ticks = 2 minutes,"
 			+ "\nbut I recommend to save every 5th minute = 6000 ticks")
 	public int savePeriod = 6000;
 
