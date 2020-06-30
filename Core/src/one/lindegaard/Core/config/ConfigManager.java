@@ -240,10 +240,6 @@ public class ConfigManager extends AutoConfig {
 	@ConfigField(name = "database_name", category = "database")
 	public String databaseName = "bagofgoldcore";
 
-	@ConfigField(name = "save_period", category = "database", comment = "Time between saving data to disk in ticks (20 ticks ~ 1 sec) This number must be higher that 1200 ticks = 2 minutes,"
-			+ "\nbut I recommend to save every 5th minute = 6000 ticks")
-	public int savePeriod = 6000;
-
 	@ConfigField(name = "username", category = "database.mysql")
 	public String databaseUsername = "user";
 
@@ -255,6 +251,10 @@ public class ConfigManager extends AutoConfig {
 
 	@ConfigField(name = "useSSL", category = "database.mysql")
 	public String databaseUseSSL = "false";
+
+	@ConfigField(name = "save_period", category = "database", comment = "Time between saving data to disk in ticks (20 ticks ~ 1 sec) This number must be higher that 1200 ticks = 2 minutes,"
+			+ "\nbut I recommend to save every 5th minute = 6000 ticks")
+	public int savePeriod = 6000;
 
 	@ConfigField(name = "database_version", category = "database", comment = "This is the database layout version. Mostly for internal use and you should not need"
 			+ "\nto change this value. In case you decide to delete your database and let it recreate"
