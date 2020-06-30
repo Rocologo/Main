@@ -119,8 +119,8 @@ public class WorldGroupManager {
 		}
 		worldGroups.get(getDefaultWorldgroup()).add(world);
 		save();
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGold]" + ChatColor.RED + " World:" + world
-				+ " was missing in the worldgroups.yml file. It has beed added to the default group in worldgroups.yml in the BagOfGold folder. Please review the worldgroups.");
+		Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGold]" + ChatColor.RED + " The world '" + world
+				+ "' was missing in the worldgroups.yml file. It has beed added to the default group in worldgroups.yml in the BagOfGold folder. Please review the worldgroups.");
 		return getDefaultWorldgroup();
 	}
 
