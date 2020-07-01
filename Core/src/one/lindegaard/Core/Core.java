@@ -82,10 +82,10 @@ public class Core {
 	public static void shutdown() {
 		disabling = true;
 		try {
-			getMessages().debug("Saving all rewardblocks to disk.");
-			mRewardBlockManager.saveAllRewards();
-			getMessages().debug("Saving worldgroups.");
-			mWorldGroupManager.save();
+			//getMessages().debug("Saving all rewardblocks to disk.");
+			//mRewardBlockManager.saveAllRewards();
+			//getMessages().debug("Saving worldgroups.");
+			//mWorldGroupManager.save();
 			getMessages().debug("Shutdown StoreManager");
 			mDataStoreManager.shutdown();
 			getMessages().debug("Shutdown Store");
