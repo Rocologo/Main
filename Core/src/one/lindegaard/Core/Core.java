@@ -30,13 +30,9 @@ public class Core {
 	private static IDataStore mStore;
 	private static DataStoreManager mDataStoreManager;
 	private static PlayerSettingsManager mPlayerSettingsManager;
-	public static boolean disabling = false;
 	
 	public Core(Plugin plugin) {
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD+"[BagOfGoldCore]"+ChatColor.GRAY+" Core initiated.");
 		this.plugin = plugin;
-
-		disabling = false;
 		
 		mFileShared = new File(plugin.getDataFolder() + "/../BagOfGold", "bagofgoldcore.yml");
 		int config_version = ConfigManager.getConfigVersion(mFileShared);
@@ -83,12 +79,11 @@ public class Core {
 	}
 
 	public void shutdown() {
-		disabling = true;
 		try {
-			//getMessages().debug("Saving all rewardblocks to disk.");
-			//mRewardBlockManager.saveAllRewards();
-			//getMessages().debug("Saving worldgroups.");
-			//mWorldGroupManager.save();
+			getMessages().debug("Saving all rewardblocks to disk.");
+			mRewardBlockManager.save();
+			getMessages().debug("Saving worldgroups.");
+			mWorldGroupManager.save();
 			getMessages().debug("Shutdown StoreManager");
 			mDataStoreManager.shutdown();
 			getMessages().debug("Shutdown Store");

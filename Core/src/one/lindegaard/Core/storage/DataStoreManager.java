@@ -42,7 +42,6 @@ public class DataStoreManager {
 			Bukkit.getConsoleSender().sendMessage(ChatColor.RED
 					+ "[BagOfGoldCore][Warning] save-period in your config.yml is too low. Please raise it to 1200 or higher");
 		}
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[BagOfGoldCore][INFO] New mStoreThread created");
 		mStoreThread = new StoreThread(savePeriod);
 	}
 
