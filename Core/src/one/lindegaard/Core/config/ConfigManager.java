@@ -4,10 +4,10 @@ import java.io.File;
 import java.util.LinkedHashMap;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
-import net.md_5.bungee.api.ChatColor;
 import one.lindegaard.Core.Core;
 import one.lindegaard.Core.config.AutoConfig;
 import one.lindegaard.Core.config.ConfigField;
@@ -266,7 +266,7 @@ public class ConfigManager extends AutoConfig {
 	// #####################################################################################
 	/**
 	 * importConfig import settings from BagOfGold and/or from MobHunting - ADDED at
-	 * BagOfGold V3.0.0 and MobHunting V7.5.0
+	 * BagOfGold V3.0.0 and MobHunting V7.5.0.
 	 * 
 	 * @param plugin
 	 */
