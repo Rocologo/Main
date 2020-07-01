@@ -2,6 +2,8 @@ package one.lindegaard.Core;
 
 import java.io.File;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.compatibility.BagOfGoldCompat;
@@ -31,6 +33,7 @@ public class Core {
 	public static boolean disabling = false;
 	
 	public Core(Plugin plugin) {
+		Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD+"[BagOfGoldCore]"+ChatColor.GRAY+" Core initiated.");
 		this.plugin = plugin;
 
 		disabling = false;
@@ -79,7 +82,7 @@ public class Core {
 
 	}
 
-	public static void shutdown() {
+	public void shutdown() {
 		disabling = true;
 		try {
 			//getMessages().debug("Saving all rewardblocks to disk.");

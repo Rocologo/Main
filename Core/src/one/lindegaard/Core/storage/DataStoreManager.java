@@ -42,6 +42,7 @@ public class DataStoreManager {
 			Bukkit.getConsoleSender().sendMessage(ChatColor.RED
 					+ "[BagOfGoldCore][Warning] save-period in your config.yml is too low. Please raise it to 1200 or higher");
 		}
+		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[BagOfGoldCore][INFO] New mStoreThread created");
 		mStoreThread = new StoreThread(savePeriod);
 	}
 
@@ -84,7 +85,7 @@ public class DataStoreManager {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Get the playerId from the database
 	 * 
@@ -110,8 +111,7 @@ public class DataStoreManager {
 			if (Core.getConfigManager().debug)
 				e.printStackTrace();
 		}
-		throw new UserNotFoundException(
-				"[BagOfGoldCore] User " + playerId + " is not present in Core database");
+		throw new UserNotFoundException("[BagOfGoldCore] User " + playerId + " is not present in Core database");
 	}
 
 	public final static String RANDOM_PLAYER_UUID = "bb3be6f2-b457-11ea-b3de-0242ac130004";
@@ -124,8 +124,6 @@ public class DataStoreManager {
 				e.printStackTrace();
 		}
 	}
-	
-
 
 	// *****************************************************************************
 	// Common
@@ -196,7 +194,7 @@ public class DataStoreManager {
 		private int mSaveInterval;
 
 		public StoreThread(int interval) {
-			super("MH StoreThread");
+			super("BGC StoreThread");
 			start();
 			mSaveInterval = interval;
 		}
@@ -211,18 +209,9 @@ public class DataStoreManager {
 						}
 					}
 					mTaskThread.addTask(new StoreTask(mWaiting), null);
-					
-					if (Core.disabling) {
-						Core.getRewardBlockManager().saveAllRewards();
-						Core.getWorldGroupManager().save();
-					} else
-						Bukkit.getScheduler().runTask(plugin, new Runnable() {
-							@Override
-							public void run() {
-								Core.getRewardBlockManager().saveAllRewards();
-								Core.getWorldGroupManager().save();
-							}
-						});
+
+					Core.getRewardBlockManager().save();
+					Core.getWorldGroupManager().save();
 
 					Thread.sleep(mSaveInterval * 50);
 				}
@@ -271,11 +260,12 @@ public class DataStoreManager {
 		private Object mSignal = new Object();
 
 		public TaskThread() {
-			super("MH TaskThread");
+			super("BGC TaskThread");
 
 			mQueue = new LinkedBlockingQueue<Task>();
 
 			start();
+
 		}
 
 		public void waitForEmptyQueue() throws InterruptedException {
@@ -335,6 +325,7 @@ public class DataStoreManager {
 						else
 							e.printStackTrace();
 					}
+
 				}
 
 			} catch (InterruptedException e) {

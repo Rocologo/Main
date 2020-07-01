@@ -36,7 +36,7 @@ public class RewardBlockManager implements Listener {
 	public RewardBlockManager(Plugin plugin) {
 		this.plugin = plugin;
 		file = new File(plugin.getDataFolder().getParent(), "BagOfGold/rewards.yml");
-		loadAllStoredRewards();
+		load();
 		Bukkit.getPluginManager().registerEvents(this, plugin);
 	}
 
@@ -70,7 +70,7 @@ public class RewardBlockManager implements Listener {
 		return max + 1;
 	}
 
-	public void saveAllRewards() {
+	public void save() {
 		int n = 0;
 		try {
 			config.options().header(
@@ -99,7 +99,7 @@ public class RewardBlockManager implements Listener {
 		}
 	}
 
-	public void loadAllStoredRewards() {
+	public void load() {
 		int n = 0;
 		int deleted = 0;
 		try {
@@ -162,11 +162,11 @@ public class RewardBlockManager implements Listener {
 		File file2 = new File(plugin.getDataFolder().getParent(), "MobHunting/rewards.yml");
 		if (file2.exists()) {
 			Core.getMessages().debug("Loading rewards from MobHunting first time.");
-			loadAllStoredRewardsFromMobHunting(file2);
+			migrateRewardsFromMobHunting(file2);
 		}
 	}
 
-	private void loadAllStoredRewardsFromMobHunting(File file) {
+	private void migrateRewardsFromMobHunting(File file) {
 		if (!file.exists())
 			return;
 
