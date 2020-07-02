@@ -105,9 +105,10 @@ public class RewardBlockManager implements Listener {
 		try {
 			if (file.exists())
 				config.load(file);
+		} catch (IllegalArgumentException | InvalidConfigurationException e) {
+			Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED
+					+ " The rewards file contain broken rewards. They will be deleted.");
 		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InvalidConfigurationException e) {
 			e.printStackTrace();
 		}
 
