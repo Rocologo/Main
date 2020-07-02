@@ -111,34 +111,36 @@ public class RewardBlockManager implements Listener {
 			e.printStackTrace();
 		}
 
-		try {
-			for (String key : config.getKeys(false)) {
-				ConfigurationSection section = config.getConfigurationSection(key);
-				Reward reward = new Reward();
+		for (String key : config.getKeys(false)) {
+			ConfigurationSection section = config.getConfigurationSection(key);
+			Reward reward = new Reward();
+			try {
 				reward.read(section);
-				Location location = (Location) section.get("location");
-				for (RewardBlock rb : rewardBlocks.values()) {
-					if (rb.equals(new RewardBlock(location, reward)))
-						continue;
-				}
-				if (location != null && Materials.isSkull(location.getBlock().getType())) {
-					n++;
-					reward.setUniqueID(n);
-					location.getBlock().setMetadata(Reward.MH_REWARD_DATA_NEW,
-							new FixedMetadataValue(plugin, new Reward(reward)));
-					rewardBlocks.put(n, new RewardBlock(location, reward));
-					if (Tools.isUUID(key)) {
-						deleted++;
-						config.set(key, null);
-					}
-				} else {
-					// This block is not a PLAYER_HEAD, delete the section.
+			} catch (InvalidConfigurationException e) {
+				Bukkit.getConsoleSender().sendMessage(
+						ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED + " Could not reward no. " + key + ".");
+			}
+
+			Location location = (Location) section.get("location");
+			for (RewardBlock rb : rewardBlocks.values()) {
+				if (rb.equals(new RewardBlock(location, reward)))
+					continue;
+			}
+			if (location != null && Materials.isSkull(location.getBlock().getType())) {
+				n++;
+				reward.setUniqueID(n);
+				location.getBlock().setMetadata(Reward.MH_REWARD_DATA_NEW,
+						new FixedMetadataValue(plugin, new Reward(reward)));
+				rewardBlocks.put(n, new RewardBlock(location, reward));
+				if (Tools.isUUID(key)) {
 					deleted++;
 					config.set(key, null);
 				}
+			} else {
+				// This block is not a PLAYER_HEAD, delete the section.
+				deleted++;
+				config.set(key, null);
 			}
-		} catch (InvalidConfigurationException e) {
-			e.printStackTrace();
 		}
 
 		try {

@@ -27,6 +27,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.Core;
+import one.lindegaard.Core.Strings;
 
 public class Messages {
 
@@ -131,25 +132,6 @@ public class Messages {
 			e.printStackTrace();
 			return false;
 		}
-	}
-
-	private void injectMissingMobNamesToLangFiles() {
-		File folder = new File(dataFolder, "lang");
-		if (!folder.exists())
-			folder.mkdirs();
-
-		boolean customLanguage = true;
-		for (String source : sources) {
-			if (source.equalsIgnoreCase(Core.getConfigManager().language))
-				customLanguage = false;
-			new File(folder, source);
-		}
-
-		if (customLanguage) {
-			File dest = new File(folder, "bagofgoldcore_"+Core.getConfigManager().language + ".lang");
-			sortFileOnDisk(dest);
-		}
-
 	}
 
 	private static Map<String, String> loadLang(InputStream stream, String encoding) throws IOException {
@@ -306,7 +288,7 @@ public class Messages {
 					output = output.replaceAll("\\$\\{" + name + "\\}", Matcher.quoteReplacement(replace.toString()));
 			}
 
-			return ChatColor.translateAlternateColorCodes('&', output);
+			return Strings.convertColors(ChatColor.translateAlternateColorCodes('&', output));
 		} catch (MissingResourceException e) {
 			Bukkit.getConsoleSender().sendMessage(PREFIX + " Could not find key: " + key.toString());
 			return key;
@@ -315,7 +297,7 @@ public class Messages {
 
 	public String getString(String key) {
 		try {
-			return ChatColor.translateAlternateColorCodes('&', getStringInternal(key));
+			return Strings.convertColors(ChatColor.translateAlternateColorCodes('&', getStringInternal(key)));
 		} catch (MissingResourceException e) {
 			return key;
 		}
