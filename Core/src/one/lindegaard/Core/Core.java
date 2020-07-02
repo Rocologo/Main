@@ -2,8 +2,6 @@ package one.lindegaard.Core;
 
 import java.io.File;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.compatibility.BagOfGoldCompat;
@@ -30,10 +28,10 @@ public class Core {
 	private static IDataStore mStore;
 	private static DataStoreManager mDataStoreManager;
 	private static PlayerSettingsManager mPlayerSettingsManager;
-	
+
 	public Core(Plugin plugin) {
 		this.plugin = plugin;
-		
+
 		mFileShared = new File(plugin.getDataFolder() + "/../BagOfGold", "bagofgoldcore.yml");
 		int config_version = ConfigManager.getConfigVersion(mFileShared);
 
@@ -50,7 +48,7 @@ public class Core {
 			throw new RuntimeException("[BagOfGoldCore] Could not load bagofgoldcore.yml");
 
 		mMessages = new Messages(plugin);
-		mMessages.setLanguage("bagofgoldcore_"+mConfig.language + ".lang");
+		mMessages.setLanguage("bagofgoldcore_" + mConfig.language + ".lang");
 		mMessages.debug("Loading bagofgoldcore.yml file, version %s", config_version);
 
 		mWorldGroupManager = new WorldGroupManager(plugin);
@@ -116,7 +114,7 @@ public class Core {
 	public static RewardBlockManager getRewardBlockManager() {
 		return mRewardBlockManager;
 	}
-	
+
 	public static IDataStore getStoreManager() {
 		return mStore;
 	}

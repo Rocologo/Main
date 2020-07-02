@@ -89,7 +89,7 @@ public class RewardBlockManager implements Listener {
 					n++;
 				} else {
 					config.set(id.toString(), null);
-					rewardBlocks.remove(reward.getUniqueID());
+					itr.remove();
 				}
 			}
 			if (n > 0)
