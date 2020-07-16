@@ -1,5 +1,7 @@
 v0.4.5
 * Added support for RGB colours in lang file
+* Fixed NPE bug when saving bounties
+* Fixed support with StackMob
 V0.2.3, 09-05-2020
 * Messages added
 V0.2.2, 02-05-2020

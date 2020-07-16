@@ -371,7 +371,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 				if (result.next()) {
 					String name = result.getString("NAME");
 					UUID uuid = UUID.fromString(result.getString("UUID"));
-					if (name != null && uuid != null)
+					if (name != null && uuid != null && offlinePlayer.getName()!=null && !offlinePlayer.getName().isEmpty())
 						if (offlinePlayer.getUniqueId().equals(uuid) && !offlinePlayer.getName().equals(name)) {
 							Core.getMessages().debug("Name change detected(2): " + name + " -> "
 									+ offlinePlayer.getName() + " UUID=" + offlinePlayer.getUniqueId().toString());
