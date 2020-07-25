@@ -190,7 +190,6 @@ public abstract class DatabaseDataStore implements IDataStore {
 				result.close();
 				mGetPlayerSettings.close();
 				mConnection.close();
-				Core.getMessages().debug("DatabaseDataStore: loadPS, ps=%s id=%s", ps.getPlayer().getName(),ps.getPlayerId());
 				return ps;
 			}
 			mGetPlayerSettings.close();
@@ -225,7 +224,6 @@ public abstract class DatabaseDataStore implements IDataStore {
 					mInsertPlayerSettings.setLong(10, playerSettings.getLast_interest());
 
 					mInsertPlayerSettings.addBatch();
-					Core.getMessages().debug("DatabaseDataStore: savePS, ps=%s id=%s", playerSettings.getPlayer().getName(),playerSettings.getPlayerId());
 				}
 				mInsertPlayerSettings.executeBatch();
 				mInsertPlayerSettings.close();
