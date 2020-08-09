@@ -152,16 +152,16 @@ public class DataStoreManager {
 			while (mTaskThread.getState() != Thread.State.WAITING && mTaskThread.getState() != Thread.State.TERMINATED
 					&& n < 40) {
 				Thread.sleep(500);
-				Core.getMessages().debug("Waiting %s", n);
+				//Core.getMessages().debug("Waiting %s", n);
 				n++;
 			}
-			Core.getMessages().debug("mTaskThread.state=%s", mTaskThread.getState());
+			//Core.getMessages().debug("mTaskThread.state=%s", mTaskThread.getState());
 			if (mTaskThread.getState() == Thread.State.RUNNABLE) {
-				Core.getMessages().debug("Interupting mTaskThread");
+				//Core.getMessages().debug("Interupting mTaskThread");
 				mTaskThread.interrupt();
 			}
-			Core.getMessages().debug("mStoreThread.state=%s", mStoreThread.getState());
-			Core.getMessages().debug("mTaskThread.state=%s", mTaskThread.getState());
+			//Core.getMessages().debug("mStoreThread.state=%s", mStoreThread.getState());
+			//Core.getMessages().debug("mTaskThread.state=%s", mTaskThread.getState());
 			if (mTaskThread.getState() != Thread.State.WAITING) {
 				mTaskThread.waitForEmptyQueue();
 			}
