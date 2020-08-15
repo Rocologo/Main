@@ -1,4 +1,4 @@
-package one.lindegaard.Core.v1_16_R1;
+package one.lindegaard.Core.v1_16_R2;
 
 import org.bukkit.craftbukkit.v1_16_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
@@ -9,7 +9,7 @@ import com.mojang.authlib.properties.Property;
 import net.minecraft.server.v1_16_R2.EntityPlayer;
 import one.lindegaard.Core.shared.Skins;
 
-public class Skins_1_16_R1 implements Skins {
+public class Skins_1_16_R2 implements Skins {
 
 	// How to get Playerskin
 	// https://www.spigotmc.org/threads/how-to-get-a-players-texture.244966/

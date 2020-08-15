@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion> 
+	<modelVersion>4.0.0</modelVersion>
 	<artifactId>Core</artifactId>
 	<packaging>jar</packaging>
 	<version>0.4.8-SNAPSHOT</version>
@@ -28,72 +28,6 @@
 	</issueManagement>
 
 	<!-- ********************************************************************** -->
-	<!-- ******************************** Build ******************************* -->
-	<!-- ********************************************************************** -->
-	<build>
-		<sourceDirectory>${basedir}/src</sourceDirectory>
-		<defaultGoal>clean install</defaultGoal>
-		<resources>
-			<resource>
-				<targetPath>lang</targetPath>
-				<filtering>true</filtering>
-				<directory>${basedir}/src/main/resources/lang</directory>
-			</resource>
-		</resources>
-		<directory>${basedir}/target</directory>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${mavenCompilerPlugin.version}</version>
-				<configuration>
-					<source>${javacompiler.version}</source>
-					<target>${javacompiler.version}</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.Maven.plugins</groupId>
-				<artifactId>Maven-jar-plugin</artifactId>
-				<version>${mavenJarPlugin.version}</version>
-				<configuration>
-					<archive>
-						<index>true</index>
-						<manifest>
-							<addClasspath>true</addClasspath>
-						</manifest>
-						<manifestEntries>
-							<Implementation-Version>B${build.number}</Implementation-Version>
-						</manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>${mavenShadePlugin.version}</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<createDependencyReducedPom>false</createDependencyReducedPom>
-					<createSourcesJar>false</createSourcesJar>
-					<artifactSet>
-						<includes>
-							<include>one.lindegaard:NMS*</include>
-						</includes>
-					</artifactSet>
-				</configuration>
-			</plugin>
-
-		</plugins>
-	</build>
-
-	<!-- ********************************************************************** -->
 	<!-- **************************** Dependencies **************************** -->
 	<!-- ********************************************************************** -->
 	<dependencies>
@@ -102,7 +36,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_16_R1.version}</version>
+			<version>${spigotmc_1_16_R2.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -110,13 +44,20 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_16_R1.version}</version>
+			<version>${craftbukkit_1_16_R2.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_Shared</artifactId>
 			<version>${NMS_Shared.version}</version>
+			<type>jar</type>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>NMS_v1_16_R2</artifactId>
+			<version>v1_16_R2-SNAPSHOT</version>
 			<type>jar</type>
 			<optional>true</optional>
 		</dependency>
@@ -213,4 +154,71 @@
 		</dependency>
 
 	</dependencies>
+
+	<!-- ********************************************************************** -->
+	<!-- ******************************** Build ******************************* -->
+	<!-- ********************************************************************** -->
+	<build>
+		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<defaultGoal>clean install</defaultGoal>
+		<resources>
+			<resource>
+				<targetPath>lang</targetPath>
+				<filtering>true</filtering>
+				<directory>${basedir}/src/main/resources/lang</directory>
+			</resource>
+		</resources>
+		<directory>${basedir}/target</directory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${mavenCompilerPlugin.version}</version>
+				<configuration>
+					<source>${javacompiler.version}</source>
+					<target>${javacompiler.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.Maven.plugins</groupId>
+				<artifactId>Maven-jar-plugin</artifactId>
+				<version>${mavenJarPlugin.version}</version>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Implementation-Version>B${build.number}</Implementation-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>${mavenShadePlugin.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+					<createSourcesJar>false</createSourcesJar>
+					<artifactSet>
+						<includes>
+							<include>one.lindegaard:NMS*</include>
+						</includes>
+					</artifactSet>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
 </project>
