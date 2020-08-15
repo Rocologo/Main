@@ -21,22 +21,35 @@ public enum MobType {
 	// https://mineskin.org/
 	// http://heads.freshcoal.com/index.php
 
+	// ******************************************************************
+	// Minecraft 1.16.2
+	// ******************************************************************
+	// Piglin Brutes
+	PiglinBrute("Piglin_Brute", "5da73b14-c0c5-46c3-8ce7-4abfa5eb07ad", "Piglin Brute",
+			"ewogICJ0aW1lc3RhbXAiIDogMTU5NzUwMTIzODQwNiwKICAicHJvZmlsZUlkIiA6ICIwNjEzY2I1Y2QxYjg0M2JjYjI4OTk1NWU4N2QzMGEyYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJicmVhZGxvYWZzcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kZGMxYjQzOTdkODMxNmUyOTU4MWEyZGM3OTIxYWMyOWQzMjE2NDczMzZiMDdlNDQ2ZmQxMWVkYWZmNDQzN2JjIgogICAgfQogIH0KfQ==",
+			"dpnBJMCw+r9MrtSOSlhhU/ZJJ7qotIv1A9YaeOVNnFjRg3JociO6ZHNM4+1plV1CDooNcDbUel6rirJVW2TwxOCcdC5mXuaz6dRU7hOfhOQfpRpkIai2H2WNm56+ecC41xwKxOo++a4OVSTNsYBgQl4aibLiwC4D/l3iiFkKc34immy0bPrH1tUfWkDYDuaR8TR1XOqlKfGrnxDp+2daVygtlDwXQAl40AdubRAWOuu0pDlYbHIlfkOPgISriCb0tRrpQ1pBazewUucdehVus8q0/qhYyWllwzt79aB1LT8Kqz02teyOch+2UrooUrfMyFatsTZ1Xdte2xBHCJtc5kDxJROpFsFhIxwQYP6MUgIpne/AyaSC9I6jjSnkPCuHpPMEEVRNBf5h3Ot08PpciIJ5k1TIZ3bl9hLl1SWeVMBo/NXofhQE6BfahQq+Njr1c0Zyo6MWoi4w0phAAi1t5cPeDnQPMdNkabSOp67V7OQ7CEKC+LWMcJ1aCSmyskRQYRU5WTsvu+YiZ8c9uoLKlSSUdm/VdOGXsIdJ2U4LiKoNKc1J2/Ic7zpfWykbCQeNMiMaqBtSc4P5etB0uikWkSGB4bnmsw81zPeeIx8F4ZlVYHRQNxjQFjQSiLkKVr4E9hDgxBq9t2lExUQaMrVnsLK/Hzt0++v7zVrKgnwpiAc="),
+
+	// ******************************************************************
 	// Minecraft 1.16
 	// ******************************************************************
 	// Hoglin
 	Hoglin("Hoglin", "aa5e4524-f0ea-457f-874d-aebca562e6ea", "Hoglin",
 			"ewogICJ0aW1lc3RhbXAiIDogMTU5MzMzMjUzOTA4MCwKICAicHJvZmlsZUlkIiA6ICI0ZWQ4MjMzNzFhMmU0YmI3YTVlYWJmY2ZmZGE4NDk1NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJGaXJlYnlyZDg4IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzJmOGEzY2RjNWMyMWYyZTVmNjk0MGRhMDA4ODBiNDVjZGU5OGQ3MWM4ZGM4NmE1ZjljNGFhNmJjMzhlMjc5MmUiCiAgICB9CiAgfQp9",
 			"GL3yp3jEa8w3CZ56GZ5JYy7hoGvCvDzKH+J0/TPChrcsE8s5FjjO7e3H8WB5AVogbPyjaN0WaGN/97iOu95xy7PlYa9b4mdMYfajDM+e9vkVy4YfK2wyWWSwez5tH12w8j88Xc04b/8YrLhblj+Cw1KojpRN4aW1DND6YJ3ISFTURQmtYMj9zdsAmu5Pf/M3J2HOk4QnBwgLTI95+aXHRg6gGfEHxH6/9Iq0vgPLYczbw/36OEJHOaHk+C72ybx3ZrTtxwBHVkSOPZsA/fKzDITh1MoA7GGT/+S6m2RH3mrFhKcLvhtsmioHx8bJ07OPTsFXDKb8NNSl22dhUU83LoX+0yrJekOecnHk3LcEecMS1flwozdyMwTE0iwj3ENOF7CxbrfOZIwhjzx6QjTDAq+pGM3ziI59DsjXonGvVmX+o4814UoIjX5v6OHmtv5o8HEx3rWWhQPuCvDcj9u9rcePtCeiPNDLqYpiXaC0zk+GiBvY2JbSj6mZS3oUF2n0Zv/u7Cgay4Kaela3tunjLDFVxFClOBVEtJUJs4gPgdETarSs7B9MKJrqlWzDDMFaf//Cy9c089v2eR50H/7XQ/QoRsDZKOqPPkkJNVOr59unuh7pqINb2nKjjyVYKN3meyh9/Fx+HCXzOlES1cL/RF4OQ9O2uq3tUjw6iLRQnF8="),
+	//Piglin
 	Piglin("Piglin", "533997ff-7ca1-471b-b0c9-8242ebc44f0f", "Piglin",
 			"eyJ0aW1lc3RhbXAiOjE1ODE4OTU1MTM0MjYsInByb2ZpbGVJZCI6ImVkNTNkZDgxNGY5ZDRhM2NiNGViNjUxZGNiYTc3ZTY2IiwicHJvZmlsZU5hbWUiOiJGb3J5eExPTCIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2MwYWQzZGRlYmY4OGNlMzk1M2I1NzcyZmRkMDI4OGI2ZjhlZGQ4YTAwMzFjZWVlZTVjZGNkNTk0NDFmMTNmNyJ9fX0=",
 			"p4OrgaTMzsO2hWkZq2R+EHVpu4krAJdlgSA5p0Q4h7dbqJaRlsEjxuJcXbYuPqhgi3V3ly3CZVBfeC6ghgxLNBtWr26m9s7NxsoPV6CYF04zq1ITz1c8e3eCgqLYN4k+GbJ3M0rNjJdza9aKyzasq1n8HGArJns7wtuEazcZgatoWX5aFleGGAqZFFyk14NBUpYukHpebxL3jgaWAR5Q/j8Kk3TceUQqrnvKHfUATLpkQF8xt1GYDTkwnQP9iKEDh/WoLVt2tgEGi2qukPPtE1uA1a9jHf6HB5hjGTSEm36L81rK7inQvkNUesnJ23hY5oEmTxxO3kO0gQTgqaD+1uPhGvZwwE4zOgpiY4Bcw6eAi0Kw8y9pF55GyNK1MCgScLTNO/sRk+WvWZYP986OGiIYO1E5DHgsJJyK0xZLmxeq6hk4UUzUwRM1naTUmD5IbhUE2qXpzJHPT97b+SvKfxallc1q8s6l/v1IMYPq1ZQb+JrNH1Q5ssurwKzr4WdhNJ9PushY9dDxkCkm4q0+gQwX9jdv3sYOigUNVH8WBGT/PxfTgMww5xTTSby1ArBv2J3kvxBcsJga/JuYqxiJvXeiwc0uAsMpn5C7X+KDX7ogXArmYPV07cM3l9PWGT00uDZX9ZcPliehKMfKl5WUX/GymLxTDe99ls73K2MiGz8="),
+	// Strider
 	Strider("Strider", "1d076bb0-58a1-4869-90a1-1ed2fc32608f", "Strider",
 			"ewogICJ0aW1lc3RhbXAiIDogMTU5MzMzMjI1MzE3NiwKICAicHJvZmlsZUlkIiA6ICJkZTU3MWExMDJjYjg0ODgwOGZlN2M5ZjQ0OTZlY2RhZCIsCiAgInByb2ZpbGVOYW1lIiA6ICJNSEZfTWluZXNraW4iLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDA2YjNhZTY0ZmY4N2FmYzlhYzllMzk2NzAzMWZhZGJiY2Q2NjE0MjYwNjBhZTFmZmMyYTUyYTU0MTdjOTViOSIKICAgIH0KICB9Cn0=",
 			"I6vdm/NSMMSrCl17/UIiyYNm3u/GAoACQO2hkjyGfC0wj+i8U3YnfWqYgCo9chcfw5telDLGVVqKpt2G4gAHsQlfDDO10ujH0hlSQ+bb83kOjvK27I7Qs/IGIIAWJCOw4ttMOq4Pof0RyUOCIQekRXuyLv5lysNlvVMBQV4Iw9h0/vCVGQHbMhW+uZQIvWebGybwWmggQGj/sNT8wZlsIMgOykn/NxgOFg8BzcwU4dtk+FKGxtK2kCVnG0rh8r13Uss7Ol+TdLCzE1StkwtF5JEYeWpSlXnZjbZVJzsg+ftab+2KZdZQahUg1f06PRcYdso8RVS5AUzeMiYCzmCPcQxZoUZ51/EA06bPVkYUznBRaSwTONchzf+0ZCKi53rsLNDcYtR5coBNEYI5K5m/0uajxtvz4DLVL9eo6usQvp8nr7fi9TyOGMPRszIc8SEmFLH2x8b32+yPOn+Pc9BleBtoYtbVyO0h1p4OyrTwLcixmmkh/F4mtOmnIseyQvh2krECAi90JQBWhcyxvfGSvZ6G3QNy9EnBmSojZeLV2xdUCEpmA1D6JMKF2CIZVblGoqqSD3OGRDg0eQN0RS515kR7tcQudji7nhTKbl2hnq3LxQCs2L/6rBYv8JCAelzJnC9PVX4m8+0V6Bq9B4h5JU7Y6q9kIhMwzrHUnYoXkDY="),
+	//Zoglin
 	Zoglin("Zoglin", "d9d513ab-5a6a-42d6-94e4-a01192255183", "Zoglin",
 			"ewogICJ0aW1lc3RhbXAiIDogMTU5MzMzMjQyMTc2MCwKICAicHJvZmlsZUlkIiA6ICIyM2YxYTU5ZjQ2OWI0M2RkYmRiNTM3YmZlYzEwNDcxZiIsCiAgInByb2ZpbGVOYW1lIiA6ICIyODA3IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y4Y2U2MTgyMjlkYWZkMzIxZjg2MzYzOTE5MGUyYzY1NWRmZDAxZmE0MDk5YjM3MGM4YjIwZGQyZTk1YzYyY2QiCiAgICB9CiAgfQp9",
 			"SSd5Yybhl32i82T0QMYkXOyc5G7Q4gfqAH4wSgc1prLVSp9nsCIM86NKvbTnNg8ydne2psULGU0/a1SU6MSbZ6jNZvv0W1ghudbqVD9nDeyNxJ5jT7ECrzR0OgQR2t8WBtYjrkN0qwa9mbZX1utRhHCamjUANdCw6WSVCL8WVxre2NzeoQ1daI9pCCbAdSPkVmpz5fCvSKGCxd+dd9/gni4xun69n3pDbF33BXyeAwcZm8gdO7W2vIt/VJSRuEoncHNXBYTcZnTN6Y1Vm7EM/SX3t3VphuKkAKSNfc7gBxWhVneu1O+MV/p7W7zUYTvtXU+n6Zn+elQQ4lwFKysWwtfzD20rscHiJK0jo07lhDcgFtl7jcWvFUQKNxQcUM9RFjXO/kPwXJqPw6kpIXgdLFDWRcPI3Ow5CASKYUgbuXAMHwHJSRwC34DTId7guSM3ab6fbwtx+Z2jTJ7fzDx+gKiCjIrmOBvGXiqblgbgjhZdm0rmSbT462Qyd+ueKkCEubtwi0oFFhpBHIsToI+mjJjFp4Hpx29BEKlOvMC/jfqLxzWJAE45Dpt74N2XHFxv3TxggZ0hbUMQPRiKVhqrnMoAUWKOa1zABbehQSoFOoAsIs04pPzK3W29OS2iEreHLxIHREuviHB9T4I/4gKvQMunWO9BerYljMCP6GoRsUY="),
 
+	// ******************************************************************
 	// Minecraft 1.15
 	// ******************************************************************
 	// Bee
@@ -511,6 +524,10 @@ public enum MobType {
 	}
 
 	public boolean matches(Entity entity) {
+
+		if (Servers.isMC1162OrNewer())
+			if (this == MobType.PiglinBrute)
+				return entity instanceof org.bukkit.entity.PiglinBrute;
 
 		if (Servers.isMC116OrNewer())
 			if (this == Hoglin)
