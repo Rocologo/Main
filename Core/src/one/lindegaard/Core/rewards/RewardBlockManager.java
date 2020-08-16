@@ -82,25 +82,25 @@ public class RewardBlockManager implements Listener {
 				Reward reward = rewardBlocks.get(id).getReward();
 
 				if (location != null) {
-					if (location.getChunk().isLoaded() && Materials.isSkull(location.getBlock().getType())) {
-						ConfigurationSection section = config.createSection(id.toString());
-						section.set("location", location.clone());
-						reward.save(section);
-						config.save(file);
-						n++;
-					} else if (location.getChunk().isLoaded() && !Materials.isSkull(location.getBlock().getType())) {
+					if (location.getWorld().isChunkGenerated(location.getBlockX(), location.getBlockZ())) {
+						if (Materials.isSkull(location.getBlock().getType())) {
+							ConfigurationSection section = config.createSection(id.toString());
+							section.set("location", location.clone());
+							reward.save(section);
+							config.save(file);
+							n++;
+						} else {
+							config.set(id.toString(), null);
+							itr.remove();
+						}
+					} else {
+						Core.getMessages().debug(
+								"This location is not generated (%s,%s,%s,%s) (Maybe the world has been regenerated?) - deleting reward block",
+								location.getWorld().getName(), location.getBlockX(), location.getY(), location.getZ());
 						config.set(id.toString(), null);
 						itr.remove();
-					} else {
-						Core.getMessages().debug("Could not check block at (%s,%s,%s,%s) - saving block",
-								location.getWorld().getName(), location.getBlockX(), location.getY(), location.getZ());
-						ConfigurationSection section = config.createSection(id.toString());
-						section.set("location", location.clone());
-						reward.save(section);
-						config.save(file);
-						n++;
 					}
-				} // location is null
+				} 
 			}
 			if (n > 0)
 				Core.getMessages().debug("Saved %s rewards to disk", n);
