@@ -100,7 +100,7 @@ public class RewardBlockManager implements Listener {
 						config.set(id.toString(), null);
 						itr.remove();
 					}
-				} 
+				}
 			}
 			if (n > 0)
 				Core.getMessages().debug("Saved %s rewards to disk", n);
@@ -137,7 +137,8 @@ public class RewardBlockManager implements Listener {
 				if (rb.equals(new RewardBlock(location, reward)))
 					continue;
 			}
-			if (location != null && Materials.isSkull(location.getBlock().getType())) {
+			if (location != null && location.getWorld().isChunkGenerated(location.getBlockX(), location.getBlockZ())
+					&& Materials.isSkull(location.getBlock().getType())) {
 				n++;
 				reward.setUniqueID(n);
 				location.getBlock().setMetadata(Reward.MH_REWARD_DATA_NEW,
