@@ -85,7 +85,7 @@ public class RewardBlockManager implements Listener {
 				if (location != null) {
 					if (location.getWorld().isChunkGenerated(location.getBlockX(), location.getBlockZ())) {
 						if (Materials.isSkull(location.getBlock().getType())) {
-							ConfigurationSection section = config.createSection(id.toString());
+							ConfigurationSection section = config.createSection(id.getKey().toString());
 							section.set("location", location.clone());
 							reward.save(section);
 							config.save(file);
@@ -130,7 +130,7 @@ public class RewardBlockManager implements Listener {
 				reward.read(section);
 			} catch (InvalidConfigurationException e) {
 				Bukkit.getConsoleSender().sendMessage(
-						ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED + " Could not reward no. " + key + ".");
+						ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED + " Could not load reward no. " + key + ".");
 			}
 
 			Location location = (Location) section.get("location");
