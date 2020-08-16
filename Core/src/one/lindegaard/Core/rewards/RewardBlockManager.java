@@ -81,16 +81,26 @@ public class RewardBlockManager implements Listener {
 				Location location = rewardBlocks.get(id).getLocation();
 				Reward reward = rewardBlocks.get(id).getReward();
 
-				if (location != null && Materials.isSkull(location.getBlock().getType())) {
-					ConfigurationSection section = config.createSection(id.toString());
-					section.set("location", location.clone());
-					reward.save(section);
-					config.save(file);
-					n++;
-				} else {
-					config.set(id.toString(), null);
-					itr.remove();
-				}
+				if (location != null) {
+					if (location.getChunk().isLoaded() && Materials.isSkull(location.getBlock().getType())) {
+						ConfigurationSection section = config.createSection(id.toString());
+						section.set("location", location.clone());
+						reward.save(section);
+						config.save(file);
+						n++;
+					} else if (location.getChunk().isLoaded() && !Materials.isSkull(location.getBlock().getType())) {
+						config.set(id.toString(), null);
+						itr.remove();
+					} else {
+						Core.getMessages().debug("Could not check block at (%s,%s,%s,%s) - saving block",
+								location.getWorld().getName(), location.getBlockX(), location.getY(), location.getZ());
+						ConfigurationSection section = config.createSection(id.toString());
+						section.set("location", location.clone());
+						reward.save(section);
+						config.save(file);
+						n++;
+					}
+				} // location is null
 			}
 			if (n > 0)
 				Core.getMessages().debug("Saved %s rewards to disk", n);
