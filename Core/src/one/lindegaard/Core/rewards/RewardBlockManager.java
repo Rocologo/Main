@@ -83,7 +83,7 @@ public class RewardBlockManager implements Listener {
 				Reward reward = id.getValue().getReward();
 
 				if (location != null) {
-					if (location.getWorld().isChunkGenerated(location.getBlockX(), location.getBlockZ())) {
+					if (location.getWorld().isChunkGenerated(location.getChunk().getX(), location.getChunk().getZ())) {
 						if (Materials.isSkull(location.getBlock().getType())) {
 							ConfigurationSection section = config.createSection(id.getKey().toString());
 							section.set("location", location.clone());
@@ -91,14 +91,14 @@ public class RewardBlockManager implements Listener {
 							config.save(file);
 							n++;
 						} else {
-							config.set(id.toString(), null);
+							config.set(id.getKey().toString(), null);
 							itr.remove();
 						}
 					} else {
 						Core.getMessages().debug(
 								"This location is not generated (%s,%s,%s,%s) (Maybe the world has been regenerated?) - deleting reward block",
 								location.getWorld().getName(), location.getBlockX(), location.getY(), location.getZ());
-						config.set(id.toString(), null);
+						config.set(id.getKey().toString(), null);
 						itr.remove();
 					}
 				}
@@ -138,7 +138,7 @@ public class RewardBlockManager implements Listener {
 				if (rb.equals(new RewardBlock(location, reward)))
 					continue;
 			}
-			if (location != null && location.getWorld().isChunkGenerated(location.getBlockX(), location.getBlockZ())
+			if (location != null && location.getWorld().isChunkGenerated(location.getChunk().getX(), location.getChunk().getZ())
 					&& Materials.isSkull(location.getBlock().getType())) {
 				n++;
 				reward.setUniqueID(n);
