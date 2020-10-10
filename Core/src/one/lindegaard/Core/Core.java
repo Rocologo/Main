@@ -8,6 +8,7 @@ import one.lindegaard.Core.compatibility.BagOfGoldCompat;
 import one.lindegaard.Core.compatibility.MobHuntingCompat;
 import one.lindegaard.Core.config.ConfigManager;
 import one.lindegaard.Core.messages.Messages;
+import one.lindegaard.Core.rewards.CoreRewardManager;
 import one.lindegaard.Core.rewards.RewardBlockManager;
 import one.lindegaard.Core.storage.DataStoreException;
 import one.lindegaard.Core.storage.DataStoreManager;
@@ -28,6 +29,7 @@ public class Core {
 	private static IDataStore mStore;
 	private static DataStoreManager mDataStoreManager;
 	private static PlayerSettingsManager mPlayerSettingsManager;
+	private static CoreRewardManager mCoreRewardManager;
 
 	public Core(Plugin plugin) {
 		this.plugin = plugin;
@@ -73,6 +75,7 @@ public class Core {
 
 		mDataStoreManager = new DataStoreManager(plugin, mStore);
 		mPlayerSettingsManager = new PlayerSettingsManager(plugin);
+		mCoreRewardManager = new CoreRewardManager(plugin);
 
 	}
 
@@ -127,4 +130,7 @@ public class Core {
 		return mPlayerSettingsManager;
 	}
 
+	public static CoreRewardManager getCoreRewardManager() {
+		return mCoreRewardManager;
+	}
 }

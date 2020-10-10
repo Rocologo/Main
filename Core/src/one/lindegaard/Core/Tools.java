@@ -141,5 +141,20 @@ public class Tools {
 	public static String trimSignText(String string) {
 		return string.length() > 15 ? string.substring(0, 14).trim() : string;
 	}
+	
+	public static double round(double d) {
+		return Math.round(d / Core.getConfigManager().rewardRounding)
+				* Core.getConfigManager().rewardRounding;
+	}
+
+	public static double ceil(double d) {
+		return Math.ceil(d / Core.getConfigManager().rewardRounding)
+				* Core.getConfigManager().rewardRounding;
+	}
+
+	public static double floor(double d) {
+		return Math.floor(d / Core.getConfigManager().rewardRounding)
+				* Core.getConfigManager().rewardRounding;
+	}
 
 }

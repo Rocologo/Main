@@ -16,7 +16,6 @@ import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.event.Listener;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.Plugin;
 
@@ -26,7 +25,7 @@ import one.lindegaard.Core.materials.Materials;
 import one.lindegaard.Core.rewards.Reward;
 import one.lindegaard.Core.rewards.RewardBlock;
 
-public class RewardBlockManager implements Listener {
+public class RewardBlockManager {
 
 	private Plugin plugin;
 	private File file;
@@ -38,7 +37,7 @@ public class RewardBlockManager implements Listener {
 		this.plugin = plugin;
 		file = new File(plugin.getDataFolder().getParent(), "BagOfGold/rewards.yml");
 		load();
-		Bukkit.getPluginManager().registerEvents(this, plugin);
+		Bukkit.getPluginManager().registerEvents(new CoreRewardListeners(plugin), plugin);
 	}
 
 	/**
@@ -71,6 +70,11 @@ public class RewardBlockManager implements Listener {
 		return max + 1;
 	}
 
+	private boolean isGenerated(Location location) {
+		return location != null
+				&& location.getWorld().isChunkGenerated(location.getChunk().getX(), location.getChunk().getZ());
+	}
+
 	public void save() {
 		int n = 0;
 		try {
@@ -81,26 +85,23 @@ public class RewardBlockManager implements Listener {
 				Entry<Integer, RewardBlock> id = itr.next();
 				Location location = id.getValue().getLocation();
 				Reward reward = id.getValue().getReward();
-
-				if (location != null) {
-					if (location.getWorld().isChunkGenerated(location.getChunk().getX(), location.getChunk().getZ())) {
-						if (Materials.isSkull(location.getBlock().getType())) {
-							ConfigurationSection section = config.createSection(id.getKey().toString());
-							section.set("location", location.clone());
-							reward.save(section);
-							config.save(file);
-							n++;
-						} else {
-							config.set(id.getKey().toString(), null);
-							itr.remove();
-						}
+				if (isGenerated(location)) {
+					if (Materials.isSkull(location.getBlock().getType())) {
+						ConfigurationSection section = config.createSection(id.getKey().toString());
+						section.set("location", location.clone());
+						reward.save(section);
+						config.save(file);
+						n++;
 					} else {
-						Core.getMessages().debug(
-								"This location is not generated (%s,%s,%s,%s) (Maybe the world has been regenerated?) - deleting reward block",
-								location.getWorld().getName(), location.getBlockX(), location.getY(), location.getZ());
 						config.set(id.getKey().toString(), null);
 						itr.remove();
 					}
+				} else {
+					Core.getMessages().debug(
+							"This location is not generated (%s,%s,%s,%s) (Maybe the world has been regenerated?) - deleting reward block",
+							location.getWorld().getName(), location.getBlockX(), location.getY(), location.getZ());
+					config.set(id.getKey().toString(), null);
+					itr.remove();
 				}
 			}
 			if (n > 0)
@@ -129,8 +130,8 @@ public class RewardBlockManager implements Listener {
 			try {
 				reward.read(section);
 			} catch (InvalidConfigurationException e) {
-				Bukkit.getConsoleSender().sendMessage(
-						ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED + " Could not load reward no. " + key + ".");
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED
+						+ " Could not load reward no. " + key + ".");
 			}
 
 			Location location = (Location) section.get("location");
@@ -138,8 +139,7 @@ public class RewardBlockManager implements Listener {
 				if (rb.equals(new RewardBlock(location, reward)))
 					continue;
 			}
-			if (location != null && location.getWorld().isChunkGenerated(location.getChunk().getX(), location.getChunk().getZ())
-					&& Materials.isSkull(location.getBlock().getType())) {
+			if (isGenerated(location) && Materials.isSkull(location.getBlock().getType())) {
 				n++;
 				reward.setUniqueID(n);
 				location.getBlock().setMetadata(Reward.MH_REWARD_DATA_NEW,
@@ -222,5 +222,5 @@ public class RewardBlockManager implements Listener {
 		}
 
 	}
-
+	
 }
