@@ -406,4 +406,18 @@ public class Reward {
 		return skull;
 	}
 
+	public static boolean isFakeReward(Item item) {
+		ItemStack itemStack = item.getItemStack();
+		return isFakeReward(itemStack);
+	}
+
+	public static boolean isFakeReward(ItemStack itemStack) {
+		if (itemStack != null && itemStack.hasItemMeta() && itemStack.getItemMeta().hasDisplayName()
+				&& itemStack.getItemMeta().getDisplayName().contains(Core.getConfigManager().bagOfGoldName)) {
+			if (!itemStack.getItemMeta().hasLore()) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

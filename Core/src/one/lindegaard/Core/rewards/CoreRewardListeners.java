@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPistonExtendEvent;
+import org.bukkit.event.entity.ItemDespawnEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.inventory.InventoryInteractEvent;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
@@ -59,10 +60,9 @@ public class CoreRewardListeners implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onInventoryMoveItemEvent(InventoryMoveItemEvent event) {
-		Core.getMessages().debug("CoreRewardListeners: onInventoryMoveItemEvent called");
 		ItemStack is = event.getItem();
 		if (Reward.isReward(is)) {
-			Core.getMessages().debug("You move a reward like that");
+			Core.getMessages().debug("onInventoryMoveItemEvent: You move a reward like that");
 			event.setCancelled(true);
 		}
 	}
@@ -77,7 +77,6 @@ public class CoreRewardListeners implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onInventoryDragEvent(InventoryDragEvent event) {
-		Core.getMessages().debug("CoreRewardListeners: onInventoryDragEvent called");
 		ItemStack isCursor = event.getCursor();
 		if (Reward.isReward(isCursor)) {
 			Reward reward = Reward.getReward(isCursor);
@@ -94,4 +93,21 @@ public class CoreRewardListeners implements Listener {
 		}
 	}
 
+	@EventHandler(priority = EventPriority.NORMAL)
+	public void onDespawnRewardEvent(ItemDespawnEvent event) {
+		if (event.isCancelled())
+			return;
+
+		if (Reward.isReward(event.getEntity())) {
+			if (Core.getCoreRewardManager().getDroppedMoney().containsKey(event.getEntity().getEntityId())) {
+				Core.getCoreRewardManager().getDroppedMoney().remove(event.getEntity().getEntityId());
+				if (event.getEntity().getLastDamageCause() != null)
+					Core.getMessages().debug("The reward was destroyed by %s",
+							event.getEntity().getLastDamageCause().getCause());
+				else
+					Core.getMessages().debug("The reward despawned (# of rewards left=%s)",
+							Core.getCoreRewardManager().getDroppedMoney().size());
+			}
+		}
+	}
 }
