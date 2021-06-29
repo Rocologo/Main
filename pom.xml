@@ -5,7 +5,7 @@
 
 	<groupId>one.lindegaard</groupId>
 	<artifactId>Main</artifactId>
-	<version>0.1.1</version>
+	<version>0.1.2</version>
 	<packaging>pom</packaging>
 
 	<name>Main project</name>
@@ -35,6 +35,7 @@
 
 	<modules>
 		<module>NMS_Shared</module>
+		<module>NMS_v1_17_R1</module>
 		<module>NMS_v1_16_R2</module>
 		<module>NMS_v1_16_R1</module>
 		<module>NMS_v1_15_R1</module>
@@ -57,7 +58,7 @@
 
 	<organization>
 		<name>Rocologo</name>
-		<url>https://fractal.lindegaard.one</url>
+		<url>https://www.lindegaard.one</url>
 	</organization>
 
 	<build>
@@ -88,12 +89,14 @@
 		<mainClass>${project.groupId}.${project.artifactId}</mainClass>
 		<junit.version>4.12</junit.version>
 		<spring.version>5.1.5.RELEASE</spring.version>
-
+         
+		<spigotmc_1_17_R1.version>1.17-R0.1-SNAPSHOT</spigotmc_1_17_R1.version>
 		<spigotmc_1_16_R2.version>1.16.2-R0.1-SNAPSHOT</spigotmc_1_16_R2.version>
 		<spigotmc_1_16_R1.version>1.16.1-R0.1-SNAPSHOT</spigotmc_1_16_R1.version>
 		<spigotmc_1_15_R1.version>1.15.2-R0.1-SNAPSHOT</spigotmc_1_15_R1.version>
 		<spigotmc_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</spigotmc_1_14_R1.version>
 
+		<craftbukkit_1_17_R1.version>1.17-R0.1-SNAPSHOT</craftbukkit_1_17_R1.version>
 		<craftbukkit_1_16_R2.version>1.16.2-R0.1-SNAPSHOT</craftbukkit_1_16_R2.version>
 		<craftbukkit_1_16_R1.version>1.16.1-R0.1-SNAPSHOT</craftbukkit_1_16_R1.version>
 		<craftbukkit_1_15_R1.version>1.15.2-R0.1-SNAPSHOT</craftbukkit_1_15_R1.version>
@@ -194,7 +197,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_16_R2.version}</version>
+			<version>${spigotmc_1_17_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -202,7 +205,7 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_16_R2.version}</version>
+			<version>${craftbukkit_1_17_R1.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -240,12 +243,12 @@
 		<repository>
 			<id>central</id>
 			<name>fractal-releases</name>
-			<url>https://fractal.lindegaard.one:8187/artifactory/plugins-release-local</url>
+			<url>https://nexus.lindegaard.one/repository/maven-releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>fractal-snapshot</name>
-			<url>https://fractal.lindegaard.one:8187/artifactory/plugins-snapshot-local</url>
+			<url>https://nexus.lindegaard.one/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -257,11 +260,11 @@
 		<!-- Rocologo repository -->
 		<repository>
 			<id>fractal-release</id>
-			<url>https://fractal.lindegaard.one:8187/artifactory/plugins-release/</url>
+			<url>https://nexus.lindegaard.one/repository/maven-releases/</url>
 		</repository>
 		<repository>
 			<id>fractal-snapshots</id>
-			<url>https://fractal.lindegaard.one:8187/artifactory/plugins-snapshot/</url>
+			<url>https://nexus.lindegaard.one/repository/maven-snapshots/</url>
 		</repository>
 
 		<!-- SpigotMC Repository -->
