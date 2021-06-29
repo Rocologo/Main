@@ -63,6 +63,13 @@
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
+			<artifactId>NMS_v1_16_R3</artifactId>
+			<version>v1_16_R3-SNAPSHOT</version>
+			<type>jar</type>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_16_R2</artifactId>
 			<version>v1_16_R2-SNAPSHOT</version>
 			<type>jar</type>

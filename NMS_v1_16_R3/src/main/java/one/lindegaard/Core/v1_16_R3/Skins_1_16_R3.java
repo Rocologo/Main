@@ -1,15 +1,15 @@
-package one.lindegaard.Core.v1_17_R1;
+package one.lindegaard.Core.v1_16_R3;
 
-import org.bukkit.craftbukkit.v1_17_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
-import net.minecraft.server.level.EntityPlayer;
+import net.minecraft.server.v1_16_R3.EntityPlayer;
 import one.lindegaard.Core.shared.Skins;
 
-public class Skins_1_17_R1 implements Skins {
+public class Skins_1_16_R3 implements Skins {
 
 	// How to get Playerskin
 	// https://www.spigotmc.org/threads/how-to-get-a-players-texture.244966/

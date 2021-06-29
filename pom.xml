@@ -36,6 +36,7 @@
 	<modules>
 		<module>NMS_Shared</module>
 		<module>NMS_v1_17_R1</module>
+		<module>NMS_v1_16_R3</module>
 		<module>NMS_v1_16_R2</module>
 		<module>NMS_v1_16_R1</module>
 		<module>NMS_v1_15_R1</module>
@@ -91,12 +92,14 @@
 		<spring.version>5.1.5.RELEASE</spring.version>
          
 		<spigotmc_1_17_R1.version>1.17-R0.1-SNAPSHOT</spigotmc_1_17_R1.version>
+		<spigotmc_1_16_R3.version>1.16.3-R0.1-SNAPSHOT</spigotmc_1_16_R3.version>
 		<spigotmc_1_16_R2.version>1.16.2-R0.1-SNAPSHOT</spigotmc_1_16_R2.version>
 		<spigotmc_1_16_R1.version>1.16.1-R0.1-SNAPSHOT</spigotmc_1_16_R1.version>
 		<spigotmc_1_15_R1.version>1.15.2-R0.1-SNAPSHOT</spigotmc_1_15_R1.version>
 		<spigotmc_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</spigotmc_1_14_R1.version>
 
 		<craftbukkit_1_17_R1.version>1.17-R0.1-SNAPSHOT</craftbukkit_1_17_R1.version>
+		<craftbukkit_1_16_R3.version>1.16.3-R0.1-SNAPSHOT</craftbukkit_1_16_R3.version>
 		<craftbukkit_1_16_R2.version>1.16.2-R0.1-SNAPSHOT</craftbukkit_1_16_R2.version>
 		<craftbukkit_1_16_R1.version>1.16.1-R0.1-SNAPSHOT</craftbukkit_1_16_R1.version>
 		<craftbukkit_1_15_R1.version>1.15.2-R0.1-SNAPSHOT</craftbukkit_1_15_R1.version>
