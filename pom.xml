@@ -35,25 +35,25 @@
 
 	<modules>
 		<module>NMS_Shared</module>
-		<module>NMS_v1_17_R1</module>
-		<module>NMS_v1_16_R3</module>
-		<module>NMS_v1_16_R2</module>
-		<module>NMS_v1_16_R1</module>
-		<module>NMS_v1_15_R1</module>
-		<module>NMS_v1_14_R1</module>
-		<module>NMS_v1_13_R2</module>
-		<module>NMS_v1_13_R1</module>
-		<module>NMS_v1_12_R1</module>
-		<module>NMS_v1_11_R1</module>
-		<module>NMS_v1_10_R1</module>
-		<module>NMS_v1_9_R2</module>
-		<module>NMS_v1_9_R1</module>
-		<module>NMS_v1_8_R3</module>
-		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
+		<module>NMS_v1_8_R2</module>
+		<module>NMS_v1_8_R3</module>
+		<module>NMS_v1_9_R1</module>
+		<module>NMS_v1_9_R2</module>
+		<module>NMS_v1_10_R1</module>
+		<module>NMS_v1_11_R1</module>
+		<module>NMS_v1_12_R1</module>
+		<module>NMS_v1_13_R1</module>
+		<module>NMS_v1_13_R2</module>
+		<module>NMS_v1_14_R1</module>
+		<module>NMS_v1_15_R1</module>
+		<module>NMS_v1_16_R1</module>
+		<module>NMS_v1_16_R2</module>
+		<module>NMS_v1_16_R3</module>
+		<module>NMS_v1_17_R1</module>
 		<module>Core</module>
-		<module>BagOfGold</module>
-		<module>MobHunting</module>
+		<!-- <module>BagOfGold</module> -->
+		<!-- <module>MobHunting</module> -->
 		<!-- <module>../Spheres</module> -->
 	</modules>
 
@@ -160,7 +160,7 @@
 
 		<vault.version>1.7.2</vault.version>
 		<reserve.version>0.1.3.0</reserve.version>
-		<bstats.version>1.7</bstats.version>
+		<bstats.version>2.2.1</bstats.version>
 		<protocollib.version>4.4.0-SNAPSHOT</protocollib.version>
 		<EssentialsX.version>2.0.1</EssentialsX.version>
 		<spigetupdate.version>1.4.0</spigetupdate.version>
