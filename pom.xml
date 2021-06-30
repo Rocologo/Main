@@ -262,12 +262,8 @@
 
 		<!-- Rocologo repository -->
 		<repository>
-			<id>fractal-release</id>
-			<url>https://nexus.lindegaard.one/repository/maven-releases/</url>
-		</repository>
-		<repository>
-			<id>fractal-snapshots</id>
-			<url>https://nexus.lindegaard.one/repository/maven-snapshots/</url>
+			<id>fractal-public</id>
+			<url>https://nexus.lindegaard.one/repository/maven-public/</url>
 		</repository>
 
 		<!-- SpigotMC Repository -->
