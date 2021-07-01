@@ -52,8 +52,8 @@
 		<module>NMS_v1_16_R3</module>
 		<module>NMS_v1_17_R1</module>
 		<module>Core</module>
-		<module>BagOfGold</module>
-		<module>MobHunting</module>
+		<module>../BagOfGold</module>
+		<module>../MobHunting</module>
 		<!-- <module>../Spheres</module> -->
 	</modules>
 
