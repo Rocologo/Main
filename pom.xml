@@ -69,8 +69,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${mavenCompilerPlugin.version}</version>
 				<configuration>
-					<source>${javacompiler.version}</source>
-					<target>${javacompiler.version}</target>
+					<source>${javaCompilerSource.version}</source>
+					<target>${javaCompilerTarget.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -151,8 +151,8 @@
 		<craftbukkit_1_8_R2.version>1.8.3-R0.1-SNAPSHOT</craftbukkit_1_8_R2.version>
 		<craftbukkit_1_8_R1.version>1.8-R0.1-SNAPSHOT</craftbukkit_1_8_R1.version>
 
-		<javaCompilerSource.version>1.8</javaCompilerSource.version>
-		<javaCompilerTarget.version>1.8</javaCompilerTarget.version>
+		<javaCompilerSource.version>16</javaCompilerSource.version>
+		<javaCompilerTarget.version>16</javaCompilerTarget.version>
 		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
 		<mavenShadePlugin.version>3.2.4</mavenShadePlugin.version>
