@@ -151,7 +151,8 @@
 		<craftbukkit_1_8_R2.version>1.8.3-R0.1-SNAPSHOT</craftbukkit_1_8_R2.version>
 		<craftbukkit_1_8_R1.version>1.8-R0.1-SNAPSHOT</craftbukkit_1_8_R1.version>
 
-		<javacompiler.version>16</javacompiler.version>
+		<javaCompilerSource.version>1.8</javaCompilerSource.version>
+		<javaCompilerTarget.version>1.8</javaCompilerTarget.version>
 		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
 		<mavenShadePlugin.version>3.2.4</mavenShadePlugin.version>
