@@ -126,13 +126,10 @@
 		<mainClass>${project.groupId}.${project.artifactId}</mainClass>
 		<junit.version>4.12</junit.version>
 		<spring.version>5.1.5.RELEASE</spring.version>
+		<java.version>1.16</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<spigotmc_1_17_R1.version>1.17-R0.1-SNAPSHOT</spigotmc_1_17_R1.version>
-		<spigotmc_1_16_R3.version>1.16.3-R0.1-SNAPSHOT</spigotmc_1_16_R3.version>
-		<spigotmc_1_16_R2.version>1.16.2-R0.1-SNAPSHOT</spigotmc_1_16_R2.version>
-		<spigotmc_1_16_R1.version>1.16.1-R0.1-SNAPSHOT</spigotmc_1_16_R1.version>
-		<spigotmc_1_15_R1.version>1.15.2-R0.1-SNAPSHOT</spigotmc_1_15_R1.version>
-		<spigotmc_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</spigotmc_1_14_R1.version>
 
 		<craftbukkit_1_17_R1.version>1.17-R0.1-SNAPSHOT</craftbukkit_1_17_R1.version>
 		<craftbukkit_1_16_R3.version>1.16.3-R0.1-SNAPSHOT</craftbukkit_1_16_R3.version>
@@ -155,8 +152,8 @@
 		<javaCompilerTarget.version>16</javaCompilerTarget.version>
 		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
-		<!-- <mavenShadePlugin.version>3.3.0-SNAPSHOT</mavenShadePlugin.version> -->
-		<mavenShadePlugin.version>3.2.4</mavenShadePlugin.version>
+		<mavenShadePlugin.version>3.3.0-SNAPSHOT</mavenShadePlugin.version>
+		<!-- <mavenShadePlugin.version>3.2.4</mavenShadePlugin.version> -->
 		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 
@@ -435,18 +432,11 @@
 		</repository>
 
 	</repositories>
-	
+
 	<pluginRepositories>
 		<pluginRepository>
-			<releases>
-				<updatePolicy>never</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<id>central</id>
-			<name>Maven Plugin Repository</name>
-			<url>https://repo1.maven.org/maven2</url>
+			<id>maven-snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots/</url>
 		</pluginRepository>
 	</pluginRepositories>
 

@@ -26,6 +26,11 @@
 	<issueManagement>
 		<url>https://github.com/Rocologo/Core/issues</url>
 	</issueManagement>
+	
+	<properties>
+        <java.version>1.16</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 	<!-- ********************************************************************** -->
 	<!-- **************************** Dependencies **************************** -->

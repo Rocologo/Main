@@ -73,7 +73,9 @@ public class Core {
 			return;
 		}
 
+		getMessages().debug("Setup Core.DataStoreManager.");
 		mDataStoreManager = new DataStoreManager(plugin, mStore);
+		getMessages().debug("Setup Core.DataStoreManager - finished.");
 		mPlayerSettingsManager = new PlayerSettingsManager(plugin);
 		mCoreRewardManager = new CoreRewardManager(plugin);
 
