@@ -35,22 +35,22 @@
 
 	<modules>
 		<module>NMS_Shared</module>
-		<module>NMS_v1_8_R1</module>
-		<module>NMS_v1_8_R2</module>
-		<module>NMS_v1_8_R3</module>
-		<module>NMS_v1_9_R1</module>
-		<module>NMS_v1_9_R2</module>
-		<module>NMS_v1_10_R1</module>
-		<module>NMS_v1_11_R1</module>
-		<module>NMS_v1_12_R1</module>
-		<module>NMS_v1_13_R1</module>
-		<module>NMS_v1_13_R2</module>
-		<module>NMS_v1_14_R1</module>
-		<module>NMS_v1_15_R1</module>
-		<module>NMS_v1_16_R1</module>
-		<module>NMS_v1_16_R2</module>
-		<module>NMS_v1_16_R3</module>
 		<module>NMS_v1_17_R1</module>
+		<module>NMS_v1_16_R3</module>
+		<module>NMS_v1_16_R2</module>
+		<module>NMS_v1_16_R1</module>
+		<module>NMS_v1_15_R1</module>
+		<module>NMS_v1_14_R1</module>
+		<module>NMS_v1_13_R2</module>
+		<module>NMS_v1_13_R1</module>
+		<module>NMS_v1_12_R1</module>
+		<module>NMS_v1_11_R1</module>
+		<module>NMS_v1_10_R1</module>
+		<module>NMS_v1_9_R2</module>
+		<module>NMS_v1_9_R1</module>
+		<module>NMS_v1_8_R3</module>
+		<module>NMS_v1_8_R2</module>
+		<module>NMS_v1_8_R1</module>
 		<module>Core</module>
 		<module>../BagOfGold</module>
 		<module>../MobHunting</module>
@@ -155,6 +155,7 @@
 		<javaCompilerTarget.version>16</javaCompilerTarget.version>
 		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
+		<!-- <mavenShadePlugin.version>3.3.0-SNAPSHOT</mavenShadePlugin.version> -->
 		<mavenShadePlugin.version>3.2.4</mavenShadePlugin.version>
 		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
@@ -164,7 +165,7 @@
 		<bstats.version>2.2.1</bstats.version>
 		<protocollib.version>4.4.0-SNAPSHOT</protocollib.version>
 		<EssentialsX.version>2.0.1</EssentialsX.version>
-		<spigetupdate.version>1.4.0</spigetupdate.version>
+		<spigetupdate.version>1.4.2-SNAPSHOT</spigetupdate.version>
 
 		<PerWorldInventory.version>2.1.0</PerWorldInventory.version>
 
@@ -226,7 +227,7 @@
 
 		<gringotts.version>2.11.1-SNAPSHOT</gringotts.version>
 		<extrahardmode.version>3.12.1</extrahardmode.version>
-		<extrahardmode.jar.version>ExtraHardMode-3.12.1.jar</extrahardmode.jar.version>
+		<extrahardmode.jar.version>ExtraHardMode-3.14.2.jar</extrahardmode.jar.version>
 
 	</properties>
 
@@ -425,6 +426,28 @@
 			<url>https://jitpack.io/com/github/MinecraftWars/Gringotts</url>
 		</repository>
 
+		<!-- Maven Snapshots -->
+		<repository>
+			<!-- This is a temporary reference as the Maven Shade plugin that supports 
+				Java 16 is not released yet -->
+			<id>maven-snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots/</url>
+		</repository>
+
 	</repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>Maven Plugin Repository</name>
+			<url>https://repo1.maven.org/maven2</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
