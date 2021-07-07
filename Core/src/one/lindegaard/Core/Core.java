@@ -60,7 +60,7 @@ public class Core {
 			mStore = new MySQLDataStore(plugin);
 		else
 			mStore = new SQLiteDataStore(plugin);
-
+		
 		try {
 			mStore.initialize();
 		} catch (DataStoreException e) {
@@ -73,15 +73,13 @@ public class Core {
 			return;
 		}
 
-		getMessages().debug("Setup Core.DataStoreManager.");
 		mDataStoreManager = new DataStoreManager(plugin, mStore);
-		getMessages().debug("Setup Core.DataStoreManager - finished.");
 		mPlayerSettingsManager = new PlayerSettingsManager(plugin);
 		mCoreRewardManager = new CoreRewardManager(plugin);
 
 	}
 
-	public void shutdown() {
+	public static void shutdown() {
 		try {
 			getMessages().debug("Saving all rewardblocks to disk.");
 			mRewardBlockManager.save();
@@ -135,4 +133,5 @@ public class Core {
 	public static CoreRewardManager getCoreRewardManager() {
 		return mCoreRewardManager;
 	}
+	
 }

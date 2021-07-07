@@ -110,6 +110,8 @@ public abstract class DatabaseDataStore implements IDataStore {
 				setupV3Tables(mConnection);
 				break;
 			}
+			
+			Core.getStoreManager().createRandomBountyPlayer();
 
 			Core.getConfigManager().databaseVersion = 1;
 			Core.getConfigManager().saveConfig();
