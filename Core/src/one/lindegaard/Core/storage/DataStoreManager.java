@@ -11,6 +11,7 @@ import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.Core;
 import one.lindegaard.Core.PlayerSettings;
+import one.lindegaard.Core.compatibility.MobHuntingCompat;
 import one.lindegaard.Core.storage.async.IDataStoreTask;
 import one.lindegaard.Core.storage.async.PlayerSettingsRetrieverTask;
 import one.lindegaard.Core.storage.async.StoreTask;
@@ -51,6 +52,17 @@ public class DataStoreManager {
 				&& mStoreThread.getState() != Thread.State.TERMINATED;
 	}
 
+	public void save() {
+		if (mTaskThread.getState() == Thread.State.WAITING || mTaskThread.getState() == Thread.State.TIMED_WAITING)
+			mTaskThread.interrupt();
+		else 
+		  Core.getMessages().debug("mTaskThread=%s",mTaskThread.getState());
+		
+		if (mStoreThread.getState() == Thread.State.WAITING || mStoreThread.getState() == Thread.State.TIMED_WAITING)
+			mStoreThread.interrupt();
+		else 
+		  Core.getMessages().debug("mStoreThread=%s",mStoreThread.getState());
+	}
 	// *****************************************************************************
 	// PlayerSettings
 	// *****************************************************************************
@@ -152,16 +164,11 @@ public class DataStoreManager {
 			while (mTaskThread.getState() != Thread.State.WAITING && mTaskThread.getState() != Thread.State.TERMINATED
 					&& n < 40) {
 				Thread.sleep(500);
-				//Core.getMessages().debug("Waiting %s", n);
 				n++;
 			}
-			//Core.getMessages().debug("mTaskThread.state=%s", mTaskThread.getState());
 			if (mTaskThread.getState() == Thread.State.RUNNABLE) {
-				//Core.getMessages().debug("Interupting mTaskThread");
 				mTaskThread.interrupt();
 			}
-			//Core.getMessages().debug("mStoreThread.state=%s", mStoreThread.getState());
-			//Core.getMessages().debug("mTaskThread.state=%s", mTaskThread.getState());
 			if (mTaskThread.getState() != Thread.State.WAITING) {
 				mTaskThread.waitForEmptyQueue();
 			}

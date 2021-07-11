@@ -357,8 +357,9 @@ public abstract class DatabaseDataStore implements IDataStore {
 			return 0;
 		int playerId = 0;
 		PlayerSettings ps = Core.getPlayerSettingsManager().getPlayerSettings(offlinePlayer);
-		if (ps != null)
+		if (ps != null) {
 			playerId = ps.getPlayerId();
+		}
 		if (playerId == 0) {
 			Connection mConnection;
 			try {

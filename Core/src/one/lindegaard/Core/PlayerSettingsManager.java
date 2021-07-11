@@ -1,7 +1,9 @@
 package one.lindegaard.Core;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.UUID;
+import java.util.Map.Entry;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,7 +16,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 
-import one.lindegaard.Core.PlayerSettings;
 import one.lindegaard.Core.storage.DataStoreException;
 import one.lindegaard.Core.storage.IDataCallback;
 import one.lindegaard.Core.storage.UserNotFoundException;
@@ -128,8 +129,8 @@ public class PlayerSettingsManager implements Listener {
 
 			@Override
 			public void onError(Throwable error) {
-				Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[BagOfGoldCore][ERROR] " + offlinePlayer.getName()
-						+ " is new, creating user in database.");
+				Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[BagOfGoldCore][ERROR] "
+						+ offlinePlayer.getName() + " is new, creating user in database.");
 				mPlayerSettings.put(offlinePlayer.getUniqueId(), new PlayerSettings(offlinePlayer));
 			}
 		});
@@ -143,6 +144,33 @@ public class PlayerSettingsManager implements Listener {
 	 */
 	public boolean containsKey(final OfflinePlayer player) {
 		return mPlayerSettings.containsKey(player.getUniqueId());
+	}
+
+	public UUID getPlayerByID(int player_id) {
+
+		Iterator<Entry<UUID, PlayerSettings>> itr = mPlayerSettings.entrySet().iterator();
+		while (itr.hasNext()) {
+			Entry<UUID, PlayerSettings> set = (Entry<UUID, PlayerSettings>) itr.next();
+			if (set.getValue().getPlayerId() == player_id)
+				return set.getKey();
+		}
+
+		OfflinePlayer offlinePlayer = null;
+
+		try {
+			offlinePlayer = Core.getDataStoreManager().getPlayerByPlayerId(player_id);
+		} catch (UserNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		if (offlinePlayer != null)
+			return offlinePlayer.getUniqueId();
+		else {
+			//Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[BagOfGoldCore][ERROR] Player_ID=" + player_id
+			//		+ " was not found in the database table: mh_PlayerSettings.");
+
+			return null;
+		}
 	}
 
 }
