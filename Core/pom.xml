@@ -199,8 +199,8 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.Maven.plugins</groupId>
-				<artifactId>Maven-jar-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
 				<version>${mavenJarPlugin.version}</version>
 				<configuration>
 					<archive>
