@@ -141,10 +141,10 @@ public class ConfigManager extends AutoConfig {
 	// Reward Settings
 	// #####################################################################################
 
-	@ConfigField(name = "reward_name", category = "reward.name", comment = "This is the name of the currency which will be used in the displayname.")
+	@ConfigField(name = "reward_name", category = "reward.name", comment = "This is the name of the currency which will be used in the displayname. This can't be empty.")
 	public String bagOfGoldName = "Bag Of Gold";
 
-	@ConfigField(name = "reward_name_plural", category = "reward.name", comment = "This is the name of the reward in plural")
+	@ConfigField(name = "reward_name_plural", category = "reward.name", comment = "This is the name of the reward in plural. This can't be empty.")
 	public String bagOfGoldNamePlural = "Bag of gold";
 
 	@ConfigField(name = "text_color", category = "reward.name", comment = "Here you can set of the color of the number above the dropped item. \nUse color names like WHITE, RED, BLUE, GOLD")
@@ -348,8 +348,8 @@ public class ConfigManager extends AutoConfig {
 					.getBoolean("dropmoneyonground.deny_hoppers_to_pickup_money_on_ground");
 
 			configVersion = 2;
-			Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
-					+ "Finished migrating configuration.");
+			Bukkit.getConsoleSender().sendMessage(
+					ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN + "Finished migrating configuration.");
 
 		}
 	}

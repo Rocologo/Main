@@ -53,16 +53,25 @@ public class DataStoreManager {
 	}
 
 	public void save() {
-		if (mTaskThread.getState() == Thread.State.WAITING || mTaskThread.getState() == Thread.State.TIMED_WAITING)
-			mTaskThread.interrupt();
-		else 
-		  Core.getMessages().debug("mTaskThread=%s",mTaskThread.getState());
 		
-		if (mStoreThread.getState() == Thread.State.WAITING || mStoreThread.getState() == Thread.State.TIMED_WAITING)
+		//flush(); VIRKER IKKE
+		
+		mTaskThread.addTask(new StoreTask(mWaiting), null);
+		
+		/**mTaskThread.addTask(new StoreTask(mWaiting), null);
+		
+		if (mStoreThread.getState() == Thread.State.WAITING || 
+				mStoreThread.getState() == Thread.State.TIMED_WAITING)
 			mStoreThread.interrupt();
-		else 
-		  Core.getMessages().debug("mStoreThread=%s",mStoreThread.getState());
+		else if (mStoreThread.getState() == Thread.State.RUNNABLE)
+			mStoreThread.run();
+		//else if (mStoreThread.getState() == Thread.State.TERMINATED)
+		//    mStoreThread = new StoreThread(Core.getConfigManager().savePeriod);
+		else
+			Core.getMessages().debug("mStoreThread=%s", mStoreThread.getState());
+			**/
 	}
+
 	// *****************************************************************************
 	// PlayerSettings
 	// *****************************************************************************
@@ -135,7 +144,7 @@ public class DataStoreManager {
 				e.printStackTrace();
 		}
 	}
-	
+
 	// *****************************************************************************
 	// Common
 	// *****************************************************************************

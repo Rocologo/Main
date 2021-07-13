@@ -18,8 +18,9 @@
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_13_R1.version}</version>
+			<scope>system</scope> 
+			<systemPath>${project.basedir}/../lib/craftbukkit-1.13-R0.1-SNAPSHOT.jar</systemPath> 
 			<type>jar</type>
-			<scope></scope>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
