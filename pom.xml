@@ -215,8 +215,7 @@
 		<PVPControl.version>1.4.1-SNAPSHOT</PVPControl.version>
 
 		<gringotts.version>2.11.1-SNAPSHOT</gringotts.version>
-		<extrahardmode.version>3.12.1</extrahardmode.version>
-		<extrahardmode.jar.version>ExtraHardMode-3.14.2.jar</extrahardmode.jar.version>
+		<extrahardmode.version>3.14.2</extrahardmode.version>
 
 	</properties>
 
@@ -230,7 +229,6 @@
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc_1_17_R1.version}</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- Craftbukkit / Bukkit -->
@@ -238,7 +236,6 @@
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_17_R1.version}</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- ProtocolLib -->
@@ -246,25 +243,9 @@
 			<groupId>com.comphenix.protocol</groupId>
 			<artifactId>ProtocolLib-API</artifactId>
 			<version>${protocollib.version}</version>
-			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>
-
-
-	<!-- ********************************************************************** -->
-	<!-- ********************** Dependency Management ************************* -->
-	<!-- ********************************************************************** -->
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.testng</groupId>
-				<artifactId>testng</artifactId>
-				<scope>test</scope>
-				<version>6.14.3</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 
 	<!-- ********************************************************************** -->
@@ -425,6 +406,7 @@
 
 	</repositories>
 
+	<!-- Maven Repo -->
 	<pluginRepositories>
 		<pluginRepository>
 			<id>maven-snapshots</id>

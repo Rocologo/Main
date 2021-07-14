@@ -27,10 +27,45 @@
 		<url>https://github.com/Rocologo/Core/issues</url>
 	</issueManagement>
 	
-	<properties>
-        <java.version>1.16</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+	<!-- ********************************************************************** -->
+	<!-- ******************************** Build ******************************* -->
+	<!-- ********************************************************************** -->
+	<build>
+		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<defaultGoal>clean install</defaultGoal>
+		<resources>
+			<resource>
+				<targetPath>lang</targetPath>
+				<filtering>true</filtering>
+				<directory>${basedir}/src/main/resources/lang</directory>
+			</resource>
+		</resources>
+		<directory>${basedir}/target</directory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>${mavenShadePlugin.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+					<createSourcesJar>false</createSourcesJar>
+					<artifactSet>
+						<includes>
+							<include>one.lindegaard:NMS*</include>
+						</includes>
+					</artifactSet>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<!-- ********************************************************************** -->
 	<!-- **************************** Dependencies **************************** -->
@@ -173,71 +208,5 @@
 		</dependency>
 
 	</dependencies>
-
-	<!-- ********************************************************************** -->
-	<!-- ******************************** Build ******************************* -->
-	<!-- ********************************************************************** -->
-	<build>
-		<sourceDirectory>${basedir}/src</sourceDirectory>
-		<defaultGoal>clean install</defaultGoal>
-		<resources>
-			<resource>
-				<targetPath>lang</targetPath>
-				<filtering>true</filtering>
-				<directory>${basedir}/src/main/resources/lang</directory>
-			</resource>
-		</resources>
-		<directory>${basedir}/target</directory>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${mavenCompilerPlugin.version}</version>
-				<configuration>
-					<source>${javaCompilerSource.version}</source>
-					<target>${javaCompilerTarget.version}</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>${mavenJarPlugin.version}</version>
-				<configuration>
-					<archive>
-						<index>true</index>
-						<manifest>
-							<addClasspath>true</addClasspath>
-						</manifest>
-						<manifestEntries>
-							<Implementation-Version>B${build.number}</Implementation-Version>
-						</manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>${mavenShadePlugin.version}</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<createDependencyReducedPom>false</createDependencyReducedPom>
-					<createSourcesJar>false</createSourcesJar>
-					<artifactSet>
-						<includes>
-							<include>one.lindegaard:NMS*</include>
-						</includes>
-					</artifactSet>
-				</configuration>
-			</plugin>
-
-		</plugins>
-	</build>
 
 </project>
