@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>Core</artifactId>
 	<packaging>jar</packaging>
-	<version>0.5.3</version>
+	<version>0.5.2-SNAPSHOT</version>
 	<name>Rocologo Core Library</name>
 	<url>https://github.com/Rocologo/Core</url>
 	<description>Core is a library with code shared between MobHunting and BagOfGold. </description>
@@ -77,7 +77,6 @@
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc_1_17_R1.version}</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- Craftbukkit / Bukkit -->
@@ -85,126 +84,91 @@
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_17_R1.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_Shared</artifactId>
 			<version>${NMS_Shared.version}</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_17_R1</artifactId>
 			<version>v1_17_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_16_R3</artifactId>
 			<version>v1_16_R3-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_16_R2</artifactId>
 			<version>v1_16_R2-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_16_R1</artifactId>
 			<version>v1_16_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_15_R1</artifactId>
 			<version>v1_15_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_14_R1</artifactId>
 			<version>v1_14_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_13_R2</artifactId>
 			<version>v1_13_R2-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_13_R1</artifactId>
 			<version>v1_13_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_12_R1</artifactId>
 			<version>v1_12_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_11_R1</artifactId>
 			<version>v1_11_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_10_R1</artifactId>
 			<version>v1_10_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_9_R2</artifactId>
 			<version>v1_9_R2-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_9_R1</artifactId>
 			<version>v1_9_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_8_R3</artifactId>
 			<version>v1_8_R3-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_8_R2</artifactId>
 			<version>v1_8_R2-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_v1_8_R1</artifactId>
 			<version>v1_8_R1-SNAPSHOT</version>
-			<type>jar</type>
-			<optional>true</optional>
 		</dependency>
 
 	</dependencies>

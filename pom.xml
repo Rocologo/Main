@@ -116,10 +116,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<mainClass>${project.groupId}.${project.artifactId}</mainClass>
-		<junit.version>4.12</junit.version>
-		<spring.version>5.1.5.RELEASE</spring.version>
 		<java.version>1.16</java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<spigotmc_1_17_R1.version>1.17-R0.1-SNAPSHOT</spigotmc_1_17_R1.version>
 
