@@ -52,7 +52,8 @@
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
 		<module>Core</module>
-		<!-- <module>../BagOfGold</module> <module>../MobHunting</module> -->
+		<!-- <module>../BagOfGold</module>
+		<module>../MobHunting</module> -->
 		<!-- <module>../Spheres</module> -->
 	</modules>
 
@@ -111,23 +112,23 @@
 		<!-- Build versions -->
 		<NMS_Shared.version>0.0.5-SNAPSHOT</NMS_Shared.version>
 		<build.number>TestBuild</build.number>
-		
+
 		<mainClass>${project.groupId}.${project.artifactId}</mainClass>
-		
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
+
 		<java.version>1.16</java.version>
 		<javaCompilerSource.version>16</javaCompilerSource.version>
 		<javaCompilerTarget.version>16</javaCompilerTarget.version>
-		
+
 		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
 		<mavenShadePlugin.version>3.3.0-SNAPSHOT</mavenShadePlugin.version>
 		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
-		
+
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-		
+
 		<spring.version>5.1.5.RELEASE</spring.version>
 
 		<spigotmc_1_17_R1.version>1.17-R0.1-SNAPSHOT</spigotmc_1_17_R1.version>
