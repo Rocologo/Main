@@ -52,8 +52,8 @@
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
 		<module>Core</module>
-		<!-- <module>../BagOfGold</module>
-		<module>../MobHunting</module> -->
+		<module>../BagOfGold</module>
+		<module>../MobHunting</module>
 		<!-- <module>../Spheres</module> -->
 	</modules>
 
@@ -200,6 +200,7 @@
 		<TARDISWeepingAngels.version>2.4</TARDISWeepingAngels.version>
 		<ConquestiaMobs.version>3.3.3</ConquestiaMobs.version>
 		<LorinthsRpgMobs.version>1.6.8</LorinthsRpgMobs.version>
+		<LevelledMobs.version>3.0.6</LevelledMobs.version>
 		<MysteriousHalloween.version>1.3.5</MysteriousHalloween.version>
 		<EliteMobs.version>6.5.0</EliteMobs.version>
 		<SmartGiants.version>2.3.6</SmartGiants.version>
