@@ -217,7 +217,7 @@
 		<BossAPI.version>3.6.7</BossAPI.version>
 		<PVPControl.version>1.4.1-SNAPSHOT</PVPControl.version>
 
-		<gringotts.version>2.11.1-SNAPSHOT</gringotts.version>
+		<gringotts.version>2.11.1</gringotts.version>
 		<extrahardmode.version>3.14.2</extrahardmode.version>
 
 	</properties>
