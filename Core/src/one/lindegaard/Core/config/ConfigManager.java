@@ -84,11 +84,6 @@ public class ConfigManager extends AutoConfig {
 				"########################################################################" + "\nOther reward settings"
 						+ "\n########################################################################");
 
-		setCategoryComment("plugins",
-				"########################################################################"
-						+ "\nIntegration to other plugins."
-						+ "\n########################################################################");
-
 		setCategoryComment("database",
 				"########################################################################" + "\nDatabase Settings."
 						+ "\n########################################################################");
@@ -235,13 +230,6 @@ public class ConfigManager extends AutoConfig {
 			+ "\nIf you want to deny HOPPERS to collect MobHunting Money rewards "
 			+ "\nset \"deny_hoppers_to_pickup_rewards\"=false")
 	public boolean denyHoppersToPickUpRewards = true;
-
-	// #####################################################################################
-	// Plugin integration
-	// #####################################################################################
-	@ConfigField(name = "protocollib.enable_integration_protocollib", category = "plugins", comment = "Enable/Disable integration with ProtocolLib."
-			+ "\nhttps://www.spigotmc.org/resources/protocollib.1997/")
-	public boolean enableIntegrationProtocolLib = true;
 
 	// #####################################################################################
 	// Database

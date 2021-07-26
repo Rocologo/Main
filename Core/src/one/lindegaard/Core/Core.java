@@ -4,10 +4,8 @@ import java.io.File;
 
 import org.bukkit.plugin.Plugin;
 
-import one.lindegaard.BagOfGold.rewards.BagOfGoldItems;
 import one.lindegaard.Core.compatibility.BagOfGoldCompat;
 import one.lindegaard.Core.compatibility.MobHuntingCompat;
-import one.lindegaard.Core.compatibility.ProtocolLibCompat;
 import one.lindegaard.Core.config.ConfigManager;
 import one.lindegaard.Core.messages.Messages;
 import one.lindegaard.Core.rewards.CoreRewardManager;
@@ -25,7 +23,6 @@ public class Core {
 	private static ConfigManager mConfig;
 	private static BagOfGoldCompat mBagOfGoldCompat;
 	private static MobHuntingCompat mMobHuntingCompat;
-	private static ProtocolLibCompat mProtocolLibCompat;
 	private static Messages mMessages;
 	private static RewardBlockManager mRewardBlockManager;
 	private static WorldGroupManager mWorldGroupManager;
@@ -33,9 +30,7 @@ public class Core {
 	private static DataStoreManager mDataStoreManager;
 	private static PlayerSettingsManager mPlayerSettingsManager;
 	private static CoreRewardManager mCoreRewardManager;
-	private static BagOfGoldItems mBagOfGoldItems;
-	
-	
+
 	public Core(Plugin plugin) {
 		this.plugin = plugin;
 
@@ -44,7 +39,6 @@ public class Core {
 
 		mBagOfGoldCompat = new BagOfGoldCompat();
 		mMobHuntingCompat = new MobHuntingCompat();
-		mProtocolLibCompat = new ProtocolLibCompat(plugin);
 
 		mConfig = new ConfigManager(mFileShared);
 		if (mConfig.loadConfig()) {
