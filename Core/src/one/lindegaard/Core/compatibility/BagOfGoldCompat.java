@@ -31,8 +31,8 @@ public class BagOfGoldCompat {
 
 	}
 
-	public boolean isSupported() {
+	public static boolean isSupported() {
 		return supported;
 	}
-
+	
 }
