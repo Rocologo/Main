@@ -35,6 +35,7 @@
 
 	<modules>
 		<module>NMS_Shared</module>
+		<module>NMS_v1_18_R1</module>
 		<module>NMS_v1_17_R1</module>
 		<module>NMS_v1_16_R3</module>
 		<module>NMS_v1_16_R2</module>
@@ -118,9 +119,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<java.version>1.16</java.version>
-		<javaCompilerSource.version>16</javaCompilerSource.version>
-		<javaCompilerTarget.version>16</javaCompilerTarget.version>
+		<java.version>1.17</java.version>
+		<javaCompilerSource.version>17</javaCompilerSource.version>
+		<javaCompilerTarget.version>17</javaCompilerTarget.version>
 
 		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
@@ -131,8 +132,9 @@
 
 		<spring.version>5.1.5.RELEASE</spring.version>
 
-		<spigotmc_1_17_R1.version>1.17-R0.1-SNAPSHOT</spigotmc_1_17_R1.version>
+		<spigotmc_1_18_R1.version>1.18-R0.1-SNAPSHOT</spigotmc_1_18_R1.version>
 
+		<craftbukkit_1_18_R1.version>1.18-R0.1-SNAPSHOT</craftbukkit_1_18_R1.version>
 		<craftbukkit_1_17_R1.version>1.17-R0.1-SNAPSHOT</craftbukkit_1_17_R1.version>
 		<craftbukkit_1_16_R3.version>1.16.3-R0.1-SNAPSHOT</craftbukkit_1_16_R3.version>
 		<craftbukkit_1_16_R2.version>1.16.2-R0.1-SNAPSHOT</craftbukkit_1_16_R2.version>
@@ -200,7 +202,7 @@
 		<TARDISWeepingAngels.version>2.4</TARDISWeepingAngels.version>
 		<ConquestiaMobs.version>3.3.3</ConquestiaMobs.version>
 		<LorinthsRpgMobs.version>1.6.8</LorinthsRpgMobs.version>
-		<LevelledMobs.version>3.0.7</LevelledMobs.version>
+		<LevelledMobs.version>3.1.0</LevelledMobs.version>
 		<MysteriousHalloween.version>1.3.5</MysteriousHalloween.version>
 		<EliteMobs.version>6.5.0</EliteMobs.version>
 		<SmartGiants.version>2.3.6</SmartGiants.version>
@@ -212,7 +214,7 @@
 		<mythicmobsold.version>2.5.1</mythicmobsold.version>
 		<mythicmobs.version>4.7.2</mythicmobs.version>
 		<mythiclib.version>0.0.1-20170628.172950-1</mythiclib.version>
-		<StackMob.version>5.2.2</StackMob.version>
+		<StackMob.version>5.6.2</StackMob.version>
 		<InfernalMobs.version>5.8</InfernalMobs.version>
 		<BossAPI.version>3.6.7</BossAPI.version>
 		<PVPControl.version>1.4.1-SNAPSHOT</PVPControl.version>
@@ -231,14 +233,14 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_17_R1.version}</version>
+			<version>${spigotmc_1_18_R1.version}</version>
 		</dependency>
 
 		<!-- Craftbukkit / Bukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_17_R1.version}</version>
+			<version>${craftbukkit_1_18_R1.version}</version>
 		</dependency>
 
 		<!-- ProtocolLib -->
@@ -283,11 +285,10 @@
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
 
-		<!-- Vault -->
+		<!-- Jitpack / Vault -->
 		<repository>
 			<id>vault-repo</id>
 			<url>https://jitpack.io</url>
-			<!-- <url>http://nexus.hc.to/content/repositories/pub_releases</url> -->
 		</repository>
 
 		<!-- Reserve -->

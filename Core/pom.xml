@@ -76,10 +76,15 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_17_R1.version}</version>
+			<version>${spigotmc_1_18_R1.version}</version>
 		</dependency>
 
 		<!-- Craftbukkit / Bukkit -->
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId>
+			<version>${craftbukkit_1_18_R1.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
