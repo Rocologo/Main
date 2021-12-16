@@ -74,7 +74,7 @@ public class CoreCustomItems {
 			whatVersionAreYouUsingException.printStackTrace();
 			return null;
 		}
-		// https://www.spigotmc.org/wiki/spigot-nms-and-minecraft-versions/
+		// https://www.spigotmc.org/wiki/spigot-nms-and-minecraft-versions-1-16/
 		if (version.equals("v1_18_R1")) {
 			sk = new Skins_1_18_R1();
 		} else if (version.equals("v1_17_R1")) {
