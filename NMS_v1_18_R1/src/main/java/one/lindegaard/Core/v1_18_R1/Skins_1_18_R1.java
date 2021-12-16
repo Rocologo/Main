@@ -16,7 +16,7 @@ public class Skins_1_18_R1 implements Skins {
 
 	public String[] getSkin(Player player) {
 		EntityPlayer playerNMS = ((CraftPlayer) player).getHandle();
-		GameProfile profile = playerNMS.getProfile();
+		GameProfile profile = playerNMS.fp();
 		String[] result = new String[2];
 		if (profile.getProperties().containsKey("textures")) {
 			Property property = profile.getProperties().get("textures").iterator().next();
