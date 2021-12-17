@@ -10,7 +10,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.Plugin;
 
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
 
 import one.lindegaard.Core.Core;
 
@@ -32,7 +32,7 @@ public class MySQLDataStore extends DatabaseDataStore {
 		try {
 			Locale.setDefault(new Locale("us", "US"));
 			Class.forName("com.mysql.jdbc.Driver");
-			MysqlDataSource dataSource = new MysqlDataSource();
+			MysqlXADataSource dataSource = new MysqlXADataSource();
 			dataSource.setUser(Core.getConfigManager().databaseUsername);
 			dataSource.setPassword(Core.getConfigManager().databasePassword);
 			if (Core.getConfigManager().databaseHost.contains(":")) {
