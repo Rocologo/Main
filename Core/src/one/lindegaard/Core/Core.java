@@ -1,7 +1,11 @@
 package one.lindegaard.Core;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.compatibility.BagOfGoldCompat;
@@ -53,6 +57,12 @@ public class Core {
 		mMessages.setLanguage("bagofgoldcore_" + mConfig.language + ".lang");
 		mMessages.debug("Loading bagofgoldcore.yml file, version %s", config_version);
 
+		List<String> itemtypes = Arrays.asList("SKULL", "ITEM", "KILLER", "KILLED", "GRINGOTTS_STYLE");
+		if (!itemtypes.contains(mConfig.rewardItemtype)){
+			Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[BagOfGoldCore] " + ChatColor.RESET
+					+ "The type define with reward_itemtype in your config is unknown: " + mConfig.rewardItemtype);
+		}
+
 		mWorldGroupManager = new WorldGroupManager(plugin);
 		mRewardBlockManager = new RewardBlockManager(plugin);
 
@@ -60,7 +70,7 @@ public class Core {
 			mStore = new MySQLDataStore(plugin);
 		else
 			mStore = new SQLiteDataStore(plugin);
-		
+
 		try {
 			mStore.initialize();
 		} catch (DataStoreException e) {
@@ -133,5 +143,5 @@ public class Core {
 	public static CoreRewardManager getCoreRewardManager() {
 		return mCoreRewardManager;
 	}
-	
+
 }
