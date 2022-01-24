@@ -214,7 +214,7 @@
 		<mythiclib.version>0.0.1-20170628.172950-1</mythiclib.version>
 		<StackMob.version>5.6.2</StackMob.version>
 		<InfernalMobs.version>5.8</InfernalMobs.version>
-		<Boss.version>4.1.9</Boss.version>
+		<boss.version>4.1.9</boss.version>
 		<PVPControl.version>1.4.1-SNAPSHOT</PVPControl.version>
 
 		<gringotts.version>2.11.1</gringotts.version>
