@@ -121,7 +121,7 @@
 		<javaCompilerSource.version>17</javaCompilerSource.version>
 		<javaCompilerTarget.version>17</javaCompilerTarget.version>
 
-		<mavenCompilerPlugin.version>3.8.1</mavenCompilerPlugin.version>
+		<mavenCompilerPlugin.version>3.9.0</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
 		<mavenShadePlugin.version>3.3.0-SNAPSHOT</mavenShadePlugin.version>
 		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
