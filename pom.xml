@@ -123,8 +123,8 @@
 
 		<mavenCompilerPlugin.version>3.9.0</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
-		<mavenShadePlugin.version>3.3.0-SNAPSHOT</mavenShadePlugin.version>
-		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+		<mavenShadePlugin.version>3.3.0</mavenShadePlugin.version>
+		<maven-deploy-plugin.version>3.0.0-M2</maven-deploy-plugin.version>
 
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 
