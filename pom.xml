@@ -389,7 +389,7 @@
 		<!-- PlaceholderAPI -->
 		<repository>
 			<id>placeholderapi</id>
-			<url>http://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+			<url>http://repo.extendedclip.com/content/repositories/</url>
 		</repository>
 
 		<!-- FactionsUUID repository -->
