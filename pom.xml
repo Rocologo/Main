@@ -412,6 +412,16 @@
 			<url>https://repository.apache.org/content/repositories/snapshots/</url>
 		</repository>
 
+	<!-- EssentialsX repo-->
+    <repository>
+        <id>essentials-releases</id>
+        <url>https://repo.essentialsx.net/releases/</url>
+    </repository>
+    <repository>
+        <id>paper-repo</id>
+        <url>https://papermc.io/repo/repository/maven-public/</url>
+    </repository>
+
 	</repositories>
 
 	<!-- Maven Repo -->
