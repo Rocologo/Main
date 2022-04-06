@@ -117,7 +117,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<java.version>17</java.version>
 		<javaCompilerSource.version>17</javaCompilerSource.version>
 		<javaCompilerTarget.version>17</javaCompilerTarget.version>
 
@@ -180,7 +179,7 @@
 		<worldedit.version>7.0.1-SNAPSHOT</worldedit.version>
 		<worldguard.version>7.0.0</worldguard.version>
 		<PreciousStones.version>10.7.2</PreciousStones.version>
-		<libsdisguises.version>9.8.2-20190620.180128-1</libsdisguises.version>
+		<libsdisguises.version>10.0.28</libsdisguises.version>
 		<battleArena.version>3.9.12.4</battleArena.version>
 		<custommobs.version>4.16</custommobs.version>
 		<mobarena.version>0.97.1</mobarena.version>
