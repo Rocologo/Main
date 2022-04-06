@@ -163,7 +163,7 @@
 		<barapi.version>3.5</barapi.version>
 		<titlemanager.version>2.2.0</titlemanager.version>
 		<ActionBarAPI.version>5b2d642d3df240cfd2545effcdcacec38405f9cf</ActionBarAPI.version>
-		<ActionAnnouncer.version>1.10.0</ActionAnnouncer.version>
+		<ActionAnnouncer.version>1.16.4</ActionAnnouncer.version>
 		<TitleAPI.version>1.8.1</TitleAPI.version> 
 		<placeholderapi.version>2.10.0</placeholderapi.version>
 		<CMI.version>9.0.1.0</CMI.version>
