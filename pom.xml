@@ -169,7 +169,7 @@
 		<CMI.version>9.0.1.0</CMI.version>
 		<CMILib.version>1.0.2.11</CMILib.version>
 
-		<citizensapi.version>2.0.25-SNAPSHOT</citizensapi.version>
+		<citizensapi.version>2.0.29-SNAPSHOT</citizensapi.version>
 		<holograms.version>2.6-SNAPSHOT</holograms.version>
 		<hologramdisplays.version>2.3.2</hologramdisplays.version>
 
