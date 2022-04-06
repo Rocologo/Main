@@ -348,7 +348,7 @@
 		<!-- TitleManager -->
 		<repository>
 			<id>puha-repo</id>
-			<url>http://repo.puha.io/nexus/content/repositories/releases/</url>
+			<url>https://repo.puha.io/repo/</url>
 		</repository>
 
 		<!-- citizens repository -->
