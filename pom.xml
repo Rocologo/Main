@@ -117,11 +117,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<java.version>1.17</java.version>
+		<java.version>17</java.version>
 		<javaCompilerSource.version>17</javaCompilerSource.version>
 		<javaCompilerTarget.version>17</javaCompilerTarget.version>
 
-		<mavenCompilerPlugin.version>3.9.0</mavenCompilerPlugin.version>
+		<mavenCompilerPlugin.version>3.10.1</mavenCompilerPlugin.version>
 		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
 		<mavenShadePlugin.version>3.3.0</mavenShadePlugin.version>
 		<maven-deploy-plugin.version>3.0.0-M2</maven-deploy-plugin.version>
@@ -150,7 +150,7 @@
 		<craftbukkit_1_8_R2.version>1.8.3-R0.1-SNAPSHOT</craftbukkit_1_8_R2.version>
 		<craftbukkit_1_8_R1.version>1.8-R0.1-SNAPSHOT</craftbukkit_1_8_R1.version>
 
-		<vault.version>1.7.2</vault.version>
+		<vault.version>1.7.3</vault.version>
 		<reserve.version>0.1.3.0</reserve.version>
 		<bstats.version>2.2.1</bstats.version>
 		<protocollib.version>4.7.0-SNAPSHOT</protocollib.version>
