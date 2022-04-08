@@ -278,7 +278,7 @@
 		<!-- Rocologo repository -->
 		<repository>
 			<id>nexus-public</id>
-			<url>https://nexus.lindegaard.one/repository/maven-public/</url>
+			<url>https://nexus.lindegaard.one/repository/</url>
 		</repository>
 
 		<!-- SpigotMC Repository -->
