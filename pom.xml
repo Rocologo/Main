@@ -176,8 +176,9 @@
 		<minigameslib.version>1.14.18-SNAPSHOT</minigameslib.version>
 		<mypet.version>2.3.4</mypet.version>
 		<mcmmohorses.version>4.3.55</mcmmohorses.version>
-		<worldedit.version>7.0.1-SNAPSHOT</worldedit.version>
-		<worldguard.version>7.0.0</worldguard.version>
+		<worldedit.version>7.2.8</worldedit.version>
+		<worldguard6.version>6.2</worldguard6.version>
+		<worldguard7.version>7.0.6</worldguard7.version>
 		<PreciousStones.version>10.7.2</PreciousStones.version>
 		<libsdisguises.version>10.0.28</libsdisguises.version>
 		<battleArena.version>3.9.16.4</battleArena.version>
@@ -190,8 +191,7 @@
 
 		<iDisguise.version>5.5.5</iDisguise.version>
 		<vanishnopacket.version>3.20</vanishnopacket.version>
-		<mcmmo160.jar.version>mcMMO-1.6.0-SNAPSHOT-B38.jar</mcmmo160.jar.version>
-		<mcmmo161.version>1.6.1-SNAPSHOT</mcmmo161.version>
+		<mcmmo160version>1.6.0</mcmmo160version>
 		<mcmmo210.version>2.1.211</mcmmo210.version>
 		<disguisecraft.version>5.1</disguisecraft.version>
 		<crackshot.version>0.98.5</crackshot.version>
@@ -288,7 +288,7 @@
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
 
-		<!-- Jitpack / Vault, TitleAPI, ActionBarAPI -->
+		<!-- Jitpack (Vault, TitleAPI, ActionBarAPI) -->
 		<repository>
 			<id>vault-repo</id>
 			<url>https://jitpack.io</url>
@@ -424,6 +424,12 @@
         <id>paper-repo</id>
         <url>https://papermc.io/repo/repository/maven-public/</url>
     </repository>
+
+  	<!-- Add imported jar files to main project-->
+	<repository>
+    	<id>main-local-repo</id>
+    	<url>file://${project.basedir}/lib</url>
+  	</repository>
 
 	</repositories>
 
