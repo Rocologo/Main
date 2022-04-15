@@ -268,10 +268,10 @@
 		</repository>
 
 		<!-- mypet repository -->
-		<repository>
+		<!-- <repository>
 			<id>mypet-repo1</id>
 			<url>https://repo.keyle.de/</url>
-		</repository>
+		</repository> -->
 
 		<!-- BattleArena -->
 		<!--<repository>
