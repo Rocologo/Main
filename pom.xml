@@ -282,10 +282,10 @@
 		<!-- </repository> -->
 
 		<!-- MiniGamesLib / MinigamesAPI repo -->
-		<repository>
+		<!-- REPO IS DOWN <repository>
 			<id>minigameslib-repo</id>
 			<url>https://nexus.xworlds.eu/nexus/content/repositories/</url>
-		</repository>
+		</repository> -->
 
 		<!-- Inventive Repo / SpigetUpdater / BossBarAPI -->
 		<repository>
