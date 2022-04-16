@@ -325,6 +325,21 @@ public class Reward {
 			return false;
 	}
 
+	public static boolean isHead(ItemStack itemStack) {
+		if (itemStack != null && itemStack.hasItemMeta() && itemStack.getItemMeta().hasLore()
+				&& itemStack.getItemMeta().getLore().size() > 2) {
+			String lore = itemStack.getItemMeta().getLore().get(2);
+			if (lore.startsWith("Hidden(2):")) {
+				lore = lore.substring(10);
+				return lore.equals(RewardType.KILLED.getType()) || lore.equals(RewardType.KILLER.getType())
+						|| lore.equals(RewardType.KILLED.getUUID()) || lore.equals(RewardType.KILLER.getUUID());
+			} else
+				return false;
+
+		} else
+			return false;
+	}
+
 	public static Reward getReward(ItemStack itemStack) {
 		return new Reward(itemStack.getItemMeta().getLore());
 	}
