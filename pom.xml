@@ -290,7 +290,7 @@
 		<!-- Inventive Repo / SpigetUpdater / BossBarAPI -->
 		<repository>
 			<id>inventive-repo</id>
-			<url>https://mvnrepository.com/artifact/org.inventivetalent</url>
+			<url>https://repo.inventivetalent.org/repository/public/</url>
 		</repository>
 
 		<!-- BarAPI -->
