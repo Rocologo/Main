@@ -96,6 +96,10 @@ public class Core {
 
 	}
 
+	public static void init() {
+		
+	}
+	
 	public static void shutdown() {
 		try {
 			getMessages().debug("Saving all rewardblocks to disk.");
