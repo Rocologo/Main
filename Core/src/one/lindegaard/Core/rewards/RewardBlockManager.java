@@ -22,8 +22,6 @@ import org.bukkit.plugin.Plugin;
 import one.lindegaard.Core.Core;
 import one.lindegaard.Core.Tools;
 import one.lindegaard.Core.materials.Materials;
-import one.lindegaard.Core.rewards.Reward;
-import one.lindegaard.Core.rewards.RewardBlock;
 
 public class RewardBlockManager {
 

@@ -35,6 +35,13 @@ public class Core {
 	private static PlayerSettingsManager mPlayerSettingsManager;
 	private static CoreRewardManager mCoreRewardManager;
 
+	// Public Placeholders used in BagOfGold and MobHunting
+	public static final String PH_PLAYERNAME = "playername";
+	public static final String PH_MONEY = "money";
+	public static final String PH_REWARDNAME = "rewardname";
+	public static final String PH_COMMAND = "command";
+	public static final String PH_PERMISSION = "perm";
+
 	public Core(Plugin plugin) {
 		this.plugin = plugin;
 
@@ -58,7 +65,7 @@ public class Core {
 		mMessages.debug("Loading bagofgoldcore.yml file, version %s", config_version);
 
 		List<String> itemtypes = Arrays.asList("SKULL", "ITEM", "KILLER", "KILLED", "GRINGOTTS_STYLE");
-		if (!itemtypes.contains(mConfig.rewardItemtype)){
+		if (!itemtypes.contains(mConfig.rewardItemtype)) {
 			Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[BagOfGoldCore] " + ChatColor.RESET
 					+ "The type define with reward_itemtype in your config is unknown: " + mConfig.rewardItemtype);
 		}

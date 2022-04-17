@@ -80,7 +80,7 @@ public class Messages {
 					}
 				}
 			}
-			mTranslationTable = loadLang(dest);
+			//mTranslationTable = loadLang(dest);
 		}
 	}
 

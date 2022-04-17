@@ -150,6 +150,11 @@ public class ConfigManager extends AutoConfig {
 	@ConfigField(name = "text_color", category = "reward.name", comment = "Here you can set of the color of the number above the dropped item. \nUse color names like WHITE, RED, BLUE, GOLD")
 	public String rewardTextColor = "GOLD";
 
+	@ConfigField(name = "show_displayname", category = "reward.name", comment = "Here you can hide the displayname when the bag of gold is an floating item in a world"
+			+"\nlike for normal Minecraft items."
+			+ "\nYou will still be able to see the displayname and value in the player Inventory.")
+	public boolean showCustomDisplayname = true;
+
 	@ConfigField(name = "command_alias", category = "reward.command", comment = "Here you can chance the command /mh money ... and /bag money... to /mh <alias> ... and /bag <alias>..."
 			+ "\nExample: gold,bag,silver,coin,???? ")
 	public String commandAlias = "money";

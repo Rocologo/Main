@@ -26,7 +26,8 @@ public class CoreRewardManager {
 
 	public CoreRewardManager(Plugin plugin) {
 		this.plugin = plugin;
-		Bukkit.getPluginManager().registerEvents(new MoneyMergeEventListener(plugin), plugin);
+		// Bukkit.getPluginManager().registerEvents(new MoneyMergeEventListener(plugin),
+		// plugin);
 	}
 
 	public HashMap<Integer, Double> getDroppedMoney() {
@@ -39,7 +40,7 @@ public class CoreRewardManager {
 				|| Core.getConfigManager().rewardItemtype.equalsIgnoreCase("KILLED")
 				|| Core.getConfigManager().rewardItemtype.equalsIgnoreCase("KILLER");
 	}
-	
+
 	public boolean isGringottsStyle() {
 		return Core.getConfigManager().rewardItemtype.equals("GRINGOTTS_STYLE");
 	}
@@ -150,11 +151,11 @@ public class CoreRewardManager {
 			dropBagOfGoldMoneyOnGround(player, null, player.getLocation(), moneyLeftToGive);
 		return addedMoney;
 	}
-	
+
 	public double removeBagOfGoldFromPlayer(Player player, double amount) {
 		double taken = 0;
 		double toBeTaken = Tools.round(amount);
-		for (int slot = player.getInventory().getSize(); slot > 0 ; slot--) {
+		for (int slot = player.getInventory().getSize(); slot > 0; slot--) {
 			if (slot >= 36 && slot <= 40)
 				continue;
 			ItemStack is = player.getInventory().getItem(slot);
@@ -191,7 +192,7 @@ public class CoreRewardManager {
 		}
 		return taken;
 	}
-	
+
 	/**
 	 * Dropes an Reward Item at the specified location
 	 * 
@@ -225,7 +226,7 @@ public class CoreRewardManager {
 					+ "Unhandled reward type in CoreRewardManager.");
 		}
 	}
-	
+
 	public void dropBagOfGoldMoneyOnGround(Player player, Entity killedEntity, Location location, double money) {
 		Item item = null;
 		double moneyLeftToDrop = Tools.ceil(money);
@@ -275,7 +276,7 @@ public class CoreRewardManager {
 				getDroppedMoney().put(item.getEntityId(), nextBag);
 				item.setMetadata(Reward.MH_REWARD_DATA_NEW, new FixedMetadataValue(plugin, new Reward(reward)));
 				item.setCustomName(is.getItemMeta().getDisplayName());
-				item.setCustomNameVisible(true);
+				item.setCustomNameVisible(Core.getConfigManager().showCustomDisplayname);
 				if (player != null)
 					Core.getMessages().debug("%s dropped %s on the ground as item %s (# of rewards=%s)(3)",
 							player.getName(), Tools.format(nextBag), Core.getConfigManager().rewardItemtype,

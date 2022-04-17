@@ -44,10 +44,9 @@ public class Tools {
 		Block lastBlock = iter.next();
 		while (iter.hasNext()) {
 			lastBlock = iter.next();
-			if (lastBlock.getType() == Material.AIR) {
-				continue;
-			}
-			break;
+			if (lastBlock.getType() != Material.AIR) 
+				break;
+			
 		}
 		return lastBlock;
 	}
@@ -104,6 +103,10 @@ public class Tools {
 		return null;
 	}
 
+	public static boolean isPlayerOnline(String name) {
+		return Bukkit.getPlayer(name)!=null;
+	}
+
 	public static Map<String, Object> toMap(Location loc) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("X", loc.getX());
@@ -141,20 +144,17 @@ public class Tools {
 	public static String trimSignText(String string) {
 		return string.length() > 15 ? string.substring(0, 14).trim() : string;
 	}
-	
+
 	public static double round(double d) {
-		return Math.round(d / Core.getConfigManager().rewardRounding)
-				* Core.getConfigManager().rewardRounding;
+		return Math.round(d / Core.getConfigManager().rewardRounding) * Core.getConfigManager().rewardRounding;
 	}
 
 	public static double ceil(double d) {
-		return Math.ceil(d / Core.getConfigManager().rewardRounding)
-				* Core.getConfigManager().rewardRounding;
+		return Math.ceil(d / Core.getConfigManager().rewardRounding) * Core.getConfigManager().rewardRounding;
 	}
 
 	public static double floor(double d) {
-		return Math.floor(d / Core.getConfigManager().rewardRounding)
-				* Core.getConfigManager().rewardRounding;
+		return Math.floor(d / Core.getConfigManager().rewardRounding) * Core.getConfigManager().rewardRounding;
 	}
 
 }
