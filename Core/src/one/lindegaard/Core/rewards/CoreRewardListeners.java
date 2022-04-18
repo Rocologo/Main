@@ -19,7 +19,7 @@ import org.bukkit.plugin.Plugin;
 import one.lindegaard.Core.Core;
 
 public class CoreRewardListeners implements Listener {
-	
+
 	private Plugin plugin;
 
 	public CoreRewardListeners(Plugin plugin) {
@@ -29,7 +29,7 @@ public class CoreRewardListeners implements Listener {
 	// **********************************************************************************************************
 	// Events
 	// **********************************************************************************************************
-	
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onBlockPistonExtendEvent(BlockPistonExtendEvent event) {
 		if (event.isCancelled())
@@ -62,14 +62,20 @@ public class CoreRewardListeners implements Listener {
 	public void onInventoryMoveItemEvent(InventoryMoveItemEvent event) {
 		ItemStack is = event.getItem();
 		if (Reward.isReward(is)) {
-			Core.getMessages().debug("onInventoryMoveItemEvent: You move a reward like that");
-			event.setCancelled(true);
+			Reward reward = Reward.getReward(is);
+			Core.getMessages().debug(
+					"CoreRewardListeners: onInventoryMoveItemEvent: a %s was moved from %s to %s. The Initiator was %s",
+					reward.getDisplayName(), event.getSource().getType(), event.getDestination().getType(),
+					event.getInitiator().getType());
+			// TODO: The BagOfGold in the Destination inventory should be merged.
 		}
 	}
 
 	@EventHandler(priority = EventPriority.NORMAL)
 	public void onInventoryInteractEvent(InventoryInteractEvent event) {
 		Core.getMessages().debug("CoreRewardListeners: onInventoryInteractEvent called");
+		Core.getMessages().debug("%s clicked on %s with result %s (report this to the developer on Github)",
+				event.getWhoClicked().getName(), event.getInventory().getType(), event.getResult().name());
 		// plugin.getMessages().debug("BagOfGoldItems: %s clicked an inventory %s",
 		// event.getWhoClicked().getName(),
 		// event.getInventory().getType());
