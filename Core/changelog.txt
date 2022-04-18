@@ -1,5 +1,6 @@
 V0.5.7
 * Added some placeholders as constants
+* Fixed problem in BagOfGoldCore which could cause the rewards.yml file to be ruined on servers both running BagOfGold and MobHunting.
 v0.4.8
 * Fixed ticket 684 - location cant be checked on saving reward blocks: https://github.com/Rocologo/MobHunting/issues/684 
 v0.4.5

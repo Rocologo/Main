@@ -13,7 +13,7 @@ public class MobHuntingCompat {
 		mPlugin = Bukkit.getPluginManager().getPlugin(CompatPlugin.MobHunting.getName());
 
 		if (mPlugin != null) {
-			if (mPlugin.getDescription().getVersion().compareTo("7.5.0") >= 0) {
+			if (mPlugin.getDescription().getVersion().compareTo("8.1.1") >= 0) {
 				Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RESET
 						+ "Enabling compatibility with MobHunting (" + mPlugin.getDescription().getVersion() + ")");
 				supported = true;
@@ -21,7 +21,7 @@ public class MobHuntingCompat {
 				Bukkit.getServer().getConsoleSender()
 						.sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED
 								+ "Your current version of MobHunting (" + mPlugin.getDescription().getVersion()
-								+ ") is outdated. Please upgrade to 7.5.0 or newer.");
+								+ ") is outdated. Please upgrade to 8.1.1 or newer.");
 				Bukkit.getPluginManager().disablePlugin(mPlugin);
 			}
 		} else {

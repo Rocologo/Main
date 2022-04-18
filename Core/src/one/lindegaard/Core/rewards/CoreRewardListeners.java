@@ -48,7 +48,7 @@ public class CoreRewardListeners implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerQuit(PlayerQuitEvent event) {
-		Player player = (Player) event.getPlayer();
+		Player player = event.getPlayer();
 		if (player.getOpenInventory() != null) {
 			if (player.getOpenInventory().getCursor() == null)
 				return;
@@ -76,9 +76,6 @@ public class CoreRewardListeners implements Listener {
 		Core.getMessages().debug("CoreRewardListeners: onInventoryInteractEvent called");
 		Core.getMessages().debug("%s clicked on %s with result %s (report this to the developer on Github)",
 				event.getWhoClicked().getName(), event.getInventory().getType(), event.getResult().name());
-		// plugin.getMessages().debug("BagOfGoldItems: %s clicked an inventory %s",
-		// event.getWhoClicked().getName(),
-		// event.getInventory().getType());
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST)
@@ -104,16 +101,17 @@ public class CoreRewardListeners implements Listener {
 		if (event.isCancelled())
 			return;
 
-		if (Reward.isReward(event.getEntity())) {
-			if (Core.getCoreRewardManager().getDroppedMoney().containsKey(event.getEntity().getEntityId())) {
-				Core.getCoreRewardManager().getDroppedMoney().remove(event.getEntity().getEntityId());
-				if (event.getEntity().getLastDamageCause() != null)
-					Core.getMessages().debug("The reward was destroyed by %s",
-							event.getEntity().getLastDamageCause().getCause());
-				else
-					Core.getMessages().debug("The reward despawned (# of rewards left=%s)",
-							Core.getCoreRewardManager().getDroppedMoney().size());
-			}
+		if (Reward.isReward(event.getEntity())
+				&& Core.getCoreRewardManager().getDroppedMoney().containsKey(event.getEntity().getEntityId())) {
+			
+			Core.getCoreRewardManager().getDroppedMoney().remove(event.getEntity().getEntityId());
+			if (event.getEntity().getLastDamageCause() != null)
+				Core.getMessages().debug("CoreRewardListeners: The reward was destroyed by %s",
+						event.getEntity().getLastDamageCause().getCause());
+			else
+				Core.getMessages().debug("CoreRewardListeners: The reward despawned (# of rewards left=%s)",
+						Core.getCoreRewardManager().getDroppedMoney().size());
+
 		}
 	}
 }

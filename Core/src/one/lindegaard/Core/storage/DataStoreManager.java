@@ -11,7 +11,7 @@ import org.bukkit.plugin.Plugin;
 
 import one.lindegaard.Core.Core;
 import one.lindegaard.Core.PlayerSettings;
-import one.lindegaard.Core.compatibility.MobHuntingCompat;
+import one.lindegaard.Core.compatibility.BagOfGoldCompat;
 import one.lindegaard.Core.storage.async.IDataStoreTask;
 import one.lindegaard.Core.storage.async.PlayerSettingsRetrieverTask;
 import one.lindegaard.Core.storage.async.StoreTask;
@@ -53,23 +53,22 @@ public class DataStoreManager {
 	}
 
 	public void save() {
-		
-		//flush(); VIRKER IKKE
-		
+
+		// flush(); VIRKER IKKE
+
 		mTaskThread.addTask(new StoreTask(mWaiting), null);
-		
-		/**mTaskThread.addTask(new StoreTask(mWaiting), null);
-		
-		if (mStoreThread.getState() == Thread.State.WAITING || 
-				mStoreThread.getState() == Thread.State.TIMED_WAITING)
-			mStoreThread.interrupt();
-		else if (mStoreThread.getState() == Thread.State.RUNNABLE)
-			mStoreThread.run();
-		//else if (mStoreThread.getState() == Thread.State.TERMINATED)
-		//    mStoreThread = new StoreThread(Core.getConfigManager().savePeriod);
-		else
-			Core.getMessages().debug("mStoreThread=%s", mStoreThread.getState());
-			**/
+
+		/**
+		 * mTaskThread.addTask(new StoreTask(mWaiting), null);
+		 * 
+		 * if (mStoreThread.getState() == Thread.State.WAITING ||
+		 * mStoreThread.getState() == Thread.State.TIMED_WAITING)
+		 * mStoreThread.interrupt(); else if (mStoreThread.getState() ==
+		 * Thread.State.RUNNABLE) mStoreThread.run(); //else if (mStoreThread.getState()
+		 * == Thread.State.TERMINATED) // mStoreThread = new
+		 * StoreThread(Core.getConfigManager().savePeriod); else
+		 * Core.getMessages().debug("mStoreThread=%s", mStoreThread.getState());
+		 **/
 	}
 
 	// *****************************************************************************
@@ -210,7 +209,16 @@ public class DataStoreManager {
 
 		public StoreThread(int interval) {
 			super("BGC StoreThread");
-			start();
+			Core.getMessages().debug("Saving called from %s", plugin.getName());
+			if (BagOfGoldCompat.isSupported()) {
+				if (plugin.getName().equals("BagOfGold")) {
+					start();
+				} else {
+
+				}
+			} else {
+				start();
+			}
 			mSaveInterval = interval;
 		}
 
