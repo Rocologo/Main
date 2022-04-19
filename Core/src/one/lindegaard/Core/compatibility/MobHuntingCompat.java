@@ -13,7 +13,7 @@ public class MobHuntingCompat {
 		mPlugin = Bukkit.getPluginManager().getPlugin(CompatPlugin.MobHunting.getName());
 
 		if (mPlugin != null) {
-			if (mPlugin.getDescription().getVersion().compareTo("8.1.1") >= 0) {
+			if (mPlugin.getDescription().getVersion().compareTo("8.0.0") >= 0) {
 				Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RESET
 						+ "Enabling compatibility with MobHunting (" + mPlugin.getDescription().getVersion() + ")");
 				supported = true;
