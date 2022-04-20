@@ -60,6 +60,7 @@ public class CoreRewardListeners implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onInventoryMoveItemEvent(InventoryMoveItemEvent event) {
+		// This happens when an item moves from one Intory to another. Ex from one Hoppe to another Hopper.
 		ItemStack is = event.getItem();
 		if (Reward.isReward(is)) {
 			Reward reward = Reward.getReward(is);
@@ -67,7 +68,10 @@ public class CoreRewardListeners implements Listener {
 					"CoreRewardListeners: onInventoryMoveItemEvent: a %s was moved from %s to %s. The Initiator was %s",
 					reward.getDisplayName(), event.getSource().getType(), event.getDestination().getType(),
 					event.getInitiator().getType());
-			// TODO: The BagOfGold in the Destination inventory should be merged.
+			
+			//TODO: The BagOfGold in the Destination inventory should be merged.
+			
+			
 		}
 	}
 
