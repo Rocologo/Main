@@ -76,19 +76,24 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_18_R1.version}</version>
+			<version>${spigotmc_1_19_R1.version}</version>
 		</dependency>
 
 		<!-- Craftbukkit / Bukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_18_R1.version}</version>
+			<version>${craftbukkit_1_19_R1.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
 			<artifactId>NMS_Shared</artifactId>
 			<version>${NMS_Shared.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>NMS_v1_19_R1</artifactId>
+			<version>v1_19_R1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
