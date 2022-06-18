@@ -194,7 +194,7 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_18_R1.version}</version>
+			<version>${craftbukkit_1_19_R1.version}</version>
 		</dependency>
 
 		<!-- ProtocolLib -->
