@@ -22,6 +22,29 @@ public enum MobType {
 	// http://heads.freshcoal.com/index.php
 
 	// ******************************************************************
+	// Minecraft 1.19
+	// ******************************************************************
+	// Warden
+	Warden("Warden", "b6223af7-2174-42da-b23b-ffa430de0c14", "Warden",
+			"ewogICJ0aW1lc3RhbXAiIDogMTYyNjkyNjA3MjMxOSwKICAicHJvZmlsZUlkIiA6ICI5MGQ1NDY0OGEzNWE0YmExYTI2Yjg1YTg4NTU4OGJlOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJFdW4wbWlhIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzFkZmQxM2NhMDhiZjk3M2JmZWYwMjkzZDc3MDcwNGExMWVmNWE5ZmUyMGQ0MDY3MWZiMDY2NzI0ZDNlMThkOCIKICAgIH0KICB9Cn0=",
+			"xtu1c4weY8eXLUAFW4UsX0qS/1mxLieHLXjpCIR+Je8IXa3IyIhs5Ct9RpfGlrcuGJg4xmDLPA40VDfF1ZOE/aPrqENHIL2uhU1AvU2JtxWQWEy84eg1PhsAEY7rVFXED0CAQL9mFTyslKSBE8yxhMzMIBfJARLBsb+cP/MrUvbupYaywB0fRA54iqrdYSEXsbLmszgl/zAmTPNphXw/eJgD1yQooAZNoebB96HS6KrcoZyWZsoJazvWL+9PvqLUJMuAOIDxCYs2km74YZggKgstFmW4YCnutzj+vds4uZy5ObpMz/5oApOMjiCtFcqpfB9QL3yaPCQnYt2TUph8zuUgW2YEFYsFK8MmFXt3Y0R22SLg4oiIgJnJQtzVgz2+t+LnsClIolux/fNZljb4MSuQJMiI7hS+xRjNh0OFMVCh9YHwPtO4EK2aW/zvR58Pro8nDxmafeUk/RHDvphpXZnuo6RyZEuwj3+6mQYtCTZVFOEGHspBkSjyAXwaO460d4qV1febal/nO7DygLT4ZOhixWLM/vz5we0JE3G2933yFU22K2ipuSXwL4nwHYvu8nO3Hvmtt40DnHL0xCI1cjbivb9xZwPMjLIHX3VRp349LseAoml/okf6hdrTKqxvmNvfvFsIIfAc9WPQ3qQFI2OZA3mwXb/W6Eozwb0ykfk="),
+
+	// Frog
+	Frog("Frog", "56eccf08-5864-48e6-8fed-7a736013568b", "Frog",
+			"ewogICJ0aW1lc3RhbXAiIDogMTY0NDE3NzU4OTQ2OSwKICAicHJvZmlsZUlkIiA6ICJhYTZhNDA5NjU4YTk0MDIwYmU3OGQwN2JkMzVlNTg5MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJiejE0IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JmMGU4OWU4NTIzMzMyYTQ0YjdkM2Y0MjY5M2JhY2QyMTlmM2Q2NDQxMzg5MDFjMjZkMzMxMDk1NmVmNjUzYWUiCiAgICB9CiAgfQp9",
+			"h0ZNmnJAQ1fqv2A/lW00sIA9yRmO+F0esrckyT3Q4YutN7ZxERCFgdk8mZrDhrh/y0wCs6vWFOHQPxeAbrgQ6FnuC3l+crjcMRzIa2KqW0JpVAPs6VhIMpvRjZfmlzLuDDt6rPUnGOEEQ8ofwQyyWkDKyXDYoZv2/MsFX8dV+C8YPpKUZHIyscgpkejkSXUWoejArDCclRh4f34inrU2PbvmFQQcIyHOPlMMUOa58L7iNFNwn10khNOW00hXVcs5BJhm2ana5Y6nhlY/cK0Pp+UzKPIhL8pbsPCcCkJD/ddHj/C9oG89ll+wieo0g+9plyq1qx06mat/ztrNRcXd3kgQYDb9cHlT3iY7LDwY75utX5OhjI6XIANR2Dk2glOHx+9KD9zUQwmcbgKJsFmYUSx/PsGu6YEmncyPmNHDbCkdB8dJkHY9j6YZvBkIuhZvJQNVdPWgu3LpaODz5RZOB7Tk1yaSqsxqFy7UTy5gh+NKQmA/419xZiKyTuiG1i0Rd5+nAV3r7Ayu1LctHZaUyGlQw7ulCiZWRBwvjI93Ppug/cT3PO55uKetPNCCTrUDU5CyH4M/dRI7CoR8NxZlyzoeF1g6DKr9nuXv0agNMPeqGL4eEzgel/LUeUhGAq94WRffBFobQqDQYCaZ9meHtSP9mBbUaJP3RqLOdCsNxm8="),
+
+	// Tadpole
+	Tadpole("Tadpole", "78bc039e-a641-4a2c-8371-63218be72317", "Tadpole",
+			"ewogICJ0aW1lc3RhbXAiIDogMTY1NTgyMjE1MzU4NSwKICAicHJvZmlsZUlkIiA6ICJlM2I0NDVjODQ3ZjU0OGZiOGM4ZmEzZjFmN2VmYmE4ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJNaW5pRGlnZ2VyVGVzdCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS83Yjk1ZDExODBkNTZmYWU2OWQ4MjZiNmM5NTU5MmNjZjQ4MDQxOGIwMTEzMTFiNzQwZTFmMTM0MzNmMTk4YWEzIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
+			"lrs7TBrvZEHqjNo1h9E6Yc3KEIRdE1OSqLJiaCVHYp5WE9WxwSEu7cccRXE6keiaJi/h0FBfaEndee1FITQgDeurkzOJMkNdhBdrAwJOJXcn7qEOhtut0jAd8rGqDzL5wlxy8Pq3cqrP1+dJplT1zfiPtzyw0wS8GvodyyuRvusOiEm4DP1gxipTRK2CHiAPCrGrHeeUTKf+DCLEneqdKB55PDLoIbaVz1QYkZSU9DQPCRsvmHODF/BZ/EUD3Qd9RhahdlXQCBucf6929gvRNAp3eEBBaPuIKjvS+wuDq34KEbaivOEbep3EGl1FWB0ws3KxPdKpMvAsLWJoN+o9uXgN66lQd1a/pSTRyvynuQUdzRXlxhVcXDpxbtqctnwHDtYac1yj9uy/tZDmhcdZ31sq3zNyuSIMxNm5x56tPVlZztULsgWtKEPLUccn2xdiFqDuaNmSWfqueFhWzyZ+j0HIz6gklNQLThFr0+focBietrL0oa3QQub38VUpCdXyRT3/dKKAD9Gh/BlFM7xQH4jj93BQsXXPwhN//DCN4FH9Fw/SPNXpKdwlvpWV7TN9IVDwoClEBvVwFmrERODOR2j+vrubNPWvUc9NYQzfMwsrg0rnf3N7WyoMSqmD309YUFRMKsaxEnHp0Bwgil7Ys5OfRN06K+FC1FFTL3KpksU="),
+
+	// Allay
+	Allay("Allay", "a7c50c74-de1d-4deb-9f76-7d0f5c29e10f", "Allay",
+			"ewogICJ0aW1lc3RhbXAiIDogMTY1NTgyMTkxOTY3NCwKICAicHJvZmlsZUlkIiA6ICI4YjgyM2E1YmU0Njk0YjhiOTE0NmE5MWRhMjk4ZTViNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJTZXBoaXRpcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS83MmQxMGQxNjlhN2IzY2Q5MDJiMmE4MTM4MGI1NDAyZDhkYWU2MjdjMGZmZjIzNjY0NDcxOWRjOGE3ZTcwMDViIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
+			"iEFIGNGoDPSgqBXNKt5fFi+uO/EL9dis4bqA9i1tNy99b8DEom2yQSGfDFk4bvbq0h/YwXNsJZO9vnZiwULMYNjdYhE+b0IPWMP2M1Y4VEldRuhSzJL1bHPmJoEa8/EErG5IwFsObKWgRvXVsvqqF5GLtIB6DkX80A9EMfbnLrlUtbi0MMxxJkqxl+iGf/wVB4DLY/2itzGcYnszdqczKXJr+01Xu07i+mZ2XDzEfkz/Jw6JR9QTYEMom2DZ+fdf4PG/6gsvIX9UYuWm5/fWHr54QbNFVgEm6m8wMmR1V4KwtOGx/86KBH1emP+iUHXZJhwtkN93LElxlHFgOKXRJ6HJloKpwHResivyx3SpVovI6DMwYeFIVcibhXHhWouoPE/+C2+VOaaerP8FcHwuTBlsX2TTzv73fqhG5fLSodBRIyd18UmgSXYQ0/0/QzBn+X8iOe5j4wPWjud/xerNuagMm8pJkjG5LwoLPxD6u+/r5KWRFKHj3SoQ8tXFfaFGJxkYfzwZMZ2mEVK6Q25A3wg6hMLMF0W4M9Rci3d9MON4CC2CwnjJHr4KHVLwQa5l7UF8CewtZv92YATJ2HiY07v2IyqHYTWYnGSg1CJ9trz2obf5LKlH/ovmJqglXhJC86CwKW5j27pByWFEVh1/WEYmb+cutrBXr+dfEmhUXVw="),
+
+	// ******************************************************************
 	// Minecraft 1.17
 	// ******************************************************************
 	// Goat
@@ -38,11 +61,6 @@ public enum MobType {
 	Axolotl("Axolotl", "4e33985d-4451-4fd3-821f-4a05d7756735", "Axolotl",
 			"ewogICJ0aW1lc3RhbXAiIDogMTYyNTY4MjIyMjM1OSwKICAicHJvZmlsZUlkIiA6ICIzZjM4YmViZGYwMWQ0MjNkYWI4MjczZjUwNGFiNGEyNyIsCiAgInByb2ZpbGVOYW1lIiA6ICJjazM0Nzk0MjM1NzUzNzMxIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M5ZTA2MjY1NmRhN2I3NGM2YjNhZDA3MGI3YmRhOGRhOTg3MmQ1Zjk3YzcwYzYzZTFmN2YwNTFjNTljNzlmNjIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==",
 			"DQ4qAQXs4DD2E13VfOSI4mTh8DrdEO5HUCHKN8ril2MBpUDbhR3rzc8062gLulErFLbQ6AiDB3ihHggTqb3x5hYVK5kdbXKueHDRCQ7RfrRYSiRkEkCzJXEg7Le+sXRG2ZsgFDo+n/6GZl1nFKB+McDzsJoxeskuGD3eGB9bdNDbSsLQnD2D+0aiD1JgCZGa1C0HO6UUVuMMLASgiXptPZj8bg72xJxzBkAPLGdhLVbVUvkTM7vJyuD3xbjg95YrM1thbLHbw0aVzCUmy9rc58tJCPI4vvxaQZxLHGAK++1/S4c+jVLFz2EWzl0LToUaDsNWJc+nw7NrMJ3mUm4UbZobsMCRmK+6Q77dBGuZflTQODLePu2255bn9E8/0cKpjF1SiAQLxGjMT11b/awSo3dzHHK9ySxgh/U0ICn9yvCaB38FcdzJsB7JjmI7NbHNYwN3yl4a+GWiVLbVsZ1piXGa6C3uinPcTfUk2+YZ/7fBS30TC6ap51nIiAnrZIrJbDpq/qqLm2FznAXt5PoL3dNaIwO2VKKoD4AMUTJ8MYY4AezChallx8+f8XbZaiZQ01ZSI2UQoZqfzG/NvkrCbK7q/kKzdM9pRFk5c+7KXSO+lm12vjp/RyWnUy+LskMGDfP3Bkl6BKoYu/HVsQC/+B3nIC7Cqh9W2tXPRK+67Vg="),
-
-//	// Warden
-//	Warden("Warden", "f2a1b6a9-0493-4876-b4e9-e8465d7d70b8", "Warden",
-//			"ewogICJ0aW1lc3RhbXAiIDogMTYyNTYxMTc1NzQxMSwKICAicHJvZmlsZUlkIiA6ICI0OWIzODUyNDdhMWY0NTM3YjBmN2MwZTFmMTVjMTc2NCIsCiAgInByb2ZpbGVOYW1lIiA6ICJiY2QyMDMzYzYzZWM0YmY4IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVjMzA1Njk2NThiOWNmZDdiY2Y5NTkzNDQ0ZWViY2RmNjEzY2VhYTU4YzBiZTUzNWU3YmUyODExYmExNTNjNjMiCiAgICB9CiAgfQp9",
-//			"rphkIzh86Wof52R9pyMx18Bbwon7tSx6FNu03VG7atvQMmviQ18SmWnHK5DY4e0jibf+FCGHQczd0TM7436TYHCK1l6O5kjMkxoIhii1ibMiBkUKZyAX5/KS4jXEB41sfWgw7lW6X5m33Q/YHpZkHDNafat0Y3dMA2Aoacs5u5DTWFlf09z65frpK9AOUdTrjGyfCtTBab3RR6z1Jc68erLvgW0DbSyvKuJFGDTBuRBdA8DhJOzjH9/NecBIl25FhCFmyKpbdYfSRBxP/JsD83Rv4Qae+jZXccSPgY9kxQ/54DA2MsF8MfEjYn5gyjOXgU63ZfOHZIjiVuAmOuv4h5vi57VLC/oVxV75EQmMnxYArAGIxMRnVbz8qZpHNXm/8MalILpmg10qeQkzO8MHenaG+lSBCTs0LD+4Ll1XAf/pT9S7Zf0LnNJdy7+8ln/nXNWpmFwrM9MfIMjzoeSG9xMg29N5Ld9Od0YSbfokUhB34N3eAqR+fIWfBXHtLdSPukssx/tIKxYXirq1KDQo+FiXkSjv1vF/ziMUBZbbXva7xk+VDjc6EcXi+sJwWv74W+mTOICWm9L/nn+HuS0MKkSoXEqs26AcrrPPwcQhKKwDBMC/g+zN4s2sw50N0KwiqxGU2EtaOejwWTkx1RbPFGTnUJGQ5Z+nwMxzP40/E0s="),
 
 	// ******************************************************************
 	// Minecraft 1.16.2
@@ -548,6 +566,19 @@ public enum MobType {
 
 	public boolean matches(Entity entity) {
 
+		if (Servers.isMC119OrNewer())
+			if (this == Warden)
+				return entity instanceof org.bukkit.entity.Warden;
+			else if (this == Frog)
+				return entity instanceof org.bukkit.entity.Frog;
+			else if (this == Tadpole)
+				return entity instanceof org.bukkit.entity.Tadpole;
+			else if (this == Allay)
+				return entity instanceof org.bukkit.entity.Allay;
+
+		if (Servers.isMC118OrNewer()) {
+		}
+
 		if (Servers.isMC117OrNewer())
 			if (this == Axolotl)
 				return entity instanceof org.bukkit.entity.Axolotl;
@@ -555,8 +586,6 @@ public enum MobType {
 				return entity instanceof org.bukkit.entity.Goat;
 			else if (this == GlowSquid)
 				return entity instanceof org.bukkit.entity.GlowSquid;
-//			else if (this == Warden)
-//				return entity instanceof org.bukkit.entity.Warden;
 
 		if (Servers.isMC1162OrNewer())
 			if (this == MobType.PiglinBrute)

@@ -260,7 +260,7 @@
 		<!-- sk89q WorldGuard WorldEdit repositories -->
 		<repository>
 			<id>sk89q-repo</id>
-			<url>https://maven.sk89q.com/repo/</url>
+			<url>https://maven.enginehub.org/repo/</url>
 		</repository>
 
 		<!-- dmulloy2 repository / ProtocolLib -->
