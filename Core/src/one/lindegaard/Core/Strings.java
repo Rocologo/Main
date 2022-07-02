@@ -41,15 +41,15 @@ public class Strings {
 		return ns;
 	}
 
-	public static net.md_5.bungee.api.ChatColor getColor(String s) {
+	public static ChatColor getColor(String s) {
 		try {
-			Class<ChatColor> c = net.md_5.bungee.api.ChatColor.class;
+			Class<ChatColor> c = ChatColor.class;
 			Method m = c.getMethod("of", String.class);
 			Object o = m.invoke(null, s);
-			return (net.md_5.bungee.api.ChatColor) o;
+			return (ChatColor) o;
 
 		} catch (Exception e) {
-			return net.md_5.bungee.api.ChatColor.WHITE;
+			return ChatColor.WHITE;
 		}
 	}
 }

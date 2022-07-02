@@ -197,6 +197,22 @@
 			<version>${craftbukkit_1_19_R1.version}</version>
 		</dependency>
 
+		<!-- Bungeecord -->
+		<dependency>
+			<groupId>net.md-5</groupId>
+			<artifactId>bungeecord-api</artifactId>
+			<version>1.19-R0.1-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.md-5</groupId>
+			<artifactId>bungeecord-api</artifactId>
+			<version>1.19-R0.1-SNAPSHOT</version>
+			<type>javadoc</type>
+			<scope>provided</scope>
+		</dependency>
+		
 		<!-- ProtocolLib -->
 		<dependency>
 			<groupId>com.comphenix.protocol</groupId>
@@ -352,7 +368,7 @@
 			<id>main-local-repo</id>
 			<url>file://${project.basedir}/lib</url>
 		</repository>
-
+		
 	</repositories>
 
 	<!-- Maven Repo -->
