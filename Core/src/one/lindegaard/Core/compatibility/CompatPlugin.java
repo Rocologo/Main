@@ -57,8 +57,8 @@ public enum CompatPlugin {
 	McMMOHorses("mcMMOHorse", 53), // McMMOHorses
 	Boss("Boss",54), //BOSS
 	CMILib("CMILib", 55), // CMILib
-	LevelledMobs("LevelledMobs",56); //LevelledMobs
-
+	LevelledMobs("LevelledMobs",56), //LevelledMobs
+	Shopkeepers("Shopkeepers",57); //Shopkeepers
 	private final String name;
 	private final Integer id;
 
