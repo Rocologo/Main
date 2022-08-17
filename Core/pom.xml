@@ -79,12 +79,12 @@
 			<version>${spigotmc_1_19_R1.version}</version>
 		</dependency>
 
-		<!-- Craftbukkit / Bukkit -->
+		<!-- Craftbukkit / Bukkit 
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_19_R1.version}</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
             <groupId>com.mojang</groupId>

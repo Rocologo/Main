@@ -133,6 +133,7 @@
 		<spigotmc_1_19_R1.version>1.19-R0.1-SNAPSHOT</spigotmc_1_19_R1.version>
 
 		<craftbukkit_1_19_R1.version>1.19-R0.1-SNAPSHOT</craftbukkit_1_19_R1.version>
+		<bukkit_1_19_R1.version>1.19-R0.1-SNAPSHOT</bukkit_1_19_R1.version>
 		<craftbukkit_1_18_R1.version>1.18.1-R0.1-SNAPSHOT</craftbukkit_1_18_R1.version>
 		<craftbukkit_1_17_R1.version>1.17-R0.1-SNAPSHOT</craftbukkit_1_17_R1.version>
 		<craftbukkit_1_16_R3.version>1.16.3-R0.1-SNAPSHOT</craftbukkit_1_16_R3.version>
@@ -191,11 +192,11 @@
 		</dependency>
 
 		<!-- Craftbukkit / Bukkit -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_19_R1.version}</version>
-		</dependency>
+		</dependency>-->
 
 		<!-- Bungeecord -->
 		<dependency>
