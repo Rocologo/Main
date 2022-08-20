@@ -313,42 +313,42 @@ public class CoreCustomItems {
 		return skull;
 	}
 
-	public static ItemStack getDefaultSkeletonHead(int amount) {
+	private static ItemStack getDefaultSkeletonHead(int amount) {
 		if (Servers.isMC113OrNewer())
 			return new ItemStack(Material.SKELETON_SKULL, amount);
 		else
 			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 0);
 	}
 
-	public static ItemStack getDefaultWitherSkeletonHead(int amount) {
+	private static ItemStack getDefaultWitherSkeletonHead(int amount) {
 		if (Servers.isMC113OrNewer())
 			return new ItemStack(Material.WITHER_SKELETON_SKULL, amount);
 		else
 			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 1);
 	}
 
-	public static ItemStack getDefaultZombieHead(int amount) {
+	private static ItemStack getDefaultZombieHead(int amount) {
 		if (Servers.isMC113OrNewer())
 			return new ItemStack(Material.ZOMBIE_HEAD, amount);
 		else
 			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 2);
 	}
 
-	public static ItemStack getDefaultPlayerHead(int amount) {
+	private static ItemStack getDefaultPlayerHead(int amount) {
 		if (Servers.isMC113OrNewer())
 			return new ItemStack(Material.PLAYER_HEAD, amount);
 		else
 			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 3);
 	}
 
-	public static ItemStack getDefaultCreeperHead(int amount) {
+	private static ItemStack getDefaultCreeperHead(int amount) {
 		if (Servers.isMC113OrNewer())
 			return new ItemStack(Material.CREEPER_HEAD, amount);
 		else
 			return new ItemStack(Material.matchMaterial("SKULL_ITEM"), amount, (short) 4);
 	}
 
-	public static ItemStack getDefaultEnderDragonHead(int amount) {
+	private static ItemStack getDefaultEnderDragonHead(int amount) {
 		if (Servers.isMC113OrNewer())
 			return new ItemStack(Material.DRAGON_HEAD, amount);
 		else
