@@ -1,5 +1,6 @@
 V0.5.8
 * added MC 1.19
+* Fixed GetPlayerProfile
 V0.5.7
 * Added some placeholders as constants
 * Fixed problem in BagOfGoldCore which could cause the rewards.yml file to be ruined on servers both running BagOfGold and MobHunting.

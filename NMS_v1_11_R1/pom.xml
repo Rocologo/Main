@@ -19,7 +19,7 @@
 			<artifactId>craftbukkit</artifactId>
 			<version>v1_11_R1</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/../lib/craftbukkit-1.11.2-R0.1-SNAPSHOT.jar</systemPath>
+			<systemPath>${project.basedir}/lib/craftbukkit-1.11.2-R0.1-SNAPSHOT.jar</systemPath>
 			<!-- 
 			<version>${craftbukkit_1_11_R1.version}</version>
 			<type>jar</type>

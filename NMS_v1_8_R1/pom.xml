@@ -19,7 +19,7 @@
 			<artifactId>craftbukkit</artifactId>
 			<version>${craftbukkit_1_8_R1.version}</version>
 			<scope>system</scope> 
-			<systemPath>${project.basedir}/../lib/craftbukkit-1.8-R0.1-SNAPSHOT.jar</systemPath> 
+			<systemPath>${project.basedir}/lib/craftbukkit-1.8-R0.1-SNAPSHOT.jar</systemPath> 
 		</dependency>
 		<dependency>
 			<groupId>one.lindegaard</groupId>
