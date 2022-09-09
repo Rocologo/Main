@@ -3,14 +3,7 @@ package one.lindegaard.Core.config;
 import java.io.File;
 import java.util.LinkedHashMap;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
-
-import one.lindegaard.Core.Core;
-import one.lindegaard.Core.config.AutoConfig;
-import one.lindegaard.Core.config.ConfigField;
 
 public class ConfigManager extends AutoConfig {
 
@@ -137,6 +130,17 @@ public class ConfigManager extends AutoConfig {
 			+ "\nSet limit_per_bag: 9999999999 to disable the feature.")
 	public double limitPerBag = 10000;
 
+	@ConfigField(name = "minimum_reward", category = "economy", comment = "This is the minimum reward which will which will be paid to the player 0.01 will be fine"
+			+ "\nin most installation, but Gringott users who want very low rewards (like 0.001  for killing"
+			+ "\na mob) will have to lower the minimum reward. Remember that some multipliers are less than 1"
+			+ "\n and grinding detection and penalties. The minimum_reward should therefor be less than 10%"
+			+ "\n of smallest reward. In the Gringotts example minimum_reward should be 0.0001 or 0.00005.")
+	public double minimumReward = 0.01;
+
+	@ConfigField(name = "limit_per_bag", category = "economy", comment = "If you only want the bags to be able to contain a "
+			+ "\ncertain amount of gold you can set the limit here. Set limit_per_bag: 9999999999 to disable the limit.")
+	public double limitPerBagOld = 10000;
+
 	// #####################################################################################
 	// Reward Settings
 	// #####################################################################################
@@ -151,7 +155,7 @@ public class ConfigManager extends AutoConfig {
 	public String rewardTextColor = "GOLD";
 
 	@ConfigField(name = "show_displayname", category = "reward.name", comment = "Here you can hide the displayname when the bag of gold is an floating item in a world"
-			+"\nlike for normal Minecraft items."
+			+ "\nlike for normal Minecraft items."
 			+ "\nYou will still be able to see the displayname and value in the player Inventory.")
 	public boolean showCustomDisplayname = true;
 
@@ -275,88 +279,81 @@ public class ConfigManager extends AutoConfig {
 	 * 
 	 * @param plugin
 	 */
-	public void importConfig(Plugin plugin) {
-
-		if (configVersion == 0) {
-			File mFileShared = null;
-			if (Core.getBagOfGoldCompat().isSupported()) {
-				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
-						+ "Migrating configuration from BagOfGold to BagOfGoldCore");
-				mFileShared = new File(plugin.getDataFolder(), "../BagOfGold/config.yml");
-			} else if (Core.getMobHuntingCompat().isSupported()) {
-				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN
-						+ "Migrating configuration from MobHunting to BagOfGoldCore");
-				mFileShared = new File(plugin.getDataFolder(), "../MobHunting/config.yml");
-			} else {
-				configVersion = 2;
-				Bukkit.getConsoleSender().sendMessage(
-						ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RED + "Could not find configuration file");
-				return;
-			}
-
-			YamlConfiguration yamlConfig = YamlConfiguration.loadConfiguration(mFileShared);
-
-			// Import general settings
-			this.language = yamlConfig.getString("general.language");
-
-			this.debug = yamlConfig.getBoolean("general.debug");
-
-			this.learningMode = yamlConfig.getBoolean("general.newplayer_learning_mode");
-
-			// Import economy settings
-			this.numberFormat = yamlConfig.getString("economy.number_format");
-
-			if (Core.getBagOfGoldCompat().isSupported())
-				this.rewardRounding = yamlConfig.getDouble("economy.reward_rounding");
-			else if (Core.getMobHuntingCompat().isSupported())
-				this.rewardRounding = yamlConfig.getDouble("general.reward_rounding");
-			else
-				this.rewardRounding = 1;
-
-			if (Core.getBagOfGoldCompat().isSupported())
-				this.limitPerBag = yamlConfig.getDouble("economy.limit_per_bag");
-			else if (Core.getMobHuntingCompat().isSupported())
-				this.limitPerBag = yamlConfig.getDouble("dropmoneyonground.limit_per_bag");
-			else
-				this.limitPerBag = 10000;
-
-			// Import reward settings
-			this.bagOfGoldName = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name");
-
-			this.bagOfGoldNamePlural = yamlConfig
-					.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name_plural");
-
-			if (Core.getBagOfGoldCompat().isSupported())
-				this.rewardTextColor = yamlConfig.getString("dropmoneyonground.drop-money-on-ground-text-color");
-			else if (Core.getMobHuntingCompat().isSupported())
-				this.rewardTextColor = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_text_color");
-			else
-				this.rewardTextColor = "GOLD";
-
-			this.commandAlias = yamlConfig.getString("dropmoneyonground.drop_money_command_alias");
-
-			if (Core.getBagOfGoldCompat().isSupported())
-				this.rewardItemtype = yamlConfig.getString("dropmoneyonground.drop-money-on-ground-itemtype");
-			else if (Core.getMobHuntingCompat().isSupported())
-				this.rewardItemtype = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_itemtype");
-			else
-				this.rewardItemtype = "SKULL";
-
-			if (Core.getBagOfGoldCompat().isSupported())
-				this.rewardItem = yamlConfig.getString("dropmoneyonground.drop-money-on-ground-item");
-			else if (Core.getMobHuntingCompat().isSupported())
-				this.rewardItem = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_item");
-			else
-				this.rewardItem = "GOLD_INGOT";
-
-			this.denyHoppersToPickUpRewards = yamlConfig
-					.getBoolean("dropmoneyonground.deny_hoppers_to_pickup_money_on_ground");
-
-			configVersion = 2;
-			Bukkit.getConsoleSender().sendMessage(
-					ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.GREEN + "Finished migrating configuration.");
-
-		}
-	}
+	/**
+	 * public void importConfig(Plugin plugin) {
+	 * 
+	 * if (configVersion == 0) { File mFileShared = null; if
+	 * (Core.getBagOfGoldCompat().isSupported()) {
+	 * Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " +
+	 * ChatColor.GREEN + "Migrating configuration from BagOfGold to BagOfGoldCore");
+	 * mFileShared = new File(plugin.getDataFolder(), "../BagOfGold/config.yml"); }
+	 * else if (Core.getMobHuntingCompat().isSupported()) {
+	 * Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " +
+	 * ChatColor.GREEN + "Migrating configuration from MobHunting to
+	 * BagOfGoldCore"); mFileShared = new File(plugin.getDataFolder(),
+	 * "../MobHunting/config.yml"); } else { configVersion = 2;
+	 * Bukkit.getConsoleSender().sendMessage( ChatColor.GOLD + "[BagOfGoldCore] " +
+	 * ChatColor.RED + "Could not find configuration file"); return; }
+	 * 
+	 * YamlConfiguration yamlConfig =
+	 * YamlConfiguration.loadConfiguration(mFileShared);
+	 * 
+	 * // Import general settings this.language =
+	 * yamlConfig.getString("general.language");
+	 * 
+	 * this.debug = yamlConfig.getBoolean("general.debug");
+	 * 
+	 * this.learningMode = yamlConfig.getBoolean("general.newplayer_learning_mode");
+	 * 
+	 * // Import economy settings // this.numberFormat =
+	 * yamlConfig.getString("economy.number_format");
+	 * 
+	 * // if (Core.getBagOfGoldCompat().isSupported()) // this.rewardRounding =
+	 * yamlConfig.getDouble("economy.reward_rounding"); // else if
+	 * (Core.getMobHuntingCompat().isSupported()) // this.rewardRounding =
+	 * yamlConfig.getDouble("general.reward_rounding"); // else //
+	 * this.rewardRounding = 1;
+	 * 
+	 * //if (Core.getBagOfGoldCompat().isSupported()) // this.limitPerBag =
+	 * yamlConfig.getDouble("economy.limit_per_bag"); //else if
+	 * (Core.getMobHuntingCompat().isSupported()) // this.limitPerBag =
+	 * yamlConfig.getDouble("dropmoneyonground.limit_per_bag"); //else //
+	 * this.limitPerBag = 10000;
+	 * 
+	 * // Import reward settings //this.bagOfGoldName =
+	 * yamlConfig.getString("dropmoneyonground.drop_money_on_ground_skull_reward_name");
+	 * 
+	 * //this.bagOfGoldNamePlural = yamlConfig //
+	 * .getString("dropmoneyonground.drop_money_on_ground_skull_reward_name_plural");
+	 * 
+	 * //if (Core.getBagOfGoldCompat().isSupported()) // this.rewardTextColor =
+	 * yamlConfig.getString("dropmoneyonground.drop-money-on-ground-text-color");
+	 * //else if (Core.getMobHuntingCompat().isSupported()) // this.rewardTextColor
+	 * = yamlConfig.getString("dropmoneyonground.drop_money_on_ground_text_color");
+	 * //else // this.rewardTextColor = "GOLD";
+	 * 
+	 * //this.commandAlias =
+	 * yamlConfig.getString("dropmoneyonground.drop_money_command_alias");
+	 * 
+	 * //if (Core.getBagOfGoldCompat().isSupported()) // this.rewardItemtype =
+	 * yamlConfig.getString("dropmoneyonground.drop-money-on-ground-itemtype");
+	 * //else if (Core.getMobHuntingCompat().isSupported()) // this.rewardItemtype =
+	 * yamlConfig.getString("dropmoneyonground.drop_money_on_ground_itemtype");
+	 * //else // this.rewardItemtype = "SKULL";
+	 * 
+	 * //if (Core.getBagOfGoldCompat().isSupported()) // this.rewardItem =
+	 * yamlConfig.getString("dropmoneyonground.drop-money-on-ground-item"); //else
+	 * if (Core.getMobHuntingCompat().isSupported()) // this.rewardItem =
+	 * yamlConfig.getString("dropmoneyonground.drop_money_on_ground_item"); //else
+	 * // this.rewardItem = "GOLD_INGOT";
+	 * 
+	 * //this.denyHoppersToPickUpRewards = yamlConfig //
+	 * .getBoolean("dropmoneyonground.deny_hoppers_to_pickup_money_on_ground");
+	 * 
+	 * configVersion = 2; Bukkit.getConsoleSender().sendMessage( ChatColor.GOLD +
+	 * "[BagOfGoldCore] " + ChatColor.GREEN + "Finished migrating configuration.");
+	 * 
+	 * } }
+	 **/
 
 }

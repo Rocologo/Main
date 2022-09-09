@@ -53,9 +53,9 @@ public class Core {
 
 		mConfig = new ConfigManager(mFileShared);
 		if (mConfig.loadConfig()) {
-			if (config_version == -1 || config_version == 0) {
-				mConfig.importConfig(plugin);
-			}
+			//if (config_version == -1 || config_version == 0) {
+			//	mConfig.importConfig(plugin);
+			//}
 			mConfig.saveConfig();
 		} else
 			throw new RuntimeException("[BagOfGoldCore] Could not load bagofgoldcore.yml");

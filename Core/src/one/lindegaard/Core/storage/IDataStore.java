@@ -92,4 +92,8 @@ public interface IDataStore {
 	 */
 	void createRandomBountyPlayer() throws DataStoreException;
 	
+	/**
+	 * Delete all players which is not known on the server.
+	 */
+	void databaseDeleteOldPlayers() throws DataStoreException;
 }

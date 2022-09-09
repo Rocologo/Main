@@ -429,5 +429,33 @@ public abstract class DatabaseDataStore implements IDataStore {
 			throw new DataStoreException(e);
 		}
 	}
+	
+	@Override
+	public void databaseDeleteOldPlayers() {
+		Core.getMessages().debug("Deleting players not known on this server.");
+		int n = 0;
+		try {
+			Connection mConnection = setupConnection();
+			Statement statement = mConnection.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT UUID, NAME FROM mh_PlayerSettings");
+			while (rs.next()) {
+				String uuid = rs.getString("UUID");
+				String playername = rs.getString("NAME");
+				if (!Bukkit.getOfflinePlayer(UUID.fromString(uuid)).hasPlayedBefore()) {
+					Core.getMessages().debug("Deleting %s (%s) from mh_PlayerSettings and mh_Balance.", playername,
+							uuid);
+					statement.executeUpdate("DELETE FROM mh_PlayerSettings WHERE UUID='" + uuid + "'");
+					n++;
+				}
+			}
+			rs.close();
+			statement.close();
+			mConnection.close();
+			Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.WHITE + n
+					+ " players was deleted from the BagOfGoldCore database.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }
