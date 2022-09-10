@@ -306,8 +306,9 @@
 
 		<!-- citizens repository -->
 		<repository>
-			<id>citizens-repo</id>
-			<url>http://repo.citizensnpcs.co/</url>
+  			<id>citizens-repo</id>
+  			<name>Citizens Repository</name>
+  			<url>https://maven.citizensnpcs.co/repo</url>
 		</repository>
 
 		<!-- CodeMC - Open Source Minecraft projects repository -->
