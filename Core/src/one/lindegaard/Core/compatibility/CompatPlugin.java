@@ -58,7 +58,8 @@ public enum CompatPlugin {
 	Boss("Boss",54), //BOSS
 	CMILib("CMILib", 55), // CMILib
 	LevelledMobs("LevelledMobs",56), //LevelledMobs
-	Shopkeepers("Shopkeepers",57); //Shopkeepers
+	Shopkeepers("Shopkeepers",57),
+	WeaponMechanics("WeaponMechanics",58); //WeaponMechanics
 	private final String name;
 	private final Integer id;
 

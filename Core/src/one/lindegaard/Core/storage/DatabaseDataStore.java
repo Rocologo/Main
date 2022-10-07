@@ -110,7 +110,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 				setupV3Tables(mConnection);
 				break;
 			}
-			
+
 			Core.getStoreManager().createRandomBountyPlayer();
 
 			Core.getConfigManager().databaseVersion = 1;
@@ -158,7 +158,8 @@ public abstract class DatabaseDataStore implements IDataStore {
 			}
 			n++;
 		} while (Core.getDataStoreManager().isRunning() && n < 40);
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD+"[BagOfGoldCore] "+ChatColor.RESET+"Closing database connection.");
+		Bukkit.getConsoleSender()
+				.sendMessage(ChatColor.GOLD + "[BagOfGoldCore] " + ChatColor.RESET + "Closing database connection.");
 	}
 
 	// ******************************************************************
@@ -372,7 +373,8 @@ public abstract class DatabaseDataStore implements IDataStore {
 				if (result.next()) {
 					String name = result.getString("NAME");
 					UUID uuid = UUID.fromString(result.getString("UUID"));
-					if (name != null && uuid != null && offlinePlayer.getName()!=null && !offlinePlayer.getName().isEmpty())
+					if (name != null && uuid != null && offlinePlayer.getName() != null
+							&& !offlinePlayer.getName().isEmpty())
 						if (offlinePlayer.getUniqueId().equals(uuid) && !offlinePlayer.getName().equals(name)) {
 							Core.getMessages().debug("Name change detected(2): " + name + " -> "
 									+ offlinePlayer.getName() + " UUID=" + offlinePlayer.getUniqueId().toString());
@@ -429,7 +431,7 @@ public abstract class DatabaseDataStore implements IDataStore {
 			throw new DataStoreException(e);
 		}
 	}
-	
+
 	@Override
 	public void databaseDeleteOldPlayers() {
 		Core.getMessages().debug("Deleting players not known on this server.");
@@ -441,9 +443,10 @@ public abstract class DatabaseDataStore implements IDataStore {
 			while (rs.next()) {
 				String uuid = rs.getString("UUID");
 				String playername = rs.getString("NAME");
+				Core.getMessages().debug("Player:%s (%s) - hasplayedbefore:%s", playername, uuid,
+						Bukkit.getOfflinePlayer(UUID.fromString(uuid)).hasPlayedBefore());
 				if (!Bukkit.getOfflinePlayer(UUID.fromString(uuid)).hasPlayedBefore()) {
-					Core.getMessages().debug("Deleting %s (%s) from mh_PlayerSettings and mh_Balance.", playername,
-							uuid);
+					Core.getMessages().debug("Deleting %s (%s) from mh_PlayerSettings", playername, uuid);
 					statement.executeUpdate("DELETE FROM mh_PlayerSettings WHERE UUID='" + uuid + "'");
 					n++;
 				}
