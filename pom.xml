@@ -22,7 +22,7 @@
 			<id>rocologo</id>
 			<name>Rocologo</name>
 			<email>rocologo@hotmail.com</email>
-			<url>http://github.com/rocologo</url>
+			<url>https://github.com/rocologo</url>
 			<roles>
 				<role>developer</role>
 				<role>maintainer</role>
@@ -52,8 +52,9 @@
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
 		<module>Core</module>
-		<!-- <module>../BagOfGold</module>
-		<module>../MobHunting</module> -->
+		<module>../CustomItemsLib</module>
+		<module>../BagOfGold</module>
+		<module>../MobHunting</module>
 		<!-- <module>../Spheres</module> -->
 	</modules>
 
@@ -152,7 +153,8 @@
 		<craftbukkit_1_8_R2.version>1.8.3-R0.1-SNAPSHOT</craftbukkit_1_8_R2.version>
 		<craftbukkit_1_8_R1.version>1.8-R0.1-SNAPSHOT</craftbukkit_1_8_R1.version>
 
-		<vault.version>1.7</vault.version>
+		<vault.version>1.7.3</vault.version>
+		<vaultapi.version>1.7</vaultapi.version>
 		<reserve.version>0.1.5.4</reserve.version>
 		<bstats.version>2.2.1</bstats.version>
 		<protocollib.version>4.8.0-SNAPSHOT</protocollib.version>
@@ -190,13 +192,6 @@
 			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc_1_19_R1.version}</version>
 		</dependency>
-
-		<!-- Craftbukkit / Bukkit -->
-		<!--<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit_1_19_R1.version}</version>
-		</dependency>-->
 
 		<!-- Bungeecord -->
 		<dependency>
@@ -325,8 +320,8 @@
 
 		<!-- Nexus is used by Holograms -->
 		<!-- currently broken -->
-		<!-- <repository> <id>nexus-repo</id> <url>http://maven.sainttx.com/nexus/content/repositories/releases</url> 
-			</repository> <repository> <id>nexus-snapshot-repo</id> <url>http://maven.sainttx.com/nexus/content/repositories/snapshots</url> 
+		<!-- <repository> <id>nexus-repo</id> <url>https://maven.sainttx.com/nexus/content/repositories/releases</url> 
+			</repository> <repository> <id>nexus-snapshot-repo</id> <url>https://maven.sainttx.com/nexus/content/repositories/snapshots</url> 
 			</repository> -->
 
 		<!-- PlaceholderAPI -->

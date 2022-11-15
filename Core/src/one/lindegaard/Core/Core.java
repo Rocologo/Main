@@ -104,6 +104,7 @@ public class Core {
 		try {
 			getMessages().debug("Saving all rewardblocks to disk.");
 			mRewardBlockManager.save();
+			
 			getMessages().debug("Saving worldgroups.");
 			mWorldGroupManager.save();
 			getMessages().debug("Shutdown StoreManager");
