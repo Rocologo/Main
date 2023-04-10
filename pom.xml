@@ -3,7 +3,7 @@
 
 	<groupId>one.lindegaard</groupId>
 	<artifactId>Main</artifactId>
-	<version>0.1.3-SNAPSHOT</version>
+	<version>0.1.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Main project</name>
@@ -33,6 +33,8 @@
 
 	<modules>
 		<module>NMS_Shared</module>
+		<module>NMS_v1_19_R3</module>
+		<module>NMS_v1_19_R2</module>
 		<module>NMS_v1_19_R1</module>
 		<module>NMS_v1_18_R1</module>
 		<module>NMS_v1_17_R1</module>
@@ -130,9 +132,11 @@
 
 		<spring.version>5.1.5.RELEASE</spring.version>
 
-		<spigotmc_1_19_R1.version>1.19-R0.1-SNAPSHOT</spigotmc_1_19_R1.version>
+		<spigotmc_1_19_R3.version>1.19.4-R0.1-SNAPSHOT</spigotmc_1_19_R3.version>
 
-		<craftbukkit_1_19_R1.version>1.19-R0.1-SNAPSHOT</craftbukkit_1_19_R1.version>
+		<craftbukkit_1_19_R3.version>1.19.4-R0.1-SNAPSHOT</craftbukkit_1_19_R3.version>
+		<craftbukkit_1_19_R2.version>1.19.3-R0.1-SNAPSHOT</craftbukkit_1_19_R2.version>
+		<craftbukkit_1_19_R1.version>1.19.2-R0.1-SNAPSHOT</craftbukkit_1_19_R1.version>
 		<bukkit_1_19_R1.version>1.19-R0.1-SNAPSHOT</bukkit_1_19_R1.version>
 		<craftbukkit_1_18_R1.version>1.18.1-R0.1-SNAPSHOT</craftbukkit_1_18_R1.version>
 		<craftbukkit_1_17_R1.version>1.17-R0.1-SNAPSHOT</craftbukkit_1_17_R1.version>
@@ -159,6 +163,11 @@
 		<protocollib.version>4.8.0-SNAPSHOT</protocollib.version>
 		<EssentialsX.version>2.19.4</EssentialsX.version>
 		<spigetupdate.version>1.4.5-SNAPSHOT</spigetupdate.version>
+
+		<customitemslib.version>1.0.5-SNAPSHOT</customitemslib.version>
+
+		<worldguard7.version>7.0.7</worldguard7.version>
+		<worldedit.version>7.2.8</worldedit.version>
 
 		<PerWorldInventory.version>2.3.2</PerWorldInventory.version>
 
@@ -189,7 +198,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_19_R1.version}</version>
+			<version>${spigotmc_1_19_R3.version}</version>
 		</dependency>
 
 		<!-- Bungeecord -->
