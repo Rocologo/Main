@@ -2,10 +2,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>NMS_v1_19_R2</artifactId>
+	<artifactId>NMS_v1_19_R3</artifactId>
 	<packaging>jar</packaging>
-	<name>Core NMS v1_19_R2</name>
-	<version>v1_19_R2-SNAPSHOT</version>
+	<name>Core NMS v1_19_R3</name>
+	<version>v1_19_R3-SNAPSHOT</version>
 	
 	<parent>
 		<groupId>one.lindegaard</groupId>
