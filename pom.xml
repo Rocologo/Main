@@ -305,10 +305,10 @@
 		</repository>
 
 		<!-- TitleManager -->
-		<repository>
+<!--		<repository>
 			<id>puha-repo</id>
 			<url>https://repo.puha.io/repo/</url>
-		</repository>
+		</repository> -->
 
 		<!-- citizens repository -->
 		<repository>
