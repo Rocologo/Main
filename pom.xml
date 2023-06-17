@@ -304,11 +304,11 @@
 			<url>https://ci.frostcast.net/plugin/repository/everything/</url>
 		</repository>
 
-		<!-- TitleManager -->
-<!--		<repository>
+		<!-- TitleManager THIS REPO IS BROKEN -->
+		<!-- <repository>
 			<id>puha-repo</id>
 			<url>https://repo.puha.io/repo/</url>
-		</repository> -->
+		</repository>  -->
 
 		<!-- citizens repository -->
 		<repository>
