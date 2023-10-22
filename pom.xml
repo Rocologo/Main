@@ -134,10 +134,9 @@
 
 		<spring.version>5.1.5.RELEASE</spring.version>
 
-		<spigotmc_1_20_R1.version>1.20-R0.1-SNAPSHOT</spigotmc_1_20_R1.version>
+		<spigotmc_1_20_R2.version>1.20.2-R0.1-SNAPSHOT</spigotmc_1_20_R2.version>
 		<!-- <spigotmc_1_19_R3.version>1.19.4-R0.1-SNAPSHOT</spigotmc_1_19_R3.version> -->
 
-		<!-- <bukkit_1_19_R1.version>1.19-R0.1-SNAPSHOT</bukkit_1_19_R1.version> -->
 		<craftbukkit_1_20_R2.version>1.20.2-R0.1-SNAPSHOT</craftbukkit_1_20_R2.version>
 		<craftbukkit_1_20_R1.version>1.20-R0.1-SNAPSHOT</craftbukkit_1_20_R1.version>
 		<craftbukkit_1_19_R3.version>1.19.4-R0.1-SNAPSHOT</craftbukkit_1_19_R3.version>
@@ -203,7 +202,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_20_R1.version}</version>
+			<version>${spigotmc_1_20_R2.version}</version>
 		</dependency>
 
 		<!-- Bungeecord -->
