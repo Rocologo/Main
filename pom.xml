@@ -60,9 +60,9 @@
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
 		<module>CustomItemsLib</module>
-		<!--<module>BagOfGold</module>
+		<module>BagOfGold</module>
 		<module>MobHunting</module>
-		<module>../Spheres</module> -->
+		<!--<module>../Spheres</module> -->
 	</modules>
 
 	<organization>
@@ -220,6 +220,14 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.32</version>
+		</dependency>
+		
+		<!-- Vault / -->
+		<dependency>
+			<groupId>net.milkbowl.vault</groupId>
+			<artifactId>Vault</artifactId>
+			<version>${vault.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>
