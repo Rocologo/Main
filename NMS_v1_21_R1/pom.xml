@@ -5,11 +5,11 @@
 	<artifactId>NMS_v1_21_R1</artifactId>
 	<packaging>jar</packaging>
 	<name>Core NMS v1_21_R1</name>
-	<version>v1_21_R1-SNAPSHOT</version>
 	
 	<parent>
 		<groupId>one.lindegaard</groupId>
 		<artifactId>Main</artifactId>
+		<version>0.1.6-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
