@@ -153,7 +153,7 @@
 		<reserve.version>0.1.5.4</reserve.version>
 		<bstats.version>2.2.1</bstats.version>
 		<protocollib.version>4.8.0-SNAPSHOT</protocollib.version>
-		<EssentialsX.version>2.19.4</EssentialsX.version>
+		<EssentialsX.version>2.20.1</EssentialsX.version>
 		<spigetupdate.version>1.4.5-SNAPSHOT</spigetupdate.version>
 
 		<customitemslib.version>1.0.5-SNAPSHOT</customitemslib.version>
@@ -321,6 +321,10 @@
 		</repository>
 
 		<!-- EssentialsX repo-->
+		<repository>
+            <id>EssentialsX</id>
+            <url>https://mvnrepository.com/artifact/net.essentialsx/EssentialsX/</url>
+        </repository>
 		<repository>
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
