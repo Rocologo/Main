@@ -178,6 +178,7 @@
 		<citizensapi.version>2.0.30-SNAPSHOT</citizensapi.version>
 		<holograms.version>2.6-SNAPSHOT</holograms.version>
 		<hologramdisplays.version>2.3.2</hologramdisplays.version>
+		<Shopkeeper.version>2.16.1</Shopkeeper.version>
 
 	</properties>
 
@@ -322,8 +323,16 @@
 
 		<!-- EssentialsX repo-->
 		<repository>
-            <id>EssentialsX</id>
+            <id>EssentialsX-maven</id>
             <url>https://mvnrepository.com/artifact/net.essentialsx/EssentialsX/</url>
+        </repository>
+		<repository>
+            <id>EssentialsX</id>
+            <url>https://repo.essentialsx.net/releases/</url>
+        </repository>
+		<repository>
+            <id>EssentialsX-snapshots</id>
+            <url>https://repo.essentialsx.net/snapshots/</url>
         </repository>
 		<repository>
             <id>papermc</id>
@@ -335,6 +344,12 @@
 			<id>main-local-repo</id>
 			<url>file://${project.basedir}/lib</url>
 		</repository>
+		
+		<!-- Shopkeeper Repository-->
+		<repository>
+		    <id>shopkeepers-repo</id>    
+		    <url>https://repo.essentialsx.net/releases/</url>
+        </repository>
 		
 	</repositories>
 
