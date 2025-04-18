@@ -60,9 +60,9 @@
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
 		<module>CustomItemsLib</module>
-		<!--<module>BagOfGold</module>
+		<module>BagOfGold</module>
 		<module>MobHunting</module>
-		<module>../Spheres</module> -->
+		<!--<module>../Spheres</module> -->
 	</modules>
 
 	<organization>
@@ -152,7 +152,7 @@
 		<vaultapi.version>1.7</vaultapi.version>
 		<reserve.version>0.1.5.4</reserve.version>
 		<bstats.version>2.2.1</bstats.version>
-		<protocollib.version>4.8.0-SNAPSHOT</protocollib.version>
+		<protocollib.version>5.3.0</protocollib.version>
 		<EssentialsX.version>2.20.1</EssentialsX.version>
 		<spigetupdate.version>1.4.5-SNAPSHOT</spigetupdate.version>
 
