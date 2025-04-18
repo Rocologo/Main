@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>NMS_v1_21_R2</artifactId>
+	<packaging>jar</packaging>
+	<name>Core NMS v1_21_R2</name>
+	<version>v1_21_R1-SNAPSHOT</version>
+	
+	<parent>
+		<groupId>one.lindegaard</groupId>
+		<artifactId>Main</artifactId>
+		<version>0.1.5-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId> 
+			<version>${craftbukkit_1_21_R2.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/craftbukkit-1.21.3-R0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>one.lindegaard</groupId>
+			<artifactId>NMS_Shared</artifactId>
+			<version>${NMS_Shared.version}</version>
+			<type>jar</type>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>authlib</artifactId>
+            <version>1.5.21</version>
+            <scope>provided</scope>
+        </dependency>		
+	</dependencies>
+</project>
