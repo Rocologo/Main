@@ -59,10 +59,10 @@
 		<module>NMS_v1_8_R3</module>
 		<module>NMS_v1_8_R2</module>
 		<module>NMS_v1_8_R1</module>
-		<module>CustomItemsLib</module>
+		<!--<module>CustomItemsLib</module>
 		<module>BagOfGold</module>
 		<module>MobHunting</module>
-		<!--<module>../Spheres</module> -->
+		<module>../Spheres</module> -->
 	</modules>
 
 	<organization>
