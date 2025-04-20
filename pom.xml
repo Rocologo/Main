@@ -176,8 +176,8 @@
 		<bossshop.version>1.9.8</bossshop.version>
 
 		<citizensapi.version>2.0.30-SNAPSHOT</citizensapi.version>
-		<holograms.version>2.6-SNAPSHOT</holograms.version>
-		<hologramdisplays.version>2.3.2</hologramdisplays.version>
+		<holograms.version>2.13</holograms.version>
+		<hologramdisplays.version>2.4.8</hologramdisplays.version>
 		<Shopkeeper.version>2.16.1</Shopkeeper.version>
 
 	</properties>
@@ -198,15 +198,7 @@
 		<dependency>
 			<groupId>net.md-5</groupId>
 			<artifactId>bungeecord-api</artifactId>
-			<version>1.19-R0.1-SNAPSHOT</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.md-5</groupId>
-			<artifactId>bungeecord-api</artifactId>
-			<version>1.19-R0.1-SNAPSHOT</version>
-			<type>javadoc</type>
+			<version>1.21-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		
@@ -334,16 +326,18 @@
             <id>EssentialsX-snapshots</id>
             <url>https://repo.essentialsx.net/snapshots/</url>
         </repository>
+        
+        <!-- PaperMC repo-->
 		<repository>
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
 
 		<!-- Add imported jar files to main project-->
-		<repository>
+		<!-- <repository>
 			<id>main-local-repo</id>
 			<url>file://${project.basedir}/lib</url>
-		</repository>
+		</repository>-->
 		
 		<!-- Shopkeeper Repository-->
 		<repository>
