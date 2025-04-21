@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>one.lindegaard</groupId>
 		<artifactId>Main</artifactId>
-		<version>${main.version}</version>
+		<version>0.1.6-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
