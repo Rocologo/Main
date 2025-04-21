@@ -89,56 +89,23 @@
 	<!-- ********************************************************************** -->
 	<properties>
 
-		<!-- Build versions -->
-		<main.version>0.1.6-SNAPSHOT</main.version>
-		<NMS_Shared.version>0.0.5-SNAPSHOT</NMS_Shared.version>
-		<build.number>TestBuild</build.number>
 		<mainClass>${project.groupId}.${project.artifactId}</mainClass>
-
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<javaCompilerSource.version>17</javaCompilerSource.version>
-		<javaCompilerTarget.version>17</javaCompilerTarget.version>
+		<mavenCompilerPlugin.version>3.14.0</mavenCompilerPlugin.version>
+		<mavenShadePlugin.version>3.6.0</mavenShadePlugin.version>
+		<javaCompilerSource.version>21</javaCompilerSource.version>
+		<javaCompilerTarget.version>21</javaCompilerTarget.version>
+		<maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+		<nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
 
-		<mavenCompilerPlugin.version>3.10.1</mavenCompilerPlugin.version>
-		<mavenJarPlugin.version>3.2.0</mavenJarPlugin.version>
-		<mavenShadePlugin.version>3.3.0</mavenShadePlugin.version>
-		<maven-deploy-plugin.version>3.0.0-M2</maven-deploy-plugin.version>
-
-		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-
-		<spring.version>5.1.5.RELEASE</spring.version>
-
+		<!-- Build versions -->
+		<main.version>0.1.6-SNAPSHOT</main.version>
+		
+		<build.number>TestBuild</build.number>
+		
 		<spigotmc_1_21_R3.version>1.21.4-R0.1-SNAPSHOT</spigotmc_1_21_R3.version>
-		<!-- <spigotmc_1_19_R3.version>1.19.4-R0.1-SNAPSHOT</spigotmc_1_19_R3.version> -->
-
-		<craftbukkit_1_21_R3.version>1.21.4-R0.1-SNAPSHOT</craftbukkit_1_21_R3.version>
-		<craftbukkit_1_21_R2.version>1.21.3-R0.1-SNAPSHOT</craftbukkit_1_21_R2.version>
-		<craftbukkit_1_21_R1.version>1.21.1-R0.1-SNAPSHOT</craftbukkit_1_21_R1.version>
-		<craftbukkit_1_20_R3.version>1.20.4-R0.1-SNAPSHOT</craftbukkit_1_20_R3.version>
-		<craftbukkit_1_20_R2.version>1.20.2-R0.1-SNAPSHOT</craftbukkit_1_20_R2.version>
-		<craftbukkit_1_20_R1.version>1.20.1-R0.1-SNAPSHOT</craftbukkit_1_20_R1.version>
-		<craftbukkit_1_19_R3.version>1.19.4-R0.1-SNAPSHOT</craftbukkit_1_19_R3.version>
-		<craftbukkit_1_19_R2.version>1.19.3-R0.1-SNAPSHOT</craftbukkit_1_19_R2.version>
-		<craftbukkit_1_19_R1.version>1.19.2-R0.1-SNAPSHOT</craftbukkit_1_19_R1.version>
-		<craftbukkit_1_18_R1.version>1.18.1-R0.1-SNAPSHOT</craftbukkit_1_18_R1.version>
-		<craftbukkit_1_17_R1.version>1.17-R0.1-SNAPSHOT</craftbukkit_1_17_R1.version>
-		<craftbukkit_1_16_R3.version>1.16.3-R0.1-SNAPSHOT</craftbukkit_1_16_R3.version>
-		<craftbukkit_1_16_R2.version>1.16.2-R0.1-SNAPSHOT</craftbukkit_1_16_R2.version>
-		<craftbukkit_1_16_R1.version>1.16.1-R0.1-SNAPSHOT</craftbukkit_1_16_R1.version>
-		<craftbukkit_1_15_R1.version>1.15.2-R0.1-SNAPSHOT</craftbukkit_1_15_R1.version>
-		<craftbukkit_1_14_R1.version>1.14.4-R0.1-SNAPSHOT</craftbukkit_1_14_R1.version>
-		<craftbukkit_1_13_R2.version>1.13.2-R0.1-SNAPSHOT</craftbukkit_1_13_R2.version>
-		<craftbukkit_1_13_R1.version>1.13-R0.1-SNAPSHOT</craftbukkit_1_13_R1.version>
-		<craftbukkit_1_12_R1.version>1.12.2-R0.1-SNAPSHOT</craftbukkit_1_12_R1.version>
-		<craftbukkit_1_11_R1.version>1.11.2-R0.1-SNAPSHOT</craftbukkit_1_11_R1.version>
-		<craftbukkit_1_10_R1.version>1.10.2-R0.1-SNAPSHOT</craftbukkit_1_10_R1.version>
-		<craftbukkit_1_9_R2.version>1.9.4-R0.1-SNAPSHOT</craftbukkit_1_9_R2.version>
-		<craftbukkit_1_9_R1.version>1.9-R0.1-SNAPSHOT</craftbukkit_1_9_R1.version>
-		<craftbukkit_1_8_R3.version>1.8.8-R0.1-SNAPSHOT</craftbukkit_1_8_R3.version>
-		<craftbukkit_1_8_R2.version>1.8.3-R0.1-SNAPSHOT</craftbukkit_1_8_R2.version>
-		<craftbukkit_1_8_R1.version>1.8-R0.1-SNAPSHOT</craftbukkit_1_8_R1.version>
 
 		<vault.version>1.7.3</vault.version>
 		<vaultapi.version>1.7</vaultapi.version>
@@ -184,6 +151,7 @@
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>${spigotmc_1_21_R3.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Bungeecord -->
@@ -199,6 +167,7 @@
 			<groupId>com.comphenix.protocol</groupId>
 			<artifactId>ProtocolLib</artifactId>
 			<version>${protocollib.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
