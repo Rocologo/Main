@@ -90,9 +90,9 @@
 	<properties>
 
 		<!-- Build versions -->
+		<main.version>0.1.6-SNAPSHOT</main.version>
 		<NMS_Shared.version>0.0.5-SNAPSHOT</NMS_Shared.version>
 		<build.number>TestBuild</build.number>
-
 		<mainClass>${project.groupId}.${project.artifactId}</mainClass>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
