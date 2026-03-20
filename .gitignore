@@ -2,7 +2,7 @@
 /bin
 /.classpath
 /.project
-/target
+**/target/
 *.iml
 .idea/
 doc
